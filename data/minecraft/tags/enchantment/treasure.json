@@ -1,7 +1,6 @@
 {
     "values": [
-      "minecraft:binding_curse",
-      "minecraft:vanishing_curse",
+      "#minecraft:curse",
       "minecraft:swift_sneak",
       "minecraft:soul_speed",
       "minecraft:frost_walker",

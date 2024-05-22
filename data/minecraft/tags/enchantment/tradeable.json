@@ -1,8 +1,7 @@
 {
     "values": [
       "#minecraft:non_treasure",
-      "minecraft:binding_curse",
-      "minecraft:vanishing_curse",
+      "#minecraft:curse",
       "minecraft:frost_walker"
     ]
   }
