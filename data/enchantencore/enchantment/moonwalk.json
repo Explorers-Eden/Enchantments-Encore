@@ -19,15 +19,14 @@
     "effects": {
       "minecraft:attributes": [
         {
-          "name": "gravity",
+          "id": "enchantencore:moonwalk",
           "attribute": "minecraft:generic.gravity",
           "amount": {
             "type": "minecraft:linear",
             "base": -0.03,
             "per_level_above_first": -0.015
           },
-          "operation": "add_value",
-          "uuid": "34af63c0-13dd-4ceb-823d-86749b623345"
+          "operation": "add_value"
         }
       ]
     }
