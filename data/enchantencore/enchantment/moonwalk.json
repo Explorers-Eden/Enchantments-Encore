@@ -1,0 +1,35 @@
+{
+    "description": "Moonwalk",
+    "exclusive_set": "#enchantencore:exclusive_set/elytra",
+    "supported_items": "minecraft:elytra",
+    "weight": 1,
+    "max_level": 3,
+    "min_cost": {
+      "base": 15,
+      "per_level_above_first": 9
+    },
+    "max_cost": {
+      "base": 65,
+      "per_level_above_first": 9
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "chest"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "name": "gravity",
+          "attribute": "minecraft:generic.gravity",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": -0.03,
+            "per_level_above_first": -0.015
+          },
+          "operation": "add_value",
+          "uuid": "34af63c0-13dd-4ceb-823d-86749b623345"
+        }
+      ]
+    }
+  }
+  
