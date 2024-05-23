@@ -37,7 +37,9 @@
       "minecraft:breach",
       "enchantencore:magma_walker",
       "enchantencore:crab_claw",
-      "enchantencore:growth_dance"
+      "enchantencore:growth_dance",
+      "enchantencore:growth",
+      "enchantencore:shrinkage"
     ]
   }
   
