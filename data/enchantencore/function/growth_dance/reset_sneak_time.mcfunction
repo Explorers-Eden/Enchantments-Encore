@@ -1,0 +1,1 @@
+execute as @e[type=player,predicate=enchantencore:entity/is_not_sneaking] run scoreboard players reset @s enchantencore.sneaktime

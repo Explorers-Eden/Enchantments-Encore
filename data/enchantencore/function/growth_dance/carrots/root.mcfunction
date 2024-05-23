@@ -1,0 +1,69 @@
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+execute if block ~ ~ ~ minecraft:carrots[age=6] run function enchantencore:growth_dance/carrots/age_7
+
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+execute if block ~ ~ ~ minecraft:carrots[age=5] run function enchantencore:growth_dance/carrots/age_6
+
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+execute if block ~ ~ ~ minecraft:carrots[age=4] run function enchantencore:growth_dance/carrots/age_5
+
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+execute if block ~ ~ ~ minecraft:carrots[age=3] run function enchantencore:growth_dance/carrots/age_4
+
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+execute if block ~ ~ ~ minecraft:carrots[age=2] run function enchantencore:growth_dance/carrots/age_3
+
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+execute if block ~ ~ ~ minecraft:carrots[age=1] run function enchantencore:growth_dance/carrots/age_2
+
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1
+execute if block ~ ~ ~ minecraft:carrots[age=0] run function enchantencore:growth_dance/carrots/age_1

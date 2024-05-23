@@ -36,7 +36,8 @@
       "minecraft:density",
       "minecraft:breach",
       "enchantencore:magma_walker",
-      "enchantencore:crab_claw"
+      "enchantencore:crab_claw",
+      "enchantencore:growth_dance"
     ]
   }
   
