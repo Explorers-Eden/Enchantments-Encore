@@ -1,0 +1,33 @@
+{
+    "description": "Sonic",
+    "supported_items": "#minecraft:foot_armor",
+    "weight": 1,
+    "max_level": 3,
+    "min_cost": {
+      "base": 25,
+      "per_level_above_first": 25
+    },
+    "max_cost": {
+      "base": 75,
+      "per_level_above_first": 25
+    },
+    "anvil_cost": 8,
+    "slots": [
+      "feet"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "id": "enchantencore:sonic",
+          "attribute": "minecraft:generic.movement_speed",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.025,
+            "per_level_above_first": 0.01
+          },
+          "operation": "add_value"
+        }
+      ]
+    }
+  }
+  
