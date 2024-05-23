@@ -1,0 +1,36 @@
+{
+    "description": {
+      "translate": "enchantment.minecraft.swift_sneak"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/leggings",
+    "supported_items": "#minecraft:enchantable/leg_armor",
+    "weight": 1,
+    "max_level": 3,
+    "min_cost": {
+      "base": 25,
+      "per_level_above_first": 25
+    },
+    "max_cost": {
+      "base": 75,
+      "per_level_above_first": 25
+    },
+    "anvil_cost": 8,
+    "slots": [
+      "legs"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "id": "minecraft:swiftsneak",
+          "attribute": "minecraft:player.sneaking_speed",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.15,
+            "per_level_above_first": 0.15
+          },
+          "operation": "add_value"
+        }
+      ]
+    }
+  }
+  

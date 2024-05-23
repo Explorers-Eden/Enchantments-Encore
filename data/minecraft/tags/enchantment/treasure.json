@@ -6,6 +6,7 @@
       "minecraft:frost_walker",
       "minecraft:mending",
       "minecraft:wind_burst",
+      "enchantencore:night_vision",
       "#enchantencore:exclusive_set/elytra"
     ]
   }

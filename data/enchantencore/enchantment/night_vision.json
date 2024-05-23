@@ -1,0 +1,33 @@
+{
+    "description": "Night Vision",
+    "supported_items": "#minecraft:enchantable/head_armor",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 0
+    },
+    "max_cost": {
+      "base": 41,
+      "per_level_above_first": 0
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "head"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:night_vision",
+            "min_duration": 2,
+            "max_duration": 2,
+            "min_amplifier": 1,
+            "max_amplifier": 1
+          }
+        }
+      ]
+    }
+  }
+  

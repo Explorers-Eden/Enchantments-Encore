@@ -1,0 +1,33 @@
+{
+    "description": "Bunny Hop",
+    "supported_items": "#minecraft:enchantable/leg_armor",
+    "weight": 1,
+    "max_level": 3,
+    "min_cost": {
+      "base": 25,
+      "per_level_above_first": 25
+    },
+    "max_cost": {
+      "base": 75,
+      "per_level_above_first": 25
+    },
+    "anvil_cost": 8,
+    "slots": [
+      "legs"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "id": "enchantencore:jumpstrength",
+          "attribute": "minecraft:generic.jump_strength",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.15,
+            "per_level_above_first": 0.1
+          },
+          "operation": "add_value"
+        }
+      ]
+    }
+  }
+  
