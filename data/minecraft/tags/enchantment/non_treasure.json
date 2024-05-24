@@ -41,7 +41,9 @@
       "enchantencore:growth",
       "enchantencore:shrinkage",
       "enchantencore:sonic",
-      "enchantencore:summer_walker"
+      "enchantencore:summer_walker",
+      "enchantencore:poison_aspect",
+      "enchantencore:wither_aspect"
     ]
   }
   

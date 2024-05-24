@@ -1,0 +1,77 @@
+{
+    "description": "Poison Aspect",
+    "exclusive_set": "#enchantencore:exclusive_set/aspect",
+    "supported_items": "#minecraft:enchantable/fire_aspect",
+    "primary_items": "#minecraft:enchantable/sword",
+    "weight": 2,
+    "max_level": 2,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:hit_block": [
+        {
+          "effect": {
+            "type": "minecraft:all_of",
+            "effects": [
+              {
+                "type": "minecraft:set_block_properties",
+                "properties": {
+                  "lit": "true"
+                },
+                "trigger_game_event": "minecraft:block_change"
+              },
+              {
+                "type": "minecraft:damage_item",
+                "amount": 1
+              }
+            ]
+          },
+          "requirements": {
+            "condition": "minecraft:location_check",
+            "predicate": {
+              "block": {
+                "blocks": "#minecraft:fire_aspect_lightable",
+                "state": {
+                  "lit": "false"
+                }
+              },
+              "fluid": {
+                "fluids": "minecraft:empty"
+              }
+            }
+          }
+        }
+      ],
+      "minecraft:post_attack": [
+        {
+          "enchanted": "attacker",
+          "affected": "victim",
+          "effect": {
+            "type": "minecraft:ignite",
+            "duration": {
+              "type": "minecraft:linear",
+              "base": 4,
+              "per_level_above_first": 4
+            }
+          },
+          "requirements": {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "is_direct": true
+            }
+          }
+        }
+      ]
+    }
+  }
+  
