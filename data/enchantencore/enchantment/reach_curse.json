@@ -1,9 +1,12 @@
 {
-    "description": "Crab Claw",
+    "description": {
+        "text": "Curse of Reach",
+        "color": "red"
+      },
     "supported_items": "#enchantencore:all_tools",
-    "exclusive_set": "#enchantencore:exclusive_set/reach",
+    "exclusive_set": "#enchantencore:exclusive_set/reach_curse",
     "weight": 1,
-    "max_level": 3,
+    "max_level": 1,
     "min_cost": {
       "base": 15,
       "per_level_above_first": 9
@@ -19,22 +22,22 @@
     "effects": {
       "minecraft:attributes": [
         {
-          "id": "enchantencore:crabclaw_block",
+          "id": "enchantencore:reachcurse_block",
           "attribute": "minecraft:player.block_interaction_range",
           "amount": {
             "type": "minecraft:linear",
-            "base": 1,
-            "per_level_above_first": 1
+            "base": -2,
+            "per_level_above_first": -2
           },
           "operation": "add_value"
         },
         {
-          "id": "enchantencore:crabclaw_entity",
+          "id": "enchantencore:reachcurse_entity",
           "attribute": "minecraft:player.entity_interaction_range",
           "amount": {
             "type": "minecraft:linear",
-            "base": 1,
-            "per_level_above_first": 1
+            "base": -2,
+            "per_level_above_first": -2
           },
           "operation": "add_value"
         }

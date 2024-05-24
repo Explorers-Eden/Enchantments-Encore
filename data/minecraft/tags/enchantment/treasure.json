@@ -7,7 +7,7 @@
       "minecraft:mending",
       "minecraft:wind_burst",
       "enchantencore:night_vision",
-      "#enchantencore:exclusive_set/elytra",
+      "enchantencore:moonwalk",
       "enchantencore:sonic"
     ]
   }
