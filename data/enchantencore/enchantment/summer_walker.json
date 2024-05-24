@@ -1,0 +1,107 @@
+{
+    "description": "Summer Walker",
+    "exclusive_set": "#minecraft:exclusive_set/boots",
+    "supported_items": "#minecraft:enchantable/foot_armor",
+    "weight": 2,
+    "max_level": 2,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 10
+    },
+    "max_cost": {
+      "base": 25,
+      "per_level_above_first": 10
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "feet"
+    ],
+    "effects": {
+      "minecraft:damage_immunity": [
+        {
+          "effect": {},
+          "requirements": {
+            "condition": "minecraft:damage_source_properties",
+            "predicate": {
+              "tags": [
+                {
+                  "id": "minecraft:burn_from_stepping",
+                  "expected": true
+                },
+                {
+                  "id": "minecraft:bypasses_invulnerability",
+                  "expected": false
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:replace_disc",
+            "block_state": {
+              "type": "minecraft:simple_state_provider",
+              "state": {
+                "Name": "minecraft:air"
+              }
+            },
+            "predicate": {
+              "type": "minecraft:all_of",
+              "predicates": [
+                {
+                  "type": "minecraft:matching_blocks",
+                  "offset": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "blocks": "minecraft:air"
+                },
+                {
+                  "type": "minecraft:matching_blocks",
+                  "offset": [
+                    0,
+                    0,
+                    0
+                  ],
+                  "blocks": "minecraft:snow"
+                },
+                {
+                  "type": "minecraft:unobstructed"
+                }
+              ]
+            },
+            "radius": {
+              "type": "minecraft:clamped",
+              "value": {
+                "type": "minecraft:linear",
+                "base": 3,
+                "per_level_above_first": 1
+              },
+              "min": 0,
+              "max": 16
+            },
+            "height": 1,
+            "offset": [
+              0,
+              0,
+              0
+            ],
+            "trigger_game_event": "minecraft:block_place"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_on_ground": true
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  
