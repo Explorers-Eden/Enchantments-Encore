@@ -37,12 +37,12 @@
             },
             "min_amplifier": {
               "type": "minecraft:linear",
-              "base": 1,
+              "base": 0,
               "per_level_above_first": 1
             },
             "max_amplifier": {
               "type": "minecraft:linear",
-              "base": 1,
+              "base": 0,
               "per_level_above_first": 1
             }
           },

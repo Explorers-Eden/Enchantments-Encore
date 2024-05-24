@@ -41,7 +41,8 @@
       "enchantencore:shrinkage",
       "enchantencore:sonic",
       "enchantencore:summer_walker",
-      "#enchantencore:exclusive_set/aspect"
+      "#enchantencore:exclusive_set/aspect",
+      "enchantencore:swift_slash"
     ]
   }
   

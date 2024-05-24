@@ -1,0 +1,35 @@
+{
+    "description": "Swift Slash",
+    "exclusive_set": "#minecraft:exclusive_set/damage",
+    "supported_items": "#minecraft:enchantable/weapon",
+    "primary_items": "#minecraft:enchantable/sword",
+    "weight": 2,
+    "max_level": 5,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 11
+    },
+    "max_cost": {
+      "base": 21,
+      "per_level_above_first": 11
+    },
+    "anvil_cost": 1,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "id": "enchantencore:swiftslash",
+          "attribute": "minecraft:generic.attack_speed",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.15,
+            "per_level_above_first": 0.075
+          },
+          "operation": "add_multiplied_total"
+        }
+      ]
+    }
+  }
+  

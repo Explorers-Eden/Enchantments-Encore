@@ -1,0 +1,43 @@
+{
+    "description": "Invisibility Cloak",
+    "supported_items": "#minecraft:enchantable/foot_armor",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 11
+    },
+    "max_cost": {
+      "base": 12,
+      "per_level_above_first": 11
+    },
+    "anvil_cost": 2,
+    "slots": [
+      "feet"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:invisibility",
+            "min_duration": 3,
+            "max_duration": 3,
+            "min_amplifier": 1,
+            "max_amplifier": 1
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "flags": {
+                "is_on_ground": true,
+                "is_sneaking": true
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  

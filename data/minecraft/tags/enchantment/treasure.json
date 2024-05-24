@@ -8,7 +8,9 @@
       "minecraft:wind_burst",
       "enchantencore:night_vision",
       "enchantencore:moonwalk",
-      "enchantencore:sonic"
+      "enchantencore:sonic",
+      "enchantencore:invisibility_cloak",
+      "enchantencore:leech"
     ]
   }
   
