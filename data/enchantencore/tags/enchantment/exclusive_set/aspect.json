@@ -1,8 +1,13 @@
 {
     "values": [
-      "enchantencore:fire_aspect",
+      "minecraft:fire_aspect",
       "enchantencore:poison_aspect",
-      "enchantencore:wither_aspect"
+      "enchantencore:wither_aspect",
+      "enchantencore:levitation_aspect",
+      "enchantencore:hunger_aspect",
+      "enchantencore:weakness_aspect",
+      "enchantencore:infested_aspect",
+      "enchantencore:oozing_aspect"
     ]
   }
   

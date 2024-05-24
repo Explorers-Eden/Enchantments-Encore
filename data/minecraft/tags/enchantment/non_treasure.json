@@ -13,7 +13,6 @@
       "minecraft:smite",
       "minecraft:bane_of_arthropods",
       "minecraft:knockback",
-      "minecraft:fire_aspect",
       "minecraft:looting",
       "minecraft:sweeping_edge",
       "minecraft:efficiency",
@@ -42,8 +41,7 @@
       "enchantencore:shrinkage",
       "enchantencore:sonic",
       "enchantencore:summer_walker",
-      "enchantencore:poison_aspect",
-      "enchantencore:wither_aspect"
+      "#enchantencore:exclusive_set/aspect"
     ]
   }
   
