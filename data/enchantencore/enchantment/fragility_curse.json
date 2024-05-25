@@ -1,0 +1,37 @@
+{
+    "description": {
+      "text": "Curse of Fragility",
+      "color": "red"
+    },
+    "supported_items": "#enchantencore:all_enchantable",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 25,
+      "per_level_above_first": 0
+    },
+    "max_cost": {
+      "base": 50,
+      "per_level_above_first": 0
+    },
+    "anvil_cost": 8,
+    "slots": [
+      "armor"
+    ],
+    "effects": {
+      "minecraft:item_damage": [
+        {
+          "effect": {
+            "type": "minecraft:add",
+            "value": {
+              "type": "minecraft:clamped",
+              "value": 5,
+              "min": 3,
+              "max": 7
+            }
+          }
+        }
+      ]
+    }
+  }
+  

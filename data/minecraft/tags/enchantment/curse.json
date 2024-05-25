@@ -3,7 +3,8 @@
       "minecraft:binding_curse",
       "minecraft:vanishing_curse",
       "enchantencore:hiding_curse",
-      "enchantencore:reach_curse"
+      "enchantencore:reach_curse",
+      "enchantencore:fragility_curse"
     ]
   }
   
