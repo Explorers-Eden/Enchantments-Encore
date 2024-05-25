@@ -1,0 +1,42 @@
+{
+    "description": "Crispbread",
+    "exclusive_set": "#enchantencore:exclusive_set/shield",
+    "supported_items": "minecraft:shield",
+    "weight": 2,
+    "max_level": 3,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "offhand"
+    ],
+    "effects": {
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:saturation",
+            "min_duration": 2,
+            "max_duration": 2,
+            "min_amplifier": {
+              "type": "minecraft:linear",
+              "base": 0,
+              "per_level_above_first": 1
+            },
+            "max_amplifier": {
+              "type": "minecraft:linear",
+              "base": 0,
+              "per_level_above_first": 1
+            }
+          }
+        }
+      ]
+    }
+  }
+  

@@ -1,6 +1,6 @@
 {
     "description": "Lightning Bolt",
-    "exclusive_set": "#enchantencore:exclusive_set/arrow",
+    "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
     "supported_items": "#enchantencore:all_bows",
     "weight": 1,
     "max_level": 1,

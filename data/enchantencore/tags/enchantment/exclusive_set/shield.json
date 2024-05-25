@@ -1,6 +1,7 @@
 {
     "values": [
       "enchantencore:hardened",
+      "enchantencore:crispbread",
       "minecraft:unbreaking"
     ]
   }
