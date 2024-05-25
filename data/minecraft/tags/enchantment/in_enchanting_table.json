@@ -7,7 +7,9 @@
       "enchantencore:moonwalk",
       "enchantencore:fire_alloy",
       "enchantencore:ice_alloy",
-      "enchantencore:bomber"
+      "enchantencore:bomber",
+      "enchantencore:hardened",
+      "enchantencore:rejuvenation"
     ]
   }
   
