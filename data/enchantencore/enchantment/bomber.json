@@ -1,33 +1,33 @@
 {
-    "description": "Creeper Alloy",
-    "exclusive_set": "#enchantencore:exclusive_set/alloy",
-    "supported_items": "#minecraft:chest_armor",
+    "description": "Bomber",
+    "exclusive_set": "#enchantencore:exclusive_set/arrow",
+    "supported_items": "#enchantencore:all_bows",
     "weight": 1,
-    "max_level": 3,
+    "max_level": 2,
     "min_cost": {
       "base": 1,
-      "per_level_above_first": 11
+      "per_level_above_first": 10
     },
     "max_cost": {
       "base": 16,
-      "per_level_above_first": 11
+      "per_level_above_first": 10
     },
     "anvil_cost": 2,
     "slots": [
-      "chest"
+      "mainhand"
     ],
     "effects": {
       "minecraft:post_attack": [
         {
-          "enchanted": "victim",
-          "affected": "attacker",
+          "enchanted": "attacker",
+          "affected": "victim",
           "effect": {
             "type": "minecraft:explode",
             "damage_type": "minecraft:explosion",
             "radius": {
               "type": "minecraft:linear",
               "base": 1.5,
-              "per_level_above_first": 1
+              "per_level_above_first": 0.75
             },
             "offset": [
               0,

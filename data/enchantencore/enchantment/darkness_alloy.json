@@ -1,0 +1,44 @@
+{
+    "description": "Darkness Alloy",
+    "exclusive_set": "#enchantencore:exclusive_set/alloy",
+    "supported_items": "#minecraft:chest_armor",
+    "weight": 2,
+    "max_level": 3,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 11
+    },
+    "max_cost": {
+      "base": 12,
+      "per_level_above_first": 11
+    },
+    "anvil_cost": 2,
+    "slots": [
+      "chest"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "enchanted": "victim",
+          "affected": "attacker",
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:darkness",
+            "min_duration": {
+              "type": "minecraft:linear",
+              "base": 5,
+              "per_level_above_first": 5
+            },
+            "max_duration": {
+              "type": "minecraft:linear",
+              "base": 5,
+              "per_level_above_first": 5
+            },
+            "min_amplifier": 0,
+            "max_amplifier": 0
+          }
+        }
+      ]
+    }
+  }
+  
