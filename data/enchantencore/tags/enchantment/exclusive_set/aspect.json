@@ -7,7 +7,10 @@
       "enchantencore:hunger_aspect",
       "enchantencore:weakness_aspect",
       "enchantencore:infested_aspect",
-      "enchantencore:oozing_aspect"
+      "enchantencore:oozing_aspect",
+      "enchantencore:slowness_aspect",
+      "enchantencore:wind_aspect",
+      "enchantencore:weaving_aspect"
     ]
   }
   

@@ -10,7 +10,10 @@
       "enchantencore:moonwalk",
       "enchantencore:sonic",
       "enchantencore:invisibility_cloak",
-      "enchantencore:leech"
+      "enchantencore:leech",
+      "enchantencore:summer_walker",
+      "enchantencore:magma_walker",
+      "enchantencore:electric_walker"
     ]
   }
   

@@ -1,0 +1,57 @@
+{
+	"anvil_cost": 4,
+	"description": "Electric Walker",
+	"effects": {
+		"minecraft:location_changed": [
+			{
+				"effect": {
+					"type": "minecraft:set_block_properties",
+					"properties": {
+						"power": "15",
+						"powered": "true"
+					}
+				}
+			},
+			{
+				"effect": {
+					"type": "minecraft:set_block_properties",
+					"properties": {
+						"powered": "true"
+					},
+					"offset": [ 0, -1, 0 ]
+				}
+			},
+			{
+				"effect": {
+					"type": "minecraft:spawn_particles",
+					"particle": {
+						"type": "minecraft:dust",
+						"scale": 1,
+						"color": [ 1, 0, 0 ]
+					},
+					"speed": 1,
+					"horizontal_position": { "type": "entity_position" },
+					"vertical_position": { "type": "entity_position" },
+					"horizontal_velocity": {},
+					"vertical_velocity": {}
+				}
+			}
+		]
+	},
+	"exclusive_set": "#minecraft:exclusive_set/boots",
+	"max_cost": {
+		"base": 25,
+		"per_level_above_first": 0
+	},
+	"max_level": 1,
+	"min_cost": {
+		"base": 10,
+		"per_level_above_first": 0
+	},
+	"slots": [
+		"feet"
+	],
+	"supported_items": "#minecraft:enchantable/foot_armor",
+	"weight": 2
+}
+

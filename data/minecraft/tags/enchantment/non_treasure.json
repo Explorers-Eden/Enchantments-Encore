@@ -34,13 +34,11 @@
       "minecraft:piercing",
       "minecraft:density",
       "minecraft:breach",
-      "enchantencore:magma_walker",
       "enchantencore:crab_claw",
       "enchantencore:crop_dance",
       "enchantencore:growth",
       "enchantencore:shrinkage",
       "enchantencore:sonic",
-      "enchantencore:summer_walker",
       "#enchantencore:exclusive_set/aspect",
       "enchantencore:swift_slash"
     ]
