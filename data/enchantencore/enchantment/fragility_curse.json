@@ -16,7 +16,7 @@
     },
     "anvil_cost": 8,
     "slots": [
-      "armor"
+      "any"
     ],
     "effects": {
       "minecraft:item_damage": [

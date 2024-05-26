@@ -1,0 +1,44 @@
+{
+    "description": "Red Moon",
+    "exclusive_set": "#minecraft:enchantable/armor",
+    "supported_items": "#enchantencore:all_enchantable",
+    "weight": 10,
+    "max_level": 3,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 11
+    },
+    "max_cost": {
+      "base": 12,
+      "per_level_above_first": 11
+    },
+    "anvil_cost": 1,
+    "slots": [
+      "any"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "id": "enchantencore:redmoon_dfns",
+          "attribute": "minecraft:generic.armor",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": -1.5,
+            "per_level_above_first": -1.5
+          },
+          "operation": "add_value"
+        },
+        {
+          "id": "enchantencore:redmoon_atck",
+          "attribute": "minecraft:generic.attack_damage",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 1.5,
+            "per_level_above_first": 1.5
+          },
+          "operation": "add_value"
+        }
+      ]
+    }
+  }
+  
