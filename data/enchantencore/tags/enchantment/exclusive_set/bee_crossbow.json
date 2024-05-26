@@ -1,7 +1,9 @@
 {
     "values": [
-      "enchantencore:quick_charge",
-      "enchantencore:sting"
+      "minecraft:quick_charge",
+      "minecraft:infinity",
+      "enchantencore:sting",
+      "enchantencore:lightning_bolt"
     ]
   }
   
