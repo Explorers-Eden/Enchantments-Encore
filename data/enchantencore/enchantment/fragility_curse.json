@@ -1,37 +1,38 @@
 {
-    "description": {
-      "text": "Curse of Fragility",
-      "color": "red"
-    },
-    "supported_items": "#enchantencore:all_enchantable",
-    "weight": 1,
-    "max_level": 1,
-    "min_cost": {
-      "base": 25,
-      "per_level_above_first": 0
-    },
-    "max_cost": {
-      "base": 50,
-      "per_level_above_first": 0
-    },
-    "anvil_cost": 8,
-    "slots": [
-      "any"
-    ],
-    "effects": {
-      "minecraft:item_damage": [
-        {
-          "effect": {
-            "type": "minecraft:add",
-            "value": {
-              "type": "minecraft:clamped",
-              "value": 5,
-              "min": 3,
-              "max": 7
-            }
+  "description": {
+    "text": "Curse of Fragility",
+    "color": "red"
+  },
+  "supported_items": "#enchantencore:all_melee",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "attacker",
+        "effect": {
+          "type": "minecraft:damage_item",
+          "amount": {
+            "type": "minecraft:clamped",
+            "value": 75,
+            "min": 50,
+            "max": 100
           }
         }
-      ]
-    }
+      }
+    ]
   }
-  
+}

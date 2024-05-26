@@ -26,6 +26,19 @@
     "minecraft:post_attack": [
       {
         "enchanted": "attacker",
+        "affected": "attacker",
+        "effect": {
+          "type": "minecraft:damage_item",
+          "amount": {
+            "type": "minecraft:clamped",
+            "value": 9,
+            "min": 6,
+            "max": 12
+          }
+        }
+      },
+      {
+        "enchanted": "attacker",
         "affected": "victim",
         "effect": {
           "type": "minecraft:summon_entity",
@@ -38,19 +51,6 @@
         "effect": {
           "type": "minecraft:run_function",
           "function": "enchantencore:sting"
-        }
-      }
-    ],
-    "minecraft:item_damage": [
-      {
-        "effect": {
-          "type": "minecraft:add",
-          "value": {
-            "type": "minecraft:clamped",
-            "value": 9,
-            "min": 6,
-            "max": 12
-          }
         }
       }
     ]
