@@ -46,7 +46,9 @@
       "enchantencore:gluttony",
       "#enchantencore:exclusive_set/aspect",
       "enchantencore:swift_slash",
-      "enchantencore:red_moon"
+      "enchantencore:red_moon",
+      "enchantencore:scholar_of_mobs",
+      "enchantencore:scholar_of_blocks"
     ]
   }
   
