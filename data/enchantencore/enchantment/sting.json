@@ -1,0 +1,58 @@
+{
+  "description": "Sting",
+  "exclusive_set": "#enchantencore:exclusive_set/bee_crossbow",
+  "supported_items": "minecraft:crossbow",
+  "weight": 5,
+  "max_level": 1,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 8
+  },
+  "max_cost": {
+    "base": 55,
+    "per_level_above_first": 8
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:crossbow_charging_sounds": [
+      {
+        "start": "minecraft:block.beehive.enter",
+        "end": "minecraft:entity.bee.hurt"
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:summon_entity",
+          "entity": "minecraft:bee"
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:sting"
+        }
+      }
+    ],
+    "minecraft:item_damage": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:clamped",
+            "value": 9,
+            "min": 6,
+            "max": 12
+          }
+        }
+      }
+    ]
+  }
+}
