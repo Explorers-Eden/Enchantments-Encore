@@ -1,0 +1,30 @@
+{
+    "description": "Handyman",
+    "exclusive_set": "#enchantencore:exclusive_set/repair",
+    "supported_items": "#enchantencore:all_enchantable",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "any"
+    ],
+    "effects": {
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:handyman"
+          }
+        }
+      ]
+    }
+  }
+  
