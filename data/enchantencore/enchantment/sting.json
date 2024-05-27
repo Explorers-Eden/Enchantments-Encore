@@ -1,6 +1,6 @@
 {
   "description": "Sting",
-  "exclusive_set": "#enchantencore:exclusive_set/bee_crossbow",
+  "exclusive_set": "#enchantencore:exclusive_set/crossbow",
   "supported_items": "minecraft:crossbow",
   "weight": 5,
   "max_level": 1,
