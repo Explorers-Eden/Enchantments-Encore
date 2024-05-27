@@ -92,7 +92,7 @@
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "enchantencore:growth_dance/run"
+          "function": "enchantencore:crop_dance/run"
         },
         "requirements": {
           "condition": "minecraft:entity_properties",
