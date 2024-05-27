@@ -1,0 +1,65 @@
+{
+    "description": "Pacifier",
+    "exclusive_set": "#enchantencore:exclusive_set/aspect",
+    "supported_items": "#minecraft:enchantable/fire_aspect",
+    "primary_items": "#minecraft:enchantable/sword",
+    "weight": 2,
+    "max_level": 3,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "enchanted": "attacker",
+          "affected": "victim",
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:weakness",
+            "min_duration": {
+              "type": "minecraft:linear",
+              "base": 2,
+              "per_level_above_first": 3
+            },
+            "max_duration": {
+              "type": "minecraft:linear",
+              "base": 5,
+              "per_level_above_first": 5
+            },
+            "min_amplifier": {
+              "type": "minecraft:linear",
+              "base": 254,
+              "per_level_above_first": 0
+            },
+            "max_amplifier": {
+              "type": "minecraft:linear",
+              "base": 254,
+              "per_level_above_first": 0
+            }
+          },
+          "requirements": [
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.3
+            },
+            {
+              "condition": "minecraft:damage_source_properties",
+              "predicate": {
+                "is_direct": true
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+  
