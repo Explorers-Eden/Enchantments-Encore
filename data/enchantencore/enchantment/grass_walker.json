@@ -1,5 +1,5 @@
 {
-    "description": "Summer Walker",
+    "description": "Grass Walker",
     "exclusive_set": "#minecraft:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",
     "weight": 2,
@@ -44,7 +44,8 @@
             "block_state": {
               "type": "minecraft:simple_state_provider",
               "state": {
-                "Name": "minecraft:air"
+                "Name": "minecraft:grass_block",
+                "Properties": {}
               }
             },
             "predicate": {
@@ -61,12 +62,7 @@
                 },
                 {
                   "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    0,
-                    0
-                  ],
-                  "blocks": "minecraft:snow"
+                  "blocks": "minecraft:dirt"
                 },
                 {
                   "type": "minecraft:unobstructed"
@@ -86,7 +82,7 @@
             "height": 1,
             "offset": [
               0,
-              0,
+              -1,
               0
             ],
             "trigger_game_event": "minecraft:block_place"
@@ -107,7 +103,7 @@
             "particle": {
               "type": "minecraft:dust",
               "scale": 1,
-              "color": [ 1.000, 0.914, 0.149 ]
+              "color": [ 0.016, 0.761, 0.114 ]
             },
             "speed": 1,
             "horizontal_position": { "type": "entity_position" },
