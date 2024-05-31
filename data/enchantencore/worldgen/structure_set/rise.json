@@ -1,0 +1,13 @@
+{
+    "placement": {
+        "type": "minecraft:random_spread",
+        "spacing": 300,
+        "separation": 150,
+        "salt": 36148891,
+        "spread_type": "triangular"
+    },
+    "structures": [{
+        "structure": "enchantencore:rise",
+        "weight": 1
+    }]
+}

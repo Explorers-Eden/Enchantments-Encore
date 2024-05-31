@@ -1,0 +1,14 @@
+{
+    "name": "enchantencore:rise/top",
+    "fallback": "minecraft:empty",
+    "elements": [{
+        "weight": 5,
+        "element": {
+            "location": "enchantencore:rise/top/top_first",
+            "processors": "minecraft:empty",
+            "projection": "rigid",
+            "element_type": "minecraft:single_pool_element"
+        }
+    }
+]
+}
