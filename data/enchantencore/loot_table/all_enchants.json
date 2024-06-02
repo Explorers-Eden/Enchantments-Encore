@@ -97,7 +97,7 @@
           },
           {
             "type": "minecraft:loot_table",
-            "value": "enchantencore:poppy_dance"
+            "value": "enchantencore:poppy_peace"
           },
           {
             "type": "minecraft:loot_table",
