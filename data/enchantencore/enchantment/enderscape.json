@@ -1,32 +1,40 @@
 {
-    "description": "Enderscape",
-    "exclusive_set": "#enchantencore:exclusive_set/leggings",
-    "supported_items": "#minecraft:leg_armor",
-    "weight": 2,
-    "max_level": 1,
-    "min_cost": {
-      "base": 5,
-      "per_level_above_first": 8
-    },
-    "max_cost": {
-      "base": 55,
-      "per_level_above_first": 8
-    },
-    "anvil_cost": 2,
-    "slots": [
-      "legs"
-    ],
-    "effects": {
-      "minecraft:post_attack": [
-        {
-          "enchanted": "victim",
-          "affected": "victim",
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:enderscape"
+  "description": "Enderscape",
+  "exclusive_set": "#enchantencore:exclusive_set/leggings",
+  "supported_items": "#minecraft:leg_armor",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 8
+  },
+  "max_cost": {
+    "base": 55,
+    "per_level_above_first": 8
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "legs"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "victim",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:enderscape"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "location": {
+              "can_see_sky": true
+            }
           }
         }
-      ]
-    }
+      }
+    ]
   }
-  
+}
