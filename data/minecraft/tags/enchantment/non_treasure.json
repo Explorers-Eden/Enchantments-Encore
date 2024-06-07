@@ -1,4 +1,5 @@
 {
+  "replace": true,
     "values": [
       "minecraft:protection",
       "minecraft:fire_protection",

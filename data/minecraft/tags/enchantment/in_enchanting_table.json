@@ -1,4 +1,5 @@
 {
+  "replace": true,
     "values": [
       "#minecraft:non_treasure",
       "#enchantencore:exclusive_set/all_tools",
