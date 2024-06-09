@@ -2,7 +2,22 @@
     "values": [
       "minecraft:infinity",
       "enchantencore:bomber",
-      "enchantencore:lightning_bolt"
+      "enchantencore:sting",
+      "enchantencore:evokers_wrath",
+      "enchantencore:glass_breaker",
+      "enchantencore:lightning_bolt",
+      "enchantencore:poison_splash",
+      "enchantencore:blindness_splash",
+      "enchantencore:glowing_splash",
+      "enchantencore:hunger_splash",
+      "enchantencore:invisibility_splash",
+      "enchantencore:levitation_splash",
+      "enchantencore:poison_splash",
+      "enchantencore:regeneration_splash",
+      "enchantencore:saturation_splash",
+      "enchantencore:slowness_splash",
+      "enchantencore:weakness_splash",
+      "enchantencore:wither_splash"
     ]
   }
   

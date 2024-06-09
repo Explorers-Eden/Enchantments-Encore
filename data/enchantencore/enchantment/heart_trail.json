@@ -1,0 +1,30 @@
+{
+    "description": "Heart Trail",
+    "exclusive_set": "#enchantencore:exclusive_set/trail",
+    "supported_items": "#enchantencore:all_armor",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 3,
+      "per_level_above_first": 3
+    },
+    "max_cost": {
+      "base": 5,
+      "per_level_above_first": 5
+    },
+    "anvil_cost": 1,
+    "slots": [
+      "armor"
+    ],
+    "effects": {
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:trail/heart"
+          }
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,41 @@
+{
+    "description": "Levitation Splash",
+    "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
+    "supported_items": "#enchantencore:all_bows",
+    "primary_items": "minecraft:bow",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 21,
+      "per_level_above_first": 10
+    },
+    "max_cost": {
+      "base": 51,
+      "per_level_above_first": 10
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:hit_block": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:splash_arrow/levitation"
+          }
+        }
+      ],
+      "minecraft:post_attack": [
+        {
+          "enchanted": "attacker",
+          "affected": "victim",
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:splash_arrow/levitation"
+          }
+        }
+      ]
+    }
+  }
+  

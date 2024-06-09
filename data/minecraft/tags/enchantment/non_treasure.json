@@ -54,7 +54,20 @@
       "enchantencore:scholar_of_blocks",
       "enchantencore:cleansing",
       "enchantencore:evokers_wrath",
-      "enchantencore:enderscape"
+      "enchantencore:enderscape",
+      "enchantencore:poison_splash",
+      "enchantencore:blindness_splash",
+      "enchantencore:glowing_splash",
+      "enchantencore:hunger_splash",
+      "enchantencore:invisibility_splash",
+      "enchantencore:levitation_splash",
+      "enchantencore:poison_splash",
+      "enchantencore:regeneration_splash",
+      "enchantencore:saturation_splash",
+      "enchantencore:slowness_splash",
+      "enchantencore:weakness_splash",
+      "enchantencore:wither_splash",
+      "#enchantencore:trail"
     ]
   }
   

@@ -13,6 +13,14 @@
           },
           {
             "type": "minecraft:loot_table",
+            "value": "enchantencore:splash_arrow"
+          },
+          {
+            "type": "minecraft:loot_table",
+            "value": "enchantencore:trail"
+          },
+          {
+            "type": "minecraft:loot_table",
             "value": "enchantencore:bane"
           },
           {

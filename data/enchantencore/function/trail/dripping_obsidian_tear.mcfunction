@@ -1,0 +1,1 @@
+particle minecraft:dripping_obsidian_tear ~ ~1 ~ .3 .3 .3 0 5
