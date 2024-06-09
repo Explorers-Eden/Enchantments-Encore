@@ -67,7 +67,7 @@
       "enchantencore:slowness_splash",
       "enchantencore:weakness_splash",
       "enchantencore:wither_splash",
-      "#enchantencore:trail"
+      "#minecraft:trail"
     ]
   }
   

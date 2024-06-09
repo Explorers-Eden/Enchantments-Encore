@@ -47,7 +47,7 @@
                   {
                     "function": "minecraft:set_enchantments",
                     "enchantments": {
-                      "enchantencore:dripping:honey_trail": 1
+                      "enchantencore:dripping_honey_trail": 1
                     }
                   }
                 ]

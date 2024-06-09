@@ -39,7 +39,7 @@
       "enchantencore:weakness_splash",
       "enchantencore:wither_splash",
       "enchantencore:bulletproof",
-      "#enchantencore:trail"
+      "#minecraft:trail"
     ]
   }
   
