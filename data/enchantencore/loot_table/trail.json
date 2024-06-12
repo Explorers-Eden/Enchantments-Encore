@@ -11,7 +11,7 @@
                   {
                     "function": "minecraft:set_enchantments",
                     "enchantments": {
-                      "enchantencore:cherry_leave_trail": 1
+                      "enchantencore:cherry_leaves_trail": 1
                     }
                   }
                 ]
