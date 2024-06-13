@@ -1,0 +1,33 @@
+{
+    "description": "Rabbit's Foot",
+    "supported_items": "#minecraft:foot_armor",
+    "weight": 10,
+    "max_level": 5,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 10
+    },
+    "max_cost": {
+      "base": 51,
+      "per_level_above_first": 10
+    },
+    "anvil_cost": 1,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:attributes": [
+        {
+          "id": "enchantencore.rabittsfoot",
+          "attribute": "minecraft:generic.luck",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 0.5,
+            "per_level_above_first": 0.5
+          },
+          "operation": "add_value"
+        }
+      ]
+    }
+  }
+  
