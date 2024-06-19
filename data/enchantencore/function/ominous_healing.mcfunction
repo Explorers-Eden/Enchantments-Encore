@@ -1,0 +1,2 @@
+execute store result score $ominous_health enchantencore.technical run data get entity @s Health
+execute if score $ominous_health enchantencore.technical matches ..7 if predicate enchantencore:percentages/60 run summon minecraft:ominous_item_spawner ~ ~4 ~ {item:{id:"minecraft:lingering_potion",count:1,components:{"minecraft:potion_contents":{potion:"minecraft:healing"}}},spawn_item_after_ticks:80}

@@ -1,7 +1,10 @@
 {
     "values": [
       "minecraft:riptide",
-      "minecraft:channeling"
+      "minecraft:channeling",
+      "enchantencore:pufferfish",
+      "enchantencore:switch",
+      "enchantencore:ominous_rain"
     ]
   }
   

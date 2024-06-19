@@ -39,6 +39,11 @@
       "enchantencore:weakness_splash",
       "enchantencore:wither_splash",
       "enchantencore:bulletproof",
+      "enchantencore:ominous_rain",
+      "enchantencore:switch",
+      "enchantencore:end_speed",
+      "enchantencore:sand_speed",
+      "enchantencore:ominous_healing",
       "#minecraft:trail"
     ]
   }

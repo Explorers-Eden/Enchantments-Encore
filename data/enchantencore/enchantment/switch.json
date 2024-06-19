@@ -1,0 +1,47 @@
+{
+  "description": "Ride",
+  "exclusive_set": "#enchantencore:exclusive_set/pufferfish",
+  "supported_items": "#minecraft:enchantable/trident",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 17,
+    "per_level_above_first": 7
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "hand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:switch/hostile_int"
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "attacker",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:switch/player_int"
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:switch/hostile_tp"
+        }
+      }
+    ]
+  }
+}

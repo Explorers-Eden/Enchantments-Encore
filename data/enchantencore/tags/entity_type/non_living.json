@@ -1,0 +1,32 @@
+{
+    "values": [
+      "minecraft:item",
+      "minecraft:item_display",
+      "minecraft:item_frame",
+      "minecraft:glow_item_frame",
+      "minecraft:painting",
+      "minecraft:armor_stand",
+      "minecraft:marker",
+      "minecraft:interaction",
+      "minecraft:shulker_bullet",
+      "minecraft:fireball",
+      "minecraft:firework_rocket",
+      "minecraft:fishing_bobber",
+      "minecraft:wither_skull",
+      "minecraft:dragon_fireball",
+      "minecraft:arrow",
+      "minecraft:spectral_arrow",
+      "minecraft:text_display",
+      "minecraft:block_display",
+      "minecraft:boat",
+      "minecraft:chest_boat",
+      "minecraft:minecart",
+      "minecraft:chest_minecart",
+      "minecraft:hopper_minecart",
+      "minecraft:furnace_minecart",
+      "minecraft:spawner_minecart",
+      "minecraft:command_block_minecart",
+      "minecraft:area_effect_cloud",
+      "minecraft:tnt_minecart"
+    ]
+  }

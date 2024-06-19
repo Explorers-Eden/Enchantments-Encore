@@ -1,0 +1,56 @@
+{
+  "description": "Phantom Menace",
+  "supported_items": "#enchantencore:all_bows",
+  "weight": 5,
+  "max_level": 5,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 9
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 9
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:damage": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 2.5,
+            "per_level_above_first": 2.5
+          }
+        },
+        "requirements": [
+          {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "direct_attacker",
+                "predicate": {
+                  "type": "#minecraft:arrows"
+                }
+              }
+            ]
+          },
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:phantom",
+              "flags": {
+                "is_on_ground": false
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

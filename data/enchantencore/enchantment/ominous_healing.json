@@ -1,0 +1,32 @@
+{
+    "description": "Ominous Healing",
+    "exclusive_set": "#enchantencore:exclusive_set/shield",
+    "supported_items": "minecraft:shield",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 35,
+      "per_level_above_first": 11
+    },
+    "max_cost": {
+      "base": 10,
+      "per_level_above_first": 11
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "offhand"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "enchanted": "victim",
+          "affected": "victim",
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:ominous_healing"
+          }
+        }
+      ]
+    }
+  }
+  
