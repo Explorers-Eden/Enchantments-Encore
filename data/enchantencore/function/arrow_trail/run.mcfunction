@@ -1,4 +1,5 @@
 execute unless entity @e[predicate=enchantencore:entity/is_arrow_trail] run return fail
+execute as @e[type=#minecraft:arrows,predicate=enchantencore:entity/is_arrow_trail] at @s if predicate enchantencore:entity/in_ground run kill @s
 
 execute as @e[type=#minecraft:arrows,tag=heart_arrow_trail] at @s unless predicate enchantencore:entity/in_ground run particle minecraft:heart ^ ^ ^-.1 .1 .1 .1 0 1 force
 execute as @e[type=#minecraft:arrows,tag=cherry_leaves_arrow_trail] at @s unless predicate enchantencore:entity/in_ground run particle minecraft:cherry_leaves ^ ^ ^-.1 .2 .2 .2 0 3 force
@@ -26,5 +27,3 @@ execute as @e[type=#minecraft:arrows,tag=trial_omen_arrow_trail] at @s unless pr
 execute as @e[type=#minecraft:arrows,tag=wax_off_arrow_trail] at @s unless predicate enchantencore:entity/in_ground run particle minecraft:wax_off ^ ^ ^-.1 .1 .2 .3 0 5 force
 execute as @e[type=#minecraft:arrows,tag=wax_on_arrow_trail] at @s unless predicate enchantencore:entity/in_ground run particle minecraft:wax_on ^ ^ ^-.1 .1 .2 .3 0 5 force
 execute as @e[type=#minecraft:arrows,tag=witch_arrow_trail] at @s unless predicate enchantencore:entity/in_ground run particle minecraft:witch ^ ^ ^-.1 .1 .2 .3 0 5 force
-
-execute as @e[type=#minecraft:arrows,predicate=enchantencore:entity/is_arrow_trail] at @s if predicate enchantencore:entity/in_ground run kill @s
