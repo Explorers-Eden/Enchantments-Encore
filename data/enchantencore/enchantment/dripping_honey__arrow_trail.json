@@ -1,0 +1,31 @@
+{
+    "description": "Dripping Honey Arrow Trail",
+    "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
+    "supported_items": "#enchantencore:all_bows",
+    "primary_items": "minecraft:bow",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 3,
+      "per_level_above_first": 10
+    },
+    "max_cost": {
+      "base": 5,
+      "per_level_above_first": 10
+    },
+    "anvil_cost": 1,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:projectile_spawned": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:arrow_trail/dripping_honey"
+          }
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,1 @@
+tag @s add happy_villager_arrow_trail

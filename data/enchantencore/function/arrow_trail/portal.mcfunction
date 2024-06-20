@@ -1,0 +1,1 @@
+tag @s add portal_arrow_trail

@@ -1,0 +1,1 @@
+tag @s add totem_arrow_trail

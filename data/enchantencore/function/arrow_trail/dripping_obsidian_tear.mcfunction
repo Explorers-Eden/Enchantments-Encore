@@ -1,0 +1,1 @@
+tag @s add dripping_obsidian_tear_arrow_trail

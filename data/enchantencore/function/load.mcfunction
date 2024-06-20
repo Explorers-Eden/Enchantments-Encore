@@ -3,4 +3,5 @@ scoreboard objectives add enchantencore.sneaktime minecraft.custom:minecraft.sne
 scoreboard objectives add enchantencore.technical dummy
 
 ##schedule functions
+schedule function enchantencore:schedules/1tick 1t
 schedule function enchantencore:schedules/10tick 10t

@@ -1,0 +1,1 @@
+tag @s add heart_arrow_trail

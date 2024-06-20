@@ -44,7 +44,8 @@
       "enchantencore:end_speed",
       "enchantencore:sand_speed",
       "enchantencore:ominous_healing",
-      "#minecraft:trail"
+      "#minecraft:trail",
+      "#minecraft:arrow_trail"
     ]
   }
   

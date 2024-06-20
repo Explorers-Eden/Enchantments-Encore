@@ -1,0 +1,1 @@
+tag @s add raid_omen_arrow_trail

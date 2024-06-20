@@ -1,0 +1,1 @@
+tag @s add cosy_smoke_arrow_trail

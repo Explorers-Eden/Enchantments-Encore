@@ -1,0 +1,1 @@
+tag @s add flame_arrow_trail

@@ -70,7 +70,8 @@
       "enchantencore:wither_splash",
       "enchantencore:safe_landing",
       "enchantencore:rabbit_foot",
-      "#minecraft:trail"
+      "#minecraft:trail",
+      "#minecraft:arrow_trail"
     ]
   }
   

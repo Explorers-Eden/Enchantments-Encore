@@ -1,0 +1,1 @@
+tag @s add sculk_soul_arrow_trail

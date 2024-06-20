@@ -1,0 +1,1 @@
+tag @s add wax_off_arrow_trail
