@@ -67,8 +67,14 @@
       "enchantencore:slowness_splash",
       "enchantencore:weakness_splash",
       "enchantencore:wither_splash",
+      "enchantencore:forge_shot",
+      "enchantencore:ender_shot",
       "enchantencore:safe_landing",
       "enchantencore:rabbit_foot",
+      "enchantencore:night_protection",
+      "enchantencore:day_protection",
+      "enchantencore:nether_protection",
+      "enchantencore:end_protection",
       "#minecraft:trail",
       "#minecraft:arrow_trail"
     ]

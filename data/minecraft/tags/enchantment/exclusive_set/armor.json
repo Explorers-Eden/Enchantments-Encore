@@ -4,6 +4,10 @@
       "minecraft:blast_protection",
       "minecraft:fire_protection",
       "minecraft:projectile_protection",
+      "enchantencore:night_protection",
+      "enchantencore:day_protection",
+      "enchantencore:nether_protection",
+      "enchantencore:end_protection",
       "enchantencore:red_moon"
     ]
   }
