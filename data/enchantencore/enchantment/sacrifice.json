@@ -1,0 +1,36 @@
+{
+    "description": "Sacrifice",
+    "exclusive_set": "#enchantencore:exclusive_set/repair",
+    "supported_items": "#enchantencore:all_enchantable",
+    "weight": 4,
+    "max_level": 5,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 11
+    },
+    "max_cost": {
+      "base": 12,
+      "per_level_above_first": 11
+    },
+    "anvil_cost": 1,
+    "slots": [
+      "any"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "enchanted": "victim",
+          "affected": "victim",
+          "effect": {
+            "type": "minecraft:damage_item",
+            "amount": {
+              "type": "minecraft:linear",
+              "base": -2,
+              "per_level_above_first": -0.5
+            }
+          }
+        }
+      ]
+    }
+  }
+  

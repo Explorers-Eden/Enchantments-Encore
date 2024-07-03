@@ -10,7 +10,9 @@
       "enchantencore:bomber",
       "enchantencore:hardened",
       "enchantencore:pacifier",
-      "enchantencore:rejuvenation"
+      "enchantencore:rejuvenation",
+      "#minecraft:trail",
+      "#minecraft:arrow_trail"
     ]
   }
   

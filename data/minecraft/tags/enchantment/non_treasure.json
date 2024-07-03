@@ -75,8 +75,7 @@
       "enchantencore:day_protection",
       "enchantencore:nether_protection",
       "enchantencore:end_protection",
-      "#minecraft:trail",
-      "#minecraft:arrow_trail"
+      "enchantencore:sacrifice"
     ]
   }
   

@@ -2,7 +2,8 @@
     "values": [
       "enchantencore:handyman",
       "minecraft:mending",
-      "enchantencore:midas_touch"
+      "enchantencore:midas_touch",
+      "enchantencore:sacrifice"
     ]
   }
   
