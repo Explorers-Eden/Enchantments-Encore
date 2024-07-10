@@ -15,6 +15,30 @@
                     }
                   }
                 ]
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:book",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "enchantencore:sacrifice": 1
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:book",
+                "functions": [
+                  {
+                    "function": "minecraft:set_enchantments",
+                    "enchantments": {
+                      "enchantencore:midas_touch": 1
+                    }
+                  }
+                ]
               }
         ]
       },
