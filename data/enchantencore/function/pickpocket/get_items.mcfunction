@@ -1,0 +1,2 @@
+$execute if data entity @n[type=minecraft:villager,distance=..16] Inventory[0] run summon item ~ ~ ~ {Item:{id:"$(id_0)",count:$(count_0)}}
+execute if data entity @n[type=minecraft:villager,distance=..16] Inventory[0] run data remove entity @n[type=minecraft:villager,distance=..16] Inventory[0]

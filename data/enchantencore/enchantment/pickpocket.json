@@ -1,0 +1,42 @@
+{
+    "description": "Pickpocket",
+    "supported_items": "#minecraft:chest_armor",
+    "weight": 4,
+    "max_level": 1,
+    "min_cost": {
+      "base": 11,
+      "per_level_above_first": 6
+    },
+    "max_cost": {
+      "base": 21,
+      "per_level_above_first": 6
+    },
+    "anvil_cost": 5,
+    "slots": [
+      "chest"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:pickpocket/get_data"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:player",
+              "type_specific": {
+                "type": "minecraft:player",
+                "advancements": {
+                  "enchantencore:technical/pickpocket": true
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  
