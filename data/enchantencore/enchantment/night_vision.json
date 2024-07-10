@@ -21,8 +21,8 @@
           "effect": {
             "type": "minecraft:apply_mob_effect",
             "to_apply": "minecraft:night_vision",
-            "min_duration": 2,
-            "max_duration": 2,
+            "min_duration": 10,
+            "max_duration": 10,
             "min_amplifier": 0,
             "max_amplifier": 0
           }
