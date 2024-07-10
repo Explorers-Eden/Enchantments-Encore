@@ -1,0 +1,2 @@
+execute if items entity @s weapon.mainhand #enchantencore:all_tools run item modify entity @s weapon.mainhand enchantencore:reset_randomizer
+execute if items entity @s weapon.mainhand #enchantencore:all_tools run item modify entity @s weapon.mainhand enchantencore:randomizer

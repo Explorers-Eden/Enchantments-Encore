@@ -1,0 +1,11 @@
+[
+    {
+      "function": "minecraft:set_components",
+      "components": {
+        "minecraft:enchantments": {
+          "enchantencore:randomness_curse": 1
+        }
+      }
+    }
+  ]
+  
