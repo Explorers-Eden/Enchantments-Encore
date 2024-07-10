@@ -1,11 +1,11 @@
 {
     "description": "Scholar of Blocks",
     "exclusive_set": "#enchantencore:exclusive_set/exp",
-    "supported_items": "#enchantencore:all_tools",
+    "supported_items": "#enchantencore:no_weapons",
     "weight": 5,
     "max_level": 3,
     "min_cost": {
-      "base": 5,
+      "base": 15,
       "per_level_above_first": 8
     },
     "max_cost": {

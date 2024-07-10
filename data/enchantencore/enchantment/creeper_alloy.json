@@ -2,17 +2,17 @@
     "description": "Creeper Alloy",
     "exclusive_set": "#enchantencore:exclusive_set/alloy",
     "supported_items": "#minecraft:chest_armor",
-    "weight": 1,
+    "weight": 5,
     "max_level": 3,
     "min_cost": {
       "base": 1,
       "per_level_above_first": 11
     },
     "max_cost": {
-      "base": 16,
+      "base": 12,
       "per_level_above_first": 11
     },
-    "anvil_cost": 2,
+    "anvil_cost": 1,
     "slots": [
       "chest"
     ],

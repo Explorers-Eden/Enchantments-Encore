@@ -1,10 +1,10 @@
 {
     "description": "Poppy Peace",
     "supported_items": "#minecraft:enchantable/weapon",
-    "weight": 5,
+    "weight": 2,
     "max_level": 1,
     "min_cost": {
-      "base": 5,
+      "base": 25,
       "per_level_above_first": 8
     },
     "max_cost": {

@@ -9,7 +9,7 @@
       "per_level_above_first": 11
     },
     "max_cost": {
-      "base": 10,
+      "base": 50,
       "per_level_above_first": 11
     },
     "anvil_cost": 4,

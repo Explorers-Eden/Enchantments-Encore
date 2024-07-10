@@ -4,7 +4,7 @@
     "weight": 2,
     "max_level": 1,
     "min_cost": {
-      "base": 21,
+      "base": 31,
       "per_level_above_first": 10
     },
     "max_cost": {

@@ -2,15 +2,15 @@
     "description": "Midas Touch",
     "supported_items": "#enchantencore:all_golden_armor",
     "exclusive_set": "#enchantencore:exclusive_set/repair",
-    "weight": 3,
+    "weight": 6,
     "max_level": 1,
     "min_cost": {
       "base": 5,
-      "per_level_above_first": 0
+      "per_level_above_first": 5
     },
     "max_cost": {
       "base": 30,
-      "per_level_above_first": 0
+      "per_level_above_first": 10
     },
     "anvil_cost": 1,
     "slots": [
