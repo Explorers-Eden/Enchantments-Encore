@@ -1,9 +1,22 @@
 {
-  "replace": true,
     "values": [
-      "#minecraft:non_treasure",
-      "#minecraft:curse",
-      "minecraft:frost_walker"
+      "#enchantencore:alloy",
+      "enchantencore:magma_walker",
+      "enchantencore:crop_dance",
+      "enchantencore:summer_walker",
+      "enchantencore:grass_walker",
+      "enchantencore:electric_walker",
+      "enchantencore:cleansing",
+      "enchantencore:crab_claw",
+      "enchantencore:ender_shot",
+      "enchantencore:growth",
+      "enchantencore:shrinkage",
+      "enchantencore:invisibility_cloak",
+      "enchantencore:lightning_bolt",
+      "enchantencore:moonwalk",
+      "enchantencore:red_moon",
+      "enchantencore:sting",
+      "enchantencore:swift_slash"
     ]
   }
   

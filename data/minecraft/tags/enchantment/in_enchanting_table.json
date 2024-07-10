@@ -1,18 +1,18 @@
 {
-  "replace": true,
-    "values": [
-      "#minecraft:non_treasure",
-      "#enchantencore:exclusive_set/all_tools",
-      "enchantencore:bunny_hop",
-      "enchantencore:moonwalk",
-      "enchantencore:fire_alloy",
-      "enchantencore:ice_alloy",
-      "enchantencore:bomber",
-      "enchantencore:hardened",
-      "enchantencore:pacifier",
-      "enchantencore:rejuvenation",
-      "#minecraft:trail",
-      "#minecraft:arrow_trail"
-    ]
-  }
-  
+  "values": [
+    "#enchantencore:splash_arrow",
+    "#enchantencore:arrow_trail",
+    "#enchantencore:trail",
+    "#enchantencore:protection",
+    "#enchantencore:alloy",
+    "enchantencore:bunny_hop",
+    "enchantencore:ender_shot",
+    "enchantencore:gluttony",
+    "enchantencore:handyman",
+    "enchantencore:leech",
+    "enchantencore:midas_touch",
+    "enchantencore:night_vision",
+    "enchantencore:pacifier",
+    "enchantencore:sonic"
+  ]
+}

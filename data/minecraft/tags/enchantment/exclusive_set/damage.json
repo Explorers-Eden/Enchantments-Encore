@@ -1,14 +1,8 @@
 {
     "values": [
-      "minecraft:sharpness",
-      "minecraft:smite",
-      "minecraft:bane_of_arthropods",
       "enchantencore:bane_of_raiders",
       "enchantencore:bane_of_netherborn",
       "enchantencore:bane_of_bosses",
-      "minecraft:impaling",
-      "minecraft:density",
-      "minecraft:breach",
       "enchantencore:swift_slash"
     ]
   }
