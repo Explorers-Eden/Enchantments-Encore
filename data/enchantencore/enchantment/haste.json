@@ -2,8 +2,8 @@
     "description": "Haste",
     "exclusive_set": "#enchantencore:exclusive_set/haste",
     "supported_items": "#minecraft:enchantable/mining",
-    "weight": 10,
-    "max_level": 5,
+    "weight": 4,
+    "max_level": 3,
     "min_cost": {
       "base": 21,
       "per_level_above_first": 8

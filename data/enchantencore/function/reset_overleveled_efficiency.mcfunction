@@ -1,0 +1,2 @@
+execute if score $reset_effi enchantencore.technical matches 1 run item modify entity @s weapon.mainhand enchantencore:reset_overleveled_efficiency
+advancement revoke @s only enchantencore:technical/reset_efficiency
