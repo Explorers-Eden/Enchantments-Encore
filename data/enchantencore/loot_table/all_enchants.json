@@ -49,6 +49,14 @@
           },
           {
             "type": "minecraft:loot_table",
+            "value": "enchantencore:haste"
+          },
+          {
+            "type": "minecraft:loot_table",
+            "value": "enchantencore:pickpocket"
+          },
+          {
+            "type": "minecraft:loot_table",
             "value": "enchantencore:cropdance"
           },
           {
