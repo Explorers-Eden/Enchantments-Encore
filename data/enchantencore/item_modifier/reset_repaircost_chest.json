@@ -1,0 +1,30 @@
+[
+  {
+    "function": "minecraft:set_components",
+    "components": {
+      "!minecraft:repair_cost": {}
+    },
+    "conditions": [
+      {
+        "condition": "minecraft:entity_properties",
+        "entity": "this",
+        "predicate": {
+          "equipment": {
+            "chest": {
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "enchantencore:handyman",
+                    "levels": {
+                      "min": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+]
