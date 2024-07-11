@@ -1,5 +1,8 @@
 {
-    "description": "Midas Touch",
+    "description": {
+    "translate": "enchantment.enchantencore.midas_touch",
+    "fallback": "Midas Touch"
+  },
     "supported_items": "#enchantencore:all_golden_armor",
     "exclusive_set": "#enchantencore:exclusive_set/repair",
     "weight": 6,

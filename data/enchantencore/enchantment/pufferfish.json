@@ -1,5 +1,8 @@
 {
-  "description": "Pufferfish",
+  "description": {
+    "translate": "enchantment.enchantencore.pufferfish",
+    "fallback": "Pufferfish"
+  },
   "exclusive_set": "#enchantencore:exclusive_set/pufferfish",
   "supported_items": "#minecraft:enchantable/trident",
   "weight": 5,

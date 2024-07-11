@@ -1,5 +1,8 @@
 {
-    "description": "Safe Landing",
+    "description": {
+    "translate": "enchantment.enchantencore.safe_landing",
+    "fallback": "Safe Landing"
+  },
     "supported_items": "minecraft:elytra",
     "weight": 10,
     "max_level": 5,

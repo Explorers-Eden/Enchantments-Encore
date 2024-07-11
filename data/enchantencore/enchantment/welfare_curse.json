@@ -1,8 +1,8 @@
 {
     "description": {
-      "text": "Curse of Welfare",
-      "color": "red"
-    },
+    "translate": "enchantment.enchantencore.welfare_curse",
+    "fallback": "Curse of Welfare"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/item_effect",
     "supported_items": "#enchantencore:all_tools",
     "weight": 2,

@@ -1,5 +1,8 @@
 {
-    "description": "Slowness Aspect",
+    "description": {
+    "translate": "enchantment.enchantencore.slowness_aspect",
+    "fallback": "Slowness Aspect"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",
     "primary_items": "#minecraft:enchantable/sword",

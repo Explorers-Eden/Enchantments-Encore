@@ -1,5 +1,8 @@
 {
-    "description": "Weakness Aspect",
+    "description": {
+    "translate": "enchantment.enchantencore.weakness_aspect",
+    "fallback": "Weakness Aspect"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",
     "primary_items": "#minecraft:enchantable/sword",

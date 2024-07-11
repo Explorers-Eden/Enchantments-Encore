@@ -1,5 +1,8 @@
 {
-  "description": "Phantom Menace",
+  "description": {
+    "translate": "enchantment.enchantencore.phantom_menace",
+    "fallback": "Phantom Menace"
+  },
   "supported_items": "#enchantencore:all_bows",
   "weight": 5,
   "max_level": 5,

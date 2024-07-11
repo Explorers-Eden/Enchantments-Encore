@@ -1,5 +1,8 @@
 {
-    "description": "Hardened",
+    "description": {
+    "translate": "enchantment.enchantencore.hardened",
+    "fallback": "Hardened"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/shield",
     "supported_items": "minecraft:shield",
     "weight": 2,

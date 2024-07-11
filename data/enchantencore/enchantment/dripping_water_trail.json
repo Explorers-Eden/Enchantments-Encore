@@ -1,5 +1,8 @@
 {
-    "description": "Dripping Water Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.dripping_water_trail",
+    "fallback": "Dripping Water Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

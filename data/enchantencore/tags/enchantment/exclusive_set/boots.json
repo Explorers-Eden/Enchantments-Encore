@@ -1,5 +1,7 @@
 {
     "values": [
+      "enchantencore:invisibility_cloak",
+      "enchantencore:sonic",
       "minecraft:soul_speed",
       "enchantencore:end_speed",
       "enchantencore:sand_speed"

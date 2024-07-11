@@ -1,5 +1,8 @@
 {
-    "description": "Red Moon",
+    "description": {
+    "translate": "enchantment.enchantencore.red_moon",
+    "fallback": "Red Moon"
+  },
     "exclusive_set": "#minecraft:exclusive_set/armor",
     "supported_items": "#enchantencore:all_enchantable",
     "weight": 3,

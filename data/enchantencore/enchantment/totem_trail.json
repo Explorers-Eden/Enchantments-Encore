@@ -1,6 +1,9 @@
 
 {
-    "description": "Totem Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.totem_trail",
+    "fallback": "Totem Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

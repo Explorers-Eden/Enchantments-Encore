@@ -1,5 +1,8 @@
 {
-    "description": "Heart Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.heart_trail",
+    "fallback": "Heart Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

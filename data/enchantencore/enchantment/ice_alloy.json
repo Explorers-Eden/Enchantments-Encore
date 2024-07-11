@@ -1,8 +1,11 @@
 {
-    "description": "Ice Alloy",
+    "description": {
+    "translate": "enchantment.enchantencore.ice_alloy",
+    "fallback": "Ice Alloy"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/alloy",
     "supported_items": "#minecraft:chest_armor",
-    "weight": 5,
+    "weight": 2,
     "max_level": 3,
     "min_cost": {
       "base": 1,
@@ -12,7 +15,7 @@
       "base": 12,
       "per_level_above_first": 11
     },
-    "anvil_cost": 1,
+    "anvil_cost": 2,
     "slots": [
       "chest"
     ],

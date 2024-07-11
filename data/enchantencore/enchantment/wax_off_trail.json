@@ -1,5 +1,8 @@
 {
-    "description": "Wax Off Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.wax_off_trail",
+    "fallback": "Wax Off Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

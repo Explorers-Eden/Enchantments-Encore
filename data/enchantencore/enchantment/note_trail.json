@@ -1,5 +1,8 @@
 {
-    "description": "Note Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.note_trail",
+    "fallback": "Note Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

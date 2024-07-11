@@ -1,5 +1,8 @@
 {
-    "description": "Happy Villager Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.happy_villager_arrow_trail",
+    "fallback": "Happy Villager Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

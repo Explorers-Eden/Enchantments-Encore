@@ -1,6 +1,10 @@
 {
-    "description": "Sonic",
+    "description": {
+    "translate": "enchantment.enchantencore.sonic",
+    "fallback": "Sonic"
+  },
     "supported_items": "#minecraft:foot_armor",
+    "exclusive_set": "#enchantencore:exclusive_set/boots",
     "weight": 1,
     "max_level": 3,
     "min_cost": {

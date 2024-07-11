@@ -1,5 +1,8 @@
 {
-    "description": "Rejuvenation",
+    "description": {
+    "translate": "enchantment.enchantencore.rejuvenation",
+    "fallback": "Rejuvenation"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/shield",
     "supported_items": "minecraft:shield",
     "weight": 2,

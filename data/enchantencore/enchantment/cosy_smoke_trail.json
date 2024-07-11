@@ -1,5 +1,8 @@
 {
-    "description": "Cosy Smoke Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.cosy_smoke_trail",
+    "fallback": "Cosy Smoke Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

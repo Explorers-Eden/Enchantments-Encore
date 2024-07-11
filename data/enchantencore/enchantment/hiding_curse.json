@@ -1,8 +1,8 @@
 {
     "description": {
-      "text": "Curse of Hiding",
-      "color": "red"
-    },
+    "translate": "enchantment.enchantencore.hiding_curse",
+    "fallback": "Curse of Hiding"
+  },
     "supported_items": "#minecraft:enchantable/sword",
     "weight": 2,
     "max_level": 1,

@@ -1,5 +1,8 @@
 {
-    "description": "Sculk Soul Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.sculk_soul_trail",
+    "fallback": "Sculk Soul Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

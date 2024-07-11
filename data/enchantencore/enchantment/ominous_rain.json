@@ -1,5 +1,8 @@
 {
-    "description": "Ominous Rain",
+    "description": {
+    "translate": "enchantment.enchantencore.ominous_rain",
+    "fallback": "Ominous Rain"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/pufferfish",
     "supported_items": "#minecraft:enchantable/trident",
     "weight": 2,

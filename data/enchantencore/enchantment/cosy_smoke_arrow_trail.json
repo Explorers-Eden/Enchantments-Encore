@@ -1,5 +1,8 @@
 {
-    "description": "Cosy Smoke Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.cosy_smoke_arrow_trail",
+    "fallback": "Cosy Smoke Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

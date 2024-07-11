@@ -1,5 +1,8 @@
 {
-    "description": "Dolphin Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.dolphin_arrow_trail",
+    "fallback": "Dolphin Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

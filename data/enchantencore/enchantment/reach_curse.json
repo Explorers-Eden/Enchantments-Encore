@@ -1,10 +1,10 @@
 {
     "description": {
-        "text": "Curse of Reach",
-        "color": "red"
-      },
+    "translate": "enchantment.enchantencore.reach_curse",
+    "fallback": "Curse of Reach"
+  },
     "supported_items": "#enchantencore:all_tools",
-    "exclusive_set": "#enchantencore:exclusive_set/reach_curse",
+    "exclusive_set": "#enchantencore:exclusive_set/reach",
     "weight": 1,
     "max_level": 1,
     "min_cost": {

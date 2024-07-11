@@ -1,7 +1,7 @@
 {
   "description": {
-    "text": "Curse of Fragility",
-    "color": "red"
+    "translate": "enchantment.enchantencore.fragility_curse",
+    "fallback": "Curse of Fragility"
   },
   "supported_items": "#minecraft:enchantable/weapon",
   "weight": 1,

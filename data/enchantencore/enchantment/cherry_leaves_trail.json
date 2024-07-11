@@ -1,5 +1,8 @@
 {
-    "description": "Cherry Leaves Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.cherry_leaves_trail",
+    "fallback": "Cherry Leaves Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

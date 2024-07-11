@@ -1,5 +1,8 @@
 {
-    "description": "Enchant Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.enchant_trail",
+    "fallback": "Enchant Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

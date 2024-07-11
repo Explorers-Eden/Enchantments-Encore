@@ -1,5 +1,8 @@
 {
-    "description": "Bane of Netherborn",
+    "description": {
+    "translate": "enchantment.enchantencore.bane_of_netherborn",
+    "fallback": "Bane of Netherborn"
+  },
     "exclusive_set": "#minecraft:exclusive_set/damage",
     "supported_items": "#minecraft:enchantable/weapon",
     "primary_items": "#minecraft:enchantable/sword",

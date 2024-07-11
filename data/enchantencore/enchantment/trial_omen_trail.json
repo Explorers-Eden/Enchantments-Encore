@@ -1,5 +1,8 @@
 {
-    "description": "Trial Omen Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.trial_omen_trail",
+    "fallback": "Trial Omen Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

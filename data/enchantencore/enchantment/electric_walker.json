@@ -1,6 +1,9 @@
 {
 	"anvil_cost": 4,
-	"description": "Electric Walker",
+	"description": {
+    "translate": "enchantment.enchantencore.electric_walker",
+    "fallback": "Electric Walker"
+  },
 	"effects": {
 		"minecraft:location_changed": [
 			{

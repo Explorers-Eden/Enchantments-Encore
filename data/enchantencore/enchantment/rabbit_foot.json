@@ -1,5 +1,8 @@
 {
-    "description": "Rabbit's Foot",
+    "description": {
+    "translate": "enchantment.enchantencore.rabbit_foot",
+    "fallback": "Rabbit's Foot"
+  },
     "supported_items": "#minecraft:foot_armor",
     "weight": 10,
     "max_level": 5,

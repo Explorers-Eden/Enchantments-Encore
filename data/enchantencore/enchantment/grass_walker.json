@@ -1,5 +1,8 @@
 {
-    "description": "Grass Walker",
+    "description": {
+    "translate": "enchantment.enchantencore.grass_walker",
+    "fallback": "Grass Walker"
+  },
     "exclusive_set": "#minecraft:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",
     "weight": 2,

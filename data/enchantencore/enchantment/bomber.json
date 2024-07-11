@@ -1,5 +1,8 @@
 {
-    "description": "Bomber",
+    "description": {
+    "translate": "enchantment.enchantencore.bomber",
+    "fallback": "Bomber"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
     "supported_items": "#enchantencore:all_bows",
     "weight": 1,

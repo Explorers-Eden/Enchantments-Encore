@@ -1,6 +1,10 @@
 {
-    "description": "Invisibility Cloak",
+    "description": {
+    "translate": "enchantment.enchantencore.invisibility_cloak",
+    "fallback": "Invisibility Cloak"
+  },
     "supported_items": "#minecraft:enchantable/foot_armor",
+    "exclusive_set": "#enchantencore:exclusive_set/boots",
     "weight": 2,
     "max_level": 1,
     "min_cost": {

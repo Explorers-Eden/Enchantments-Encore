@@ -1,6 +1,10 @@
 {
-    "description": "Poppy Peace",
+    "description": {
+    "translate": "enchantment.enchantencore.poppy_peace",
+    "fallback": "Poppy Peace"
+  },
     "supported_items": "#minecraft:enchantable/weapon",
+    "exclusive_set": "#enchantencore:exclusive_set/poppy",
     "weight": 2,
     "max_level": 1,
     "min_cost": {

@@ -1,5 +1,8 @@
 {
-  "description": "Sting",
+  "description": {
+    "translate": "enchantment.enchantencore.sting",
+    "fallback": "Sting"
+  },
   "exclusive_set": "#enchantencore:exclusive_set/crossbow",
   "supported_items": "minecraft:crossbow",
   "weight": 3,

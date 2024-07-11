@@ -1,5 +1,8 @@
 {
-    "description": "Dripping Obsidian Tear Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.dripping_obsidian_tear_trail",
+    "fallback": "Dripping Obsidian Tear Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

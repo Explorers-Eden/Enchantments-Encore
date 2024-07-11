@@ -1,5 +1,8 @@
 {
-    "description": "Trial Omen Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.trial_omen_arrow_trail",
+    "fallback": "Trial Omen Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

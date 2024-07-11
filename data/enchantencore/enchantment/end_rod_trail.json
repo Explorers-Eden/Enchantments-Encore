@@ -1,6 +1,9 @@
 
 {
-    "description": "End Rod Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.end_rod_trail",
+    "fallback": "End Rod Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

@@ -1,6 +1,9 @@
 
 {
-    "description": "Firework Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.firework_trail",
+    "fallback": "Firework Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

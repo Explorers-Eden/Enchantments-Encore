@@ -1,5 +1,8 @@
 {
-    "description": "Sacrifice",
+    "description": {
+    "translate": "enchantment.enchantencore.sacrifice",
+    "fallback": "Sacrifice"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/repair",
     "supported_items": "#enchantencore:all_enchantable",
     "weight": 4,

@@ -1,5 +1,8 @@
 {
-    "description": "Night Vision",
+    "description": {
+    "translate": "enchantment.enchantencore.night_vision",
+    "fallback": "Night Vision"
+  },
     "supported_items": "#minecraft:enchantable/head_armor",
     "weight": 1,
     "max_level": 1,

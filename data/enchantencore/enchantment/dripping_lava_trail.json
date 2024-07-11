@@ -1,5 +1,8 @@
 {
-    "description": "Dripping Lava Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.dripping_lava_trail",
+    "fallback": "Dripping Lava Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

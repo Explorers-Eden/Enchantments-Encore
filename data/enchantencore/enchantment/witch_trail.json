@@ -1,5 +1,8 @@
 {
-    "description": "Witch Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.witch_trail",
+    "fallback": "Witch Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

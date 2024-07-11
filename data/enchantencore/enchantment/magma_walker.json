@@ -1,5 +1,8 @@
 {
-    "description": "Magma Walker",
+    "description": {
+    "translate": "enchantment.enchantencore.magma_walker",
+    "fallback": "Magma Walker"
+  },
     "exclusive_set": "#minecraft:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",
     "weight": 2,

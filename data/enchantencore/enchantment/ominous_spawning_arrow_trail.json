@@ -1,5 +1,8 @@
 {
-    "description": "Ominous Spawning Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.ominous_spawning_arrow_trail",
+    "fallback": "Ominous Spawning Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

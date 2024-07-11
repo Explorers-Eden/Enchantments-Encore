@@ -1,6 +1,9 @@
 
 {
-    "description": "Soul Fire Flame Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.soul_fire_flame_trail",
+    "fallback": "Soul Fire Flame Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,

@@ -1,5 +1,8 @@
 {
-    "description": "Slowness Splash",
+    "description": {
+    "translate": "enchantment.enchantencore.slowness_splash",
+    "fallback": "Slowness Splash"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

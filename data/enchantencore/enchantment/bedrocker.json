@@ -1,5 +1,8 @@
 {
-  "description": "Bedrocker",
+  "description": {
+    "translate": "enchantment.enchantencore.bedrocker",
+    "fallback": "Bedrocker"
+  },
   "supported_items": "minecraft:netherite_pickaxe",
   "weight": 1,
   "max_level": 1,

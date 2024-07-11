@@ -1,5 +1,8 @@
 {
-  "description": "Forge Shot",
+  "description": {
+    "translate": "enchantment.enchantencore.forge_shot",
+    "fallback": "Forge Shot"
+  },
   "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
   "supported_items": "#enchantencore:all_bows",
   "weight": 4,

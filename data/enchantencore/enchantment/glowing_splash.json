@@ -1,5 +1,8 @@
 {
-    "description": "Glowing Splash",
+    "description": {
+    "translate": "enchantment.enchantencore.glowing_splash",
+    "fallback": "Glowing Splash"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

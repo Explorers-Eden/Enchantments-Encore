@@ -1,5 +1,8 @@
 {
-    "description": "Glass Breaker",
+    "description": {
+    "translate": "enchantment.enchantencore.glass_breaker",
+    "fallback": "Glass Breaker"
+  },
     "supported_items": "#enchantencore:all_bows",
     "weight": 2,
     "max_level": 1,

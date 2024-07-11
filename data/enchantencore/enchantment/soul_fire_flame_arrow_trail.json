@@ -1,5 +1,8 @@
 {
-    "description": "Soul Fire Flame Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.soul_fire_flame_arrow_trail",
+    "fallback": "Soul Fire Flame Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

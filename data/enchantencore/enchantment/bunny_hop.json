@@ -1,6 +1,10 @@
 {
-    "description": "Bunny Hop",
+    "description": {
+    "translate": "enchantment.enchantencore.bunny_hop",
+    "fallback": "Bunny Hop"
+  },
     "supported_items": "#minecraft:enchantable/leg_armor",
+    "exclusive_set": "#enchantencore:exclusive_set/leggings",
     "weight": 3,
     "max_level": 3,
     "min_cost": {

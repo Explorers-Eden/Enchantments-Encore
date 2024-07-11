@@ -1,8 +1,8 @@
 {
     "description": {
-      "text": "Curse of Randomness",
-      "color": "red"
-    },
+    "translate": "enchantment.enchantencore.randomness_curse",
+    "fallback": "Curse of Randomness"
+  },
     "supported_items": "#enchantencore:all_tools",
     "weight": 2,
     "max_level": 1,

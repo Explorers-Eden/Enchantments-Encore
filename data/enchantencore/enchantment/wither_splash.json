@@ -1,5 +1,8 @@
 {
-    "description": "Wither Splash",
+    "description": {
+    "translate": "enchantment.enchantencore.witcher_splash",
+    "fallback": "Wither Splash"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

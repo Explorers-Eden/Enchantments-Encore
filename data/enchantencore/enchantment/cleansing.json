@@ -1,5 +1,8 @@
 {
-  "description": "Cleansing",
+  "description": {
+    "translate": "enchantment.enchantencore.cleansing",
+    "fallback": "Cleansing"
+  },
   "exclusive_set": "#enchantencore:exclusive_set/shield",
   "supported_items": "minecraft:shield",
   "weight": 2,

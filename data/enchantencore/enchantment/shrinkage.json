@@ -1,5 +1,8 @@
 {
-    "description": "Shrinkage",
+    "description": {
+    "translate": "enchantment.enchantencore.shrinkage",
+    "fallback": "Shrinkage"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/height",
     "supported_items": "#minecraft:chest_armor",
     "weight": 2,

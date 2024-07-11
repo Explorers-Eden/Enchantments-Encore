@@ -1,5 +1,8 @@
 {
-    "description": "Dripping Obsidian Tear Arrow Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.dripping_obsidian_tear_arrow_trail",
+    "fallback": "Dripping Obsidian Tear Arrow Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/arrow_trail",
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

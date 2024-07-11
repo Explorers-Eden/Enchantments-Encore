@@ -1,5 +1,8 @@
 {
-    "description": "Ominous Spawning Trail",
+    "description": {
+    "translate": "enchantment.enchantencore.ominous_spawning_trail",
+    "fallback": "Ominous Spawning Trail"
+  },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
     "supported_items": "#enchantencore:all_armor",
     "weight": 2,
