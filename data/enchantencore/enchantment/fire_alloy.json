@@ -28,8 +28,8 @@
             "type": "minecraft:ignite",
             "duration": {
               "type": "minecraft:linear",
-              "base": 8,
-              "per_level_above_first": 8
+              "base": 5,
+              "per_level_above_first": 3
             }
           }
         }
