@@ -4,24 +4,15 @@
         "minecraft:plains", 
         "minecraft:sunflower_plains", 
         "minecraft:savanna", 
-        { 
-            "id": "biomesoplenty:grassland",
-            "required": false
-        },{ 
-            "id": "biomesoplenty:clover_patch",
-            "required": false
-        },{ 
-            "id": "biomesoplenty:field",
-            "required": false
-        },{ 
-            "id": "biomesoplenty:lush_savanna",
-            "required": false
-        },{ 
-            "id": "terralith:brushland",
-            "required": false
-        },{ 
-            "id": "terralith:steppe",
-            "required": false
-        }
+        {"id": "biomesoplenty:grassland","required": false},
+        {"id": "biomesoplenty:clover_patch","required": false},
+        {"id": "biomesoplenty:field","required": false},
+        {"id": "biomesoplenty:lush_savanna","required": false},
+        {"id": "terralith:brushland","required": false},
+        {"id": "terralith:steppe","required": false},
+        {"id": "eden:meadow","required": false},
+        {"id": "eden:plains","required": false},
+        {"id": "eden:sunflower_plains","required": false},
+        {"id": "eden:savanna","required": false}
     ]
 }

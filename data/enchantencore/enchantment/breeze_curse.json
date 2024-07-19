@@ -1,0 +1,34 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.breeze_curse",
+      "fallback": "Curse of Breeze"
+    },
+    "supported_items": "#minecraft:enchantable/sword",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "enchanted": "attacker",
+          "affected": "attacker",
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:breeze_curse"
+          }
+        }
+      ]
+    }
+  }
+  
