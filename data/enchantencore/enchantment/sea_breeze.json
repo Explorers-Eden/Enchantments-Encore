@@ -1,0 +1,137 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.sea_breeze",
+      "fallback": "Sea Breeze"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/pufferfish",
+    "supported_items": "#minecraft:enchantable/trident",
+    "weight": 5,
+    "max_level": 3,
+    "min_cost": {
+      "base": 15,
+      "per_level_above_first": 9
+    },
+    "max_cost": {
+      "base": 65,
+      "per_level_above_first": 9
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:hit_block": [
+        {
+          "effect": {
+            "type": "minecraft:explode",
+            "radius": {
+              "type": "minecraft:linear",
+              "base": 3,
+              "per_level_above_first": 0.5
+            },
+            "offset": [
+              0.01,
+              0.01,
+              0.01
+            ],
+            "block_interaction": "trigger",
+            "small_particle": {
+              "type": "minecraft:gust_emitter_small"
+            },
+            "large_particle": {
+              "type": "minecraft:gust_emitter_large"
+            },
+            "sound": "minecraft:entity.wind_charge.wind_burst",
+            "immune_blocks": "#minecraft:blocks_wind_charge_explosions",
+            "knockback_multiplier": {
+              "type": "minecraft:linear",
+              "base": 0.5,
+              "per_level_above_first": 0.25
+            },
+            "attribute_to_user": true
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:trident"
+            }
+          }
+        },
+        {
+          "effect": {
+            "type": "minecraft:explode",
+            "radius": {
+              "type": "minecraft:linear",
+              "base": 3,
+              "per_level_above_first": 0.5
+            },
+            "offset": [
+              -0.01,
+              -0.01,
+              -0.01
+            ],
+            "block_interaction": "trigger",
+            "small_particle": {
+              "type": "minecraft:gust"
+            },
+            "large_particle": {
+              "type": "minecraft:gust_emitter_small"
+            },
+            "sound": "minecraft:entity.wind_charge.wind_burst",
+            "immune_blocks": "#minecraft:blocks_wind_charge_explosions",
+            "knockback_multiplier": {
+              "type": "minecraft:linear",
+              "base": 0.5,
+              "per_level_above_first": 0.25
+            },
+            "attribute_to_user": true
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:trident"
+            }
+          }
+        }
+      ],
+      "minecraft:post_attack": [
+        {
+          "enchanted": "attacker",
+          "affected": "damaging_entity",
+          "effect": {
+            "type": "minecraft:explode",
+            "radius": {
+              "type": "minecraft:linear",
+              "base": 3,
+              "per_level_above_first": 0.5
+            },
+            "block_interaction": "none",
+            "small_particle": {
+              "type": "minecraft:gust_emitter_small"
+            },
+            "large_particle": {
+              "type": "minecraft:gust_emitter_large"
+            },
+            "sound": "minecraft:entity.wind_charge.wind_burst",
+            "immune_blocks": "#minecraft:blocks_wind_charge_explosions",
+            "knockback_multiplier": {
+              "type": "minecraft:linear",
+              "base": 0.5,
+              "per_level_above_first": 0.25
+            },
+            "attribute_to_user": true
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "direct_attacker",
+            "predicate": {
+              "type": "minecraft:trident"
+            }
+          }
+        }
+      ]
+    }
+  }
+  

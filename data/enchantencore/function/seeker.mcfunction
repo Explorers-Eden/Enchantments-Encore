@@ -1,0 +1,2 @@
+execute as @e[type=item] at @s if entity @e[type=player,distance=..12,predicate=enchantencore:entity/has_seeker] run data modify entity @s Glowing set value 1b
+execute as @e[type=item] at @s unless entity @e[type=player,distance=..12,predicate=enchantencore:entity/has_seeker] run data modify entity @s Glowing set value 0b

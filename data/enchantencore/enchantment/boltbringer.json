@@ -1,0 +1,47 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.boltbringer",
+      "fallback": "Boltbringer"
+    },
+    "supported_items": "minecraft:mace",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 20,
+      "per_level_above_first": 5
+    },
+    "max_cost": {
+      "base": 50,
+      "per_level_above_first": 5
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "enchanted": "attacker",
+          "affected": "victim",
+          "effect": {
+            "type": "minecraft:summon_entity",
+            "entity": "minecraft:lightning_bolt"
+          },
+          "requirements": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "movement": {
+                  "fall_distance": {
+                    "min": 8
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

@@ -1,0 +1,21 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "equipment": {
+      "mainhand": {
+        "items": "#minecraft:enchantable/mining",
+        "predicates": {
+          "minecraft:enchantments": [
+            {
+              "enchantments": "enchantencore:haste",
+              "levels": {
+                "min": 3
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}

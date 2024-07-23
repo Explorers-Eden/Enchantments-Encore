@@ -1,3 +1,4 @@
 function enchantencore:crop_dance/reset_sneak_time
+function enchantencore:seeker
 
 schedule function enchantencore:schedules/10tick 10t
