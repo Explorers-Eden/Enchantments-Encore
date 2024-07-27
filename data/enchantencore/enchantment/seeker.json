@@ -5,14 +5,14 @@
     },
     "supported_items": "#minecraft:enchantable/head_armor",
     "weight": 1,
-    "max_level": 1,
+    "max_level": 3,
     "min_cost": {
-      "base": 31,
-      "per_level_above_first": 0
+      "base": 25,
+      "per_level_above_first": 15
     },
     "max_cost": {
-      "base": 41,
-      "per_level_above_first": 0
+      "base": 51,
+      "per_level_above_first": 15
     },
     "anvil_cost": 4,
     "slots": [

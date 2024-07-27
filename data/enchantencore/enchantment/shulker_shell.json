@@ -1,0 +1,45 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.shulker_shell",
+      "fallback": "Shulker Shell"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/alloy",
+    "supported_items": "#minecraft:chest_armor",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 31,
+      "per_level_above_first": 8
+    },
+    "max_cost": {
+      "base": 55,
+      "per_level_above_first": 8
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "chest"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:shulker_shell/get_data"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "movement": {
+                "speed": 0,
+                "horizontal_speed": 0,
+                "vertical_speed": 0,
+                "fall_distance": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  

@@ -28,7 +28,9 @@
       "enchantencore:sonic",
       "enchantencore:switch",
       "enchantencore:haste",
-      "enchantencore:boltbringer"
+      "enchantencore:boltbringer",
+      "enchantencore:flare",
+      "enchantencore:shulker_shell"
     ]
   }
   

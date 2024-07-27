@@ -1,0 +1,156 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.flare",
+    "fallback": "Flare"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
+  "supported_items": "#enchantencore:all_bows",
+  "weight": 1,
+  "max_level": 5,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 6
+  },
+  "max_cost": {
+    "base": 46,
+    "per_level_above_first": 7
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:flare/get_data_1"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:flare",
+                      "levels": 1
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:flare/get_data_2"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:flare",
+                      "levels": 2
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:flare/get_data_3"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:flare",
+                      "levels": 3
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:flare/get_data_4"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:flare",
+                      "levels": 4
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:flare/get_data_5"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:flare",
+                      "levels": 5
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.pegasus",
+    "fallback": "Pegasus"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/pegasus",
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 5
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 50
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "feet"
+  ],
+  "effects": {
+    "minecraft:location_changed": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:pegasus/run"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "vehicle": {
+              "type": "#enchantencore:rideable"
+            }
+          }
+        }
+      },
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:pegasus/get_height"
+        }
+      }
+    ]
+  }
+}

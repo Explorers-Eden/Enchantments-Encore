@@ -1,17 +1,15 @@
-  {
+{
     "condition": "minecraft:entity_properties",
     "entity": "this",
     "predicate": {
       "equipment": {
-        "head": {
-          "items": "#minecraft:enchantable/head_armor",
+        "mainhand": {
+          "items": "#enchantencore:all_tools",
           "predicates": {
             "minecraft:enchantments": [
               {
-                "enchantments": "enchantencore:seeker",
-                "levels": {
-                    "min": 1
-                }
+                "enchantments": "enchantencore:gluttony",
+                "levels": 2
               }
             ]
           }

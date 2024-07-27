@@ -1,0 +1,46 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.crank_curse",
+      "fallback": "Curse of Crank"
+    },
+    "supported_items": "#minecraft:enchantable/armor",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 5
+    },
+    "max_cost": {
+      "base": 51,
+      "per_level_above_first": 50
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "armor"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:damage_entity",
+            "damage_type": "minecraft:dry_out",
+            "min_damage": 0,
+            "max_damage": 0.5
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "movement": {
+                "speed": 0,
+                "horizontal_speed": 0,
+                "vertical_speed": 0,
+                "fall_distance": 0
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  

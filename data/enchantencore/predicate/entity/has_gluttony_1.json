@@ -1,0 +1,20 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "mainhand": {
+          "items": "#enchantencore:all_tools",
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:gluttony",
+                "levels": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  

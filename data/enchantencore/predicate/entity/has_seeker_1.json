@@ -1,0 +1,20 @@
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "head": {
+          "items": "#minecraft:enchantable/head_armor",
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:seeker",
+                "levels": 1
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  
