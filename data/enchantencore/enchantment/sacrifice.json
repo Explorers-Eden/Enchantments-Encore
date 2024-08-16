@@ -28,8 +28,8 @@
             "type": "minecraft:damage_item",
             "amount": {
               "type": "minecraft:linear",
-              "base": -0.8,
-              "per_level_above_first": -0.3
+              "base": -1.0,
+              "per_level_above_first": -0.5
             }
           }
         }
