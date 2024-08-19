@@ -16,7 +16,7 @@
     },
     "anvil_cost": 1,
     "slots": [
-      "chest"
+      "any"
     ],
     "effects": {
       "minecraft:attributes": [
