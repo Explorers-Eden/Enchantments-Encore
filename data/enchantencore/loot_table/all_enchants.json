@@ -1,158 +1,190 @@
 {
-    "pools": [
-      {
-        "rolls": 1,
-        "entries": [
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:aspect"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:alloy"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:splash_arrow"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:trail"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:bane"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:bedrocker"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:bomber"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:bunny_hop"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:cleansing"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:crab_claw"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:crispbread"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:haste"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:pickpocket"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:cropdance"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:curse"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:enderscape"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:evokers_wrath"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:glass_breaker"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:gluttony"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:handyman"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:hardened"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:invisibility_cloak"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:leech"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:lightning_bolt"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:moonwalk"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:night_vision"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:pacifier"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:poppy_peace"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:pufferfish"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:red_moon"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:rejuvenation"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:scale"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:scholar"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:sonic"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:sting"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:swift_slash"
-          },
-          {
-            "type": "minecraft:loot_table",
-            "value": "enchantencore:walker"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
+              "options": "#minecraft:treasure"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
+              "options": "#minecraft:on_random_loot"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
+              "options": "#minecraft:in_enchanting_table"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": {
+        "min": 2,
+        "max": 3
+      },
+      "bonus_rolls": {
+        "min": 0,
+        "max": 1
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_lazuli",
+          "weight": 20,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:lapis_ore",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:deepslate_lapis_ore",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:paper",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 16
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:experience_bottle",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:obsidian",
+          "weight": 10,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 8
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:bookshelf",
+          "weight": 3,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 2
+              }
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:chiseled_bookshelf",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1,
+                "max": 3
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
