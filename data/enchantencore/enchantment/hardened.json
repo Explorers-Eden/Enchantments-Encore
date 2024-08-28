@@ -23,7 +23,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:shieldhardened",
-          "attribute": "minecraft:generic.armor",
+          "attribute": "minecraft:armor",
           "amount": {
             "type": "minecraft:linear",
             "base": 2,

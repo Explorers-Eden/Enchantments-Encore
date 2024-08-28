@@ -23,7 +23,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:jumpstrength",
-          "attribute": "minecraft:generic.jump_strength",
+          "attribute": "minecraft:jump_strength",
           "amount": {
             "type": "minecraft:linear",
             "base": 0.15,
