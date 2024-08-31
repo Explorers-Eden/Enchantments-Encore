@@ -1,74 +1,74 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.evokers_wrath",
     "fallback": "Evokers Wrath"
   },
-    "exclusive_set": "#enchantencore:exclusive_set/crossbow",
-    "supported_items": "#minecraft:enchantable/crossbow",
-    "primary_items": "#minecraft:enchantable/crossbow",
-    "weight": 2,
-    "max_level": 1,
-    "min_cost": {
-      "base": 31,
-      "per_level_above_first": 10
-    },
-    "max_cost": {
-      "base": 51,
-      "per_level_above_first": 10
-    },
-    "anvil_cost": 4,
-    "slots": [
-      "mainhand"
+  "exclusive_set": "#enchantencore:exclusive_set/crossbow",
+  "supported_items": "#minecraft:enchantable/crossbow",
+  "primary_items": "#minecraft:enchantable/crossbow",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 31,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:evokers_wrath"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
+        }
+      }
     ],
-    "effects": {
-      "minecraft:hit_block": [
-        {
-          "effect": {
-            "type": "minecraft:all_of",
-            "effects": [
-              {
-                "type": "minecraft:run_function",
-                "function": "enchantencore:evokers_wrath"
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:run_function",
+              "function": "enchantencore:evokers_wrath"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "#enchantencore:hard_projectiles",
+                "flags": {}
               }
-            ]
-          }
+            }
+          ]
         }
-      ],
-      "minecraft:post_attack": [
-        {
-          "enchanted": "attacker",
-          "affected": "victim",
-          "effect": {
-            "type": "minecraft:all_of",
-            "effects": [
-              {
-                "type": "minecraft:run_function",
-                "function": "enchantencore:evokers_wrath"
-              }
-            ]
-          },
-          "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                  "flags": {
-                    "is_on_ground": true
-                  }
-                }
-              }
-            ]
-          }
-        }
-      ],
-      "minecraft:crossbow_charging_sounds": [
-        {
-          "start": "minecraft:entity.evoker.prepare_attack",
-          "end": "minecraft:entity.evoker.prepare_summon"
-        }
-      ]
-    }
+      }
+    ],
+    "minecraft:crossbow_charging_sounds": [
+      {
+        "start": "minecraft:entity.evoker.prepare_attack",
+        "end": "minecraft:entity.evoker.prepare_summon"
+      }
+    ]
   }
-  
+}

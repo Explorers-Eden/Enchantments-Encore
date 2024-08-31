@@ -38,6 +38,13 @@
             "min": 6,
             "max": 12
           }
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
         }
       },
       {
@@ -46,6 +53,13 @@
         "effect": {
           "type": "minecraft:summon_entity",
           "entity": "minecraft:bee"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
         }
       },
       {
@@ -54,6 +68,13 @@
         "effect": {
           "type": "minecraft:run_function",
           "function": "enchantencore:sting"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
         }
       }
     ]

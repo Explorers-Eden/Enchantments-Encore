@@ -22,7 +22,7 @@
       "minecraft:attributes": [
         {
           "id": "minecraft:swiftsneak",
-          "attribute": "minecraft:sneaking_speed",
+          "attribute": "minecraft:player.sneaking_speed",
           "amount": {
             "type": "minecraft:linear",
             "base": 0.15,

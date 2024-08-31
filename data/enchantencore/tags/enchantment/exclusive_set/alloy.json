@@ -1,9 +1,9 @@
 {
     "values": [
-      {"id": "enchantencore:fire_alloy", "required": false},
-      {"id": "enchantencore:ice_alloy", "required": false},
-      {"id": "enchantencore:creeper_alloy", "required": false},
-      {"id": "enchantencore:darkness_alloy", "required": false},
-      {"id": "enchantencore:bulletproof", "required": false}
+      "enchantencore:fire_alloy",
+      "enchantencore:ice_alloy",
+      "enchantencore:creeper_alloy",
+      "enchantencore:darkness_alloy",
+      "enchantencore:bulletproof"
     ]
   }

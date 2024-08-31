@@ -23,7 +23,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:redmoon_dfns",
-          "attribute": "minecraft:armor",
+          "attribute": "minecraft:generic.armor",
           "amount": {
             "type": "minecraft:linear",
             "base": -1.5,
@@ -33,7 +33,7 @@
         },
         {
           "id": "enchantencore:redmoon_atck",
-          "attribute": "minecraft:attack_damage",
+          "attribute": "minecraft:generic.attack_damage",
           "amount": {
             "type": "minecraft:linear",
             "base": 1.5,

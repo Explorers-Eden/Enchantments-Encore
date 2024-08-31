@@ -25,7 +25,7 @@
           "effect": {
             "type": "minecraft:attribute",
             "id": "minecraft:enchantment.soul_speed",
-            "attribute": "minecraft:movement_speed",
+            "attribute": "minecraft:generic.movement_speed",
             "amount": {
               "type": "minecraft:linear",
               "base": 0.0405,
@@ -120,7 +120,7 @@
           "effect": {
             "type": "minecraft:attribute",
             "id": "minecraft:enchantment.soul_speed",
-            "attribute": "minecraft:movement_efficiency",
+            "attribute": "minecraft:generic.movement_efficiency",
             "amount": 1,
             "operation": "add_value"
           },

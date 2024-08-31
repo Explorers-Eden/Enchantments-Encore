@@ -1,44 +1,57 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.invisibility_splash",
     "fallback": "Invisibility Splash"
   },
-    "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
-    "supported_items": "#enchantencore:all_bows",
-    "primary_items": "minecraft:bow",
-    "weight": 3,
-    "max_level": 1,
-    "min_cost": {
-      "base": 21,
-      "per_level_above_first": 10
-    },
-    "max_cost": {
-      "base": 51,
-      "per_level_above_first": 10
-    },
-    "anvil_cost": 4,
-    "slots": [
-      "mainhand"
+  "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
+  "supported_items": "#enchantencore:all_bows",
+  "primary_items": "minecraft:bow",
+  "weight": 3,
+  "max_level": 1,
+  "min_cost": {
+    "base": 21,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:splash_arrow/invisibility"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
+        }
+      }
     ],
-    "effects": {
-      "minecraft:hit_block": [
-        {
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:splash_arrow/invisibility"
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:splash_arrow/invisibility"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
           }
         }
-      ],
-      "minecraft:post_attack": [
-        {
-          "enchanted": "attacker",
-          "affected": "victim",
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:splash_arrow/invisibility"
-          }
-        }
-      ]
-    }
+      }
+    ]
   }
-  
+}

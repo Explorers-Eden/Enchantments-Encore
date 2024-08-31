@@ -23,11 +23,11 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:rejuvenation",
-          "attribute": "minecraft:max_health",
+          "attribute": "minecraft:generic.max_health",
           "amount": {
             "type": "minecraft:linear",
-            "base": 1,
-            "per_level_above_first": 0.5
+            "base": 2,
+            "per_level_above_first": 1
           },
           "operation": "add_value"
         }

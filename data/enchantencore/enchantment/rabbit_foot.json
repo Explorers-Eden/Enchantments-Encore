@@ -22,7 +22,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore.rabittsfoot",
-          "attribute": "minecraft:luck",
+          "attribute": "minecraft:generic.luck",
           "amount": {
             "type": "minecraft:linear",
             "base": 0.5,

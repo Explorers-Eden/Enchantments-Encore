@@ -30,6 +30,13 @@
               "function": "enchantencore:forge_shot"
             }
           ]
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
         }
       }
     ],
@@ -51,11 +58,9 @@
           "terms": [
             {
               "condition": "minecraft:entity_properties",
-              "entity": "this",
+              "entity": "direct_attacker",
               "predicate": {
-                "flags": {
-                  "is_on_ground": true
-                }
+                "type": "#enchantencore:hard_projectiles"
               }
             }
           ]

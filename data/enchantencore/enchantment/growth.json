@@ -23,7 +23,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:growth",
-          "attribute": "minecraft:scale",
+          "attribute": "minecraft:generic.scale",
           "amount": {
             "type": "minecraft:linear",
             "base": 0.1,
@@ -33,7 +33,7 @@
         },
         {
           "id": "enchantencore:growthstep",
-          "attribute": "minecraft:step_height",
+          "attribute": "minecraft:generic.step_height",
           "amount": {
             "type": "minecraft:linear",
             "base": 0.1,

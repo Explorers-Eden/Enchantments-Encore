@@ -1,0 +1,22 @@
+{
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "mainhand": {
+          "items": "#enchantencore:all_bows",
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:flare",
+                "levels": {
+                "min": 5
+              }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  

@@ -23,7 +23,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:sonic",
-          "attribute": "minecraft:movement_speed",
+          "attribute": "minecraft:generic.movement_speed",
           "amount": {
             "type": "minecraft:linear",
             "base": 0.025,
