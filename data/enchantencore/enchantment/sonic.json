@@ -26,7 +26,7 @@
           "attribute": "minecraft:generic.movement_speed",
           "amount": {
             "type": "minecraft:linear",
-            "base": 0.025,
+            "base": 0.015,
             "per_level_above_first": 0.01
           },
           "operation": "add_value"

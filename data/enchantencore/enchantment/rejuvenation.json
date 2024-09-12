@@ -6,7 +6,7 @@
     "exclusive_set": "#enchantencore:exclusive_set/shield",
     "supported_items": "minecraft:shield",
     "weight": 2,
-    "max_level": 5,
+    "max_level": 4,
     "min_cost": {
       "base": 21,
       "per_level_above_first": 20
@@ -26,7 +26,7 @@
           "attribute": "minecraft:generic.max_health",
           "amount": {
             "type": "minecraft:linear",
-            "base": 2,
+            "base": 1,
             "per_level_above_first": 1
           },
           "operation": "add_value"

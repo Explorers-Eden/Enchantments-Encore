@@ -27,10 +27,10 @@
           "attribute": "minecraft:generic.attack_speed",
           "amount": {
             "type": "minecraft:linear",
-            "base": 0.15,
-            "per_level_above_first": 0.075
+            "base": 0.1,
+            "per_level_above_first": 0.05
           },
-          "operation": "add_multiplied_total"
+          "operation": "add_value"
         }
       ]
     }

@@ -1,47 +1,56 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.red_moon",
     "fallback": "Red Moon"
   },
-    "exclusive_set": "#minecraft:exclusive_set/armor",
-    "supported_items": "#enchantencore:all_enchantable",
-    "weight": 3,
-    "max_level": 3,
-    "min_cost": {
-      "base": 10,
-      "per_level_above_first": 11
-    },
-    "max_cost": {
-      "base": 25,
-      "per_level_above_first": 11
-    },
-    "anvil_cost": 1,
-    "slots": [
-      "any"
-    ],
-    "effects": {
-      "minecraft:attributes": [
-        {
-          "id": "enchantencore:redmoon_dfns",
-          "attribute": "minecraft:generic.armor",
-          "amount": {
-            "type": "minecraft:linear",
-            "base": -1.5,
-            "per_level_above_first": -1.5
-          },
-          "operation": "add_value"
+  "exclusive_set": "#minecraft:exclusive_set/armor",
+  "supported_items": "#enchantencore:all_enchantable",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 11
+  },
+  "anvil_cost": 1,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "enchantencore:redmoon_dfns",
+        "attribute": "minecraft:generic.armor",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -2.5,
+          "per_level_above_first": -1.5
         },
-        {
-          "id": "enchantencore:redmoon_atck",
-          "attribute": "minecraft:generic.attack_damage",
-          "amount": {
-            "type": "minecraft:linear",
-            "base": 1.5,
-            "per_level_above_first": 1.5
-          },
-          "operation": "add_value"
+        "operation": "add_value"
+      },
+      {
+        "id": "enchantencore:redmoon_atck",
+        "attribute": "minecraft:generic.attack_damage",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2.5,
+          "per_level_above_first": 1.5
+        },
+        "operation": "add_value"
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "enchanted": "victim",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:red_moon/after_hit"
         }
-      ]
-    }
+      }
+    ]
   }
-  
+}

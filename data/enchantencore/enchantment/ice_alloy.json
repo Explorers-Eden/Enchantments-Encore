@@ -29,13 +29,13 @@
             "to_apply": "minecraft:slowness",
             "min_duration": {
               "type": "minecraft:linear",
-              "base": 5,
-              "per_level_above_first": 5
+              "base": 0,
+              "per_level_above_first": 0
             },
             "max_duration": {
               "type": "minecraft:linear",
-              "base": 5,
-              "per_level_above_first": 5
+              "base": 3,
+              "per_level_above_first": 0
             },
             "min_amplifier": 254,
             "max_amplifier": 254
@@ -49,13 +49,13 @@
             "damage_type": "minecraft:freeze",
             "min_damage": {
               "type": "minecraft:linear",
-              "base": 2,
-              "per_level_above_first": 1
+              "base": 1,
+              "per_level_above_first": 0
             },
             "max_damage": {
               "type": "minecraft:linear",
-              "base": 6,
-              "per_level_above_first": 2
+              "base": 2,
+              "per_level_above_first": 1
             }
           }
         }
