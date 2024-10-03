@@ -1,59 +1,58 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.creeper_alloy",
     "fallback": "Creeper Alloy"
   },
-    "exclusive_set": "#enchantencore:exclusive_set/alloy",
-    "supported_items": "#minecraft:chest_armor",
-    "weight": 5,
-    "max_level": 3,
-    "min_cost": {
-      "base": 1,
-      "per_level_above_first": 11
-    },
-    "max_cost": {
-      "base": 12,
-      "per_level_above_first": 11
-    },
-    "anvil_cost": 1,
-    "slots": [
-      "chest"
-    ],
-    "effects": {
-      "minecraft:post_attack": [
-        {
-          "enchanted": "victim",
-          "affected": "attacker",
-          "effect": {
-            "type": "minecraft:explode",
-            "damage_type": "minecraft:explosion",
-            "radius": {
-              "type": "minecraft:linear",
-              "base": 1,
-              "per_level_above_first": 0.5
-            },
-            "offset": [
-              0,
-              0.5,
-              0
-            ],
-            "block_interaction": "none",
-            "small_particle": {
-              "type": "minecraft:gust_emitter_small"
-            },
-            "large_particle": {
-              "type": "minecraft:gust_emitter_large"
-            },
-            "sound": "minecraft:entity.generic.explode",
-            "immune_blocks": "#minecraft:blocks_wind_charge_explosions",
-            "knockback_multiplier": {
-              "type": "minecraft:linear",
-              "base": 0.45,
-              "per_level_above_first": 0.15
-            }
+  "exclusive_set": "#enchantencore:exclusive_set/alloy",
+  "supported_items": "#minecraft:chest_armor",
+  "weight": 5,
+  "max_level": 3,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "anvil_cost": 1,
+  "slots": [
+    "chest"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "victim",
+        "affected": "attacker",
+        "effect": {
+          "type": "minecraft:explode",
+          "damage_type": "minecraft:explosion",
+          "radius": {
+            "type": "minecraft:linear",
+            "base": 0.5,
+            "per_level_above_first": 0.25
+          },
+          "offset": [
+            0,
+            0.5,
+            0
+          ],
+          "block_interaction": "none",
+          "small_particle": {
+            "type": "minecraft:gust_emitter_small"
+          },
+          "large_particle": {
+            "type": "minecraft:gust_emitter_large"
+          },
+          "sound": "minecraft:entity.generic.explode",
+          "immune_blocks": "#minecraft:blocks_wind_charge_explosions",
+          "knockback_multiplier": {
+            "type": "minecraft:linear",
+            "base": 0.5,
+            "per_level_above_first": 0.25
           }
         }
-      ]
-    }
+      }
+    ]
   }
-  
+}

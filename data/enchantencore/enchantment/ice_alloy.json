@@ -35,7 +35,7 @@
             "max_duration": {
               "type": "minecraft:linear",
               "base": 3,
-              "per_level_above_first": 0
+              "per_level_above_first": 1
             },
             "min_amplifier": 254,
             "max_amplifier": 254
@@ -55,7 +55,7 @@
             "max_damage": {
               "type": "minecraft:linear",
               "base": 2,
-              "per_level_above_first": 1
+              "per_level_above_first": 0
             }
           }
         }

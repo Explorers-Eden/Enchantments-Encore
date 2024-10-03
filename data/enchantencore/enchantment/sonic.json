@@ -1,37 +1,42 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.sonic",
     "fallback": "Sonic"
   },
-    "supported_items": "#minecraft:foot_armor",
-    "exclusive_set": "#enchantencore:exclusive_set/boots",
-    "weight": 1,
-    "max_level": 3,
-    "min_cost": {
-      "base": 25,
-      "per_level_above_first": 25
-    },
-    "max_cost": {
-      "base": 75,
-      "per_level_above_first": 25
-    },
-    "anvil_cost": 8,
-    "slots": [
-      "feet"
-    ],
-    "effects": {
-      "minecraft:attributes": [
-        {
-          "id": "enchantencore:sonic",
-          "attribute": "minecraft:generic.movement_speed",
-          "amount": {
-            "type": "minecraft:linear",
-            "base": 0.015,
-            "per_level_above_first": 0.01
-          },
-          "operation": "add_value"
-        }
-      ]
-    }
+  "exclusive_set": "#enchantencore:exclusive_set/boots",
+  "supported_items": "#minecraft:foot_armor",
+  "weight": 1,
+  "max_level": 3,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 25
+  },
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 25
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "feet"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "enchantencore:sonic_speed",
+        "attribute": "minecraft:generic.movement_speed",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.015,
+          "per_level_above_first": 0.01
+        },
+        "operation": "add_value"
+      },
+      {
+        "id": "enchantencore:sonic_knockback",
+        "attribute": "minecraft:player.sneaking_speed",
+        "amount": -0.15,
+        "operation": "add_value"
+      }
+    ]
   }
-  
+}

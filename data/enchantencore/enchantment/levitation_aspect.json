@@ -31,12 +31,12 @@
             "min_duration": {
               "type": "minecraft:linear",
               "base": 1,
-              "per_level_above_first": 2
+              "per_level_above_first": 0
             },
             "max_duration": {
               "type": "minecraft:linear",
-              "base": 5,
-              "per_level_above_first": 5
+              "base": 2,
+              "per_level_above_first": 2
             },
             "min_amplifier": {
               "type": "minecraft:linear",
