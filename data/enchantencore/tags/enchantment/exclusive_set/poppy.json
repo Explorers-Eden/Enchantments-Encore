@@ -1,7 +1,16 @@
 {
-    "values": [
-      "enchantencore:poppy_peace",
-      "enchantencore:pickpocket"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:poppy_peace",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pickpocket",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pacifier",
+      "required": false
+    }
+  ]
+}

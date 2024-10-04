@@ -1,9 +1,40 @@
 {
-    "values": [
-      "enchantencore:bane_of_raiders",
-      "enchantencore:bane_of_netherborn",
-      "enchantencore:bane_of_bosses",
-      "enchantencore:swift_slash"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:bane_of_raiders",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_netherborn",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_bosses",
+      "required": false
+    },
+    {
+      "id": "enchantencore:swift_slash",
+      "required": false
+    },
+    {
+      "id": "enchantplus:sword/attack_speed",
+      "required": false
+  },
+  {
+      "id": "enchantplus:sword/reach",
+      "required": false
+  },
+  {
+    "id": "enchantplus:sword/pull",
+    "required": false
+},
+{
+    "id": "enchantplus:sword/life_steal",
+    "required": false
+},
+{
+    "id": "enchantplus:sword/fear",
+    "required": false
+}
+  ]
+}

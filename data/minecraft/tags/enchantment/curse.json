@@ -1,13 +1,36 @@
 {
-    "values": [
-      "enchantencore:hiding_curse",
-      "enchantencore:reach_curse",
-      "enchantencore:fragility_curse",
-      "enchantencore:welfare_curse",
-      "enchantencore:randomness_curse",
-      "enchantencore:death_curse",
-      "enchantencore:breeze_curse",
-      "enchantencore:crank_curse"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:hiding_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:reach_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:fragility_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:welfare_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:randomness_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:death_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:breeze_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crank_curse",
+      "required": false
+    }
+  ]
+}

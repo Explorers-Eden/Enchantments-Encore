@@ -1,7 +1,16 @@
 {
-    "values": [
-      "enchantencore:crab_claw",
-      "enchantencore:reach_curse"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:crab_claw",
+      "required": false
+    },
+    {
+      "id": "enchantencore:reach_curse",
+      "required": false
+    },
+    {
+        "id": "enchantplus:sword/reach",
+        "required": false
+    }
+  ]
+}

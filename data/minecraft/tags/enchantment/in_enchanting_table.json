@@ -1,19 +1,64 @@
 {
   "values": [
-    "#enchantencore:splash_arrow",
-    "#enchantencore:arrow_trail",
-    "#enchantencore:trail",
-    "#enchantencore:protection",
-    "#enchantencore:alloy",
-    "enchantencore:bunny_hop",
-    "enchantencore:ender_shot",
-    "enchantencore:gluttony",
-    "enchantencore:handyman",
-    "enchantencore:leech",
-    "enchantencore:midas_touch",
-    "enchantencore:night_vision",
-    "enchantencore:pacifier",
-    "enchantencore:sonic",
-    "enchantencore:flare"
+    {
+      "id": "#enchantencore:splash_arrow",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:arrow_trail",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:trail",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:protection",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:alloy",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bunny_hop",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ender_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:gluttony",
+      "required": false
+    },
+    {
+      "id": "enchantencore:handyman",
+      "required": false
+    },
+    {
+      "id": "enchantencore:leech",
+      "required": false
+    },
+    {
+      "id": "enchantencore:midas_touch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:night_vision",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pacifier",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sonic",
+      "required": false
+    },
+    {
+      "id": "enchantencore:flare",
+      "required": false
+    }
   ]
 }

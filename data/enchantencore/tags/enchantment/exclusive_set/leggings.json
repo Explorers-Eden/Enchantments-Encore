@@ -1,8 +1,16 @@
 {
-    "values": [
-      "minecraft:swift_sneak",
-      "enchantencore:bunny_hop",
-      "enchantencore:enderscape"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "minecraft:swift_sneak",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bunny_hop",
+      "required": false
+    },
+    {
+      "id": "enchantencore:enderscape",
+      "required": false
+    }
+  ]
+}

@@ -1,8 +1,16 @@
 {
-    "values": [
-      "minecraft:feather_falling",
-      "minecraft:depth_strider",
-      "enchantencore:pegasus"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "minecraft:feather_falling",
+      "required": false
+    },
+    {
+      "id": "minecraft:depth_strider",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pegasus",
+      "required": false
+    }
+  ]
+}

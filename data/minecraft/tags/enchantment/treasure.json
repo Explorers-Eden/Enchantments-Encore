@@ -1,36 +1,128 @@
 {
-    "values": [
-      "enchantencore:bedrocker",
-      "#enchantencore:alloy",
-      "#enchantencore:curse",
-      "enchantencore:magma_walker",
-      "enchantencore:crop_dance",
-      "enchantencore:summer_walker",
-      "enchantencore:grass_walker",
-      "enchantencore:electric_walker",
-      "enchantencore:bomber",
-      "enchantencore:bulletproof",
-      "enchantencore:bunny_hop",
-      "enchantencore:cleansing",
-      "enchantencore:crispbread",
-      "enchantencore:end_speed",
-      "enchantencore:gluttony",
-      "enchantencore:invisibility_cloak",
-      "enchantencore:leech",
-      "enchantencore:midas_touch",
-      "enchantencore:sacrifice",
-      "enchantencore:moonwalk",
-      "enchantencore:ominous_healing",
-      "enchantencore:ominous_rain",
-      "enchantencore:pacifier",
-      "enchantencore:rejuvenation",
-      "enchantencore:sand_speed",
-      "enchantencore:sonic",
-      "enchantencore:switch",
-      "enchantencore:haste",
-      "enchantencore:boltbringer",
-      "enchantencore:flare",
-      "enchantencore:shulker_shell"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:bedrocker",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:alloy",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:magma_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crop_dance",
+      "required": false
+    },
+    {
+      "id": "enchantencore:summer_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:grass_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:electric_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bomber",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bulletproof",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bunny_hop",
+      "required": false
+    },
+    {
+      "id": "enchantencore:cleansing",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crispbread",
+      "required": false
+    },
+    {
+      "id": "enchantencore:end_speed",
+      "required": false
+    },
+    {
+      "id": "enchantencore:gluttony",
+      "required": false
+    },
+    {
+      "id": "enchantencore:invisibility_cloak",
+      "required": false
+    },
+    {
+      "id": "enchantencore:leech",
+      "required": false
+    },
+    {
+      "id": "enchantencore:midas_touch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sacrifice",
+      "required": false
+    },
+    {
+      "id": "enchantencore:moonwalk",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ominous_healing",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ominous_rain",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pacifier",
+      "required": false
+    },
+    {
+      "id": "enchantencore:rejuvenation",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sand_speed",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sonic",
+      "required": false
+    },
+    {
+      "id": "enchantencore:switch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:haste",
+      "required": false
+    },
+    {
+      "id": "enchantencore:boltbringer",
+      "required": false
+    },
+    {
+      "id": "enchantencore:flare",
+      "required": false
+    },
+    {
+      "id": "enchantencore:shulker_shell",
+      "required": false
+    }
+  ]
+}

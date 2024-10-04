@@ -1,23 +1,76 @@
 {
-    "values": [
-      "#enchantencore:alloy",
-      "enchantencore:magma_walker",
-      "enchantencore:crop_dance",
-      "enchantencore:summer_walker",
-      "enchantencore:grass_walker",
-      "enchantencore:electric_walker",
-      "enchantencore:cleansing",
-      "enchantencore:crab_claw",
-      "enchantencore:ender_shot",
-      "enchantencore:growth",
-      "enchantencore:shrinkage",
-      "enchantencore:invisibility_cloak",
-      "enchantencore:lightning_bolt",
-      "enchantencore:moonwalk",
-      "enchantencore:red_moon",
-      "enchantencore:sting",
-      "enchantencore:swift_slash",
-      "enchantencore:pegasus"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "#enchantencore:alloy",
+      "required": false
+    },
+    {
+      "id": "enchantencore:magma_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crop_dance",
+      "required": false
+    },
+    {
+      "id": "enchantencore:summer_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:grass_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:electric_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:cleansing",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crab_claw",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ender_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:growth",
+      "required": false
+    },
+    {
+      "id": "enchantencore:shrinkage",
+      "required": false
+    },
+    {
+      "id": "enchantencore:invisibility_cloak",
+      "required": false
+    },
+    {
+      "id": "enchantencore:lightning_bolt",
+      "required": false
+    },
+    {
+      "id": "enchantencore:moonwalk",
+      "required": false
+    },
+    {
+      "id": "enchantencore:red_moon",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sting",
+      "required": false
+    },
+    {
+      "id": "enchantencore:swift_slash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pegasus",
+      "required": false
+    }
+  ]
+}

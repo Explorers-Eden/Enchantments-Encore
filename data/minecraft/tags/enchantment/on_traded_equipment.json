@@ -1,17 +1,52 @@
 {
-    "values": [
-      "#enchantencore:splash_arrow",
-      "#enchantencore:arrow_trail",
-      "#enchantencore:trail",
-      "#enchantencore:protection",
-      "enchantencore:crab_claw",
-      "enchantencore:ender_shot",
-      "enchantencore:growth",
-      "enchantencore:shrinkage",
-      "enchantencore:lightning_bolt",
-      "enchantencore:night_vision",
-      "enchantencore:sting",
-      "enchantencore:swift_slash"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "#enchantencore:splash_arrow",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:arrow_trail",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:trail",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:protection",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crab_claw",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ender_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:growth",
+      "required": false
+    },
+    {
+      "id": "enchantencore:shrinkage",
+      "required": false
+    },
+    {
+      "id": "enchantencore:lightning_bolt",
+      "required": false
+    },
+    {
+      "id": "enchantencore:night_vision",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sting",
+      "required": false
+    },
+    {
+      "id": "enchantencore:swift_slash",
+      "required": false
+    }
+  ]
+}

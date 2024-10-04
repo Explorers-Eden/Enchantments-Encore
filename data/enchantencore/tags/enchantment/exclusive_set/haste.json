@@ -1,6 +1,28 @@
 {
-    "values": [
-      "enchantencore:haste",
-      "minecraft:fortune"
-    ]
+  "values": [
+    {
+      "id": "enchantencore:haste",
+      "required": false
+    },
+    {
+      "id": "minecraft:fortune",
+      "required": false
+    },
+    {
+      "id": "enchantplus:pickaxe/vein_miner",
+      "required": false
+  },
+  {
+      "id": "enchantplus:tools/miningplus",
+      "required": false
+  },
+  {
+      "id": "enchantplus:pickaxe/spawner_touch",
+      "required": false
+  },
+  {
+      "id": "enchantplus:pickaxe/experimental_bedrock_breaker",
+      "required": false
   }
+  ]
+}

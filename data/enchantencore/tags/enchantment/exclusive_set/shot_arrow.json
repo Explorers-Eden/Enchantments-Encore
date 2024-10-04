@@ -1,26 +1,104 @@
 {
-    "values": [
-      "enchantencore:bomber",
-      "minecraft:infinity",
-      "enchantencore:sting",
-      "enchantencore:forge_shot",
-      "enchantencore:ender_shot",
-      "enchantencore:evokers_wrath",
-      "enchantencore:glass_breaker",
-      "enchantencore:lightning_bolt",
-      "enchantencore:poison_splash",
-      "enchantencore:blindness_splash",
-      "enchantencore:glowing_splash",
-      "enchantencore:hunger_splash",
-      "enchantencore:invisibility_splash",
-      "enchantencore:levitation_splash",
-      "enchantencore:poison_splash",
-      "enchantencore:regeneration_splash",
-      "enchantencore:saturation_splash",
-      "enchantencore:slowness_splash",
-      "enchantencore:weakness_splash",
-      "enchantencore:wither_splash",
-      "enchantencore:flare"
-    ]
+  "values": [
+    {
+      "id": "enchantencore:bomber",
+      "required": false
+    },
+    {
+      "id": "minecraft:infinity",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sting",
+      "required": false
+    },
+    {
+      "id": "enchantencore:forge_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ender_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:evokers_wrath",
+      "required": false
+    },
+    {
+      "id": "enchantencore:glass_breaker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:lightning_bolt",
+      "required": false
+    },
+    {
+      "id": "enchantencore:poison_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:blindness_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:glowing_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:hunger_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:invisibility_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:levitation_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:poison_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:regeneration_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:saturation_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:slowness_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:weakness_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:wither_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:flare",
+      "required": false
+    },
+    {
+      "id": "enchantplus:bow/breezing_arrow",
+      "required": false
+  },
+  {
+      "id": "enchantplus:bow/explosive_arrow",
+      "required": false
+  },
+  {
+      "id": "enchantplus:bow/storm_arrow",
+      "required": false
+  },
+  {
+      "id": "enchantplus:bow/echo_shot",
+      "required": false
   }
-  
+  ]
+}

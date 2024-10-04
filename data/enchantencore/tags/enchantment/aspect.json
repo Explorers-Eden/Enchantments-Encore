@@ -1,16 +1,48 @@
 {
-    "values": [
-      "enchantencore:poison_aspect",
-      "enchantencore:wither_aspect",
-      "enchantencore:levitation_aspect",
-      "enchantencore:hunger_aspect",
-      "enchantencore:weakness_aspect",
-      "enchantencore:infested_aspect",
-      "enchantencore:oozing_aspect",
-      "enchantencore:slowness_aspect",
-      "enchantencore:wind_aspect",
-      "enchantencore:weaving_aspect",
-      "enchantencore:pacifier"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:poison_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:wither_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:levitation_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:hunger_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:weakness_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:infested_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:oozing_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:slowness_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:wind_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:weaving_aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pacifier",
+      "required": false
+    }
+  ]
+}

@@ -1,11 +1,28 @@
 {
-    "values": [
-      "minecraft:riptide",
-      "minecraft:channeling",
-      "enchantencore:pufferfish",
-      "enchantencore:switch",
-      "enchantencore:ominous_rain",
-      "enchantencore:sea_breeze"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "minecraft:riptide",
+      "required": false
+    },
+    {
+      "id": "minecraft:channeling",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pufferfish",
+      "required": false
+    },
+    {
+      "id": "enchantencore:switch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ominous_rain",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sea_breeze",
+      "required": false
+    }
+  ]
+}

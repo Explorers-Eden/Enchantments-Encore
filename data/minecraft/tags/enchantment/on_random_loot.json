@@ -1,19 +1,60 @@
 {
-    "values": [
-      "#enchantencore:splash_arrow",
-      "#enchantencore:curse",
-      "#enchantencore:arrow_trail",
-      "#enchantencore:trail",
-      "#enchantencore:protection",
-      "#enchantencore:alloy",
-      "enchantencore:crab_claw",
-      "enchantencore:ender_shot",
-      "enchantencore:growth",
-      "enchantencore:shrinkage",
-      "enchantencore:handyman",
-      "enchantencore:midas_touch",
-      "enchantencore:red_moon",
-      "enchantencore:swift_slash"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "#enchantencore:splash_arrow",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:curse",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:arrow_trail",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:trail",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:protection",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:alloy",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crab_claw",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ender_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:growth",
+      "required": false
+    },
+    {
+      "id": "enchantencore:shrinkage",
+      "required": false
+    },
+    {
+      "id": "enchantencore:handyman",
+      "required": false
+    },
+    {
+      "id": "enchantencore:midas_touch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:red_moon",
+      "required": false
+    },
+    {
+      "id": "enchantencore:swift_slash",
+      "required": false
+    }
+  ]
+}

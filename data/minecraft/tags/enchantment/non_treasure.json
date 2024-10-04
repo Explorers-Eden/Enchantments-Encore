@@ -1,30 +1,104 @@
 {
-    "values": [
-      "enchantencore:bane_of_bosses",
-      "enchantencore:bane_of_netherborn",
-      "enchantencore:bane_of_raiders",
-      "#enchantencore:aspect",
-      "enchantencore:crop_dance",
-      "enchantencore:enderscape",
-      "enchantencore:evokers_wrath",
-      "enchantencore:forge_shot",
-      "enchantencore:glass_breaker",
-      "enchantencore:hardened",
-      "enchantencore:phantom_menace",
-      "enchantencore:pufferfish",
-      "enchantencore:rabbit_foot",
-      "enchantencore:sacrifice",
-      "enchantencore:safe_landing",
-      "enchantencore:scholar_of_blocks",
-      "enchantencore:scholar_of_mobs",
-      "enchantencore:poppy_peace",
-      "enchantencore:pickpocket",
-      "enchantencore:haste",
-      "enchantencore:sea_breeze",
-      "enchantencore:seeker",
-      "enchantencore:pegasus",
-      "enchantencore:replenish",
-      "enchantencore:illumination"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:bane_of_bosses",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_netherborn",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_raiders",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crop_dance",
+      "required": false
+    },
+    {
+      "id": "enchantencore:enderscape",
+      "required": false
+    },
+    {
+      "id": "enchantencore:evokers_wrath",
+      "required": false
+    },
+    {
+      "id": "enchantencore:forge_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:glass_breaker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:hardened",
+      "required": false
+    },
+    {
+      "id": "enchantencore:phantom_menace",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pufferfish",
+      "required": false
+    },
+    {
+      "id": "enchantencore:rabbit_foot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sacrifice",
+      "required": false
+    },
+    {
+      "id": "enchantencore:safe_landing",
+      "required": false
+    },
+    {
+      "id": "enchantencore:scholar_of_blocks",
+      "required": false
+    },
+    {
+      "id": "enchantencore:scholar_of_mobs",
+      "required": false
+    },
+    {
+      "id": "enchantencore:poppy_peace",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pickpocket",
+      "required": false
+    },
+    {
+      "id": "enchantencore:haste",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sea_breeze",
+      "required": false
+    },
+    {
+      "id": "enchantencore:seeker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pegasus",
+      "required": false
+    },
+    {
+      "id": "enchantencore:replenish",
+      "required": false
+    },
+    {
+      "id": "enchantencore:illumination",
+      "required": false
+    }
+  ]
+}

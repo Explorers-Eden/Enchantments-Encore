@@ -1,10 +1,24 @@
 {
-    "values": [
-      "enchantencore:magma_walker",
-      "enchantencore:crop_dance",
-      "enchantencore:summer_walker",
-      "enchantencore:grass_walker",
-      "enchantencore:electric_walker"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:magma_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crop_dance",
+      "required": false
+    },
+    {
+      "id": "enchantencore:summer_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:grass_walker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:electric_walker",
+      "required": false
+    }
+  ]
+}

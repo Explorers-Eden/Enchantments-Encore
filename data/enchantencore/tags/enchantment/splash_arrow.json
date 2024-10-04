@@ -1,17 +1,52 @@
 {
-    "values": [
-      "enchantencore:poison_splash",
-      "enchantencore:blindness_splash",
-      "enchantencore:glowing_splash",
-      "enchantencore:hunger_splash",
-      "enchantencore:invisibility_splash",
-      "enchantencore:levitation_splash",
-      "enchantencore:poison_splash",
-      "enchantencore:regeneration_splash",
-      "enchantencore:saturation_splash",
-      "enchantencore:slowness_splash",
-      "enchantencore:weakness_splash",
-      "enchantencore:wither_splash"
-    ]
-  }
-  
+  "values": [
+    {
+      "id": "enchantencore:poison_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:blindness_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:glowing_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:hunger_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:invisibility_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:levitation_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:poison_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:regeneration_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:saturation_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:slowness_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:weakness_splash",
+      "required": false
+    },
+    {
+      "id": "enchantencore:wither_splash",
+      "required": false
+    }
+  ]
+}
