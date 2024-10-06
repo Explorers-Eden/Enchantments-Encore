@@ -23,7 +23,7 @@
     "minecraft:attributes": [
       {
         "id": "enchantencore:sonic_speed",
-        "attribute": "minecraft:generic.movement_speed",
+        "attribute": "minecraft:movement_speed",
         "amount": {
           "type": "minecraft:linear",
           "base": 0.015,
@@ -33,7 +33,7 @@
       },
       {
         "id": "enchantencore:sonic_knockback",
-        "attribute": "minecraft:player.sneaking_speed",
+        "attribute": "minecraft:sneaking_speed",
         "amount": -0.15,
         "operation": "add_value"
       }

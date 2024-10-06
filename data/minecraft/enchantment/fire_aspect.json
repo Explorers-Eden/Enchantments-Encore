@@ -31,7 +31,7 @@
                 "trigger_game_event": "minecraft:block_change"
               },
               {
-                "type": "minecraft:damage_item",
+                "type": "minecraft:change_item_damage",
                 "amount": 1
               }
             ]

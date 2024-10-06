@@ -23,7 +23,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:crabclaw_block",
-          "attribute": "minecraft:player.block_interaction_range",
+          "attribute": "minecraft:block_interaction_range",
           "amount": {
             "type": "minecraft:linear",
             "base": 1,
@@ -33,7 +33,7 @@
         },
         {
           "id": "enchantencore:crabclaw_entity",
-          "attribute": "minecraft:player.entity_interaction_range",
+          "attribute": "minecraft:entity_interaction_range",
           "amount": {
             "type": "minecraft:linear",
             "base": 1,

@@ -22,7 +22,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore:moonwalk",
-          "attribute": "minecraft:generic.gravity",
+          "attribute": "minecraft:gravity",
           "amount": {
             "type": "minecraft:linear",
             "base": -0.03,

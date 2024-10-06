@@ -25,7 +25,7 @@
           "enchanted": "victim",
           "affected": "victim",
           "effect": {
-            "type": "minecraft:damage_item",
+            "type": "minecraft:change_item_damage",
             "amount": {
               "type": "minecraft:linear",
               "base": -1.0,

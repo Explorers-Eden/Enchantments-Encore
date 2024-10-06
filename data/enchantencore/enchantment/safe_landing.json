@@ -22,7 +22,7 @@
       "minecraft:attributes": [
         {
           "id": "enchantencore.safeland",
-          "attribute": "minecraft:generic.safe_fall_distance",
+          "attribute": "minecraft:safe_fall_distance",
           "amount": {
             "type": "minecraft:linear",
             "base": 2,

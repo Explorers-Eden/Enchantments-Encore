@@ -24,7 +24,7 @@
         "enchanted": "attacker",
         "affected": "attacker",
         "effect": {
-          "type": "minecraft:damage_item",
+          "type": "minecraft:change_item_damage",
           "amount": {
             "type": "minecraft:clamped",
             "value": 75,
