@@ -29,26 +29,12 @@
           "condition": "minecraft:any_of",
           "terms": [
             {
-              "condition": "minecraft:all_of",
-              "terms": [
-                {
-                  "condition": "minecraft:time_check",
-                  "value": {
-                    "min": 13000,
-                    "max": 23000
-                  },
-                  "period": 24000
-                },
-                {
-                  "condition": "minecraft:entity_properties",
-                  "entity": "this",
-                  "predicate": {
-                    "location": {
-                      "can_see_sky": true
-                    }
-                  }
-                }
-              ]
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 13000,
+                "max": 23000
+              },
+              "period": 24000
             },
             {
               "condition": "minecraft:entity_properties",
@@ -59,8 +45,7 @@
                     "light": {
                       "max": 5
                     }
-                  },
-                  "can_see_sky": false
+                  }
                 }
               }
             }
