@@ -1,2 +1,2 @@
-execute as @e[type=block_display,tag=ee.lush_jumper] at @s unless entity @e[type=area_effect_cloud,tag=ee.lush_jumper,distance=..0.5] unless entity @e[type=player,distance=..1.5] if block ~ ~ ~ barrier run setblock ~ ~ ~ air
-execute as @e[type=block_display,tag=ee.lush_jumper] at @s unless entity @e[type=area_effect_cloud,tag=ee.lush_jumper,distance=..0.5] unless entity @e[type=player,distance=..1.5] run kill @s
+execute as @e[type=block_display,tag=ee.lush_jumper] at @s unless entity @e[type=area_effect_cloud,tag=ee.lush_jumper,distance=..0.5] unless entity @e[type=player,distance=..2.5] if block ~ ~ ~ barrier run setblock ~ ~ ~ air
+execute as @e[type=block_display,tag=ee.lush_jumper] at @s unless entity @e[type=area_effect_cloud,tag=ee.lush_jumper,distance=..0.5] unless entity @e[type=player,distance=..2.5] run kill @s
