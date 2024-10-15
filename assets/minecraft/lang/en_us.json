@@ -148,6 +148,7 @@
 "enchantment.enchantencore.witch_trail": "Witch Trail",
 "enchantment.enchantencore.wither_aspect": "Wither Aspect",
 "enchantment.enchantencore.wither_splash": "Wither Splash",
+"enchantment.enchantencore.leaf_jumper": "Leaf Jumper",
 
 "enchantment.enchantencore.replenish.desc": "50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot",
 "enchantment.enchantencore.illumination.desc": "Lightens up the area around you when headblock is not obstructed",
@@ -297,5 +298,6 @@
 "enchantment.enchantencore.witch_arrow_trail.desc": "Leaves behind a trail of particles when an arrow was shot",
 "enchantment.enchantencore.witch_trail.desc": "Leaves behind a trail of particles when the wearer moves",
 "enchantment.enchantencore.wither_aspect.desc": "Applies wither effect to hit entities",
-"enchantment.enchantencore.wither_splash.desc": "Arrows spawn a wither area effect cloud upon landing"
+"enchantment.enchantencore.wither_splash.desc": "Arrows spawn a wither area effect cloud upon landing",
+"enchantment.enchantencore.leaf_jumper.desc": "Spawns Leaf Blocks when jumping in the air"
 }

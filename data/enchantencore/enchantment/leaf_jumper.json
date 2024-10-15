@@ -1,7 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.lush_jumper",
-    "fallback": "Lush Jumper"
+    "translate": "enchantment.enchantencore.leaf_jumper",
+    "fallback": "Leaf Jumper"
   },
   "exclusive_set": "#enchantencore:exclusive_set/boots",
   "supported_items": "#minecraft:enchantable/foot_armor",
@@ -57,7 +57,7 @@
       {
         "effect": {
           "type": "minecraft:run_function",
-          "function": "enchantencore:lush_jumper/run"
+          "function": "enchantencore:leaf_jumper/run"
         },
         "requirements": {
           "condition": "minecraft:entity_properties",

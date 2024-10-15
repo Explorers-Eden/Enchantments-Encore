@@ -1,7 +1,7 @@
 ##add scoreboards
 scoreboard objectives add enchantencore.sneaktime minecraft.custom:minecraft.sneak_time
 scoreboard objectives add enchantencore.technical dummy
-scoreboard objectives add enchantencore.lush_jumper dummy
+scoreboard objectives add enchantencore.leaf_jumper dummy
 scoreboard objectives add enchantencore.pegasus dummy
 scoreboard objectives add enchantencore.red_moon dummy
 scoreboard objectives add enchantencore.has_died deathCount
