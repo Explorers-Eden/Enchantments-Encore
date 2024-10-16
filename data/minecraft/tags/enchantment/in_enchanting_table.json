@@ -51,6 +51,10 @@
     {
       "id": "enchantencore:flare",
       "required": false
+    },
+    {
+      "id": "enchantencore:leaf_jumper",
+      "required": false
     }
   ]
 }

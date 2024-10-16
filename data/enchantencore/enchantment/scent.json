@@ -1,0 +1,100 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.scent",
+      "fallback": "Scent"
+    },
+    "supported_items": "minecraft:wolf_armor",
+    "weight": 2,
+    "max_level": 3,
+    "min_cost": {
+      "base": 25,
+      "per_level_above_first": 15
+    },
+    "max_cost": {
+      "base": 51,
+      "per_level_above_first": 15
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "body"
+    ],
+    "effects": {
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:scent/lvl_3"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "body": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "enchantencore:scent",
+                        "levels": {
+                          "min": 3
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:scent/lvl_2"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "body": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "enchantencore:scent",
+                        "levels": 2
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:scent/lvl_1"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "equipment": {
+                "body": {
+                  "predicates": {
+                    "minecraft:enchantments": [
+                      {
+                        "enchantments": "enchantencore:scent",
+                        "levels": 1
+                      }
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
+    }
+  }
+  

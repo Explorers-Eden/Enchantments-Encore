@@ -21,7 +21,11 @@
       "required": false
     },
     {
-      "id": "enchantencore:lush_jumper",
+      "id": "enchantencore:leaf_jumper",
+      "required": false
+    },
+    {
+      "id": "enchantencore:strafe",
       "required": false
     }
   ]

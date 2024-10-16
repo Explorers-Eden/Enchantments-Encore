@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "enchantencore:pegasus",
+      "required": false
+    },
+    {
+      "id": "enchantencore:moonwalk",
+      "required": false
+    }
+  ]
+}

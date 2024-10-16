@@ -4,7 +4,7 @@
       "fallback": "Seeker"
     },
     "supported_items": "#minecraft:enchantable/head_armor",
-    "weight": 1,
+    "weight": 2,
     "max_level": 3,
     "min_cost": {
       "base": 25,

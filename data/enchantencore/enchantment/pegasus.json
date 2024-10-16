@@ -3,8 +3,8 @@
     "translate": "enchantment.enchantencore.pegasus",
     "fallback": "Pegasus"
   },
-  "exclusive_set": "#enchantencore:exclusive_set/pegasus",
-  "supported_items": "#minecraft:enchantable/foot_armor",
+  "exclusive_set": "#enchantencore:exclusive_set/horse_armor",
+  "supported_items": "#enchantencore:all_horse_armor",
   "weight": 1,
   "max_level": 1,
   "min_cost": {
@@ -17,7 +17,7 @@
   },
   "anvil_cost": 4,
   "slots": [
-    "feet"
+    "body"
   ],
   "effects": {
     "minecraft:location_changed": [
@@ -30,8 +30,8 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "vehicle": {
-              "type": "#enchantencore:rideable"
+            "passenger": {
+              "type": "minecraft:player"
             }
           }
         }

@@ -149,12 +149,14 @@
 "enchantment.enchantencore.wither_aspect": "Wither Aspect",
 "enchantment.enchantencore.wither_splash": "Wither Splash",
 "enchantment.enchantencore.leaf_jumper": "Leaf Jumper",
+"enchantment.enchantencore.strafe": "Strafe",
+"enchantment.enchantencore.scent": "Scent",
 
 "enchantment.enchantencore.replenish.desc": "50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot",
 "enchantment.enchantencore.illumination.desc": "Lightens up the area around you when headblock is not obstructed",
 "enchantment.enchantencore.shulker_shell.desc": "Firework, Tridents, (Spectral) Arrows shot at the wearer fall to the ground when wearer stands still",
 "enchantment.enchantencore.crank_curse.desc": "Hurts the wearer when not moving",
-"enchantment.enchantencore.pegasus.desc": "Entities start flying up to 30 blocks above the Y-level they were mounted. Dismounting gives slow falling to land safely",
+"enchantment.enchantencore.pegasus.desc": "Horses fly up to 30 Blocks in the air when mounted. Dismounting gives slow falling to land safely",
 "enchantment.enchantencore.flare.desc": "Arrows explode like fireworks",
 "enchantment.enchantencore.boltbringer.desc": "Summons lightning when entity was hit by a player which at least fell 8 blocks",
 "enchantment.enchantencore.sea_breeze.desc": "wind charges hit entities away when hit by thrown trident",
@@ -299,5 +301,7 @@
 "enchantment.enchantencore.witch_trail.desc": "Leaves behind a trail of particles when the wearer moves",
 "enchantment.enchantencore.wither_aspect.desc": "Applies wither effect to hit entities",
 "enchantment.enchantencore.wither_splash.desc": "Arrows spawn a wither area effect cloud upon landing",
-"enchantment.enchantencore.leaf_jumper.desc": "Spawns Leaf Blocks when jumping in the air"
+"enchantment.enchantencore.leaf_jumper.desc": "Spawns Leaf Blocks when jumping in the air",
+"enchantment.enchantencore.strafe.desc": "Sprint + Left/Right lets you strafe fast in that direction",
+"enchantment.enchantencore.scent.desc": "Wolves make nearby entities glow when they move"
 }

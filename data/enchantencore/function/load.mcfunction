@@ -1,3 +1,8 @@
+##cleanup
+scoreboard objectives remove enchantencore.leaf_jumper
+scoreboard objectives remove enchantencore.pegasus
+scoreboard objectives remove enchantencore.sneaktime
+
 ##add scoreboards
 scoreboard objectives add enchantencore.sneaktime minecraft.custom:minecraft.sneak_time
 scoreboard objectives add enchantencore.technical dummy

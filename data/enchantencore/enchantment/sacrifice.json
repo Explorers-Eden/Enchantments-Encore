@@ -4,7 +4,7 @@
     "fallback": "Sacrifice"
   },
     "exclusive_set": "#enchantencore:exclusive_set/repair",
-    "supported_items": "#enchantencore:all_enchantable",
+    "supported_items": "#enchantencore:all_enchantable_wolf_armor",
     "weight": 4,
     "max_level": 5,
     "min_cost": {

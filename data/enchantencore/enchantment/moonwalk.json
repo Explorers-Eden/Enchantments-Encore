@@ -1,36 +1,42 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.moonwalk",
     "fallback": "Moonwalk"
   },
-    "supported_items": "minecraft:elytra",
-    "weight": 1,
-    "max_level": 3,
-    "min_cost": {
-      "base": 15,
-      "per_level_above_first": 9
-    },
-    "max_cost": {
-      "base": 65,
-      "per_level_above_first": 9
-    },
-    "anvil_cost": 4,
-    "slots": [
-      "any"
-    ],
-    "effects": {
-      "minecraft:attributes": [
-        {
-          "id": "enchantencore:moonwalk",
-          "attribute": "minecraft:gravity",
-          "amount": {
-            "type": "minecraft:linear",
-            "base": -0.03,
-            "per_level_above_first": -0.015
-          },
-          "operation": "add_value"
-        }
-      ]
-    }
+  "supported_items": [
+    "minecraft:elytra",
+    "minecraft:diamond_horse_armor",
+    "minecraft:golden_horse_armor",
+    "minecraft:iron_horse_armor",
+    "minecraft:leather_horse_armor"
+  ],
+  "weight": 1,
+  "max_level": 3,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 9
+  },
+  "max_cost": {
+    "base": 65,
+    "per_level_above_first": 9
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "armor",
+    "body"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "enchantencore:moonwalk",
+        "attribute": "minecraft:gravity",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.03,
+          "per_level_above_first": -0.015
+        },
+        "operation": "add_value"
+      }
+    ]
   }
-  
+}

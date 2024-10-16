@@ -1,0 +1,1 @@
+execute at @s run effect give @e[type=!minecraft:player,type=!minecraft:wolf,distance=..16] minecraft:glowing 12 0 true

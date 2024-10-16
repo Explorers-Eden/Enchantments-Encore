@@ -1,0 +1,80 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.strafe",
+      "fallback": "Strafe"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/boots",
+    "supported_items": "#minecraft:foot_armor",
+    "weight": 3,
+    "max_level": 1,
+    "min_cost": {
+      "base": 15,
+      "per_level_above_first": 8
+    },
+    "max_cost": {
+      "base": 55,
+      "per_level_above_first": 8
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "feet"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:speed",
+            "min_duration": 0.2,
+            "max_duration": 0.2,
+            "min_amplifier": 4,
+            "max_amplifier": 4
+          },
+          "requirements": {
+            "condition": "minecraft:any_of",
+            "terms": [
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type": "minecraft:player",
+                  "type_specific": {
+                    "type": "minecraft:player",
+                    "input": {
+                      "forward": false,
+                      "backward": false,
+                      "left": true,
+                      "right": false,
+                      "jump": false,
+                      "sneak": false,
+                      "sprint": true
+                    }
+                  }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type": "minecraft:player",
+                  "type_specific": {
+                    "type": "minecraft:player",
+                    "input": {
+                      "forward": false,
+                      "backward": false,
+                      "left": false,
+                      "right": true,
+                      "jump": false,
+                      "sneak": false,
+                      "sprint": true
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+  

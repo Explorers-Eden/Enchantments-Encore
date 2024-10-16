@@ -99,6 +99,10 @@
     {
       "id": "enchantencore:illumination",
       "required": false
+    },
+    {
+      "id": "enchantencore:scent",
+      "required": false
     }
   ]
 }

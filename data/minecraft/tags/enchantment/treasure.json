@@ -123,6 +123,10 @@
     {
       "id": "enchantencore:shulker_shell",
       "required": false
+    },
+    {
+      "id": "enchantencore:leaf_jumper",
+      "required": false
     }
   ]
 }
