@@ -31,6 +31,10 @@
     {
       "id": "enchantencore:crank_curse",
       "required": false
+    },
+    {
+      "id": "enchantencore:undying_curse",
+      "required": false
     }
   ]
 }

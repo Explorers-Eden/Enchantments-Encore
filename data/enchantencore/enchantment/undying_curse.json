@@ -1,0 +1,32 @@
+{
+    "description": {
+    "translate": "enchantment.enchantencore.undying_curse",
+    "fallback": "Curse of Undying"
+  },
+    "supported_items": "#enchantencore:all_tools",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 1,
+      "per_level_above_first": 5
+    },
+    "max_cost": {
+      "base": 51,
+      "per_level_above_first": 50
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:undying_curse"
+          }
+        }
+      ]
+    }
+  }
+  

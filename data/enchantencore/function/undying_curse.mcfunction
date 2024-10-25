@@ -1,0 +1,2 @@
+execute if predicate enchantencore:entity/has_undying_curse_mainhand run item modify entity @s weapon.mainhand enchantencore:death_protection
+execute if predicate enchantencore:entity/has_undying_curse_offhand run item modify entity @s weapon.offhand enchantencore:death_protection

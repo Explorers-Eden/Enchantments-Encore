@@ -1,0 +1,23 @@
+  
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "offhand": {
+          "items": "#enchantencore:all_tools",
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:undying_curse",
+                "levels": {
+                    "min": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  
