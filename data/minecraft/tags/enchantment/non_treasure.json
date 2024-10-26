@@ -103,6 +103,14 @@
     {
       "id": "enchantencore:scent",
       "required": false
+    },
+    {
+      "id": "enchantencore:fetch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:strafe",
+      "required": false
     }
   ]
 }
