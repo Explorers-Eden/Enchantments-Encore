@@ -1,0 +1,46 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.fetch",
+      "fallback": "Fetch"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/wolf_armor",
+    "supported_items": "minecraft:wolf_armor",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 30,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "body"
+    ],
+    "effects": {
+      "minecraft:location_changed": [
+        {
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:fetch"
+          },
+          "requirements": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "periodic_tick": 1200
+              }
+            },
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.1
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

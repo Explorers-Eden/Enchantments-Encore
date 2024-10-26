@@ -151,6 +151,10 @@
 "enchantment.enchantencore.leaf_jumper": "Leaf Jumper",
 "enchantment.enchantencore.strafe": "Strafe",
 "enchantment.enchantencore.scent": "Scent",
+"enchantment.enchantencore.fetch": "Fetch",
+"enchantment.enchantencore.boar_spirit": "Boar Spirit",
+"enchantment.enchantencore.bear_spirit": "Bear Spirit",
+"enchantment.enchantencore.scorpion_spirit": "Scorpion Spirit",
 
 "enchantment.enchantencore.replenish.desc": "50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot",
 "enchantment.enchantencore.illumination.desc": "Lightens up the area around you when headblock is not obstructed",
@@ -303,5 +307,9 @@
 "enchantment.enchantencore.wither_splash.desc": "Arrows spawn a wither area effect cloud upon landing",
 "enchantment.enchantencore.leaf_jumper.desc": "Spawns Leaf Blocks when jumping in the air",
 "enchantment.enchantencore.strafe.desc": "Sprint + Left/Right lets you strafe fast in that direction",
-"enchantment.enchantencore.scent.desc": "Wolves make nearby entities glow when they move"
+"enchantment.enchantencore.scent.desc": "Wolves make nearby entities glow when they move",
+"enchantment.enchantencore.fetch.desc": "Small chance for a Wolf to fetch loot",
+"enchantment.enchantencore.boar_spirit.desc": "Infuses a Wolf with the powers of a Boar",
+"enchantment.enchantencore.bear_spirit.desc": "Infuses a Wolf with the powers of a Bear",
+"enchantment.enchantencore.scorpion_spirit.desc": "Infuses a Wolf with the powers of a Scorpion"
 }

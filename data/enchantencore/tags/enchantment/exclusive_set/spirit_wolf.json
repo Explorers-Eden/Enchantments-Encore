@@ -1,0 +1,17 @@
+{
+    "values": [
+      {
+        "id": "enchantencore:spirit_boar",
+        "required": false
+      },
+      {
+        "id": "enchantencore:spirit_bear",
+        "required": false
+      },
+      {
+        "id": "enchantencore:scorpion_spirit",
+        "required": false
+      }
+    ]
+  }
+  

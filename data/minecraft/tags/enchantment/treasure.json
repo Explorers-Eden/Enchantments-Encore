@@ -127,6 +127,18 @@
     {
       "id": "enchantencore:leaf_jumper",
       "required": false
+    },
+    {
+      "id": "enchantencore:boar_spirit",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bear_spirit",
+      "required": false
+    },
+    {
+      "id": "enchantencore:scorpion_spirit",
+      "required": false
     }
   ]
 }

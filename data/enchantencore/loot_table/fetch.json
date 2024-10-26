@@ -1,0 +1,81 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+      {
+        "rolls": 1,
+        "entries": [
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:bone",
+            "weight": 50
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:stick",
+            "weight": 50
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:rotten_flesh",
+            "weight": 50
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:ender_pearl",
+            "weight": 15
+          },
+          {
+            "type": "minecraft:item",
+            "name": "minecraft:wind_charge",
+            "weight": 15
+          },
+          {
+            "type": "minecraft:alternatives",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:arrow",
+                "weight": 10
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:spectral_arrow",
+                "weight": 5
+              }
+            ]
+          },
+          {
+            "type": "minecraft:group",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:ink_sac",
+                "weight": 10
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:glow_ink_sac",
+                "weight": 10
+              }
+            ]
+          },
+          {
+            "type": "minecraft:group",
+            "children": [
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:armadillo_scute",
+                "weight": 5
+              },
+              {
+                "type": "minecraft:item",
+                "name": "minecraft:turtle_scute",
+                "weight": 5
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+  
