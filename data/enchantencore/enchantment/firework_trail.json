@@ -5,7 +5,7 @@
     "fallback": "Firework Trail"
   },
     "exclusive_set": "#enchantencore:exclusive_set/trail",
-    "supported_items": "#enchantencore:all_armor",
+    "supported_items": "#enchantencore:valid_for_trail",
     "weight": 2,
     "max_level": 1,
     "min_cost": {
@@ -18,7 +18,8 @@
     },
     "anvil_cost": 1,
     "slots": [
-      "armor"
+      "armor",
+      "body"
     ],
     "effects": {
       "minecraft:location_changed": [
@@ -67,6 +68,16 @@
                       "right": true
                     }
                   }
+                }
+              },
+              {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "type": [
+                    "minecraft:wolf",
+                    "minecraft:horse"
+                  ]
                 }
               }
             ]
