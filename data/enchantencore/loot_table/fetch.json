@@ -45,7 +45,7 @@
             ]
           },
           {
-            "type": "minecraft:group",
+            "type": "minecraft:alternatives",
             "children": [
               {
                 "type": "minecraft:item",
@@ -60,7 +60,7 @@
             ]
           },
           {
-            "type": "minecraft:group",
+            "type": "minecraft:alternatives",
             "children": [
               {
                 "type": "minecraft:item",
