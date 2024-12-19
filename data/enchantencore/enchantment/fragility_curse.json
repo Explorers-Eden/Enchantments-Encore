@@ -3,7 +3,7 @@
     "translate": "enchantment.enchantencore.fragility_curse",
     "fallback": "Curse of Fragility"
   },
-  "supported_items": "#minecraft:enchantable/weapon",
+  "supported_items": "#enchantencore:weapons",
   "weight": 1,
   "max_level": 1,
   "min_cost": {

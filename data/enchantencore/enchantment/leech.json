@@ -3,7 +3,7 @@
     "translate": "enchantment.enchantencore.leech",
     "fallback": "Leech"
   },
-    "supported_items": "#minecraft:enchantable/weapon",
+    "supported_items": "#enchantencore:weapons",
     "primary_items": "#minecraft:enchantable/sword",
     "weight": 1,
     "max_level": 1,

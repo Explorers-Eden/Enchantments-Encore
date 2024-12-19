@@ -3,7 +3,7 @@
     "translate": "enchantment.enchantencore.poppy_peace",
     "fallback": "Poppy Peace"
   },
-    "supported_items": "#minecraft:enchantable/weapon",
+    "supported_items": "#enchantencore:weapons",
     "exclusive_set": "#enchantencore:exclusive_set/poppy",
     "weight": 2,
     "max_level": 1,

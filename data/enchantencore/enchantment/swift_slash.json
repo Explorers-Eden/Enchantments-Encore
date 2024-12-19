@@ -4,7 +4,7 @@
     "fallback": "Swift Slash"
   },
     "exclusive_set": "#minecraft:exclusive_set/damage",
-    "supported_items": "#minecraft:enchantable/weapon",
+    "supported_items": "#enchantencore:weapons",
     "primary_items": "#minecraft:enchantable/sword",
     "weight": 2,
     "max_level": 5,
