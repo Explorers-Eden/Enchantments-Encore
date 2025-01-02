@@ -13,6 +13,10 @@
       "required": false
     },
     {
+      "id": "enchantencore:bane_of_endborn",
+      "required": false
+    },
+    {
       "id": "#enchantencore:aspect",
       "required": false
     },
