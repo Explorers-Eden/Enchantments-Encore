@@ -143,6 +143,7 @@
 "enchantment.enchantencore.weakness_arrow_trail": "Weakness Arrow Trail",
 "enchantment.enchantencore.weakness_trail": "Weakness Trail",
 "enchantment.enchantencore.weaving_aspect": "Weaving Aspect",
+"enchantment.enchantencore.weakness_aspect": "Weakness Aspect",
 "enchantment.enchantencore.welfare_curse": "Curse of Welfare",
 "enchantment.enchantencore.wind_aspect": "Wind Aspect",
 "enchantment.enchantencore.witch_arrow_trail": "Witch Arrow Trail",
@@ -314,5 +315,6 @@
 "enchantment.enchantencore.boar_spirit.desc": "Infuses a Wolf with the powers of a Boar",
 "enchantment.enchantencore.bear_spirit.desc": "Infuses a Wolf with the powers of a Bear",
 "enchantment.enchantencore.scorpion_spirit.desc": "Infuses a Wolf with the powers of a Scorpion",
-"enchantment.enchantencore.undying_curse.desc": "Turns the tool into a Totem of Undying"
+"enchantment.enchantencore.undying_curse.desc": "Turns the tool into a Totem of Undying",
+"enchantment.enchantencore.weakness_aspect.desc": "Applies weakness effect to hit entities"
 }
