@@ -1,0 +1,60 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.heroes_crown",
+      "fallback": "Heroes Crown"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/helmet",
+    "supported_items": "#minecraft:enchantable/head_armor",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 31,
+      "per_level_above_first": 0
+    },
+    "max_cost": {
+      "base": 41,
+      "per_level_above_first": 0
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "head"
+    ],
+    "effects": {
+      "minecraft:tick": [
+        {
+          "effect": {
+            "type": "minecraft:apply_mob_effect",
+            "to_apply": "minecraft:hero_of_the_village",
+            "min_duration": 15,
+            "max_duration": 15,
+            "min_amplifier": 0,
+            "max_amplifier": 0
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "periodic_tick": 200
+            }
+          }
+        },
+        {
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "periodic_tick": 200
+            }
+          },
+          "effect": {
+            "type": "minecraft:change_item_damage",
+            "amount": {
+              "type": "minecraft:linear",
+              "base": 2.5,
+              "per_level_above_first": 0
+            }
+          }
+        }
+      ]
+    }
+  }

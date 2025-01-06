@@ -3,6 +3,7 @@
     "translate": "enchantment.enchantencore.night_vision",
     "fallback": "Night Vision"
   },
+  "exclusive_set": "#enchantencore:exclusive_set/helmet",
   "supported_items": "#minecraft:enchantable/head_armor",
   "weight": 1,
   "max_level": 1,

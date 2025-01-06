@@ -1,0 +1,13 @@
+{
+    "values": [
+      {
+        "id": "enchantencore:night_vision",
+        "required": false
+      },
+      {
+        "id": "enchantencore:heroes_crown",
+        "required": false
+      }
+    ]
+  }
+  

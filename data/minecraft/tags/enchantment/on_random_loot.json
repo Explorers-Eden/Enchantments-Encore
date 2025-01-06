@@ -55,6 +55,14 @@
     {
       "id": "enchantencore:swift_slash",
       "required": false
+    },
+    {
+      "id": "enchantencore:trial_runner",
+      "required": false
+    },
+    {
+      "id": "enchantencore:heroes_crown",
+      "required": false
     }
   ]
 }
