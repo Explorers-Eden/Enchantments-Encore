@@ -1,0 +1,68 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.implosion",
+    "fallback": "Implosion"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/crossbow",
+  "supported_items": "#enchantencore:all_bows",
+  "primary_items": "minecraft:bow",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 31,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:implosion"
+        },
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "type": "#enchantencore:hard_projectiles"
+          }
+        }
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:run_function",
+              "function": "enchantencore:implosion"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "#enchantencore:hard_projectiles",
+                "flags": {}
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

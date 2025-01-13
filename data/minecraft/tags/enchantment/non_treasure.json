@@ -115,6 +115,10 @@
     {
       "id": "enchantencore:strafe",
       "required": false
+    },
+    {
+      "id": "enchantencore:implosion",
+      "required": false
     }
   ]
 }
