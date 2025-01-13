@@ -28,6 +28,20 @@
                 "min": 1,
                 "max": 40
               },
+              "options": "#minecraft:on_mob_spawn_equipment"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
               "options": "#minecraft:on_random_loot"
             }
           ]
@@ -42,7 +56,35 @@
                 "min": 1,
                 "max": 40
               },
+              "options": "#minecraft:tradeable"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
               "options": "#minecraft:in_enchanting_table"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
+              "options": "#minecraft:non_treasure"
             }
           ]
         }
