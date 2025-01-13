@@ -11,6 +11,10 @@
       {
         "id": "enchantencore:scorpion_spirit",
         "required": false
+      },
+      {
+        "id": "enchantencore:ghost_spirit",
+        "required": false
       }
     ]
   }

@@ -1,0 +1,68 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.ghost_spirit",
+      "fallback": "Ghost Spirit"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/spirit_wolf",
+    "supported_items": "minecraft:wolf_armor",
+    "weight": 1,
+    "max_level": 1,
+    "min_cost": {
+      "base": 30,
+      "per_level_above_first": 20
+    },
+    "max_cost": {
+      "base": 60,
+      "per_level_above_first": 20
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "body"
+    ],
+    "effects": {
+      "minecraft:damage_protection": [
+        {
+          "effect": {
+            "type": "minecraft:add",
+            "value": 999999
+          }
+        }
+      ],
+      "minecraft:attributes": [
+        {
+          "attribute": "minecraft:attack_damage",
+          "id": "enchantencore_ghost_atck_dmg",
+          "amount": -999999,
+          "operation": "add_value"
+        }
+      ],
+      "minecraft:tick": [
+        {
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "periodic_tick": 200
+            }
+          },
+          "effect": {
+            "type": "minecraft:run_function",
+            "function": "enchantencore:ghost_spirit"
+          }
+        },
+        {
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "periodic_tick": 20
+            }
+          },
+          "effect": {
+            "type": "minecraft:change_item_damage",
+            "amount": -99999
+          }
+        }
+      ]
+    }
+  }

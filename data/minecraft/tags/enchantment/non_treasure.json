@@ -119,6 +119,10 @@
     {
       "id": "enchantencore:implosion",
       "required": false
+    },
+    {
+      "id": "enchantencore:ghost_spirit",
+      "required": false
     }
   ]
 }
