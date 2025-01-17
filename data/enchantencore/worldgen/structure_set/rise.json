@@ -1,13 +1,21 @@
 {
     "placement": {
-        "type": "minecraft:random_spread",
-        "spacing": 96,
-        "separation": 48,
-        "salt": 36148891,
-        "spread_type": "triangular"
+      "type": "minecraft:random_spread",
+      "spacing": 96,
+      "separation": 48,
+      "salt": 509925154,
+      "spread_type": "triangular",
+      "frequency_reduction_method": "default",
+      "frequency": 0.8,
+      "exclusion_zone": {
+        "other_set": "minecraft:pillager_outposts",
+        "chunk_count": 8
+      }
     },
-    "structures": [{
+    "structures": [
+      {
         "structure": "enchantencore:rise",
         "weight": 1
-    }]
-}
+      }
+    ]
+  }
