@@ -17,6 +17,18 @@
       "required": false
     },
     {
+      "id": "enchantencore:wither_protection",
+      "required": false
+    },
+    {
+      "id": "enchantencore:thorns_protection",
+      "required": false
+    },
+    {
+      "id": "enchantencore:airbag",
+      "required": false
+    },
+    {
       "id": "#enchantencore:aspect",
       "required": false
     },

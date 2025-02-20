@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "enchantencore:safe_landing",
+      "required": false
+    },
+    {
+      "id": "enchantencore:airbag",
+      "required": false
+    }
+  ]
+}

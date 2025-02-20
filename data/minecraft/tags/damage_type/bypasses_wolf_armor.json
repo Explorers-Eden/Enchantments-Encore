@@ -1,0 +1,16 @@
+{
+  "replace": true,
+  "values": [
+    "#minecraft:bypasses_invulnerability",
+    "minecraft:cramming",
+    "minecraft:drown",
+    "minecraft:dry_out",
+    "minecraft:freeze",
+    "minecraft:indirect_magic",
+    "minecraft:magic",
+    "minecraft:outside_border",
+    "minecraft:starve",
+    "minecraft:thorns",
+    "minecraft:wither"
+  ]
+}

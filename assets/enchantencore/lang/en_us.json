@@ -36,7 +36,7 @@
     "enchantment.enchantencore.dolphin_trail": "Dolphin Trail",
     "enchantment.enchantencore.dripping_honey_arrow_trail": "Dripping Honey Arrow Trail",
     "enchantment.enchantencore.dripping_honey_trail": "Dripping Honey Trail",
-    "enchantment.enchantencore.dripping_lava_arrow_trail": "dripping_lava_arrow_trail",
+    "enchantment.enchantencore.dripping_lava_arrow_trail": "Dripping Lava Arrow Trail",
     "enchantment.enchantencore.dripping_lava_trail": "Dripping Lava Trail",
     "enchantment.enchantencore.dripping_obsidian_tear_arrow_trail": "Dripping Obsidian Tear Arrow Trail",
     "enchantment.enchantencore.dripping_obsidian_tear_trail": "Dripping Obsidian Tear Trail",
@@ -161,6 +161,10 @@
     "enchantment.enchantencore.undying_curse": "Curse of Undying",
     "enchantment.enchantencore.trial_runner": "Trial Runner",
     "enchantment.enchantencore.heroes_crown": "Heroes Crown",
+    "enchantment.enchantencore.airbag": "Airbag",
+    "enchantment.enchantencore.wither_protection": "Wither Protection",
+    "enchantment.enchantencore.thorns_protection": "Thorns Protection",
+
     "enchantment.enchantencore.ghost_spirit.desc": "Makes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment.enchantencore.implosion.desc": "Pulls in hostile entities within a 5 block radius",
     "enchantment.enchantencore.trial_runner.desc": "Gives the wearer the Trial Omen effect but drowns durability",
@@ -323,6 +327,10 @@
     "enchantment.enchantencore.scorpion_spirit.desc": "Infuses a Wolf with the powers of a Scorpion",
     "enchantment.enchantencore.undying_curse.desc": "Turns the tool into a Totem of Undying",
     "enchantment.enchantencore.weakness_aspect.desc": "Applies weakness effect to hit entities",
+    "enchantment.enchantencore.airbag.desc": "Protection against damage when flying into walls",
+    "enchantment.enchantencore.wither_protection.desc": "Protection against Wither Effect and Wither Skulls",
+    "enchantment.enchantencore.thorns_protection.desc": "Protection against Thorns including Sweet Berry Bushes and Cactus",
+
     "enchantment_lore.enchantencore:ghost_spirit.description": "§nGhost Spirit§r\n\nMax Level: I\n\nCompatible with: Wolf Armor\n\nMakes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment_lore.enchantencore:implosion.description": "§nImplosion§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\nPulls in hostile entities within a 5 block radius",
     "enchantment_lore.enchantencore:trial_runner.description": "§nTrial Runner§r\n\nMax Level: I\n\nCompatible with: Boots\n\nGives the wearer the Trial Omen effect but drowns durability",
@@ -484,5 +492,8 @@
     "enchantment_lore.enchantencore:bear_spirit.description": "§nBear Spirit§r\n\nMax Level: I\n\nCompatible with: Wolf Armor\n\nInfuses a Wolf with the powers of a Bear",
     "enchantment_lore.enchantencore:scorpion_spirit.description": "§nScorpion Spirit§r\n\nMax Level: I\n\nCompatible with: Wolf Armor\n\nInfuses a Wolf with the powers of a Scorpion",
     "enchantment_lore.enchantencore:undying_curse.description": "§nCurse of Undying§r\n\nMax Level: I\n\nCompatible with: Tools\n\nTurns the tool into a Totem of Undying",
-    "enchantment_lore.enchantencore:weakness_aspect.description": "§nWeakness Aspect§r\n\nMax Level: II\n\nCompatible with: Swords, Maces\n\nApplies weakness effect to hit entities"
+    "enchantment_lore.enchantencore:weakness_aspect.description": "§nWeakness Aspect§r\n\nMax Level: II\n\nCompatible with: Swords, Maces\n\nApplies weakness effect to hit entities",
+    "enchantment_lore.enchantencore.airbag.description": "§nAirbag§r\n\nMax Level: IV\n\nCompatible with: Elytra\n\nProtection against damage when flying into walls",
+    "enchantment_lore.enchantencore.wither_protection.description": "§nWither Protection§r\n\nMax Level: IV\n\nCompatible with: Armor\n\nProtection against Wither Effect and Wither Skulls",
+    "enchantment_lore.enchantencore.thorns_protection.description": "§nThorns Protection§r\n\nMax Level: IV\n\nCompatible with: Armor\n\nProtection against Thorns including Sweet Berry Bushes and Cactus"
     }

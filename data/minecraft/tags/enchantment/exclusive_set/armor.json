@@ -21,6 +21,14 @@
       "required": false
     },
     {
+      "id": "enchantencore:wither_protection",
+      "required": false
+    },
+    {
+      "id": "enchantencore:thorns_protection",
+      "required": false
+    },
+    {
       "id": "enchantplus:armor/lifeplus",
       "required": false
   },

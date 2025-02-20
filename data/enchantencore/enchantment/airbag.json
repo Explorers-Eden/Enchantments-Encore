@@ -1,0 +1,47 @@
+{
+	"anvil_cost": 1,
+	"description": {
+		"translate": "enchantment.enchantencore.airbag",
+        "fallback": "Airbag"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/elytra",
+  "supported_items": "minecraft:elytra",
+	"effects": {
+		"minecraft:damage_protection": [
+			{
+				"effect": {
+					"type": "minecraft:add",
+					"value": {
+						"type": "minecraft:linear",
+						"base": 7.5,
+						"per_level_above_first": 7.5
+					}
+				},
+				"requirements": {
+					"condition": "minecraft:damage_source_properties",
+					"predicate": {
+						"tags": [
+							{
+								"expected": true,
+								"id": "enchantencore:fly_into_wall"
+							}
+						]
+					}
+				}
+			}
+		]
+	},
+	"max_cost": {
+		"base": 12,
+		"per_level_above_first": 11
+	},
+	"max_level": 4,
+	"min_cost": {
+		"base": 1,
+		"per_level_above_first": 11
+	},
+	"slots": [
+		"chest"
+	],
+	"weight": 10
+}

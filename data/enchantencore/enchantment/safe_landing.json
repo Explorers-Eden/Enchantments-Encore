@@ -4,6 +4,7 @@
     "fallback": "Safe Landing"
   },
     "supported_items": "minecraft:elytra",
+    "exclusive_set": "#enchantencore:exclusive_set/elytra",
     "weight": 10,
     "max_level": 5,
     "min_cost": {
