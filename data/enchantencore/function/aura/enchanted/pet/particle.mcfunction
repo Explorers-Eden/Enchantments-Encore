@@ -1,0 +1,1 @@
+particle minecraft:enchant ^ ^ ^-.6 .1 .2 .1 0 3 force

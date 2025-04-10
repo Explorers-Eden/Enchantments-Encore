@@ -8,9 +8,7 @@ scoreboard objectives add enchantencore.sneaktime minecraft.custom:minecraft.sne
 scoreboard objectives add enchantencore.technical dummy
 scoreboard objectives add enchantencore.leaf_jumper dummy
 scoreboard objectives add enchantencore.pegasus dummy
-scoreboard objectives add enchantencore.red_moon dummy
-scoreboard objectives add enchantencore.has_died deathCount
+scoreboard objectives add enchantencore.idle_time dummy
 
 ##schedule functions
-schedule function enchantencore:schedules/1tick 1t
-schedule function enchantencore:schedules/10tick 10t
+schedule function enchantencore:schedules/10_tick 10t

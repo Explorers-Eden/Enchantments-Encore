@@ -1,0 +1,60 @@
+{
+  "values": [
+    {
+      "id": "enchantencore:heavenly_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:demonic_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:aquatic_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:lush_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ominous_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:echoing_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ender_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sticky_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:lovely_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pale_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:trial_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:enchanted_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sparking_aura",
+      "required": false
+    },
+    {
+      "id": "enchantencore:angry_aura",
+      "required": false
+    }
+  ]
+}

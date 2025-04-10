@@ -1,0 +1,1 @@
+function enchantencore:aura/aquatic/pet/exec with entity @s

@@ -17,6 +17,10 @@
       "required": false
     },
     {
+      "id": "#enchantencore:aura",
+      "required": false
+    },
+    {
       "id": "enchantencore:grass_walker",
       "required": false
     },
@@ -30,6 +34,10 @@
     },
     {
       "id": "enchantencore:crab_claw",
+      "required": false
+    },
+    {
+      "id": "enchantencore:gallop",
       "required": false
     },
     {
@@ -54,10 +62,6 @@
     },
     {
       "id": "enchantencore:moonwalk",
-      "required": false
-    },
-    {
-      "id": "enchantencore:red_moon",
       "required": false
     },
     {

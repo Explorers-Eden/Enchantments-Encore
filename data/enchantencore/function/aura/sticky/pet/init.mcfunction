@@ -1,0 +1,1 @@
+function enchantencore:aura/sticky/pet/exec with entity @s

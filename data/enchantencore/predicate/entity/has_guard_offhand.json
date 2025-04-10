@@ -1,0 +1,23 @@
+  
+  {
+    "condition": "minecraft:entity_properties",
+    "entity": "this",
+    "predicate": {
+      "equipment": {
+        "offhand": {
+          "items": "#enchantencore:can_block",
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:guard",
+                "levels": {
+                    "min": 1
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+  

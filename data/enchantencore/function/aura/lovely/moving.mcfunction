@@ -1,0 +1,2 @@
+execute anchored feet run particle minecraft:heart ^ ^1 ^-.5 .1 .2 .1 0 1
+execute anchored feet run particle minecraft:dust_color_transition{from_color:[1.000,0.098,0.098],scale:1,to_color:[0.729,0.000,0.000]} ^ ^1 ^-.5 .1 .2 .1 0 5

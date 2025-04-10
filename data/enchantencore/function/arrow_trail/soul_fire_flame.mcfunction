@@ -1,1 +1,0 @@
-tag @s add soul_fire_flame_arrow_trail

@@ -9,14 +9,6 @@
       "required": false
     },
     {
-      "id": "#enchantencore:arrow_trail",
-      "required": false
-    },
-    {
-      "id": "#enchantencore:trail",
-      "required": false
-    },
-    {
       "id": "#enchantencore:protection",
       "required": false
     },

@@ -17,10 +17,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:red_moon",
-      "required": false
-    },
-    {
       "id": "enchantencore:wither_protection",
       "required": false
     },

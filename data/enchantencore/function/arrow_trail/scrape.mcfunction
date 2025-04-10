@@ -1,1 +1,0 @@
-tag @s add scrape_arrow_trail

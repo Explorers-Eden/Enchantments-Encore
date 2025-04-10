@@ -1,0 +1,1 @@
+function enchantencore:aura/heavenly/pet/exec with entity @s

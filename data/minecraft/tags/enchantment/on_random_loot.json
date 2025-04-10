@@ -9,11 +9,7 @@
       "required": false
     },
     {
-      "id": "#enchantencore:arrow_trail",
-      "required": false
-    },
-    {
-      "id": "#enchantencore:trail",
+      "id": "#enchantencore:aura",
       "required": false
     },
     {
@@ -41,15 +37,15 @@
       "required": false
     },
     {
+      "id": "enchantencore:gallop",
+      "required": false
+    },
+    {
       "id": "enchantencore:handyman",
       "required": false
     },
     {
       "id": "enchantencore:midas_touch",
-      "required": false
-    },
-    {
-      "id": "enchantencore:red_moon",
       "required": false
     },
     {

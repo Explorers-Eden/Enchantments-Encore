@@ -49,6 +49,14 @@
       "required": false
     },
     {
+      "id": "enchantencore:guard",
+      "required": false
+    },
+    {
+      "id": "minecraft:sharpness",
+      "required": false
+    },
+    {
         "id": "enchantplus:sword/poison_aspect",
         "required": false
     }

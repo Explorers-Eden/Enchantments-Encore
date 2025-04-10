@@ -1,0 +1,2 @@
+execute if predicate enchantencore:percentages/30 run particle minecraft:heart ^ ^ ^-.4 .1 .2 .1 0 1
+particle minecraft:dust_color_transition{from_color:[1.000,0.098,0.098],scale:1,to_color:[0.729,0.000,0.000]} ^ ^ ^-.4 .1 .2 .1 0 2

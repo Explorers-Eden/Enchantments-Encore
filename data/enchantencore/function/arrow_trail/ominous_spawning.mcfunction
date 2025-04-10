@@ -1,1 +1,0 @@
-tag @s add ominous_spawning_arrow_trail

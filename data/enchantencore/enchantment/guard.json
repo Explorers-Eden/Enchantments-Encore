@@ -1,0 +1,23 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.guard",
+      "fallback": "Guard"
+    },
+    "exclusive_set": "#enchantencore:exclusive_set/repair",
+    "supported_items": "#enchantencore:can_block",
+    "primary_items": "#minecraft:swords",
+    "weight": 2,
+    "max_level": 1,
+    "min_cost": {
+      "base": 10,
+      "per_level_above_first": 10
+    },
+    "max_cost": {
+      "base": 40,
+      "per_level_above_first": 10
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "any"
+    ]
+  }

@@ -25,7 +25,7 @@
       "required": false
     },
     {
-      "id": "enchantencore:airbag",
+      "id": "enchantencore:cushion",
       "required": false
     },
     {
@@ -46,10 +46,6 @@
     },
     {
       "id": "enchantencore:forge_shot",
-      "required": false
-    },
-    {
-      "id": "enchantencore:glass_breaker",
       "required": false
     },
     {
@@ -134,6 +130,10 @@
     },
     {
       "id": "enchantencore:ghost_spirit",
+      "required": false
+    },
+    {
+      "id": "enchantencore:guard",
       "required": false
     }
   ]

@@ -1,0 +1,1 @@
+function enchantencore:aura/trial/pet/exec with entity @s

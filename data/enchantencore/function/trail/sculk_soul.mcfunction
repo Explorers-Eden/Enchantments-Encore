@@ -1,1 +1,0 @@
-particle minecraft:sculk_soul ~ ~1 ~ .3 .3 .3 0 1

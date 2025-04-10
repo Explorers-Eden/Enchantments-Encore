@@ -1,1 +1,0 @@
-particle minecraft:totem_of_undying ~ ~1 ~ .3 .3 .3 0 3

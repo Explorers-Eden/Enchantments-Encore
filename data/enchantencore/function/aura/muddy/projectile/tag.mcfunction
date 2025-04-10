@@ -1,0 +1,1 @@
+$execute as @n[type=#enchantencore:hard_projectiles,tag=!ee.muddy_aura,tag=!ee.in_ground,distance=..10] if data entity @s {Owner:$(UUID)} run tag @s add ee.muddy_aura

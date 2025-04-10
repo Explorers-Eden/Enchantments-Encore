@@ -1,0 +1,25 @@
+[
+    {
+      "function": "minecraft:set_components",
+      "components": {
+        "minecraft:blocks_attacks": {
+          "block_delay_seconds": 1,
+          "disable_cooldown_scale": 2,
+          "item_damage": {
+            "threshold": 1,
+            "base": 5,
+            "factor": 3
+          },
+          "block_sound": "minecraft:item.shield.block",
+          "disabled_sound": "minecraft:item.shield.break",
+          "bypassed_by": "#enchantencore:bypasses_guard"
+        }
+      }
+    },
+    {
+      "function": "minecraft:set_custom_data",
+      "tag": {
+        "enchantencore": "has_guard"
+      }
+    }
+  ]

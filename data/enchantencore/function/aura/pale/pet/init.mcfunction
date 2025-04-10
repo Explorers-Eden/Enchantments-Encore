@@ -1,0 +1,1 @@
+function enchantencore:aura/pale/pet/exec with entity @s

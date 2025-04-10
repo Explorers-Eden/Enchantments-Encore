@@ -1,0 +1,1 @@
+function enchantencore:aura/flaming/pet/exec with entity @s

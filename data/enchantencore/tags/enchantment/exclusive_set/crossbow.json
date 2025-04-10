@@ -13,10 +13,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:glass_breaker",
-      "required": false
-    },
-    {
       "id": "enchantencore:evokers_wrath",
       "required": false
     },

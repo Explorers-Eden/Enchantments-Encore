@@ -1,0 +1,1 @@
+function enchantencore:aura/sparking/pet/exec with entity @s

@@ -1,1 +1,0 @@
-tag @s add dripping_lava_arrow_trail

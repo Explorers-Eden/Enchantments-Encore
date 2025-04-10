@@ -1,0 +1,2 @@
+function enchantencore:aura/ominous/projectile/tag with entity @s
+execute as @e[type=#enchantencore:hard_projectiles,tag=ee.ominous_aura,tag=!ee.in_ground] at @s run function enchantencore:aura/ominous/projectile/particles

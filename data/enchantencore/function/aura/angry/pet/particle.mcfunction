@@ -1,0 +1,2 @@
+execute if predicate enchantencore:percentages/30 run particle minecraft:angry_villager ^ ^ ^-.4 .1 .2 .1 0 1
+particle minecraft:dust_color_transition{from_color:[0.749,0.749,0.749],scale:1,to_color:[0.478,0.478,0.475]} ^ ^ ^-.4 .1 .2 .1 0 2

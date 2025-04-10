@@ -1,1 +1,0 @@
-tag @s add firework_arrow_trail
