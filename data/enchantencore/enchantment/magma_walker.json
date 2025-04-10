@@ -1,121 +1,126 @@
 {
-    "description": {
+  "anvil_cost": 4,
+  "description": {
     "translate": "enchantment.enchantencore.magma_walker",
     "fallback": "Magma Walker"
   },
-    "exclusive_set": "#minecraft:exclusive_set/boots",
-    "supported_items": "#minecraft:enchantable/foot_armor",
-    "weight": 2,
-    "max_level": 2,
-    "min_cost": {
-      "base": 10,
-      "per_level_above_first": 10
-    },
-    "max_cost": {
-      "base": 25,
-      "per_level_above_first": 10
-    },
-    "anvil_cost": 4,
-    "slots": [
-      "feet"
-    ],
-    "effects": {
-      "minecraft:damage_immunity": [
-        {
-          "effect": {},
-          "requirements": {
-            "condition": "minecraft:damage_source_properties",
-            "predicate": {
-              "tags": [
-                {
-                  "id": "minecraft:burn_from_stepping",
-                  "expected": true
-                },
-                {
-                  "id": "minecraft:bypasses_invulnerability",
-                  "expected": false
-                }
-              ]
-            }
-          }
-        }
-      ],
-      "minecraft:location_changed": [
-        {
-          "effect": {
-            "type": "minecraft:replace_disk",
-            "block_state": {
-              "type": "minecraft:simple_state_provider",
-              "state": {
-                "Name": "minecraft:magma_block",
-                "Properties": {}
-              }
-            },
-            "predicate": {
-              "type": "minecraft:all_of",
-              "predicates": [
-                {
-                  "type": "minecraft:matching_blocks",
-                  "offset": [
-                    0,
-                    1,
-                    0
-                  ],
-                  "blocks": "minecraft:air"
-                },
-                {
-                  "type": "minecraft:matching_blocks",
-                  "blocks": "minecraft:lava"
-                },
-                {
-                  "type": "minecraft:unobstructed"
-                }
-              ]
-            },
-            "radius": {
-              "type": "minecraft:clamped",
-              "value": {
-                "type": "minecraft:linear",
-                "base": 3,
-                "per_level_above_first": 1
+  "effects": {
+    "minecraft:damage_immunity": [
+      {
+        "effect": {},
+        "requirements": {
+          "condition": "minecraft:damage_source_properties",
+          "predicate": {
+            "tags": [
+              {
+                "expected": true,
+                "id": "minecraft:burn_from_stepping"
               },
-              "min": 0,
-              "max": 16
-            },
-            "height": 1,
-            "offset": [
-              0,
-              -1,
-              0
-            ],
-            "trigger_game_event": "minecraft:block_place"
-          },
-          "requirements": {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "flags": {
-                "is_on_ground": true
+              {
+                "expected": false,
+                "id": "minecraft:bypasses_invulnerability"
               }
-            }
-          }
-        },
-        {
-          "effect": {
-            "type": "minecraft:spawn_particles",
-            "particle": {
-              "type": "minecraft:dust",
-              "scale": 1,
-              "color": [ 1, 0, 0 ]
-            },
-            "speed": 1,
-            "horizontal_position": { "type": "entity_position" },
-            "vertical_position": { "type": "entity_position" },
-            "horizontal_velocity": {},
-            "vertical_velocity": {}
+            ]
           }
         }
-      ]
-    }
-  }
-  
+      }
+    ],
+    "minecraft:location_changed": [
+      {
+        "effect": {
+          "type": "minecraft:replace_disk",
+          "block_state": {
+            "type": "minecraft:simple_state_provider",
+            "state": {
+              "Name": "minecraft:magma_block",
+              "Properties": {
+                "age": "0"
+              }
+            }
+          },
+          "height": 1,
+          "offset": [
+            0,
+            -1,
+            0
+          ],
+          "predicate": {
+            "type": "minecraft:all_of",
+            "predicates": [
+              {
+                "type": "minecraft:matching_block_tag",
+                "offset": [
+                  0,
+                  1,
+                  0
+                ],
+                "tag": "minecraft:air"
+              },
+              {
+                "type": "minecraft:matching_blocks",
+                "blocks": "minecraft:lava"
+              },
+              {
+                "type": "minecraft:matching_fluids",
+                "fluids": "minecraft:lava"
+              },
+              {
+                "type": "minecraft:unobstructed"
+              }
+            ]
+          },
+          "radius": {
+            "type": "minecraft:clamped",
+            "max": 16,
+            "min": 0,
+            "value": {
+              "type": "minecraft:linear",
+              "base": 3,
+              "per_level_above_first": 1
+            }
+          },
+          "trigger_game_event": "minecraft:block_place"
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "flags": {
+                  "is_on_ground": true
+                }
+              }
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "vehicle": {}
+                }
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#minecraft:exclusive_set/boots",
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "max_level": 2,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "feet"
+  ],
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 2
+}
