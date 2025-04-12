@@ -118,8 +118,8 @@
 
     "enchantment.enchantencore.ghost_spirit.desc": "Makes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment.enchantencore.implosion.desc": "Pulls in hostile entities within a 5 block radius",
-    "enchantment.enchantencore.trial_runner.desc": "Gives the wearer the Trial Omen effect but drowns durability",
-    "enchantment.enchantencore.heroes_crown.desc": "Gives the wearer the Hero of the Village effect but drowns durability",
+    "enchantment.enchantencore.trial_runner.desc": "Gives the wearer the Trial Omen effect but drains durability",
+    "enchantment.enchantencore.heroes_crown.desc": "Gives the wearer the Hero of the Village effect but drains durability",
     "enchantment.enchantencore.replenish.desc": "50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot",
     "enchantment.enchantencore.illumination.desc": "Lightens up the area around you when headblock is not obstructed",
     "enchantment.enchantencore.shulker_shell.desc": "Firework, Tridents, (Spectral) Arrows shot at the wearer fall to the ground when wearer stands still",
@@ -249,8 +249,8 @@
 
     "enchantment_lore.enchantencore:ghost_spirit.description": "§nGhost Spirit§r\n\nMax Level: I\n\nCompatible with: Wolf Armor\n\nMakes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment_lore.enchantencore:implosion.description": "§nImplosion§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\nPulls in hostile entities within a 5 block radius",
-    "enchantment_lore.enchantencore:trial_runner.description": "§nTrial Runner§r\n\nMax Level: I\n\nCompatible with: Boots\n\nGives the wearer the Trial Omen effect but drowns durability",
-    "enchantment_lore.enchantencore:heroes_crown.description": "§nHeroes Crown§r\n\nMax Level: I\n\nCompatible with: Helmets\n\nGives the wearer the Hero of the Village effect but drowns durability",
+    "enchantment_lore.enchantencore:trial_runner.description": "§nTrial Runner§r\n\nMax Level: I\n\nCompatible with: Boots\n\nGives the wearer the Trial Omen effect but drains durability",
+    "enchantment_lore.enchantencore:heroes_crown.description": "§nHeroes Crown§r\n\nMax Level: I\n\nCompatible with: Helmets\n\nGives the wearer the Hero of the Village effect but drains durability",
     "enchantment_lore.enchantencore:replenish.description": "§nReplenish§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\n50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot",
     "enchantment_lore.enchantencore:illumination.description": "§nIllumination§r\n\nMax Level: III\n\nCompatible with: Helmets\n\nLightens up the area around you when headblock is not obstructed",
     "enchantment_lore.enchantencore:shulker_shell.description": "§nShulker Shell§r\n\nMax Level: I\n\nCompatible with: Chestplates\n\nFirework, Tridents, (Spectral) Arrows shot at the wearer fall to the ground when wearer stands still",
