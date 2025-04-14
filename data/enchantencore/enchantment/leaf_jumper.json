@@ -24,7 +24,7 @@
       {
         "effect": {
           "type": "minecraft:change_item_damage",
-          "amount": 1          
+          "amount": 1
         },
         "requirements": {
           "condition": "minecraft:all_of",
@@ -38,11 +38,6 @@
                   "type": "minecraft:player",
                   "input": {
                     "jump": true
-                  }
-                },
-                "stepping_on": {
-                  "block": {
-                    "blocks": "#minecraft:air"
                   }
                 }
               }
@@ -68,11 +63,6 @@
               "type": "minecraft:player",
               "input": {
                 "jump": true
-              }
-            },
-            "stepping_on": {
-              "block": {
-                "blocks": "#minecraft:air"
               }
             }
           }

@@ -3,7 +3,6 @@ function enchantencore:seeker/init
 function enchantencore:illumination/kill
 function enchantencore:leaf_jumper/kill
 function enchantencore:guard
-execute as @a[scores={enchantencore.has_died=1..}] run function enchantencore:red_moon/has_died
 execute as @a[scores={enchantencore.leaf_jumper=1..}] run scoreboard players set @s enchantencore.leaf_jumper 0
 
 execute as @a[tag=!ee.red_moon_removed] run function enchantencore:remove_red_moon_attributes

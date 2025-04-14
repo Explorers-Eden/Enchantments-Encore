@@ -12,3 +12,4 @@ scoreboard objectives add enchantencore.idle_time dummy
 
 ##schedule functions
 schedule function enchantencore:schedules/10_tick 10t
+schedule function enchantencore:schedules/5_tick 5t
