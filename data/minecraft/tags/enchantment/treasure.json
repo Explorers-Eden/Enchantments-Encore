@@ -101,6 +101,10 @@
       "required": false
     },
     {
+      "id": "enchantencore:path_speed",
+      "required": false
+    },
+    {
       "id": "enchantencore:sonic",
       "required": false
     },

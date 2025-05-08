@@ -1,0 +1,1 @@
+function enchantencore:lingering/exec with entity @s item.components."minecraft:potion_contents"

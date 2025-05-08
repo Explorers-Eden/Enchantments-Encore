@@ -1,0 +1,40 @@
+{
+    "description": {
+      "translate": "enchantment.enchantencore.ping_tag",
+      "fallback": "Ping Tag"
+    },
+    "supported_items": "#enchantencore:valid_for_ping_tag",
+    "primary_items": "minecraft:bow",
+    "weight": 3,
+    "max_level": 1,
+    "min_cost": {
+      "base": 11,
+      "per_level_above_first": 10
+    },
+    "max_cost": {
+      "base": 21,
+      "per_level_above_first": 10
+    },
+    "anvil_cost": 4,
+    "slots": [
+      "mainhand"
+    ],
+    "effects": {
+      "minecraft:post_attack": [
+        {
+          "effect": {
+            "type": "minecraft:play_sound",
+            "sound": "minecraft:entity.experience_orb.pickup",
+            "volume": 0.5,
+            "pitch": {
+              "type": "minecraft:uniform",
+              "min_inclusive": 1.1,
+              "max_exclusive": 1.3
+            }
+          },
+          "enchanted": "attacker",
+          "affected": "attacker"
+        }
+      ]
+    }
+  }

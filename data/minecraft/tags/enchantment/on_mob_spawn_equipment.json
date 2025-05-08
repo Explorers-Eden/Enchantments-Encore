@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "#enchantencore:splash_arrow",
-      "required": false
-    },
-    {
       "id": "#enchantencore:curse",
       "required": false
     },

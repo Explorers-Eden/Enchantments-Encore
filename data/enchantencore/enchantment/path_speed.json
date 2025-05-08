@@ -1,8 +1,8 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.sand_speed",
-    "fallback": "Sand Speed"
-  },
+      "translate": "enchantment.enchantencore.path_speed",
+      "fallback": "Path Speed"
+    },
     "exclusive_set": "#enchantencore:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",
     "weight": 1,
@@ -74,7 +74,7 @@
                             "predicate": {
                               "movement_affected_by": {
                                 "block": {
-                                  "blocks": "#minecraft:sand"
+                                  "blocks": "minecraft:dirt_path"
                                 }
                               }
                             }
@@ -105,7 +105,7 @@
                         "predicate": {
                           "movement_affected_by": {
                             "block": {
-                              "blocks": "#minecraft:sand"
+                              "blocks": "minecraft:dirt_path"
                             }
                           },
                           "flags": {
@@ -118,26 +118,6 @@
                 ]
               }
             ]
-          }
-        },
-        {
-          "effect": {
-            "type": "minecraft:attribute",
-            "id": "minecraft:enchantment.soul_speed",
-            "attribute": "minecraft:movement_efficiency",
-            "amount": 1,
-            "operation": "add_value"
-          },
-          "requirements": {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "movement_affected_by": {
-                "block": {
-                  "blocks": "#minecraft:sand"
-                }
-              }
-            }
           }
         },
         {
@@ -161,7 +141,7 @@
                 "predicate": {
                   "movement_affected_by": {
                     "block": {
-                      "blocks": "#minecraft:sand"
+                      "blocks": "minecraft:dirt_path"
                     }
                   },
                   "flags": {
@@ -175,4 +155,3 @@
       ]
     }
   }
-  

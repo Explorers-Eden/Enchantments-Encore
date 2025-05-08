@@ -1,9 +1,8 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.slowness_splash",
-    "fallback": "Slowness Splash"
-  },
-    "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
+      "translate": "enchantment.enchantencore.lingering",
+      "fallback": "Lingering"
+    },
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",
     "weight": 3,
@@ -25,20 +24,16 @@
         {
           "effect": {
             "type": "minecraft:run_function",
-            "function": "enchantencore:splash_arrow/slowness"
-          }
-        }
-      ],
-      "minecraft:post_attack": [
-        {
-          "enchanted": "attacker",
-          "affected": "victim",
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:splash_arrow/slowness"
+            "function": "enchantencore:lingering/init"
+          },
+          "requirements": {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "#minecraft:arrows"
+            }
           }
         }
       ]
     }
   }
-  

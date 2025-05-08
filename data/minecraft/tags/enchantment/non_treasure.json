@@ -135,6 +135,14 @@
     {
       "id": "enchantencore:guard",
       "required": false
+    },
+    {
+      "id": "enchantencore:lingering",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ping_tag",
+      "required": false
     }
   ]
 }
