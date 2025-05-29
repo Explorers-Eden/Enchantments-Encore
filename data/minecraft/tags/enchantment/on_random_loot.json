@@ -41,10 +41,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:midas_touch",
-      "required": false
-    },
-    {
       "id": "enchantencore:swift_slash",
       "required": false
     },

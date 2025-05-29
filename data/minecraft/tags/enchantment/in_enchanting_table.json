@@ -29,10 +29,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:midas_touch",
-      "required": false
-    },
-    {
       "id": "enchantencore:night_vision",
       "required": false
     },
