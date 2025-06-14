@@ -87,6 +87,10 @@
     {
       "id": "enchantencore:scorpion_spirit",
       "required": false
+    },
+    {
+      "id": "enchantencore:propeller",
+      "required": false
     }
   ]
 }

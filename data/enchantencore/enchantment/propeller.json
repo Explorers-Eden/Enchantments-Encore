@@ -1,0 +1,37 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.propeller",
+    "fallback": "Propeller"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/height",
+  "supported_items": "#minecraft:harnesses",
+  "weight": 2,
+  "max_level": 5,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 11
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "chest",
+    "body"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "enchantencore:flyspeed",
+        "attribute": "minecraft:flying_speed",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 0.025,
+          "per_level_above_first": 0.01
+        },
+        "operation": "add_value"
+      }
+    ]
+  }
+}
