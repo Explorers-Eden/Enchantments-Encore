@@ -1,0 +1,1 @@
+execute as @e[type=#enchantencore:pets] unless predicate enchantencore:entity/has_no_hurttime on owner run damage @s 1 minecraft:indirect_magic

@@ -17,7 +17,6 @@
   },
   "anvil_cost": 2,
   "slots": [
-    "chest",
     "body"
   ],
   "effects": {
@@ -27,10 +26,10 @@
         "attribute": "minecraft:flying_speed",
         "amount": {
           "type": "minecraft:linear",
-          "base": 0.025,
-          "per_level_above_first": 0.01
+          "base": 0.1,
+          "per_level_above_first": 0.05
         },
-        "operation": "add_value"
+        "operation": "add_multiplied_base"
       }
     ]
   }

@@ -31,6 +31,14 @@
     {
       "id": "enchantencore:crank_curse",
       "required": false
+    },
+    {
+      "id": "enchantencore:ownership_curse",
+      "required": false
+    },
+    {
+      "id": "enchantencore:caravan_curse",
+      "required": false
     }
   ]
 }

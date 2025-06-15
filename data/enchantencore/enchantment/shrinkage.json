@@ -30,7 +30,7 @@
             "base": -0.1,
             "per_level_above_first": -0.1
           },
-          "operation": "add_value"
+          "operation": "add_multiplied_base"
         },
         {
           "id": "enchantencore:shrinkagestep",
@@ -40,7 +40,7 @@
             "base": -0.1,
             "per_level_above_first": -0.1
           },
-          "operation": "add_value"
+          "operation": "add_multiplied_base"
         }
       ]
     }

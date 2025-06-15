@@ -108,6 +108,8 @@
     "enchantment.enchantencore.lingering": "Lingering",
     "enchantment.enchantencore.ping_tag": "Ping Tag",
     "enchantment.enchantencore.propeller": "Propeller",
+    "enchantment.enchantencore.ownership_curse": "Curse of Ownership",
+    "enchantment.enchantencore.caravan_curse": "Curse of Caravan",
 
     "enchantment.enchantencore.ghost_spirit.desc": "Makes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment.enchantencore.implosion.desc": "Pulls in hostile entities within a 5 block radius",
@@ -231,6 +233,8 @@
     "enchantment.enchantencore.lingering.desc": "Leaves behind a lingering cloud with the effect of the shot tipped arrow when hitting a block",
     "enchantment.enchantencore.ping_tag.desc": "Indicates that an entity has been hit by playing a ping sound",
     "enchantment.enchantencore.propeller.desc": "Increases flying speed of Happy Ghasts",
+    "enchantment.enchantencore.ownership_curse.desc": "Wearer takes damage when their pets do",
+    "enchantment.enchantencore.caravan_curse.desc": "Wearer gets slowed down when leashing entities",
 
     "enchantment_lore.enchantencore:ghost_spirit.description": "§nGhost Spirit§r\n\nMax Level: I\n\nCompatible with: Wolf Armor\n\nMakes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment_lore.enchantencore:implosion.description": "§nImplosion§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\nPulls in hostile entities within a 5 block radius",
@@ -353,5 +357,7 @@
     "enchantment_lore.enchantencore.trial_aura.description": "§nTrial Aura§r\n\nMax Level: I\n\nCompatible with: Helmets\n\nApplies a cosmetic trial aura to the wearer, it's pets and most of the projectiles shot",
     "enchantment_lore.enchantencore.lingering.description": "§nLingering§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\nLeaves behind a lingering cloud with the effect of the shot tipped arrow when hitting a block",
     "enchantment_lore.enchantencore.ping_tag.description": "§nPing Tag§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows, Axes, Swords, Tridents, Maces\n\nIndicates that an entity has been hit by playing a ping sound",
-    "enchantment_lore.enchantencore.propeller.description": "§nPropeller§r\n\nMax Level: V\n\nCompatible with: Harnesses\n\nIncreases flying speed of Happy Ghasts"
+    "enchantment_lore.enchantencore.propeller.description": "§nPropeller§r\n\nMax Level: V\n\nCompatible with: Harnesses\n\nIncreases flying speed of Happy Ghasts",
+    "enchantment_lore.enchantencore.ownership_curse.description": "§nCurse of Ownership§r\n\nMax Level: I\n\nCompatible with: Armor\n\nWearer takes damage when their pets do",
+    "enchantment_lore.enchantencore.caravan_curse.description": "§nCurse of Caravan§r\n\nMax Level: I\n\nCompatible with: Armor\n\nWearer gets slowed down when leashing entities"
     }

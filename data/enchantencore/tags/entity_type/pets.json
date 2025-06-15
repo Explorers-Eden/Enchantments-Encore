@@ -2,7 +2,11 @@
     "values": [
       "minecraft:parrot",
       "minecraft:cat",
-      "minecraft:wolf"
+      "minecraft:wolf",
+      "minecraft:horse",
+      "minecraft:donkey",
+      "minecraft:mule",
+      "minecraft:happy_ghast"
     ]
   }
   

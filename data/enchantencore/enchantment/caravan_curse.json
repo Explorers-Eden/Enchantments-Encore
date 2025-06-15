@@ -1,0 +1,38 @@
+{
+	"description": {
+		"translate": "enchantment.enchantencore.caravan_curse",
+		"fallback": "Curse of Caravan"
+	},
+	"supported_items": "#minecraft:enchantable/armor",
+	"weight": 2,
+	"max_level": 1,
+	"min_cost": {
+		"base": 1,
+		"per_level_above_first": 5
+	},
+	"max_cost": {
+		"base": 51,
+		"per_level_above_first": 50
+	},
+	"anvil_cost": 4,
+	"slots": [
+		"armor"
+	],
+	"effects": {
+		"minecraft:tick": [
+			{
+				"effect": {
+					"type": "minecraft:run_function",
+					"function": "enchantencore:caravan_curse"
+				},
+				"requirements": {
+					"condition": "minecraft:entity_properties",
+					"entity": "this",
+					"predicate": {
+						"periodic_tick": 15
+					}
+				}
+			}
+		]
+	}
+}
