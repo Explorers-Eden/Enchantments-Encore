@@ -1,9 +1,0 @@
-## Changes:
-- The data pack now also functions as an optional resource pack and includes custom textures for enchantment encores books (not needed for the mod version)
-- Removed Midas Touch enchantment
-- Shrinkage is now also applicable to Elytras, Horse Armor, Wolf Armor, Harnesses
-- Growth is now also applicable to Elytras, Horse Armor, Wolf Armor
-- Growth & Shrinkage now use percentage based values instead of adding fixed values
-- Added Propeller enchantment: Applicable to Harnesses; increases Happy Ghasts flying speed
-- Added Curse of Ownership enchantment: Applicable to Armor; Wearer take damage when their pets do
-- Added Curse of Caravan enchantment: Applicable to Armor; Wearer gets slowed down when leashing entities

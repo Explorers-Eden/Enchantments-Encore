@@ -55,6 +55,10 @@
     {
       "id": "enchantencore:angry_aura",
       "required": false
+    },
+    {
+      "id": "enchantencore:muddy_aura",
+      "required": false
     }
   ]
 }
