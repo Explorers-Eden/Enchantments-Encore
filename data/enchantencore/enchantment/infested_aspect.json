@@ -1,6 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.infested_asspect",
+    "translate": "enchantment.enchantencore.infested_aspect",
     "fallback": "Infested Aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
