@@ -7,7 +7,7 @@
 The datapack also adds a unique Structure which has always a guaranteed enchantment from this datapack in it.
 <br><br>
 ## ⭐ Enchantments Overview
-Every Enchantment with its characteristics is listed in the wiki. Feel free to take a look: [Click to go to the wiki](https://explorerseden.eu/wiki/enchantmentsencore/overview)
+Every Enchantment with its characteristics is listed in the wiki. Feel free to take a look: [Click to go to the wiki](https://enchantments.explorerseden.eu/)
 <br><br>
 ## 🛠️ How to, Instructions & Commands
 The datapack usually just needs to be installed. There is nothing else you have to do. It just works out of the box.
