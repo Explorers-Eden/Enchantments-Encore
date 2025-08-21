@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.oozing_aspect",
-    "fallback": "Oozing Aspect"
+    "translate": "enchantment.enchantencore.oozing_aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

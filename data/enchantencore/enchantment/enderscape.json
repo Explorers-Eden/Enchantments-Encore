@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.enderscape",
-    "fallback": "Enderscape"
+    "translate": "enchantment.enchantencore.enderscape"
   },
   "exclusive_set": "#enchantencore:exclusive_set/leggings",
   "supported_items": "#minecraft:leg_armor",

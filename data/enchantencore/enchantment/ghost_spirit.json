@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.ghost_spirit",
-      "fallback": "Ghost Spirit"
+      "translate": "enchantment.enchantencore.ghost_spirit"
     },
     "exclusive_set": "#enchantencore:exclusive_set/spirit_wolf",
     "supported_items": "minecraft:wolf_armor",

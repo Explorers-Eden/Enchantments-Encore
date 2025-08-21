@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.illumination",
-      "fallback": "Illumination"
+      "translate": "enchantment.enchantencore.illumination"
     },
     "supported_items": "#minecraft:enchantable/head_armor",
     "weight": 1,

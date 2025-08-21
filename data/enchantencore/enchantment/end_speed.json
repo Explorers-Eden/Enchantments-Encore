@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.end_speed",
-    "fallback": "End Speed"
+    "translate": "enchantment.enchantencore.end_speed"
   },
     "exclusive_set": "#enchantencore:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",

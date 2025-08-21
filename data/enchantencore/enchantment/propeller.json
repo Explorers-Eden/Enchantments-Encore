@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.propeller",
-    "fallback": "Propeller"
+    "translate": "enchantment.enchantencore.propeller"
   },
   "exclusive_set": "#enchantencore:exclusive_set/height",
   "supported_items": "#minecraft:harnesses",

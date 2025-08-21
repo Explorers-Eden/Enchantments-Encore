@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.fetch",
-      "fallback": "Fetch"
+      "translate": "enchantment.enchantencore.fetch"
     },
     "exclusive_set": "#enchantencore:exclusive_set/wolf_armor",
     "supported_items": "minecraft:wolf_armor",

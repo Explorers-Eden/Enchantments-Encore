@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.sparking_aura",
-    "fallback": "Sparking Aura"
+    "translate": "enchantment.enchantencore.sparking_aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

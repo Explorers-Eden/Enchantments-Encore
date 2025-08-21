@@ -1,2 +1,4 @@
+schedule function enchantencore:illumination/kill 10t
+
 execute as @e[type=marker,tag=ee.illumination] at @s unless entity @e[type=area_effect_cloud,tag=ee.illumination,distance=..0.5] unless entity @e[type=player,distance=..0.5] if block ~ ~ ~ light[waterlogged=false] run setblock ~ ~ ~ air
 execute as @e[type=marker,tag=ee.illumination] at @s unless entity @e[type=area_effect_cloud,tag=ee.illumination,distance=..0.5] unless entity @e[type=player,distance=..0.5] run kill @s

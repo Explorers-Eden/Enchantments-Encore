@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.poppy_peace",
-    "fallback": "Poppy Peace"
+    "translate": "enchantment.enchantencore.poppy_peace"
   },
     "supported_items": "#enchantencore:weapons",
     "exclusive_set": "#enchantencore:exclusive_set/poppy",

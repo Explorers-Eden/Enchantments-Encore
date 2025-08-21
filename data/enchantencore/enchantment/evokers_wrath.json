@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.evokers_wrath",
-    "fallback": "Evokers Wrath"
+    "translate": "enchantment.enchantencore.evokers_wrath"
   },
   "exclusive_set": "#enchantencore:exclusive_set/crossbow",
   "supported_items": "#minecraft:enchantable/crossbow",

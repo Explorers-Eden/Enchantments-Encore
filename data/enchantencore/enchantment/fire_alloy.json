@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.fire_alloy",
-    "fallback": "Fire Alloy"
+    "translate": "enchantment.enchantencore.fire_alloy"
   },
     "exclusive_set": "#enchantencore:exclusive_set/alloy",
     "supported_items": "#minecraft:chest_armor",

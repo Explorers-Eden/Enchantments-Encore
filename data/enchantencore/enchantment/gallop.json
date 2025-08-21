@@ -2,8 +2,7 @@
     "exclusive_set": "#enchantencore:exclusive_set/saddle",
     "anvil_cost": 8,
     "description": {
-      "translate": "enchantment.enchantencore.gallop",
-      "fallback": "Gallop"
+      "translate": "enchantment.enchantencore.gallop"
     },
     "effects": {
       "minecraft:location_changed": [

@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.lightning_bolt",
-    "fallback": "Lightning Bolt"
+    "translate": "enchantment.enchantencore.lightning_bolt"
   },
   "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
   "supported_items": "#enchantencore:all_bows",

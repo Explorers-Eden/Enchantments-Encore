@@ -1,10 +1,6 @@
 {
   "values": [
     {
-      "id": "enchantencore:bedrocker",
-      "required": false
-    },
-    {
       "id": "#enchantencore:alloy",
       "required": false
     },

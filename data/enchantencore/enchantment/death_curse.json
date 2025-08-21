@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.death_curse",
-      "fallback": "Curse of Death"
+      "translate": "enchantment.enchantencore.death_curse"
     },
     "supported_items": "#minecraft:enchantable/sword",
     "weight": 2,

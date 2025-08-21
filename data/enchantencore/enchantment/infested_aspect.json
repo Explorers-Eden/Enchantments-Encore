@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.infested_asspect",
-    "fallback": "Infested Aspect"
+    "translate": "enchantment.enchantencore.infested_aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

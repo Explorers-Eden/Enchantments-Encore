@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.strafe",
-      "fallback": "Strafe"
+      "translate": "enchantment.enchantencore.strafe"
     },
     "exclusive_set": "#enchantencore:exclusive_set/boots",
     "supported_items": "#minecraft:foot_armor",

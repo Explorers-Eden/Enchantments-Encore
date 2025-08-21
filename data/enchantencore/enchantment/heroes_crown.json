@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.heroes_crown",
-      "fallback": "Heroes Crown"
+      "translate": "enchantment.enchantencore.heroes_crown"
     },
     "exclusive_set": "#enchantencore:exclusive_set/helmet",
     "supported_items": "#minecraft:enchantable/head_armor",

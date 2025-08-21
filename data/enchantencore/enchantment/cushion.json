@@ -1,8 +1,7 @@
 {
 	"anvil_cost": 1,
 	"description": {
-		"translate": "enchantment.enchantencore.cushion",
-        "fallback": "Cushion"
+		"translate": "enchantment.enchantencore.cushion"
   },
   "exclusive_set": "#enchantencore:exclusive_set/elytra",
   "supported_items": "minecraft:elytra",

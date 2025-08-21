@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.sacrifice",
-    "fallback": "Sacrifice"
+    "translate": "enchantment.enchantencore.sacrifice"
   },
     "exclusive_set": "#enchantencore:exclusive_set/repair",
     "supported_items": "#enchantencore:all_enchantable_wolf_armor",

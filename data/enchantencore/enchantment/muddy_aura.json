@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.muddy_aura",
-    "fallback": "Muddy Aura"
+    "translate": "enchantment.enchantencore.muddy_aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

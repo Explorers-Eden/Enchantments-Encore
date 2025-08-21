@@ -1,0 +1,11 @@
+{
+  "values": [
+    "enchantencore:wiki/init",
+    "enchantencore:leaf_jumper/kill",
+    "enchantencore:guard",
+    "enchantencore:illumination/kill",
+    "enchantencore:seeker/init",
+    "enchantencore:crop_dance/reset_sneak_time",
+    "enchantencore:10_tick_schedule"
+  ]
+}

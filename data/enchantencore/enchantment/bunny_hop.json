@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.bunny_hop",
-    "fallback": "Bunny Hop"
+    "translate": "enchantment.enchantencore.bunny_hop"
   },
   "exclusive_set": "#enchantencore:exclusive_set/leggings",
   "supported_items": "#minecraft:enchantable/leg_armor",

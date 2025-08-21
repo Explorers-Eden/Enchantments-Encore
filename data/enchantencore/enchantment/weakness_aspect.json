@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.weakness_aspect",
-    "fallback": "Weakness Aspect"
+    "translate": "enchantment.enchantencore.weakness_aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

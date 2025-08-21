@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.guard",
-      "fallback": "Guard"
+      "translate": "enchantment.enchantencore.guard"
     },
     "exclusive_set": "#enchantencore:exclusive_set/repair",
     "supported_items": "#enchantencore:can_block",

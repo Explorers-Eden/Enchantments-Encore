@@ -9,7 +9,4 @@ scoreboard objectives add enchantencore.technical dummy
 scoreboard objectives add enchantencore.leaf_jumper dummy
 scoreboard objectives add enchantencore.pegasus dummy
 scoreboard objectives add enchantencore.idle_time dummy
-
-##schedule functions
-schedule function enchantencore:schedules/10_tick 10t
-schedule function enchantencore:schedules/5_tick 5t
+scoreboard objectives add enchantencore.dialog_trigger.wiki trigger {"bold":false,"color":"dark_purple","italic":false,"text":"Enchantments Encore: Wiki"}

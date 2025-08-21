@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.bane_of_bosses",
-    "fallback": "Bane of Bosses"
+    "translate": "enchantment.enchantencore.bane_of_bosses"
   },
     "exclusive_set": "#minecraft:exclusive_set/damage",
     "supported_items": "#enchantencore:weapons",

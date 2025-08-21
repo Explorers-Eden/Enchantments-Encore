@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.shulker_shell",
-      "fallback": "Shulker Shell"
+      "translate": "enchantment.enchantencore.shulker_shell"
     },
     "exclusive_set": "#enchantencore:exclusive_set/alloy",
     "supported_items": "#minecraft:chest_armor",

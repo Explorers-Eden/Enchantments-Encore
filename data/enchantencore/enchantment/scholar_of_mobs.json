@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.scholar_of_mobs",
-    "fallback": "Scholar of Mobs"
+    "translate": "enchantment.enchantencore.scholar_of_mobs"
   },
     "exclusive_set": "#enchantencore:exclusive_set/exp",
     "supported_items": "#enchantencore:weapons",

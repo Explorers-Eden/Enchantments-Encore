@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.ice_alloy",
-    "fallback": "Ice Alloy"
+    "translate": "enchantment.enchantencore.ice_alloy"
   },
     "exclusive_set": "#enchantencore:exclusive_set/alloy",
     "supported_items": "#minecraft:chest_armor",

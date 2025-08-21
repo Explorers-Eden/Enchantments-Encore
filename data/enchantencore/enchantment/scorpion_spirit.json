@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.scorpion_spirit",
-      "fallback": "Scorpion Spirit"
+      "translate": "enchantment.enchantencore.scorpion_spirit"
     },
     "exclusive_set": "#enchantencore:exclusive_set/spirit_wolf",
     "supported_items": "minecraft:wolf_armor",

@@ -1,7 +1,6 @@
 {
    "description": {
-    "translate": "enchantment.enchantencore.weaving_aspect",
-    "fallback": "Weaving Aspect"
+    "translate": "enchantment.enchantencore.weaving_aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

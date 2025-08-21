@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.leaf_jumper",
-    "fallback": "Leaf Jumper"
+    "translate": "enchantment.enchantencore.leaf_jumper"
   },
   "exclusive_set": "#enchantencore:exclusive_set/boots",
   "supported_items": "#minecraft:enchantable/foot_armor",

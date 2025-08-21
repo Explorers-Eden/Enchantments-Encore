@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.path_speed",
-      "fallback": "Path Speed"
+      "translate": "enchantment.enchantencore.path_speed"
     },
     "exclusive_set": "#enchantencore:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",

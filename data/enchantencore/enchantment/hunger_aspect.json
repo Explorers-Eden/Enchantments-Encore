@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.hunger_aspect",
-    "fallback": "Hunger Aspect"
+    "translate": "enchantment.enchantencore.hunger_aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

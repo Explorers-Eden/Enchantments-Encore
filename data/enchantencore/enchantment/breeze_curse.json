@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.breeze_curse",
-      "fallback": "Curse of Breeze"
+      "translate": "enchantment.enchantencore.breeze_curse"
     },
     "supported_items": "#minecraft:enchantable/sword",
     "weight": 2,

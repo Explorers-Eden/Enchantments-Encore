@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.handyman",
-    "fallback": "Handyman"
+    "translate": "enchantment.enchantencore.handyman"
   },
     "exclusive_set": "#enchantencore:exclusive_set/repair",
     "supported_items": "#enchantencore:all_enchantable",

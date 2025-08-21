@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.ominous_healing",
-    "fallback": "Ominous Healing"
+    "translate": "enchantment.enchantencore.ominous_healing"
   },
     "exclusive_set": "#enchantencore:exclusive_set/shield",
     "supported_items": "minecraft:shield",

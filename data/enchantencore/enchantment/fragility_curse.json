@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.fragility_curse",
-    "fallback": "Curse of Fragility"
+    "translate": "enchantment.enchantencore.fragility_curse"
   },
   "supported_items": "#enchantencore:weapons",
   "weight": 1,

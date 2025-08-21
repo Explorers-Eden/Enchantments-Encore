@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.summer_walker",
-    "fallback": "Summer Walker"
+    "translate": "enchantment.enchantencore.summer_walker"
   },
     "exclusive_set": "#minecraft:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",

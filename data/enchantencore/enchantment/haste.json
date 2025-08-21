@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.haste",
-    "fallback": "Haste"
+    "translate": "enchantment.enchantencore.haste"
   },
   "exclusive_set": "#enchantencore:exclusive_set/haste",
   "supported_items": "#minecraft:enchantable/mining",

@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.heavenly_aura",
-    "fallback": "Heavenly Aura"
+    "translate": "enchantment.enchantencore.heavenly_aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.ominous_aura",
-    "fallback": "Ominous Aura"
+    "translate": "enchantment.enchantencore.ominous_aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

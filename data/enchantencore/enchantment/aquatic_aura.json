@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.aquatic_aura",
-    "fallback": "Aquatic Aura"
+    "translate": "enchantment.enchantencore.aquatic_aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.pegasus",
-    "fallback": "Pegasus"
+    "translate": "enchantment.enchantencore.pegasus"
   },
   "exclusive_set": "#enchantencore:exclusive_set/horse_armor",
   "supported_items": "#enchantencore:all_horse_armor",

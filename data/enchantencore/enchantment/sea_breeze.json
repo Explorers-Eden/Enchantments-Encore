@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.sea_breeze",
-      "fallback": "Sea Breeze"
+      "translate": "enchantment.enchantencore.sea_breeze"
     },
     "exclusive_set": "#enchantencore:exclusive_set/pufferfish",
     "supported_items": "#minecraft:enchantable/trident",

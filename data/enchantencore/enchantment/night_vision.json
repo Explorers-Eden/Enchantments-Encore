@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.night_vision",
-    "fallback": "Night Vision"
+    "translate": "enchantment.enchantencore.night_vision"
   },
   "exclusive_set": "#enchantencore:exclusive_set/helmet",
   "supported_items": "#minecraft:enchantable/head_armor",

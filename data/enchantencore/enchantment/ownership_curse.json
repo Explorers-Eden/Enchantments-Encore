@@ -1,7 +1,6 @@
 {
 	"description": {
-		"translate": "enchantment.enchantencore.ownership_curse",
-		"fallback": "Curse of Ownership"
+		"translate": "enchantment.enchantencore.ownership_curse"
 	},
 	"supported_items": "#minecraft:enchantable/armor",
 	"weight": 2,

@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.enchanted_aura",
-    "fallback": "Enchanted Aura"
+    "translate": "enchantment.enchantencore.enchanted_aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

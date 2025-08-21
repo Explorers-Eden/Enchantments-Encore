@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.swift_slash",
-    "fallback": "Swift Slash"
+    "translate": "enchantment.enchantencore.swift_slash"
   },
     "exclusive_set": "#minecraft:exclusive_set/damage",
     "supported_items": "#enchantencore:weapons",

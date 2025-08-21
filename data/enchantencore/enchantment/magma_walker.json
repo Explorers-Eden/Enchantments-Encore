@@ -1,8 +1,7 @@
 {
   "anvil_cost": 4,
   "description": {
-    "translate": "enchantment.enchantencore.magma_walker",
-    "fallback": "Magma Walker"
+    "translate": "enchantment.enchantencore.magma_walker"
   },
   "effects": {
     "minecraft:damage_immunity": [

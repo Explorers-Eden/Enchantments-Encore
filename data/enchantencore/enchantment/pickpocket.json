@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.pickpocket",
-    "fallback": "Pickpocket"
+    "translate": "enchantment.enchantencore.pickpocket"
   },
     "supported_items": "#minecraft:chest_armor",
     "exclusive_set": "#enchantencore:exclusive_set/poppy",

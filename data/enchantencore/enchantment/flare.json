@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.flare",
-    "fallback": "Flare"
+    "translate": "enchantment.enchantencore.flare"
   },
   "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
   "supported_items": "#enchantencore:all_bows",

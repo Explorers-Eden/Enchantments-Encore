@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.invisibility_cloak",
-    "fallback": "Invisibility Cloak"
+    "translate": "enchantment.enchantencore.invisibility_cloak"
   },
     "supported_items": "#minecraft:enchantable/foot_armor",
     "exclusive_set": "#enchantencore:exclusive_set/boots",

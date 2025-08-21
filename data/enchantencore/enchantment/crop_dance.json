@@ -1,7 +1,6 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.crop_dance",
-    "fallback": "Crop Dance"
+    "translate": "enchantment.enchantencore.crop_dance"
   },
   "exclusive_set": "#minecraft:exclusive_set/boots",
   "supported_items": "#minecraft:enchantable/foot_armor",

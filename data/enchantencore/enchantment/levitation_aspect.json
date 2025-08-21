@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.levitation_aspect",
-    "fallback": "Levitation Aspect"
+    "translate": "enchantment.enchantencore.levitation_aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

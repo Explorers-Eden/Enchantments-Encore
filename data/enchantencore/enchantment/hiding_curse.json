@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.hiding_curse",
-    "fallback": "Curse of Hiding"
+    "translate": "enchantment.enchantencore.hiding_curse"
   },
     "supported_items": "#minecraft:enchantable/sword",
     "weight": 2,

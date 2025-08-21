@@ -1,8 +1,7 @@
 {
 	"anvil_cost": 4,
     "description": {
-        "translate": "enchantment.enchantencore.thorns_protection",
-        "fallback": "Thorns Protection"
+        "translate": "enchantment.enchantencore.thorns_protection"
       },
 	"effects": {
 		"minecraft:damage_protection": [

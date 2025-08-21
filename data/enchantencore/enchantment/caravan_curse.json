@@ -1,7 +1,6 @@
 {
 	"description": {
-		"translate": "enchantment.enchantencore.caravan_curse",
-		"fallback": "Curse of Caravan"
+		"translate": "enchantment.enchantencore.caravan_curse"
 	},
 	"supported_items": "#minecraft:enchantable/armor",
 	"weight": 2,

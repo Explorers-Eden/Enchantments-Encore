@@ -1,7 +1,6 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.lingering",
-      "fallback": "Lingering"
+      "translate": "enchantment.enchantencore.lingering"
     },
     "supported_items": "#enchantencore:all_bows",
     "primary_items": "minecraft:bow",

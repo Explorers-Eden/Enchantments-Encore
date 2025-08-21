@@ -1,7 +1,6 @@
 {
 	"description": {
-		"translate": "enchantment.enchantencore.bear_spirit",
-		"fallback": "Bear Spirit"
+		"translate": "enchantment.enchantencore.bear_spirit"
 	},
 	"exclusive_set": "#enchantencore:exclusive_set/spirit_wolf",
 	"supported_items": "minecraft:wolf_armor",

@@ -1,7 +1,6 @@
 {
 	"description": {
-		"translate": "enchantment.enchantencore.crank_curse",
-		"fallback": "Curse of Crank"
+		"translate": "enchantment.enchantencore.crank_curse"
 	},
 	"supported_items": "#minecraft:enchantable/armor",
 	"weight": 2,

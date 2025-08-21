@@ -1,7 +1,6 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.welfare_curse",
-    "fallback": "Curse of Welfare"
+    "translate": "enchantment.enchantencore.welfare_curse"
   },
     "exclusive_set": "#enchantencore:exclusive_set/item_effect",
     "supported_items": "#enchantencore:all_tools",
