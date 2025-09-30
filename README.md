@@ -16,12 +16,15 @@ Enchantments Encore is compatible with all Vanilla Enchantments as well as [NeoE
 
 Any other enchantment data pack probably will also be compatible but most likely will not have mutual exclusivities to Enchantment Encores enchantments.
 
-In addition to that the latest versions also support [Enchantment Descriptions](https://modrinth.com/mod/enchantment-descriptions) (Enchantments Encore v1.8+) and [Enchantment Lore](https://modrinth.com/mod/enchantment-lore) (Enchantments Encore v2.5+). If you're using the data pack version, make sure to use it also as a resource pack to make it work.
+In addition to that the latest versions also support [Enchantment Lore](https://modrinth.com/mod/enchantment-lore) (Enchantments Encore v2.5+). If you're using the data pack version, make sure to use it also as a resource pack to make it work.
 
 ## 🛠️ Technical Gibberish
 The datapack usually just needs to be installed. There is nothing else you have to do. It just works out of the box. Starting with v3.0 **the data pack also functions as the resource pack** to make the new enchantments stand out more from the vanilla ones and also to provide the needed translations. *(Mod users automatically have the resources enabled)*
 
 But if you are playing on a PaperMC Server (or a PaperMC Fork like Purpur) make sure to set **allow-non-player-entities-on-scoreboards** in your paper config files to **true** in order for everything to work properly.
+
+## 📝 Translations
+Want to play in your own language? You can help us out by contributing on our **[Crowdin Page](https://crowdin.com/project/explorers-eden)**! Once a translation for a language is finished, it’ll be added to the data pack for you to enjoy.
 
 ## ✍️ Feedback, Questions & Suggestions
 We're here to help! If you happen to have questions, suggestions or just encountered a bug, then feel free to hop on our discord server to ask for help in our **Data Pack Section**. [Click to join the server](https://discord.gg/f2pMggfgVv)
