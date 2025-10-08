@@ -45,6 +45,10 @@
               "predicate": {
                 "type": "#enchantencore:hard_projectiles"
               }
+            },
+            {
+              "condition": "minecraft:random_chance",
+              "chance": 0.25
             }
           ]
         }
