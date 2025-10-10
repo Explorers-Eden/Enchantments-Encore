@@ -139,3 +139,4 @@ execute if score @s enchantencore.dialog_trigger.wiki matches 115 run return run
 execute if score @s enchantencore.dialog_trigger.wiki matches 116 run return run function enchantencore:wiki/send_msg {enchant:"wind_aspect"}
 execute if score @s enchantencore.dialog_trigger.wiki matches 117 run return run function enchantencore:wiki/send_msg {enchant:"wither_aspect"}
 execute if score @s enchantencore.dialog_trigger.wiki matches 118 run return run function enchantencore:wiki/send_msg {enchant:"wither_protection"}
+execute if score @s enchantencore.dialog_trigger.wiki matches 119 run return run function enchantencore:wiki/send_msg {enchant:"regrowth"}

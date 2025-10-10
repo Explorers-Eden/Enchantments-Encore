@@ -12,4 +12,4 @@ scoreboard objectives add enchantencore.idle_time dummy
 scoreboard objectives add enchantencore.dialog_trigger.wiki trigger {"bold":false,"color":"dark_purple","italic":false,"text":"Enchantments Encore: Wiki"}
 
 ##set data pack version
-data modify storage eden:datapack enchantments_encore.version set value "3.5"
+data modify storage eden:datapack enchantments_encore.version set value "3.6"
