@@ -1,0 +1,1 @@
+summon minecraft:marker ~ ~ ~ {Tags:["enchantencore.regrowth.potatoes","enchantencore.regrowth.marker"]}

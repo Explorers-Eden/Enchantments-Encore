@@ -1,0 +1,1 @@
+summon minecraft:marker ~ ~ ~ {Tags:["enchantencore.regrowth.beetroots","enchantencore.regrowth.marker"]}

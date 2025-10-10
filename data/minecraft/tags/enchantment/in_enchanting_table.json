@@ -47,6 +47,10 @@
     {
       "id": "enchantencore:leaf_jumper",
       "required": false
+    },
+    {
+      "id": "enchantencore:regrowth",
+      "required": false
     }
   ]
 }

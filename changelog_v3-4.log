@@ -1,7 +1,0 @@
-## Changes:
-- Treasure enchantments are now part of the loot in Bastions, Ancient Cities and End Cities
-- In-Game Wiki now shows Icons for applicable items and the info text in the buttons tooltip
-- Reduced radius of Bomber's explosion by 0.5 for it's first level and 0.25 for the second level
-- Reduced chance of Lightning Bolt hitting an victim to 25%
-
-## Fixes:
