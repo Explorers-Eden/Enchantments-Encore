@@ -51,6 +51,10 @@
     {
       "id": "enchantencore:regrowth",
       "required": false
+    },
+    {
+      "id": "enchantencore:plow",
+      "required": false
     }
   ]
 }

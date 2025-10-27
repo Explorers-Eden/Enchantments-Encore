@@ -3,6 +3,7 @@
     "menu.enchantencore.title.external": "Enchantments Encore",
     "menu.enchantencore.title.wiki": "Enchantments Encore: Wiki",
 
+    "enchantment.enchantencore.plow": "Plow",
     "enchantment.enchantencore.regrowth": "Regrowth",
     "enchantment.enchantencore.ghost_spirit": "Ghost Spirit",
     "enchantment.enchantencore.cleansing": "Cleansing",
@@ -129,6 +130,7 @@
     "enchantment.enchantencore.caravan_curse": "Curse of Caravan",
 
     "enchantment_lore.enchantencore:regrowth.description": "§nRegrowth§r\n\nMax Level: I\n\nCompatible with: Hoes\n\nReplants fully grown Crops when harvested",
+    "enchantment_lore.enchantencore:plow.description": "§nPlow§r\n\nMax Level: III\n\nCompatible with: Hoes\n\nTills a larger area with left-click",
     "enchantment_lore.enchantencore:ghost_spirit.description": "§nGhost Spirit§r\n\nMax Level: I\n\nCompatible with: Wolf Armor\n\nMakes your Wolf almost invincible but it also has 0 attack damage",
     "enchantment_lore.enchantencore:implosion.description": "§nImplosion§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\nPulls in hostile entities within a 5 block radius",
     "enchantment_lore.enchantencore:trial_runner.description": "§nTrial Runner§r\n\nMax Level: I\n\nCompatible with: Boots\n\nGives the wearer the Trial Omen effect but drains durability",
@@ -179,7 +181,7 @@
     "enchantment_lore.enchantencore:ice_alloy.description": "§nIce Alloy§r\n\nMax Level: III\n\nCompatible with: Chestplates\n\nFreezes attacking entities",
     "enchantment_lore.enchantencore:infested_aspect.description": "§nInfested Aspect§r\n\nMax Level: II\n\nCompatible with: Swords, Maces\n\nApplies infested effect to hit entities",
     "enchantment_lore.enchantencore:invisibility_cloak.description": "§nInvisibility Cloak§r\n\nMax Level: I\n\nCompatible with: Boots\n\nCrouching turns you invisible",
-    "enchantment_lore.enchantencore:leech.description": "§nLeech§r\n\nMax Level: I\n\nCompatible with: Swords\n\nRegenerate health when hitting entities",
+    "enchantment_lore.enchantencore:leech.description": "§nLeech§r\n\nMax Level: I\n\nCompatible with: Swords, Axes, Tridents, Maces\n\nRegenerate health when hitting entities",
     "enchantment_lore.enchantencore:levitation_aspect.description": "§nLevitation Aspect§r\n\nMax Level: II\n\nCompatible with: Swords, Maces\n\nApplies levitation effect to hit entities",
     "enchantment_lore.enchantencore:lightning_bolt.description": "§nLightning Bolt§r\n\nMax Level: I\n\nCompatible with: Crossbows, Bows\n\nHas a chance to summon lightning upon hit entities when they can see the sky",
     "enchantment_lore.enchantencore:magma_walker.description": "§nMagma Walker§r\n\nMax Level: II\n\nCompatible with: Boots\n\nTurns Lava into magma blocks when walking over it",
@@ -253,7 +255,8 @@
     "enchantment_lore.enchantencore.ownership_curse.description": "§nCurse of Ownership§r\n\nMax Level: I\n\nCompatible with: Armor\n\nWearer takes damage when their pets do",
     "enchantment_lore.enchantencore.caravan_curse.description": "§nCurse of Caravan§r\n\nMax Level: I\n\nCompatible with: Armor\n\nWearer gets slowed down when leashing entities",
 
-    "wiki.enchantencore.regrowth": "Replants fully grown Crops when harvested \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Hoes\n\n• §lIncompabilities§r: Silk Touch, Efficiency\n\n• §lLoot Sources§r: Enchanting Table, Traded Books",
+    "wiki.enchantencore.regrowth": "Replants fully grown Crops when harvested \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Hoes\n\n• §lIncompabilities§r: Silk Touch, Efficiency, Plow\n\n• §lLoot Sources§r: Enchanting Table, Traded Books",
+    "wiki.enchantencore.plow": "Tills a larger area with left-click \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Hoes\n\n• §lIncompabilities§r: Silk Touch, Efficiency, Regrowth\n\n• §lLoot Sources§r: Enchanting Table, Traded Books",
     "wiki.enchantencore.angry_aura": "Applies a cosmetic angry aura to the wearer, it's pets and most of the projectiles shot \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books",
     "wiki.enchantencore.aquatic_aura": "Applies a cosmetic aquatic aura to the wearer, it's pets and most of the projectiles shot \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books",
     "wiki.enchantencore.bane_of_bosses": "Inflicts more damage to boss mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Maces, Tridents\n\n• §lIncompabilities§r: Bane of Netherborn, Bane of Raiders, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books",
@@ -312,7 +315,7 @@
     "wiki.enchantencore.infested_aspect": "Applies infested effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books",
     "wiki.enchantencore.invisibility_cloak": "Crouching turns you invisible\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Sonic, Soul Speed, End Speed, Path Speed, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Traded Books, Treasure",
     "wiki.enchantencore.leaf_jumper": "Spawns Leaf Blocks when jumping in the air whenever there is enough room below\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Path Speed, Strafe\n\n• §lLoot Sources§r: Enchanting Table, Treasure",
-    "wiki.enchantencore.leech": "Regenerate health when hitting entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Treasure",
+    "wiki.enchantencore.leech": "Regenerate health when hitting entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Axes, Tridents, Maces\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Treasure",
     "wiki.enchantencore.levitation_aspect": "Applies levitation effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier, Heavy\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books",
     "wiki.enchantencore.lightning_bolt": "Has a chance to summon lightning upon hit entities when they can see the sky\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Bomber, Ender Shot, Forge Shot, Evokers Wrath, Sting, Implosion, Flare\n\n• §lLoot Sources§r: Traded Equipment, Traded Books",
     "wiki.enchantencore.lingering": "Leaves behind a lingering cloud with the effect of the shot tipped arrow when hitting a block\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books",

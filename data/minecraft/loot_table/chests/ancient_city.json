@@ -343,7 +343,7 @@
           "functions": [
             {
               "function": "minecraft:enchant_randomly",
-              "options": "#minecraft:treasure"
+              "options": "#enchantencore:treasure"
             }
           ],
           "name": "minecraft:book",

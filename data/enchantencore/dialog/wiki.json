@@ -2543,6 +2543,24 @@
         "type": "run_command",
         "command": "trigger enchantencore.dialog_trigger.wiki set 119"
       }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.plow"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_hoe"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.plow"
+      },
+      "action": {
+        "type": "run_command",
+        "command": "trigger enchantencore.dialog_trigger.wiki set 120"
+      }
     }
   ]
 }
