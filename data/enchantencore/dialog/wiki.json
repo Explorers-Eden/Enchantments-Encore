@@ -1582,7 +1582,7 @@
     {
       "label": [
         {
-          "translate": "enchantment.enchantencore.ownership_curse"
+          "translate": "enchantment.enchantencore.pacifier"
         },
         " ",
         {
@@ -1593,7 +1593,7 @@
         }
       ],
       "tooltip": {
-        "translate": "wiki.enchantencore.ownership_curse"
+        "translate": "wiki.enchantencore.pacifier"
       },
       "action": {
         "type": "run_command",
@@ -2326,7 +2326,7 @@
         },
         " ",
         {
-          "sprite": "minecraft:item/iron_helmet"
+          "sprite": "minecraft:item/iron_boots"
         }
       ],
       "tooltip": {
