@@ -12,6 +12,8 @@ A comprehensive overview of all enchantments and their infos can be found here: 
 Starting with v3.2 there also is an in-game wiki accessible via the pause menu to quickly check enchantments you don't know yet.
 
 ## 🤝 Data Pack & Mod Compabilities
+**n1trus** created an awesome and useful resource pack addon that’s fully compatible with Enchantments Encore. You can check it out here: [Bray & Cyber's 3D Books - Enchantments Encore Patch](https://modrinth.com/resourcepack/bray-cybers-3d-books-enchantments-encore-patch)
+
 Enchantments Encore is compatible with all Vanilla Enchantments as well as [NeoEnchant+](https://modrinth.com/datapack/neoenchant) and Enchantments of [Katters Structures](https://modrinth.com/datapack/katters-structures).
 
 Any other enchantment data pack probably will also be compatible but most likely will not have mutual exclusivities to Enchantment Encores enchantments.
