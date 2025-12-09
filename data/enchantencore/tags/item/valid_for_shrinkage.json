@@ -4,7 +4,8 @@
       "#minecraft:harnesses",
       "minecraft:elytra",
       "minecraft:wolf_armor",
-      "#enchantencore:all_horse_armor"
+      "#enchantencore:all_horse_armor",
+      "#enchantencore:all_nautilus_armor"
     ]
   }
   

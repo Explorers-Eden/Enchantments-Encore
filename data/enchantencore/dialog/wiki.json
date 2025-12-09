@@ -22,2545 +22,2936 @@
   },
   "columns": 3,
   "actions": [
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.angry_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.angry_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 1"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.aquatic_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.aquatic_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 2"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bane_of_bosses"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bane_of_bosses"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 3"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bane_of_endborn"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bane_of_endborn"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 4"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bane_of_netherborn"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bane_of_netherborn"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 5"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bane_of_raiders"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bane_of_raiders"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 6"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bear_spirit"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bear_spirit"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 7"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.boar_spirit"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.boar_spirit"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 8"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.boltbringer"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.boltbringer"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 9"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bomber"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bomber"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 10"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.breeze_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.breeze_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 11"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bulletproof"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bulletproof"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 12"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.bunny_hop"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.bunny_hop"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 13"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.caravan_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.caravan_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 14"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.cleansing"
-        },
-        " ",
-        {
-          "sprite": "enchantencore:item/shield"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.cleansing"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 15"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.crab_claw"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.crab_claw"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 16"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.crank_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.crank_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 17"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.creeper_alloy"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.creeper_alloy"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 18"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.crispbread"
-        },
-        " ",
-        {
-          "sprite": "enchantencore:item/shield"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.crispbread"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 19"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.crop_dance"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.crop_dance"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 20"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.cushion"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/elytra"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.cushion"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 21"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.darkness_alloy"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.darkness_alloy"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 22"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.day_protection"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.day_protection"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 23"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.death_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.death_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 24"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.echoing_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.echoing_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 25"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.electric_walker"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.electric_walker"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 26"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.enchanted_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.enchanted_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 27"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.end_protection"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.end_protection"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 28"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.end_speed"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.end_speed"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 29"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ender_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ender_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 30"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ender_shot"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ender_shot"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 31"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.enderscape"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.enderscape"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 32"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.evokers_wrath"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.evokers_wrath"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 33"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.fetch"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.fetch"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 34"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.fire_alloy"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.fire_alloy"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 35"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.flaming_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.flaming_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 36"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.flare"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.flare"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 37"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.forge_shot"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.forge_shot"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 38"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.fragility_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.fragility_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 39"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.gallop"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/saddle"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.gallop"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 40"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ghost_spirit"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ghost_spirit"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 41"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.gluttony"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.gluttony"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 42"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.grass_walker"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.grass_walker"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 43"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.growth"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/elytra"
-        },
-        {
-          "sprite": "minecraft:item/iron_horse_armor"
-        },
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.growth"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 44"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.guard"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.guard"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 45"
-      }
-    },
-    {
-      "label": {
-        "translate": "enchantment.enchantencore.handyman"
-      },
-      "tooltip": {
-        "translate": "wiki.enchantencore.handyman"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 46"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.hardened"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.hardened"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 47"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.haste"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.haste"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 48"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.heavenly_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.heavenly_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 49"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.heroes_crown"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.heroes_crown"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 50"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.hiding_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.hiding_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 51"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.hunger_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.hunger_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 52"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ice_alloy"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ice_alloy"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 53"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.illumination"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.illumination"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 54"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.implosion"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.implosion"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 55"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.infested_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.infested_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 56"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.invisibility_cloak"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.invisibility_cloak"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 57"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.leaf_jumper"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.leaf_jumper"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 58"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.leech"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.leech"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 59"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.levitation_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.levitation_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 60"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.lightning_bolt"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.lightning_bolt"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 61"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.lingering"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.lingering"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 62"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.lovely_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.lovely_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 63"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.lush_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.lush_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 64"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.magma_walker"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.magma_walker"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 65"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.moonwalk"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/elytra"
-        },
-        {
-          "sprite": "minecraft:item/iron_horse_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.moonwalk"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 66"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.muddy_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.muddy_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 67"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.nether_protection"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.nether_protection"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 68"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.night_protection"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.night_protection"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 69"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.night_vision"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.night_vision"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 70"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ominous_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ominous_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 71"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ominous_healing"
-        },
-        " ",
-        {
-          "sprite": "enchantencore:item/shield"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ominous_healing"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 72"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ominous_rain"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/trident"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ominous_rain"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 73"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.oozing_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.oozing_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 74"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.ownership_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.ownership_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 75"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.pacifier"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.pacifier"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 76"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.pale_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.pale_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 77"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.path_speed"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.path_speed"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 78"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.pegasus"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_horse_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.pegasus"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 79"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.phantom_menace"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.phantom_menace"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 80"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.pickpocket"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.pickpocket"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 81"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.propeller"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/blue_harness"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.propeller"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 82"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.pufferfish"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/trident"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.pufferfish"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 83"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.rabbit_foot"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.rabbit_foot"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 84"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.randomness_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.randomness_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 85"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.reach_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.reach_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 86"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.rejuvenation"
-        },
-        " ",
-        {
-          "sprite": "enchantencore:item/shield"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.rejuvenation"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 87"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.replenish"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/bow"
-        },
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.replenish"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 88"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sacrifice"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sacrifice"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 89"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.safe_landing"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/elytra"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.safe_landing"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 90"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sand_speed"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sand_speed"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 91"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.scent"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.scent"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 92"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.scholar_of_blocks"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.scholar_of_blocks"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 93"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.scholar_of_mobs"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.scholar_of_mobs"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 94"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.scorpion_spirit"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/wolf_armor"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.scorpion_spirit"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 95"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sea_breeze"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/trident"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sea_breeze"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 96"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.seeker"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.seeker"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 97"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.shrinkage"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/elytra"
-        },
-        {
-          "sprite": "minecraft:item/iron_horse_armor"
-        },
-        {
-          "sprite": "minecraft:item/blue_harness"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.shrinkage"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 98"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.shulker_shell"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.shulker_shell"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 99"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.slowness_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.slowness_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 100"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sonic"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sonic"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 101"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sparking_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sparking_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 102"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sticky_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sticky_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 103"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.sting"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/crossbow_standby"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sting"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 104"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.strafe"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.strafe"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 105"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.summer_walker"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.summer_walker"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 106"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.swift_slash"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/trident"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.swift_slash"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 107"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.switch"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/trident"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.switch"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 108"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.thorns_protection"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.thorns_protection"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 109"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.trial_aura"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.trial_aura"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 110"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.trial_runner"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.trial_runner"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 111"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.undying_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.undying_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 112"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.weakness_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.weakness_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 113"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.weaving_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.weaving_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 114"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.welfare_curse"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_axe"
-        },
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        },
-        {
-          "sprite": "minecraft:item/iron_pickaxe"
-        },
-        {
-          "sprite": "minecraft:item/iron_shovel"
-        },
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/flint_and_steel"
-        },
-        {
-          "sprite": "minecraft:item/shears"
-        },
-        {
-          "sprite": "minecraft:item/brush"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.welfare_curse"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 115"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.wind_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.wind_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 116"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.wither_aspect"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_sword"
-        },
-        {
-          "sprite": "minecraft:item/mace"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.wither_aspect"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 117"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.wither_protection"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_helmet"
-        },
-        {
-          "sprite": "minecraft:item/iron_chestplate"
-        },
-        {
-          "sprite": "minecraft:item/iron_leggings"
-        },
-        {
-          "sprite": "minecraft:item/iron_boots"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.wither_protection"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 118"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.regrowth"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.regrowth"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 119"
-      }
-    },
-    {
-      "label": [
-        {
-          "translate": "enchantment.enchantencore.plow"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/iron_hoe"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.plow"
-      },
-      "action": {
-        "type": "run_command",
-        "command": "trigger enchantencore.dialog_trigger.wiki set 120"
-      }
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.angry_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.angry_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 1"
     }
-  ]
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.aquatic_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.aquatic_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 2"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bane_of_bosses"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bane_of_bosses"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 3"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bane_of_endborn"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bane_of_endborn"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 4"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bane_of_netherborn"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bane_of_netherborn"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 5"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bane_of_raiders"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bane_of_raiders"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 6"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bear_spirit"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bear_spirit"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 7"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.boar_spirit"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.boar_spirit"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 8"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.boltbringer"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.boltbringer"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 9"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bomber"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bomber"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 10"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.breeze_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.breeze_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 11"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bulletproof"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bulletproof"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 12"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.bunny_hop"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.bunny_hop"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 13"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.caravan_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.caravan_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 14"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.cleansing"
+      },
+      " ",
+      {
+        "sprite": "enchantencore:item/shield",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.cleansing"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 15"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.crab_claw"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.crab_claw"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 16"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.crank_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.crank_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 17"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.creeper_alloy"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.creeper_alloy"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 18"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.crispbread"
+      },
+      " ",
+      {
+        "sprite": "enchantencore:item/shield",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.crispbread"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 19"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.crop_dance"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.crop_dance"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 20"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.cushion"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/elytra",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.cushion"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 21"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.darkness_alloy"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.darkness_alloy"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 22"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.day_protection"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.day_protection"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 23"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.death_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.death_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 24"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.echoing_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.echoing_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 25"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.electric_walker"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.electric_walker"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 26"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.enchanted_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.enchanted_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 27"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.end_protection"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.end_protection"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 28"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.end_speed"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.end_speed"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 29"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ender_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ender_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 30"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ender_shot"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ender_shot"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 31"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.enderscape"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.enderscape"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 32"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.evokers_wrath"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.evokers_wrath"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 33"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.fetch"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.fetch"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 34"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.fire_alloy"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.fire_alloy"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 35"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.flaming_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.flaming_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 36"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.flare"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.flare"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 37"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.forge_shot"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.forge_shot"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 38"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.fragility_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.fragility_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 39"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.gallop"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/saddle",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.gallop"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 40"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ghost_spirit"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ghost_spirit"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 41"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.gluttony"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.gluttony"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 42"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.grass_walker"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.grass_walker"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 43"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.growth"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/elytra",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_horse_armor",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_nautilus_armor",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.growth"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 44"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.guard"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.guard"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 45"
+    }
+  },
+  {
+    "label": {
+      "translate": "enchantment.enchantencore.handyman"
+    },
+    "tooltip": {
+      "translate": "wiki.enchantencore.handyman"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 46"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.hardened"
+      },
+      " ",
+      {
+        "sprite": "enchantencore:item/shield",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.hardened"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 47"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.haste"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.haste"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 48"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.heavenly_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.heavenly_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 49"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.heroes_crown"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.heroes_crown"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 50"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.hiding_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.hiding_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 51"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.hunger_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.hunger_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 52"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ice_alloy"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ice_alloy"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 53"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.illumination"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.illumination"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 54"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.implosion"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.implosion"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 55"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.infested_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.infested_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 56"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.invisibility_cloak"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.invisibility_cloak"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 57"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.leaf_jumper"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.leaf_jumper"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 58"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.leech"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.leech"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 59"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.levitation_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.levitation_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 60"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.lightning_bolt"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.lightning_bolt"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 61"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.lingering"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.lingering"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 62"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.lovely_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.lovely_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 63"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.lush_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.lush_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 64"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.magma_walker"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.magma_walker"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 65"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.moonwalk"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/elytra",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_horse_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.moonwalk"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 66"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.muddy_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.muddy_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 67"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.nether_protection"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.nether_protection"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 68"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.night_protection"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.night_protection"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 69"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.night_vision"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.night_vision"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 70"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ominous_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ominous_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 71"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ominous_healing"
+      },
+      " ",
+      {
+        "sprite": "enchantencore:item/shield",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ominous_healing"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 72"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ominous_rain"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ominous_rain"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 73"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.oozing_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.oozing_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 74"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.ownership_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.ownership_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 75"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.pacifier"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.pacifier"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 76"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.pale_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.pale_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 77"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.path_speed"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.path_speed"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 78"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.pegasus"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_horse_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.pegasus"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 79"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.phantom_menace"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.phantom_menace"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 80"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.pickpocket"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.pickpocket"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 81"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.plow"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.plow"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 120"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.poison_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.poison_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 121"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.propeller"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/blue_harness",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.propeller"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 82"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.pufferfish"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.pufferfish"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 83"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.rabbit_foot"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.rabbit_foot"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 84"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.randomness_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.randomness_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 85"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.reach_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.reach_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 86"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.regrowth"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.regrowth"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 119"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.rejuvenation"
+      },
+      " ",
+      {
+        "sprite": "enchantencore:item/shield",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.rejuvenation"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 87"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.replenish"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/bow",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.replenish"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 88"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sacrifice"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sacrifice"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 89"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.safe_landing"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/elytra",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.safe_landing"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 90"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sand_speed"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sand_speed"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 91"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.scent"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.scent"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 92"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.scholar_of_blocks"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.scholar_of_blocks"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 93"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.scholar_of_mobs"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.scholar_of_mobs"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 94"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.scorpion_spirit"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/wolf_armor",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.scorpion_spirit"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 95"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sea_breeze"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sea_breeze"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 96"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.seeker"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.seeker"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 97"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.shrinkage"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/elytra",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_horse_armor",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_nautilus_armor",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/blue_harness",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.shrinkage"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 98"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.shulker_shell"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.shulker_shell"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 99"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.slowness_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.slowness_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 100"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sonic"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sonic"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 101"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sparking_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sparking_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 102"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sticky_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sticky_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 103"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.sting"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/crossbow_standby",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.sting"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 104"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.strafe"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.strafe"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 105"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.summer_walker"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.summer_walker"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 106"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.swift_slash"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.swift_slash"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 107"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.switch"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/trident",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.switch"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 108"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.thorns_protection"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.thorns_protection"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 109"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.trial_aura"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.trial_aura"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 110"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.trial_runner"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.trial_runner"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 111"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.undying_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.undying_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 112"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.weakness_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.weakness_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 113"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.weaving_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.weaving_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 114"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.welfare_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_axe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_hoe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_pickaxe",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_shovel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/flint_and_steel",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/shears",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/brush",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.welfare_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 115"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.wind_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.wind_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 116"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.wither_aspect"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_sword",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/mace",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_spear",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.wither_aspect"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 117"
+    }
+  },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.wither_protection"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_chestplate",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_leggings",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/iron_boots",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.wither_protection"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 118"
+    }
+  }
+]
 }

@@ -2,7 +2,6 @@
   "description": {
     "translate": "enchantment.enchantencore.propeller"
   },
-  "exclusive_set": "#enchantencore:exclusive_set/height",
   "supported_items": "#minecraft:harnesses",
   "weight": 2,
   "max_level": 5,
