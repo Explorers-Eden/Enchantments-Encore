@@ -2,7 +2,6 @@
     "description": {
       "translate": "enchantment.enchantencore.guard"
     },
-    "exclusive_set": "#enchantencore:exclusive_set/repair",
     "supported_items": "#enchantencore:can_block",
     "primary_items": "#minecraft:enchantable/melee_weapon",
     "weight": 2,
