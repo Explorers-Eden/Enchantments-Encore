@@ -143,6 +143,18 @@
     {
       "id": "enchantencore:ping_tag",
       "required": false
+    },
+    {
+      "id": "enchantencore:propeller",
+      "required": false
+    },
+    {
+      "id": "enchantencore:anchor",
+      "required": false
+    },
+    {
+      "id": "enchantencore:surfer",
+      "required": false
     }
   ]
 }

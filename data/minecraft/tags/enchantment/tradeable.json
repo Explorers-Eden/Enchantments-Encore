@@ -89,10 +89,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:propeller",
-      "required": false
-    },
-    {
       "id": "enchantencore:regrowth",
       "required": false
     },

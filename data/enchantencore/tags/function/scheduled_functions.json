@@ -8,6 +8,7 @@
     "enchantencore:crop_dance/reset_sneak_time",
     "enchantencore:10_tick_schedule",
     "enchantencore:regrowth/init",
-    "enchantencore:strafe/timer"
+    "enchantencore:strafe/timer",
+    "enchantencore:anchor/remove"
   ]
 }

@@ -22,7 +22,30 @@
   },
   "columns": 3,
   "actions": [
-  {
+    {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.anchor"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/saddle",
+        "atlas": "minecraft:items"
+      },
+      {
+        "sprite": "minecraft:item/blue_harness",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.anchor"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 122"
+    }
+    },
+    {
     "label": [
       {
         "translate": "enchantment.enchantencore.angry_aura"
@@ -2589,6 +2612,25 @@
       "command": "trigger enchantencore.dialog_trigger.wiki set 106"
     }
   },
+  {
+    "label": [
+      {
+        "translate": "enchantment.enchantencore.surfer"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/saddle",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.surfer"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 123"
+    }
+    },
   {
     "label": [
       {

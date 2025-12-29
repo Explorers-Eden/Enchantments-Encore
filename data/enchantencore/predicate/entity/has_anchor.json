@@ -1,0 +1,16 @@
+{
+  "condition": "entity_properties",
+  "entity": "this",
+  "predicate": {
+    "predicates": {
+      "enchantments": [
+        {
+          "enchantments": "enchantencore:anchor",
+          "levels": {
+            "min": 1
+          }
+        }
+      ]
+    }
+  }
+}

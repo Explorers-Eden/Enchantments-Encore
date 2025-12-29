@@ -1,0 +1,47 @@
+{
+  "exclusive_set": "#enchantencore:exclusive_set/saddle",
+  "anvil_cost": 8,
+  "description": {
+    "translate": "enchantment.enchantencore.surfer"
+  },
+  "effects": {
+    "minecraft:location_changed": [
+      {
+        "requirements": {
+          "condition": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "passenger": {
+              "type": "minecraft:player"
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:attribute",
+          "attribute": "minecraft:water_movement_efficiency",
+          "id": "enchantencore:surfer.water_mov",
+          "amount": {
+            "type": "minecraft:linear",
+            "base": 1.5,
+            "per_level_above_first": 1.75
+          },
+          "operation": "add_value"
+        }
+      }
+    ]
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 10
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "slots": [
+    "saddle"
+  ],
+  "supported_items": "minecraft:saddle",
+  "weight": 1
+}

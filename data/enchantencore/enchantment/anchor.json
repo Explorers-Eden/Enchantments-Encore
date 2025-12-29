@@ -1,0 +1,53 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.anchor"
+  },
+  "supported_items": "#enchantencore:valid_for_anchor",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 12,
+    "per_level_above_first": 11
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 11
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "body",
+    "saddle"
+  ],
+  "effects": {
+    "tick": [
+      {
+        "requirements": {
+          "condition": "all_of",
+          "terms": [
+            {
+              "condition": "inverted",
+              "term": {
+                "condition": "entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "passenger": {}
+                }
+              }
+            },
+            {
+              "condition": "entity_properties",
+              "entity": "this",
+              "predicate": {
+                "periodic_tick": 10
+              }
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:anchor/apply"
+        }
+      }
+    ]
+  }
+}

@@ -51,10 +51,6 @@
     {
       "id": "enchantencore:heroes_crown",
       "required": false
-    },
-    {
-      "id": "enchantencore:propeller",
-      "required": false
     }
   ]
 }
