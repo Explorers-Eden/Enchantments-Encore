@@ -3,7 +3,7 @@
   "entity": "this",
   "predicate": {
     "equipment": {
-      "body": {
+      "saddle": {
         "predicates": {
           "minecraft:enchantments": [
             {
