@@ -1,117 +1,117 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.illumination"
+        "translate": "enchantment.enchantencore.illumination"
     },
+    "exclusive_set": "#enchantencore:exclusive_set/helmet",
     "supported_items": "#minecraft:enchantable/head_armor",
     "weight": 1,
     "max_level": 3,
     "min_cost": {
-      "base": 21,
-      "per_level_above_first": 8
+        "base": 21,
+        "per_level_above_first": 8
     },
     "max_cost": {
-      "base": 51,
-      "per_level_above_first": 8
+        "base": 51,
+        "per_level_above_first": 8
     },
     "anvil_cost": 4,
     "slots": [
-      "head"
+        "head"
     ],
     "effects": {
-      "minecraft:tick": [
-        {
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:illumination/level_3"
-          },
-          "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                  "location": {},
-                  "equipment": {
-                    "head": {
-                      "predicates": {
-                        "minecraft:enchantments": [
-                          {
-                            "enchantments": "enchantencore:illumination",
-                            "levels": {
-                              "min": 3
+        "minecraft:tick": [
+            {
+                "effect": {
+                    "type": "minecraft:run_function",
+                    "function": "enchantencore:illumination/level_3"
+                },
+                "requirements": {
+                    "condition": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "location": {},
+                                "equipment": {
+                                    "head": {
+                                        "predicates": {
+                                            "minecraft:enchantments": [
+                                                {
+                                                    "enchantments": "enchantencore:illumination",
+                                                    "levels": {
+                                                        "min": 3
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
                             }
-                          }
-                        ]
-                      }
-                    }
-                  }
+                        }
+                    ]
                 }
-              }
-            ]
-          }
-        },
-        {
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:illumination/level_2"
-          },
-          "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                  "location": {},
-                  "equipment": {
-                    "head": {
-                      "predicates": {
-                        "minecraft:enchantments": [
-                          {
-                            "enchantments": "enchantencore:illumination",
-                            "levels": 2
-                          }
-                        ]
-                      }
-                    }
-                  }
+            },
+            {
+                "effect": {
+                    "type": "minecraft:run_function",
+                    "function": "enchantencore:illumination/level_2"
+                },
+                "requirements": {
+                    "condition": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "location": {},
+                                "equipment": {
+                                    "head": {
+                                        "predicates": {
+                                            "minecraft:enchantments": [
+                                                {
+                                                    "enchantments": "enchantencore:illumination",
+                                                    "levels": 2
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 }
-              }
-            ]
-          }
-        },
-        {
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:illumination/level_1"
-          },
-          "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                  "location": {},
-                  "equipment": {
-                    "head": {
-                      "predicates": {
-                        "minecraft:enchantments": [
-                          {
-                            "enchantments": "enchantencore:illumination",
-                            "levels": 1
-                          }
-                        ]
-                      }
-                    }
-                  }
+            },
+            {
+                "effect": {
+                    "type": "minecraft:run_function",
+                    "function": "enchantencore:illumination/level_1"
+                },
+                "requirements": {
+                    "condition": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "location": {},
+                                "equipment": {
+                                    "head": {
+                                        "predicates": {
+                                            "minecraft:enchantments": [
+                                                {
+                                                    "enchantments": "enchantencore:illumination",
+                                                    "levels": 1
+                                                }
+                                            ]
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
                 }
-              }
-            ]
-          }
-        }
-      ]
+            }
+        ]
     }
-  }
-  
+}

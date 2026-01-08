@@ -9,6 +9,7 @@
     "enchantencore:10_tick_schedule",
     "enchantencore:regrowth/init",
     "enchantencore:strafe/timer",
-    "enchantencore:anchor/remove"
+    "enchantencore:anchor/remove",
+    "enchantencore:add_enchantable_component/init"
   ]
 }
