@@ -51,6 +51,162 @@
     {
       "id": "enchantencore:heroes_crown",
       "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_bosses",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_netherborn",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_raiders",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bane_of_endborn",
+      "required": false
+    },
+    {
+      "id": "enchantencore:wither_protection",
+      "required": false
+    },
+    {
+      "id": "enchantencore:thorns_protection",
+      "required": false
+    },
+    {
+      "id": "enchantencore:cushion",
+      "required": false
+    },
+    {
+      "id": "#enchantencore:aspect",
+      "required": false
+    },
+    {
+      "id": "enchantencore:crop_dance",
+      "required": false
+    },
+    {
+      "id": "enchantencore:enderscape",
+      "required": false
+    },
+    {
+      "id": "enchantencore:evokers_wrath",
+      "required": false
+    },
+    {
+      "id": "enchantencore:forge_shot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:hardened",
+      "required": false
+    },
+    {
+      "id": "enchantencore:phantom_menace",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pufferfish",
+      "required": false
+    },
+    {
+      "id": "enchantencore:rabbit_foot",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sacrifice",
+      "required": false
+    },
+    {
+      "id": "enchantencore:safe_landing",
+      "required": false
+    },
+    {
+      "id": "enchantencore:scholar_of_blocks",
+      "required": false
+    },
+    {
+      "id": "enchantencore:scholar_of_mobs",
+      "required": false
+    },
+    {
+      "id": "enchantencore:poppy_peace",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pickpocket",
+      "required": false
+    },
+    {
+      "id": "enchantencore:haste",
+      "required": false
+    },
+    {
+      "id": "enchantencore:sea_breeze",
+      "required": false
+    },
+    {
+      "id": "enchantencore:seeker",
+      "required": false
+    },
+    {
+      "id": "enchantencore:pegasus",
+      "required": false
+    },
+    {
+      "id": "enchantencore:replenish",
+      "required": false
+    },
+    {
+      "id": "enchantencore:illumination",
+      "required": false
+    },
+    {
+      "id": "enchantencore:scent",
+      "required": false
+    },
+    {
+      "id": "enchantencore:fetch",
+      "required": false
+    },
+    {
+      "id": "enchantencore:strafe",
+      "required": false
+    },
+    {
+      "id": "enchantencore:implosion",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ghost_spirit",
+      "required": false
+    },
+    {
+      "id": "enchantencore:guard",
+      "required": false
+    },
+    {
+      "id": "enchantencore:lingering",
+      "required": false
+    },
+    {
+      "id": "enchantencore:ping_tag",
+      "required": false
+    },
+    {
+      "id": "enchantencore:propeller",
+      "required": false
+    },
+    {
+      "id": "enchantencore:anchor",
+      "required": false
+    },
+    {
+      "id": "enchantencore:surfer",
+      "required": false
     }
   ]
 }

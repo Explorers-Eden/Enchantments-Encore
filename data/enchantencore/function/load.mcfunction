@@ -13,4 +13,4 @@ scoreboard objectives add enchantencore.dialog_trigger.wiki trigger {"bold":fals
 scoreboard objectives add enchantencore.strafe.timer dummy
 
 ##set data pack version
-data modify storage eden:datapack enchantments_encore.version set value "4.0"
+data modify storage eden:datapack enchantments_encore.version set value "4.1"

@@ -1,0 +1,4 @@
+## Changes:
+- Moved entries from non_treasure tag list directly to tag lists containing the non_treasure one and removed a few entries from the on_mob_spawn_equipment tag list to balance enchantments on mob equipment a bit more fairly
+
+## Fixes:

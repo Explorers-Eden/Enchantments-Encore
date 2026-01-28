@@ -1,7 +1,0 @@
-## Changes:
-- Saddles, Harnesses, Wolf/Nautilus/Horse Armor now get the enchantable component added when in the players inventory - This allows for them to be used in an enchanting table.
-
-## Fixes:
-- Night Vision and Illumination being applicable to the same helmet
-- Guard enchantment not being removed if the item has multiple custom_data entries
-- Anchor not being removed from entities
