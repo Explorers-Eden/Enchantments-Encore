@@ -1,33 +1,40 @@
 {
-    "description": {
+  "description": {
     "translate": "enchantment.enchantencore.randomness_curse"
   },
-    "supported_items": "#enchantencore:all_tools",
-    "weight": 2,
-    "max_level": 1,
-    "min_cost": {
-      "base": 21,
-      "per_level_above_first": 6
-    },
-    "max_cost": {
-      "base": 51,
-      "per_level_above_first": 6
-    },
-    "anvil_cost": 5,
-    "slots": [
-      "mainhand"
-    ],
-    "effects": {
-      "minecraft:post_attack": [
-        {
-          "enchanted": "attacker",
-          "affected": "attacker",
-          "effect": {
-            "type": "minecraft:run_function",
-            "function": "enchantencore:randomizer"
-          }
+  "supported_items": "#enchantencore:all_tools",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 21,
+    "per_level_above_first": 6
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 6
+  },
+  "anvil_cost": 5,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "attacker",
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:randomizer"
         }
-      ]
-    }
+      }
+    ],
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:randomizer"
+        }
+      }
+    ]
   }
-  
+}
