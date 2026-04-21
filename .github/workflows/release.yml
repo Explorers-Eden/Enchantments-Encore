@@ -1,0 +1,226 @@
+name: Publish Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: pip install pyyaml requests
+
+      - name: Read release metadata
+        id: meta
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import sys
+          import yaml
+
+          info_path = "release_infos.yml"
+          if not os.path.exists(info_path):
+              raise FileNotFoundError("release_infos.yml not found")
+
+          with open(info_path, "r", encoding="utf-8") as f:
+              info = yaml.safe_load(f)
+
+          project_id = info.get("Project-ID")
+          raw_versions = info.get("Meta Data", {}).get("Versions", [])
+          meta_versions = [str(v) for v in raw_versions]
+          details = info.get("Details", {})
+
+          version_type = str(details.get("Version type", "Release")).strip()
+          version_number = str(details.get("Version number", "")).strip()
+          version_subtitle = str(details.get("Version subtitle", "")).strip()
+
+          if not project_id:
+              raise ValueError("Project-ID missing in release_infos.yml")
+          if not meta_versions:
+              raise ValueError("Meta Data -> Versions missing or empty in release_infos.yml")
+          if not version_number:
+              raise ValueError("Details -> Version number missing in release_infos.yml")
+          if not version_subtitle:
+              raise ValueError("Details -> Version subtitle missing in release_infos.yml")
+
+          changelog_candidates = ["Changelog.log", "changelog.log"]
+          changelog_path = None
+          for candidate in changelog_candidates:
+              if os.path.exists(candidate):
+                  changelog_path = candidate
+                  break
+
+          if changelog_path is None:
+              raise FileNotFoundError("Neither Changelog.log nor changelog.log was found")
+
+          tag_name = f"v{version_number}"
+          zip_name = f"enchantments_encore_{version_number}.zip"
+
+          version_type_lower = version_type.lower()
+          if version_type_lower not in {"release", "beta", "alpha"}:
+              raise ValueError(
+                  f"Unsupported version type '{version_type}'. Use Release, Beta, or Alpha."
+              )
+
+          is_prerelease = "true" if version_type_lower in {"beta", "alpha"} else "false"
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"project_id={project_id}\n")
+              out.write(f"version_number={version_number}\n")
+              out.write(f"release_name={version_subtitle}\n")
+              out.write(f"tag_name={tag_name}\n")
+              out.write(f"zip_name={zip_name}\n")
+              out.write(f"version_type={version_type_lower}\n")
+              out.write(f"is_prerelease={is_prerelease}\n")
+              out.write(f"changelog_path={changelog_path}\n")
+              out.write(f"game_versions_json={json.dumps(meta_versions)}\n")
+          PY
+
+      - name: Build release zip
+        env:
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+        run: |
+          python - <<'PY'
+          import os
+          import zipfile
+
+          zip_name = os.environ["ZIP_NAME"]
+
+          required_paths = [
+              "assets",
+              "data",
+              "LICENSE",
+              "pack.mcmeta",
+              "pack.png",
+          ]
+
+          missing = [p for p in required_paths if not os.path.exists(p)]
+          if missing:
+              raise FileNotFoundError(f"Missing required files/folders: {', '.join(missing)}")
+
+          with zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED) as zf:
+              for folder in ["assets", "data"]:
+                  for root, _, files in os.walk(folder):
+                      for file in files:
+                          full_path = os.path.join(root, file)
+                          arcname = os.path.relpath(full_path, ".")
+                          zf.write(full_path, arcname)
+
+              for file in ["LICENSE", "pack.mcmeta", "pack.png"]:
+                  zf.write(file, file)
+
+          print(f"Created {zip_name}")
+          PY
+
+      - name: Create or update GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ steps.meta.outputs.tag_name }}
+          RELEASE_NAME: ${{ steps.meta.outputs.release_name }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+          IS_PRERELEASE: ${{ steps.meta.outputs.is_prerelease }}
+        run: |
+          set -euo pipefail
+
+          if gh release view "$TAG_NAME" >/dev/null 2>&1; then
+            gh release edit "$TAG_NAME" \
+              --title "$RELEASE_NAME" \
+              --notes-file "$CHANGELOG_PATH" \
+              $([ "$IS_PRERELEASE" = "true" ] && echo "--prerelease" || echo "")
+          else
+            gh release create "$TAG_NAME" "$ZIP_NAME" \
+              --title "$RELEASE_NAME" \
+              --notes-file "$CHANGELOG_PATH" \
+              $([ "$IS_PRERELEASE" = "true" ] && echo "--prerelease" || echo "")
+          fi
+
+          gh release upload "$TAG_NAME" "$ZIP_NAME" --clobber
+
+      - name: Upload version to Modrinth
+        env:
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.version_number }}
+          RELEASE_NAME: ${{ steps.meta.outputs.release_name }}
+          VERSION_TYPE: ${{ steps.meta.outputs.version_type }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+        run: |
+          python - <<'PY'
+          import json
+          import os
+          import requests
+
+          token = os.environ["MODRINTH_TOKEN"]
+          project_id = os.environ["PROJECT_ID"]
+          version_number = os.environ["VERSION_NUMBER"]
+          release_name = os.environ["RELEASE_NAME"]
+          version_type = os.environ["VERSION_TYPE"]
+          changelog_path = os.environ["CHANGELOG_PATH"]
+          zip_name = os.environ["ZIP_NAME"]
+          game_versions = json.loads(os.environ["GAME_VERSIONS_JSON"])
+
+          if not token:
+              raise RuntimeError("MODRINTH_TOKEN secret is missing")
+
+          with open(changelog_path, "r", encoding="utf-8") as f:
+              changelog = f.read()
+
+          payload = {
+              "project_id": project_id,
+              "name": release_name,
+              "version_number": version_number,
+              "changelog": changelog,
+              "dependencies": [],
+              "game_versions": [str(v) for v in game_versions],
+              "version_type": version_type,
+              "loaders": ["datapack"],
+              "featured": True,
+              "status": "listed",
+              "file_parts": ["file"],
+              "primary_file": "file"
+          }
+
+          headers = {
+              "Authorization": token,
+              "User-Agent": "Explorers-Eden-Enchantments-Encore-GitHub-Action"
+          }
+
+          with open(zip_name, "rb") as f:
+              files = {
+                  "data": (None, json.dumps(payload), "application/json"),
+                  "file": (zip_name, f, "application/zip"),
+              }
+
+              response = requests.post(
+                  "https://api.modrinth.com/v2/version",
+                  headers=headers,
+                  files=files,
+                  timeout=300,
+              )
+
+          if response.status_code >= 300:
+              print(response.text)
+              raise RuntimeError(f"Modrinth upload failed: {response.status_code}")
+
+          print("Modrinth version uploaded successfully")
+          print(response.text)
+          PY
