@@ -245,6 +245,25 @@
   {
     "label": [
       {
+        "translate": "enchantment.enchantencore.blindness_curse"
+      },
+      " ",
+      {
+        "sprite": "minecraft:item/iron_helmet",
+        "atlas": "minecraft:items"
+      }
+    ],
+    "tooltip": {
+      "translate": "wiki.enchantencore.blindness_curse"
+    },
+    "action": {
+      "type": "run_command",
+      "command": "trigger enchantencore.dialog_trigger.wiki set 124"
+    }
+  },
+  {
+    "label": [
+      {
         "translate": "enchantment.enchantencore.boar_spirit"
       },
       " ",

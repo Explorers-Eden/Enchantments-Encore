@@ -367,15 +367,30 @@ jobs:
 
           updated = 0
           added = 0
+          generated_keys = set()
 
           for entry in generated:
               key = (entry["name"], entry["dataPack"]["name"])
+              generated_keys.add(key)
+
               if key in index_by_key:
                   target_entries[index_by_key[key]] = entry
                   updated += 1
               else:
                   target_entries.append(entry)
                   added += 1
+
+          before_count = len(target_entries)
+
+          target_entries = [
+              entry for entry in target_entries
+              if (
+                  entry.get("dataPack", {}).get("name") != DATAPACK_INFO["name"]
+                  or (entry.get("name"), entry.get("dataPack", {}).get("name")) in generated_keys
+              )
+          ]
+
+          removed = before_count - len(target_entries)
 
           target_entries.sort(
               key=lambda e: (
@@ -390,6 +405,7 @@ jobs:
 
           print(f"Updated entries: {updated}")
           print(f"Added entries: {added}")
+          print(f"Removed entries: {removed}")
           print(f"Skipped entries: {len(skipped)}")
           if skipped:
               print("Skipped enchantments:", ", ".join(skipped))

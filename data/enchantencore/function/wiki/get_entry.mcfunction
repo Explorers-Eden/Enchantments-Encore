@@ -144,3 +144,4 @@ execute if score @s enchantencore.dialog_trigger.wiki matches 120 run return run
 execute if score @s enchantencore.dialog_trigger.wiki matches 121 run return run function enchantencore:wiki/send_msg {enchant:"poison_aspect"}
 execute if score @s enchantencore.dialog_trigger.wiki matches 122 run return run function enchantencore:wiki/send_msg {enchant:"anchor"}
 execute if score @s enchantencore.dialog_trigger.wiki matches 123 run return run function enchantencore:wiki/send_msg {enchant:"surfer"}
+execute if score @s enchantencore.dialog_trigger.wiki matches 124 run return run function enchantencore:wiki/send_msg {enchant:"blindness_curse"}
