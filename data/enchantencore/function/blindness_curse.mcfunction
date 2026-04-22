@@ -1,0 +1,1 @@
+ effect give @s minecraft:blindness 7 1 true

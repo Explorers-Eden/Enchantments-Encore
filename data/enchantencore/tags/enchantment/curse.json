@@ -39,6 +39,10 @@
     {
       "id": "enchantencore:caravan_curse",
       "required": false
+    },
+    {
+      "id": "enchantencore:blindness_curse",
+      "required": false
     }
   ]
 }

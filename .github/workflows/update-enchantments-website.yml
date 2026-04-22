@@ -1,0 +1,315 @@
+name: Update Enchantments Website
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  sync-website-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out source repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Clone website repository
+        env:
+          WEBSITE_REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
+        run: |
+          git clone "https://x-access-token:${WEBSITE_REPO_TOKEN}@github.com/Explorers-Eden/enchantments.explorerseden.eu.git" website-repo
+
+      - name: Update data/enchantments.json
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          SOURCE_LANG = Path("assets/enchantencore/lang/en_us.json")
+          SOURCE_ENCHANTMENTS_DIR = Path("data/enchantencore/enchantment")
+          TARGET_JSON = Path("website-repo/data/enchantments.json")
+
+          if not SOURCE_LANG.exists():
+              raise FileNotFoundError(f"Missing language file: {SOURCE_LANG}")
+
+          if not SOURCE_ENCHANTMENTS_DIR.exists():
+              raise FileNotFoundError(f"Missing enchantment folder: {SOURCE_ENCHANTMENTS_DIR}")
+
+          if not TARGET_JSON.exists():
+              raise FileNotFoundError(f"Missing target JSON: {TARGET_JSON}")
+
+          with SOURCE_LANG.open("r", encoding="utf-8") as f:
+              lang = json.load(f)
+
+          with TARGET_JSON.open("r", encoding="utf-8") as f:
+              target_entries = json.load(f)
+
+          if not isinstance(target_entries, list):
+              raise ValueError("Target data/enchantments.json is not a JSON array")
+
+          ITEM_IMAGE_MAP = {
+              "Helmet": "helmet.png",
+              "Chestplate": "chestplate.png",
+              "Leggings": "leggings.png",
+              "Boots": "boots.png",
+              "Elytra": "elytra.png",
+              "Shield": "shield.png",
+              "Shields": "shield.png",
+              "Sword": "sword.png",
+              "Swords": "sword.png",
+              "Spear": "spear.png",
+              "Spears": "spear.png",
+              "Axe": "axe.png",
+              "Axes": "axe.png",
+              "Pickaxe": "pickaxe.png",
+              "Pickaxes": "pickaxe.png",
+              "Shovel": "shovel.png",
+              "Shovels": "shovel.png",
+              "Hoe": "hoe.png",
+              "Hoes": "hoe.png",
+              "Mace": "mace.png",
+              "Maces": "mace.png",
+              "Trident": "trident.png",
+              "Tridents": "trident.png",
+              "Bow": "bow.png",
+              "Bows": "bow.png",
+              "Crossbow": "crossbow.png",
+              "Crossbows": "crossbow.png",
+              "Fishing Rod": "fishing_rod.png",
+              "Fishing Rods": "fishing_rod.png",
+              "Shears": "shears.png",
+              "Carrot on a Stick": "carrot_on_a_stick.png",
+              "Warped Fungus on a Stick": "warped_fungus_on_a_stick.png",
+              "Flint and Steel": "flint_and_steel.png",
+              "Brush": "brush.png",
+              "Goat Horn": "goat_horn.png",
+              "Wolf Armor": "wolf_armor.png",
+              "Horse Armor": "horse_armor.png",
+              "Harness": "harness.png",
+              "Saddle": "saddle.png",
+              "Books": "enchanted_book_1.png",
+              "Book": "enchanted_book_1.png",
+              "Any": None,
+          }
+
+          DATAPACK_INFO = {
+              "name": "Enchantments Encore",
+              "url": "https://modrinth.com/datapack/enchantments-encore"
+          }
+
+          ROMAN_TO_INT_MAP = {
+              "I": 1,
+              "II": 2,
+              "III": 3,
+              "IV": 4,
+              "V": 5,
+              "VI": 6,
+              "VII": 7,
+              "VIII": 8,
+              "IX": 9,
+              "X": 10,
+              "XI": 11,
+              "XII": 12,
+              "XIII": 13,
+              "XIV": 14,
+              "XV": 15,
+              "XVI": 16,
+              "XVII": 17,
+              "XVIII": 18,
+              "XIX": 19,
+              "XX": 20,
+          }
+
+          def normalize_space(text: str) -> str:
+              return re.sub(r"\s+", " ", text).strip()
+
+          def strip_formatting(text: str) -> str:
+              text = re.sub(r"§.", "", text)
+              return text.strip()
+
+          def roman_to_int(text: str) -> str:
+              s = strip_formatting(text).upper()
+
+              if s.isdigit():
+                  return str(min(int(s), 20))
+
+              if s in ROMAN_TO_INT_MAP:
+                  return str(ROMAN_TO_INT_MAP[s])
+
+              # optional fallback parser, then cap to 20
+              fallback_map = {
+                  "I": 1,
+                  "V": 5,
+                  "X": 10,
+                  "L": 50,
+                  "C": 100,
+                  "D": 500,
+                  "M": 1000,
+              }
+
+              total = 0
+              prev = 0
+              valid = True
+
+              for char in reversed(s):
+                  value = fallback_map.get(char)
+                  if value is None:
+                      valid = False
+                      break
+                  if value < prev:
+                      total -= value
+                  else:
+                      total += value
+                  prev = value
+
+              if valid and total > 0:
+                  return str(min(total, 20))
+
+              return s
+
+          def split_csv_field(text: str):
+              text = strip_formatting(text)
+              if text in {"-", "–", "—", ""}:
+                  return "-"
+              return ", ".join(
+                  [normalize_space(part) for part in text.split(",") if normalize_space(part)]
+              )
+
+          def split_applicable_items(text: str):
+              text = strip_formatting(text)
+              if text in {"-", "–", "—", ""}:
+                  return ["Any"]
+              return [normalize_space(part) for part in text.split(",") if normalize_space(part)]
+
+          def render_applicable_html(items):
+              parts = []
+              for item in items:
+                  image = ITEM_IMAGE_MAP.get(item)
+                  if image:
+                      parts.append(f'<img src="./items/{image}" width="32px"/> {item}')
+                  else:
+                      parts.append(item)
+              return " ".join(parts)
+
+          def build_entry_from_wiki(enchant_id: str, enchant_json: dict):
+              translate_key = enchant_json.get("description", {}).get("translate")
+              if not translate_key:
+                  raise ValueError(f"{enchant_id}: missing description.translate")
+
+              enchant_name = lang.get(translate_key)
+              if not enchant_name:
+                  raise ValueError(f"{enchant_id}: missing lang entry for {translate_key}")
+
+              wiki_key = f"wiki.enchantencore.{enchant_id}"
+              wiki_text = lang.get(wiki_key)
+              if not wiki_text:
+                  raise ValueError(f"{enchant_id}: missing wiki entry {wiki_key}")
+
+              cleaned = strip_formatting(wiki_text).replace("\r\n", "\n")
+              sections = [part.strip() for part in cleaned.split("\n\n") if part.strip()]
+
+              description = sections[0] if sections else ""
+
+              max_level = "-"
+              applicable_to = ["Any"]
+              incompatibilities = "-"
+              loot_sources = "-"
+
+              for section in sections[1:]:
+                  section = section.replace("•", "").strip()
+
+                  if ":" not in section:
+                      continue
+
+                  label, value = section.split(":", 1)
+                  label = normalize_space(label).lower()
+                  value = value.strip()
+
+                  if label == "max level":
+                      max_level = roman_to_int(value)
+                  elif label == "applicable to":
+                      applicable_to = split_applicable_items(value)
+                  elif label in {"incompabilities", "incompatibilities"}:
+                      incompatibilities = split_csv_field(value)
+                  elif label == "loot sources":
+                      loot_sources = split_csv_field(value)
+
+              applicable_text = " ".join(applicable_to)
+              applicable_html = render_applicable_html(applicable_to)
+
+              return {
+                  "name": enchant_name,
+                  "description": description,
+                  "maxLevel": max_level,
+                  "applicableHtml": applicable_html,
+                  "applicableText": applicable_text,
+                  "incompatibilities": incompatibilities,
+                  "lootSources": loot_sources,
+                  "dataPack": DATAPACK_INFO,
+              }
+
+          enchantment_files = sorted(SOURCE_ENCHANTMENTS_DIR.glob("*.json"))
+          if not enchantment_files:
+              raise RuntimeError("No enchantment JSON files found")
+
+          generated = []
+          for path in enchantment_files:
+              enchant_id = path.stem
+              with path.open("r", encoding="utf-8") as f:
+                  enchant_json = json.load(f)
+              generated.append(build_entry_from_wiki(enchant_id, enchant_json))
+
+          index_by_key = {}
+          for idx, entry in enumerate(target_entries):
+              key = (entry.get("name"), entry.get("dataPack", {}).get("name"))
+              index_by_key[key] = idx
+
+          updated = 0
+          added = 0
+
+          for entry in generated:
+              key = (entry["name"], entry["dataPack"]["name"])
+              if key in index_by_key:
+                  target_entries[index_by_key[key]] = entry
+                  updated += 1
+              else:
+                  target_entries.append(entry)
+                  added += 1
+
+          target_entries.sort(
+              key=lambda e: (
+                  str(e.get("dataPack", {}).get("name", "")).lower(),
+                  str(e.get("name", "")).lower(),
+              )
+          )
+
+          with TARGET_JSON.open("w", encoding="utf-8") as f:
+              json.dump(target_entries, f, ensure_ascii=False, indent=2)
+              f.write("\n")
+
+          print(f"Updated entries: {updated}")
+          print(f"Added entries: {added}")
+          PY
+
+      - name: Commit and push website changes
+        working-directory: website-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/enchantments.json
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+
+          git commit -m "Sync Enchantments Encore data"
+          git push

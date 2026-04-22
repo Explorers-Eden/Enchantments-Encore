@@ -4,6 +4,7 @@
     "menu.enchantencore.title.wiki": "Enchantments Encore: Wiki",
 
     "enchantment.enchantencore.anchor": "Anchor",
+    "enchantment.enchantencore.blindness_curse": "Curse of Blindness",
     "enchantment.enchantencore.surfer": "Surfer",
     "enchantment.enchantencore.plow": "Plow",
     "enchantment.enchantencore.regrowth": "Regrowth",
@@ -143,6 +144,7 @@
     "enchantment_lore.enchantencore:illumination.description": "Compatible with: Helmets\n\nLightens up the area around you when headblock is not obstructed",
     "enchantment_lore.enchantencore:shulker_shell.description": "Compatible with: Chestplates\n\nFirework, Tridents, (Spectral) Arrows shot at the wearer fall to the ground when wearer stands still",
     "enchantment_lore.enchantencore:crank_curse.description": "Compatible with: Armor\n\nHurts the wearer when not moving",
+    "enchantment_lore.enchantencore:blindness_curse.description": "Compatible with: Helmets\n\nApplies Blindness to the wearer.",
     "enchantment_lore.enchantencore:pegasus.description": "Compatible with: Horse Armor\n\nHorses fly up to 30 Blocks in the air when mounted. Dismounting gives slow falling to land safely",
     "enchantment_lore.enchantencore:flare.description": "Compatible with: Crossbows, Bows\n\nArrows explode like fireworks when they land or hit an entity",
     "enchantment_lore.enchantencore:boltbringer.description": "Compatible with: Maces\n\nSummons lightning when entity was hit by a player which at least fell 8 blocks",
@@ -274,6 +276,7 @@
     "wiki.enchantencore.boltbringer": "Summons lightning when entity was hit by a player which at least fell 8 blocks \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Maces\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Treasure",
     "wiki.enchantencore.bomber": "Arrows explode when an entity was hit \n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Sting, Forge Shot, Ender Shot, Evokers Wrath, Lightning Bolt, Implosion, Flare\n\n• §lLoot Sources§r: Treasure",
     "wiki.enchantencore.breeze_curse": "Wind charges entity on attack \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure",
+    "wiki.enchantencore.blindness_curse": "Applies Blindness to the wearer \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure",
     "wiki.enchantencore.bulletproof": "10% chance of protecting the wearer from shulker bullets\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Creeper Alloy, Fire Alloy, Ice Alloy, Darkness Alloy\n\n• §lLoot Sources§r: Treasure",
     "wiki.enchantencore.bunny_hop": "Let's you jump higher\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Leggings\n\n• §lIncompabilities§r: Enderscape, Swift Sneak\n\n• §lLoot Sources§r: Enchanting Table, Treasure",
     "wiki.enchantencore.caravan_curse": "Wearer gets slowed down when leashing entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure",
