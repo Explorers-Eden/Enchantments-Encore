@@ -54,51 +54,6 @@ jobs:
           if not isinstance(target_entries, list):
               raise ValueError("Target data/enchantments.json is not a JSON array")
 
-          ITEM_IMAGE_MAP = {
-              "Helmet": "helmet.png",
-              "Chestplate": "chestplate.png",
-              "Leggings": "leggings.png",
-              "Boots": "boots.png",
-              "Elytra": "elytra.png",
-              "Shield": "shield.png",
-              "Shields": "shield.png",
-              "Sword": "sword.png",
-              "Swords": "sword.png",
-              "Spear": "spear.png",
-              "Spears": "spear.png",
-              "Axe": "axe.png",
-              "Axes": "axe.png",
-              "Pickaxe": "pickaxe.png",
-              "Pickaxes": "pickaxe.png",
-              "Shovel": "shovel.png",
-              "Shovels": "shovel.png",
-              "Hoe": "hoe.png",
-              "Hoes": "hoe.png",
-              "Mace": "mace.png",
-              "Maces": "mace.png",
-              "Trident": "trident.png",
-              "Tridents": "trident.png",
-              "Bow": "bow.png",
-              "Bows": "bow.png",
-              "Crossbow": "crossbow.png",
-              "Crossbows": "crossbow.png",
-              "Fishing Rod": "fishing_rod.png",
-              "Fishing Rods": "fishing_rod.png",
-              "Shears": "shears.png",
-              "Carrot on a Stick": "carrot_on_a_stick.png",
-              "Warped Fungus on a Stick": "warped_fungus_on_a_stick.png",
-              "Flint and Steel": "flint_and_steel.png",
-              "Brush": "brush.png",
-              "Goat Horn": "goat_horn.png",
-              "Wolf Armor": "wolf_armor.png",
-              "Horse Armor": "horse_armor.png",
-              "Harness": "harness.png",
-              "Saddle": "saddle.png",
-              "Books": "enchanted_book_1.png",
-              "Book": "enchanted_book_1.png",
-              "Any": None,
-          }
-
           DATAPACK_INFO = {
               "name": "Enchantments Encore",
               "url": "https://modrinth.com/datapack/enchantments-encore"
@@ -127,6 +82,91 @@ jobs:
               "XX": 20,
           }
 
+          APPLICABLE_NORMALIZATION_MAP = {
+              "Any": "Any",
+              "Helmet": "Helmet",
+              "Helmets": "Helmet",
+              "Chestplate": "Chestplate",
+              "Chestplates": "Chestplate",
+              "Leggings": "Leggings",
+              "Boot": "Boots",
+              "Boots": "Boots",
+              "Elytra": "Elytra",
+              "Shield": "Shield",
+              "Shields": "Shield",
+              "Sword": "Sword",
+              "Swords": "Sword",
+              "Spear": "Spear",
+              "Spears": "Spear",
+              "Axe": "Axe",
+              "Axes": "Axe",
+              "Pickaxe": "Pickaxe",
+              "Pickaxes": "Pickaxe",
+              "Shovel": "Shovel",
+              "Shovels": "Shovel",
+              "Hoe": "Hoe",
+              "Hoes": "Hoe",
+              "Mace": "Mace",
+              "Maces": "Mace",
+              "Trident": "Trident",
+              "Tridents": "Trident",
+              "Bow": "Bow",
+              "Bows": "Bow",
+              "Crossbow": "Crossbow",
+              "Crossbows": "Crossbow",
+              "Fishing Rod": "Fishing Rod",
+              "Fishing Rods": "Fishing Rod",
+              "Shears": "Shears",
+              "Carrot on a Stick": "Carrot on a Stick",
+              "Warped Fungus on a Stick": "Warped Fungus on a Stick",
+              "Flint and Steel": "Flint and Steel",
+              "Brush": "Brush",
+              "Goat Horn": "Goat Horn",
+              "Wolf Armor": "Wolf Armor",
+              "Horse Armor": "Horse Armor",
+              "Harness": "Harness",
+              "Saddle": "Saddle",
+              "Book": "Book",
+              "Books": "Book",
+          }
+
+          APPLICABLE_EXPANSION_MAP = {
+              "Armor": ["Helmet", "Chestplate", "Leggings", "Boots"],
+              "Melee Weapons": ["Sword", "Spear", "Axe"],
+          }
+
+          ITEM_IMAGE_MAP = {
+              "Helmet": "helmet.png",
+              "Chestplate": "chestplate.png",
+              "Leggings": "leggings.png",
+              "Boots": "boots.png",
+              "Elytra": "elytra.png",
+              "Shield": "shield.png",
+              "Sword": "sword.png",
+              "Spear": "spear.png",
+              "Axe": "axe.png",
+              "Pickaxe": "pickaxe.png",
+              "Shovel": "shovel.png",
+              "Hoe": "hoe.png",
+              "Mace": "mace.png",
+              "Trident": "trident.png",
+              "Bow": "bow.png",
+              "Crossbow": "crossbow.png",
+              "Fishing Rod": "fishing_rod.png",
+              "Shears": "shears.png",
+              "Carrot on a Stick": "carrot_on_a_stick.png",
+              "Warped Fungus on a Stick": "warped_fungus_on_a_stick.png",
+              "Flint and Steel": "flint_and_steel.png",
+              "Brush": "brush.png",
+              "Goat Horn": "goat_horn.png",
+              "Wolf Armor": "wolf_armor.png",
+              "Horse Armor": "horse_armor.png",
+              "Harness": "harness.png",
+              "Saddle": "saddle.png",
+              "Book": "enchanted_book_1.png",
+              "Any": None,
+          }
+
           def normalize_space(text: str) -> str:
               return re.sub(r"\s+", " ", text).strip()
 
@@ -143,7 +183,6 @@ jobs:
               if s in ROMAN_TO_INT_MAP:
                   return str(ROMAN_TO_INT_MAP[s])
 
-              # optional fallback parser, then cap to 20
               fallback_map = {
                   "I": 1,
                   "V": 5,
@@ -182,11 +221,37 @@ jobs:
                   [normalize_space(part) for part in text.split(",") if normalize_space(part)]
               )
 
+          def normalize_applicable_item(item: str) -> str:
+              item = normalize_space(strip_formatting(item))
+              return APPLICABLE_NORMALIZATION_MAP.get(item, item)
+
           def split_applicable_items(text: str):
               text = strip_formatting(text)
               if text in {"-", "–", "—", ""}:
                   return ["Any"]
-              return [normalize_space(part) for part in text.split(",") if normalize_space(part)]
+
+              raw_items = [
+                  normalize_space(strip_formatting(part))
+                  for part in text.split(",")
+                  if normalize_space(part)
+              ]
+
+              expanded = []
+              for item in raw_items:
+                  if item in APPLICABLE_EXPANSION_MAP:
+                      expanded.extend(APPLICABLE_EXPANSION_MAP[item])
+                  else:
+                      expanded.append(normalize_applicable_item(item))
+
+              deduped = []
+              seen = set()
+              for item in expanded:
+                  normalized = normalize_applicable_item(item)
+                  if normalized not in seen:
+                      deduped.append(normalized)
+                      seen.add(normalized)
+
+              return deduped or ["Any"]
 
           def render_applicable_html(items):
               parts = []
@@ -260,11 +325,18 @@ jobs:
               raise RuntimeError("No enchantment JSON files found")
 
           generated = []
+          skipped = []
+
           for path in enchantment_files:
               enchant_id = path.stem
               with path.open("r", encoding="utf-8") as f:
                   enchant_json = json.load(f)
-              generated.append(build_entry_from_wiki(enchant_id, enchant_json))
+
+              try:
+                  generated.append(build_entry_from_wiki(enchant_id, enchant_json))
+              except ValueError as e:
+                  print(f"WARNING: {e}")
+                  skipped.append(enchant_id)
 
           index_by_key = {}
           for idx, entry in enumerate(target_entries):
@@ -296,10 +368,15 @@ jobs:
 
           print(f"Updated entries: {updated}")
           print(f"Added entries: {added}")
+          print(f"Skipped entries: {len(skipped)}")
+          if skipped:
+              print("Skipped enchantments:", ", ".join(skipped))
           PY
 
       - name: Commit and push website changes
         working-directory: website-repo
+        env:
+          WEBSITE_REPO_TOKEN: ${{ secrets.WEBSITE_REPO_TOKEN }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -312,4 +389,6 @@ jobs:
           fi
 
           git commit -m "Sync Enchantments Encore data"
-          git push
+
+          git remote set-url origin "https://x-access-token:${WEBSITE_REPO_TOKEN}@github.com/Explorers-Eden/enchantments.explorerseden.eu.git"
+          git push origin HEAD:main
