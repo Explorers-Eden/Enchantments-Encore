@@ -120,19 +120,38 @@ jobs:
               "Carrot on a Stick": "Carrot on a Stick",
               "Warped Fungus on a Stick": "Warped Fungus on a Stick",
               "Flint and Steel": "Flint and Steel",
+              "Flint And Steel": "Flint and Steel",
               "Brush": "Brush",
               "Goat Horn": "Goat Horn",
               "Wolf Armor": "Wolf Armor",
               "Horse Armor": "Horse Armor",
               "Harness": "Harness",
+              "Harnesses": "Harness",
               "Saddle": "Saddle",
+              "Saddles": "Saddle",
               "Book": "Book",
               "Books": "Book",
+              "Scroll": "Scroll",
+              "Scrolls": "Scroll",
+              "Crown of Roots": "Crown of Roots",
+              "Blaze Rod": "Blaze Rod",
+              "Blaze Rods": "Blaze Rod",
           }
 
           APPLICABLE_EXPANSION_MAP = {
               "Armor": ["Helmet", "Chestplate", "Leggings", "Boots"],
               "Melee Weapons": ["Sword", "Spear", "Axe"],
+              "Tools": [
+                  "Axe",
+                  "Hoe",
+                  "Pickaxe",
+                  "Shovel",
+                  "Sword",
+                  "Spear",
+                  "Flint and Steel",
+                  "Shears",
+                  "Brush",
+              ],
           }
 
           ITEM_IMAGE_MAP = {
@@ -164,6 +183,9 @@ jobs:
               "Harness": "harness.png",
               "Saddle": "saddle.png",
               "Book": "enchanted_book_1.png",
+              "Scroll": "scroll.png",
+              "Crown of Roots": "crown_of_roots.png",
+              "Blaze Rod": "blaze_rod.png",
               "Any": None,
           }
 
@@ -306,7 +328,7 @@ jobs:
                   elif label == "loot sources":
                       loot_sources = split_csv_field(value)
 
-              applicable_text = " ".join(applicable_to)
+              applicable_text = ", ".join(applicable_to)
               applicable_html = render_applicable_html(applicable_to)
 
               return {
