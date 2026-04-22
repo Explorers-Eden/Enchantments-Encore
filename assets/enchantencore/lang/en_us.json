@@ -261,6 +261,7 @@
     "enchantment_lore.enchantencore:ownership_curse.description": "Compatible with: Armor\n\nWearer takes damage when their pets do",
     "enchantment_lore.enchantencore:caravan_curse.description": "Compatible with: Armor\n\nWearer gets slowed down when leashing entities",
 
+    "wiki.enchantencore.ping_tag": "Indicates that an entity has been hit by playing a ping sound \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows, Axes, Swords, Tridents, Maces\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment",
     "wiki.enchantencore.anchor": "Anchors the entity in place when not ridden \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Saddles, Harnesses\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment",
     "wiki.enchantencore.surfer": "Increases swimming speed of entities \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Saddles\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment",
     "wiki.enchantencore.regrowth": "Replants fully grown Crops when harvested \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Hoes\n\n• §lIncompabilities§r: Silk Touch, Efficiency, Plow\n\n• §lLoot Sources§r: Enchanting Table, Traded Books",
