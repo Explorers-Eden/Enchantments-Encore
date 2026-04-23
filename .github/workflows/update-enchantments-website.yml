@@ -285,19 +285,16 @@ jobs:
                       parts.append(item)
               return " ".join(parts)
 
-          def build_entry_from_wiki(enchant_id: str, enchant_json: dict):
-              translate_key = enchant_json.get("description", {}).get("translate")
-              if not translate_key:
-                  raise ValueError(f"{enchant_id}: missing description.translate")
-
-              enchant_name = lang.get(translate_key)
-              if not enchant_name:
-                  raise ValueError(f"{enchant_id}: missing lang entry for {translate_key}")
-
+          def build_entry_from_wiki(enchant_id: str, enchant_json):
+              enchant_key = f"enchantment.enchantencore.{enchant_id}"
               wiki_key = f"wiki.enchantencore.{enchant_id}"
+
+              enchant_name = lang.get(enchant_key)
               wiki_text = lang.get(wiki_key)
-              if not wiki_text:
-                  raise ValueError(f"{enchant_id}: missing wiki entry {wiki_key}")
+
+              if not enchant_name or not wiki_text:
+                  print(f"WARNING: Skipping {enchant_id} (missing lang entry)")
+                  return None
 
               cleaned = strip_formatting(wiki_text).replace("\r\n", "\n")
               sections = [part.strip() for part in cleaned.split("\n\n") if part.strip()]
@@ -355,9 +352,13 @@ jobs:
                   enchant_json = json.load(f)
 
               try:
-                  generated.append(build_entry_from_wiki(enchant_id, enchant_json))
-              except ValueError as e:
-                  print(f"WARNING: {e}")
+                  entry = build_entry_from_wiki(enchant_id, enchant_json)
+                  if entry:
+                      generated.append(entry)
+                  else:
+                      skipped.append(enchant_id)
+              except Exception as e:
+                  print(f"WARNING: {enchant_id}: {e}")
                   skipped.append(enchant_id)
 
           index_by_key = {}
