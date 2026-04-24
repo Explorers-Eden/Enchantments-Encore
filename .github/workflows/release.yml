@@ -1,4 +1,3 @@
-```yaml
 name: Publish Release
 
 on:
@@ -12,97 +11,130 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install deps
+      - name: Install Python dependencies
         run: pip install pyyaml requests
 
-      - name: Read metadata
+      - name: Read release metadata
         id: meta
+        shell: bash
         run: |
           python - <<'PY'
-          import yaml, json, os
+          import json
+          import os
+          import yaml
 
-          info = yaml.safe_load(open("release_infos.yml"))
+          PACK_NAME = "Enchantments Encore"
+          ZIP_PREFIX = "enchantments_encore"
+          JAR_PREFIX = "enchantments-encore"
 
-          version = str(info["Details"]["Version number"])
-          name = str(info["Details"]["Version subtitle"])
-          project_id = info["Project-ID"]
-          versions = [str(v) for v in info["Meta Data"]["Versions"]]
+          with open("release_infos.yml", "r", encoding="utf-8") as f:
+              info = yaml.safe_load(f)
 
-          tag = f"v{version}"
+          project_id = info.get("Project-ID")
+          game_versions = [str(v) for v in info.get("Meta Data", {}).get("Versions", [])]
+          details = info.get("Details", {})
 
-          out = open(os.environ["GITHUB_OUTPUT"], "a")
-          out.write(f"version={version}\n")
-          out.write(f"name={name}\n")
-          out.write(f"project_id={project_id}\n")
-          out.write(f"tag={tag}\n")
-          out.write(f"versions={json.dumps(versions)}\n")
+          version_type = str(details.get("Version type", "Release")).strip().lower()
+          version_number = str(details.get("Version number", "")).strip()
+          release_name = str(details.get("Version subtitle", "")).strip()
+
+          if version_type not in {"release", "beta", "alpha"}:
+              raise ValueError("Version type must be Release, Beta, or Alpha")
+
+          changelog_path = next(
+              (p for p in ["Changelog.log", "changelog.log"] if os.path.exists(p)),
+              None
+          )
+
+          if not project_id:
+              raise ValueError("Project-ID missing in release_infos.yml")
+          if not game_versions:
+              raise ValueError("Meta Data -> Versions missing in release_infos.yml")
+          if not version_number:
+              raise ValueError("Details -> Version number missing in release_infos.yml")
+          if not release_name:
+              raise ValueError("Details -> Version subtitle missing in release_infos.yml")
+          if not changelog_path:
+              raise FileNotFoundError("Changelog.log or changelog.log missing")
+
+          outputs = {
+              "project_id": project_id,
+              "version_number": version_number,
+              "mod_version_number": f"{version_number}-mod",
+              "release_name": release_name,
+              "mod_release_name": f"{release_name} - Universal Mod",
+              "tag_name": f"v{version_number}",
+              "zip_name": f"{ZIP_PREFIX}_{version_number}.zip",
+              "jar_name": f"{JAR_PREFIX}-{version_number}.jar",
+              "version_type": version_type,
+              "is_prerelease": "true" if version_type in {"beta", "alpha"} else "false",
+              "changelog_path": changelog_path,
+              "game_versions_json": json.dumps(game_versions),
+              "pack_name": PACK_NAME,
+          }
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              for key, value in outputs.items():
+                  out.write(f"{key}={value}\n")
           PY
 
-      - name: Build ZIP + JAR
+      - name: Build datapack zip and universal mod jar
         env:
-          VERSION: ${{ steps.meta.outputs.version }}
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+          JAR_NAME: ${{ steps.meta.outputs.jar_name }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.version_number }}
           PROJECT_ID: ${{ steps.meta.outputs.project_id }}
         run: |
           python - <<'PY'
-          import os, shutil, zipfile, json
+          import json
+          import os
+          import shutil
+          import zipfile
           from pathlib import Path
 
-          version = os.environ["VERSION"]
+          zip_name = os.environ["ZIP_NAME"]
+          jar_name = os.environ["JAR_NAME"]
+          version_number = os.environ["VERSION_NUMBER"]
           project_id = os.environ["PROJECT_ID"]
 
-          mod_id = "mr_enchantencore"
+          mod_id = "mr_enchantments_encore"
           mod_name = "Enchantments Encore"
           slug = "enchantments-encore"
-          icon = "enchantencore_pack.png"
           description = "Enchantments Encore packaged as a universal data/resource mod."
+          icon = "enchantments-encore_pack.png"
+          homepage = f"https://modrinth.com/datapack/{slug}"
+          sources = f"https://github.com/Explorers-Eden/{slug}"
 
-          zip_name = f"enchantencore_{version}.zip"
-          jar_name = f"enchantencore-{version}.jar"
-
-          required = ["data", "pack.mcmeta", "pack.png"]
+          required = ["data", "LICENSE", "pack.mcmeta", "pack.png"]
           missing = [p for p in required if not os.path.exists(p)]
           if missing:
-              raise Exception(f"Missing required files: {missing}")
+              raise FileNotFoundError(f"Missing required files/folders: {', '.join(missing)}")
 
-          # --- LANG SYNC ---
-          assets_lang = Path("assets/enchantencore/lang")
-          data_lang = Path("data/enchantencore/lang")
-
-          if assets_lang.exists():
-              if data_lang.exists():
-                  shutil.rmtree(data_lang)
-              shutil.copytree(assets_lang, data_lang)
-              print("Synced lang assets → data")
-          else:
-              print("No assets lang folder, skipping")
-
-          def add_files(z):
+          def add_pack_files(zf):
               for folder in ["assets", "data"]:
                   if not os.path.exists(folder):
                       continue
                   for root, _, files in os.walk(folder):
-                      for f in files:
-                          p = os.path.join(root, f)
-                          z.write(p, os.path.relpath(p, "."))
+                      for file in files:
+                          full = os.path.join(root, file)
+                          zf.write(full, os.path.relpath(full, "."))
+              for file in ["LICENSE", "pack.mcmeta", "pack.png"]:
+                  zf.write(file, file)
 
-              for f in ["pack.mcmeta", "pack.png", "LICENSE"]:
-                  if os.path.exists(f):
-                      z.write(f, f)
+          with zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED) as zf:
+              add_pack_files(zf)
 
-          # ZIP
-          with zipfile.ZipFile(zip_name, "w", zipfile.ZIP_DEFLATED) as z:
-              add_files(z)
-
-          # BUILD JAR
-          build = Path("build")
+          build = Path("build/universal_mod")
           if build.exists():
               shutil.rmtree(build)
 
@@ -111,151 +143,243 @@ jobs:
           if os.path.exists("assets"):
               shutil.copytree("assets", build / "assets")
           shutil.copytree("data", build / "data")
-
-          for f in ["pack.mcmeta", "pack.png", "LICENSE"]:
-              if os.path.exists(f):
-                  shutil.copy2(f, build / f)
-
+          shutil.copy2("LICENSE", build / "LICENSE")
+          shutil.copy2("pack.mcmeta", build / "pack.mcmeta")
+          shutil.copy2("pack.png", build / "pack.png")
           shutil.copy2("pack.png", build / icon)
 
-          # Fabric
-          (build / "fabric.mod.json").write_text(json.dumps({
+          fabric_json = {
               "schemaVersion": 1,
               "id": mod_id,
-              "version": version,
+              "version": version_number,
               "name": mod_name,
               "description": description,
+              "authors": [],
+              "contact": {
+                  "homepage": homepage,
+                  "sources": sources,
+              },
               "license": "GPL-3.0-or-later",
               "icon": icon,
               "environment": "*",
               "depends": {
                   "fabric-resource-loader-v0": "*"
               }
-          }))
+          }
 
-          # Quilt
-          (build / "quilt.mod.json").write_text(json.dumps({
+          quilt_json = {
               "schema_version": 1,
               "quilt_loader": {
                   "group": "com.modrinth",
                   "id": mod_id,
-                  "version": version,
+                  "version": version_number,
                   "metadata": {
                       "name": mod_name,
                       "description": description,
-                      "icon": icon
+                      "contributors": {},
+                      "contact": {
+                          "homepage": homepage,
+                          "sources": sources,
+                      },
+                      "icon": icon,
                   },
+                  "intermediate_mappings": "net.fabricmc:intermediary",
                   "depends": [
-                      {"id": "quilt_resource_loader", "versions": "*"}
-                  ]
+                      {
+                          "id": "quilt_resource_loader",
+                          "versions": "*",
+                          "unless": "fabric-resource-loader-v0",
+                      }
+                  ],
               }
-          }))
+          }
 
-          # Forge
-          (build / "META-INF/mods.toml").write_text(f"""
-modLoader="lowcodefml"
-loaderVersion="[40,)"
-license="GPL-3.0-or-later"
+          forge_toml = f"""
+          modLoader = 'lowcodefml'
+          loaderVersion = '[40,)'
+          license = 'GPL-3.0-or-later'
+          showAsResourcePack = false
+          mods = [
+            {{ modId = '{mod_id}', version = '{version_number}', displayName = '{mod_name}', description = '{description}', logoFile = '{icon}', updateJSONURL = 'https://api.modrinth.com/updates/{project_id}/forge_updates.json', credits = 'Generated by Modrinth', authors = '', displayURL = '{homepage}' }},
+          ]
+          """
 
-[[mods]]
-modId="{mod_id}"
-version="{version}"
-displayName="{mod_name}"
-logoFile="{icon}"
-description="{description}"
-""".strip())
+          neoforge_toml = f"""
+          modLoader = 'javafml'
+          loaderVersion = '[1,)'
+          license = 'GPL-3.0-or-later'
+          showAsResourcePack = false
+          mods = [
+            {{ modId = '{mod_id}', version = '{version_number}', displayName = '{mod_name}', description = '{description}', logoFile = '{icon}', updateJSONURL = 'https://api.modrinth.com/updates/{project_id}/forge_updates.json?neoforge=only', credits = 'Generated by Modrinth', authors = '', displayURL = '{homepage}' }},
+          ]
+          """
 
-          # NeoForge
-          (build / "META-INF/neoforge.mods.toml").write_text(f"""
-modLoader="javafml"
-loaderVersion="[1,)"
-license="GPL-3.0-or-later"
+          (build / "fabric.mod.json").write_text(json.dumps(fabric_json, separators=(",", ":")), encoding="utf-8")
+          (build / "quilt.mod.json").write_text(json.dumps(quilt_json, separators=(",", ":")), encoding="utf-8")
+          (build / "META-INF" / "mods.toml").write_text(forge_toml.strip() + "\n", encoding="utf-8")
+          (build / "META-INF" / "neoforge.mods.toml").write_text(neoforge_toml.strip() + "\n", encoding="utf-8")
 
-[[mods]]
-modId="{mod_id}"
-version="{version}"
-displayName="{mod_name}"
-logoFile="{icon}"
-description="{description}"
-""".strip())
-
-          # Package JAR
-          with zipfile.ZipFile(jar_name, "w", zipfile.ZIP_DEFLATED) as z:
+          with zipfile.ZipFile(jar_name, "w", zipfile.ZIP_DEFLATED) as zf:
               for root, _, files in os.walk(build):
-                  for f in files:
-                      p = Path(root) / f
-                      z.write(p, p.relative_to(build).as_posix())
+                  for file in files:
+                      full = Path(root) / file
+                      zf.write(full, full.relative_to(build).as_posix())
 
-          print("Built ZIP + JAR")
+          print(f"Created {zip_name}")
+          print(f"Created {jar_name}")
           PY
 
-      - name: GitHub Release
+      - name: Create or update GitHub Release
         env:
           GH_TOKEN: ${{ github.token }}
-          TAG: ${{ steps.meta.outputs.tag }}
-          NAME: ${{ steps.meta.outputs.name }}
+          TAG_NAME: ${{ steps.meta.outputs.tag_name }}
+          RELEASE_NAME: ${{ steps.meta.outputs.release_name }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
+          JAR_NAME: ${{ steps.meta.outputs.jar_name }}
+          IS_PRERELEASE: ${{ steps.meta.outputs.is_prerelease }}
         run: |
-          gh release create "$TAG" *.zip *.jar \
-            --title "$NAME" \
-            --notes-file Changelog.log || true
+          set -euo pipefail
 
-      - name: Upload datapack to Modrinth
+          PRERELEASE_FLAG=""
+          if [ "$IS_PRERELEASE" = "true" ]; then
+            PRERELEASE_FLAG="--prerelease"
+          fi
+
+          if gh release view "$TAG_NAME" >/dev/null 2>&1; then
+            gh release edit "$TAG_NAME" \
+              --title "$RELEASE_NAME" \
+              --notes-file "$CHANGELOG_PATH" \
+              $PRERELEASE_FLAG
+          else
+            gh release create "$TAG_NAME" "$ZIP_NAME" "$JAR_NAME" \
+              --title "$RELEASE_NAME" \
+              --notes-file "$CHANGELOG_PATH" \
+              $PRERELEASE_FLAG
+          fi
+
+          gh release upload "$TAG_NAME" "$ZIP_NAME" "$JAR_NAME" --clobber
+
+      - name: Upload datapack version to Modrinth
         env:
-          TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-          PROJECT: ${{ steps.meta.outputs.project_id }}
-          VERSION: ${{ steps.meta.outputs.version }}
-          NAME: ${{ steps.meta.outputs.name }}
-          VERSIONS: ${{ steps.meta.outputs.versions }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.version_number }}
+          RELEASE_NAME: ${{ steps.meta.outputs.release_name }}
+          VERSION_TYPE: ${{ steps.meta.outputs.version_type }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
+          FILE_NAME: ${{ steps.meta.outputs.zip_name }}
+          LOADERS_JSON: '["datapack"]'
         run: |
           python - <<'PY'
-          import os, json, requests
+          import json
+          import os
+          import requests
+
+          token = os.environ["MODRINTH_TOKEN"]
+          if not token:
+              raise RuntimeError("MODRINTH_TOKEN secret is missing")
+
+          with open(os.environ["CHANGELOG_PATH"], "r", encoding="utf-8") as f:
+              changelog = f.read()
+
+          file_name = os.environ["FILE_NAME"]
 
           payload = {
-              "project_id": os.environ["PROJECT"],
-              "name": os.environ["NAME"],
-              "version_number": os.environ["VERSION"],
-              "changelog": open("Changelog.log").read(),
-              "game_versions": json.loads(os.environ["VERSIONS"]),
-              "version_type": "release",
-              "loaders": ["datapack"],
-              "file_parts": ["file"]
+              "project_id": os.environ["PROJECT_ID"],
+              "name": os.environ["RELEASE_NAME"],
+              "version_number": os.environ["VERSION_NUMBER"],
+              "changelog": changelog,
+              "dependencies": [],
+              "game_versions": json.loads(os.environ["GAME_VERSIONS_JSON"]),
+              "version_type": os.environ["VERSION_TYPE"],
+              "loaders": json.loads(os.environ["LOADERS_JSON"]),
+              "featured": True,
+              "status": "listed",
+              "file_parts": ["file"],
+              "primary_file": "file",
           }
 
-          with open([f for f in os.listdir() if f.endswith(".zip")][0], "rb") as f:
-              requests.post(
+          with open(file_name, "rb") as f:
+              response = requests.post(
                   "https://api.modrinth.com/v2/version",
-                  headers={"Authorization": os.environ["TOKEN"]},
-                  files={"data": (None, json.dumps(payload)), "file": f}
+                  headers={
+                      "Authorization": token,
+                      "User-Agent": "Explorers-Eden-enchantments-encore-GitHub-Action",
+                  },
+                  files={
+                      "data": (None, json.dumps(payload), "application/json"),
+                      "file": (file_name, f, "application/zip"),
+                  },
+                  timeout=300,
               )
+
+          if response.status_code >= 300:
+              print(response.text)
+              raise RuntimeError(f"Modrinth datapack upload failed: {response.status_code}")
+
+          print("Modrinth datapack version uploaded successfully")
           PY
 
-      - name: Upload mod to Modrinth
+      - name: Upload universal mod version to Modrinth
         env:
-          TOKEN: ${{ secrets.MODRINTH_TOKEN }}
-          PROJECT: ${{ steps.meta.outputs.project_id }}
-          VERSION: ${{ steps.meta.outputs.version }}
-          NAME: ${{ steps.meta.outputs.name }}
-          VERSIONS: ${{ steps.meta.outputs.versions }}
+          MODRINTH_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          PROJECT_ID: ${{ steps.meta.outputs.project_id }}
+          VERSION_NUMBER: ${{ steps.meta.outputs.mod_version_number }}
+          RELEASE_NAME: ${{ steps.meta.outputs.mod_release_name }}
+          VERSION_TYPE: ${{ steps.meta.outputs.version_type }}
+          CHANGELOG_PATH: ${{ steps.meta.outputs.changelog_path }}
+          GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
+          FILE_NAME: ${{ steps.meta.outputs.jar_name }}
+          LOADERS_JSON: '["fabric", "forge", "quilt", "neoforge"]'
         run: |
           python - <<'PY'
-          import os, json, requests
+          import json
+          import os
+          import requests
+
+          token = os.environ["MODRINTH_TOKEN"]
+          if not token:
+              raise RuntimeError("MODRINTH_TOKEN secret is missing")
+
+          with open(os.environ["CHANGELOG_PATH"], "r", encoding="utf-8") as f:
+              changelog = f.read()
+
+          file_name = os.environ["FILE_NAME"]
 
           payload = {
-              "project_id": os.environ["PROJECT"],
-              "name": os.environ["NAME"] + " (Mod)",
-              "version_number": os.environ["VERSION"] + "-mod",
-              "changelog": open("Changelog.log").read(),
-              "game_versions": json.loads(os.environ["VERSIONS"]),
-              "version_type": "release",
-              "loaders": ["fabric","forge","quilt","neoforge"],
-              "file_parts": ["file"]
+              "project_id": os.environ["PROJECT_ID"],
+              "name": os.environ["RELEASE_NAME"],
+              "version_number": os.environ["VERSION_NUMBER"],
+              "changelog": changelog,
+              "dependencies": [],
+              "game_versions": json.loads(os.environ["GAME_VERSIONS_JSON"]),
+              "version_type": os.environ["VERSION_TYPE"],
+              "loaders": json.loads(os.environ["LOADERS_JSON"]),
+              "featured": True,
+              "status": "listed",
+              "file_parts": ["file"],
+              "primary_file": "file",
           }
 
-          with open([f for f in os.listdir() if f.endswith(".jar")][0], "rb") as f:
-              requests.post(
+          with open(file_name, "rb") as f:
+              response = requests.post(
                   "https://api.modrinth.com/v2/version",
-                  headers={"Authorization": os.environ["TOKEN"]},
-                  files={"data": (None, json.dumps(payload)), "file": f}
+                  headers={
+                      "Authorization": token,
+                      "User-Agent": "Explorers-Eden-enchantments-encore-GitHub-Action",
+                  },
+                  files={
+                      "data": (None, json.dumps(payload), "application/json"),
+                      "file": (file_name, f, "application/java-archive"),
+                  },
+                  timeout=300,
               )
+
+          if response.status_code >= 300:
+              print(response.text)
+              raise RuntimeError(f"Modrinth universal mod upload failed: {response.status_code}")
+
+          print("Modrinth universal mod version uploaded successfully")
           PY
-```
