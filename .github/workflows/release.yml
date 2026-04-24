@@ -115,13 +115,15 @@ jobs:
           homepage = f"https://modrinth.com/datapack/{slug}"
           sources = f"https://github.com/Explorers-Eden/{slug}"
 
-          required = ["assets", "data", "LICENSE", "pack.mcmeta", "pack.png"]
+          required = ["data", "LICENSE", "pack.mcmeta", "pack.png"]
           missing = [p for p in required if not os.path.exists(p)]
           if missing:
               raise FileNotFoundError(f"Missing required files/folders: {', '.join(missing)}")
 
           def add_pack_files(zf):
               for folder in ["assets", "data"]:
+                  if not os.path.exists(folder):
+                      continue
                   for root, _, files in os.walk(folder):
                       for file in files:
                           full = os.path.join(root, file)
@@ -138,7 +140,8 @@ jobs:
 
           (build / "META-INF").mkdir(parents=True)
 
-          shutil.copytree("assets", build / "assets")
+          if os.path.exists("assets"):
+              shutil.copytree("assets", build / "assets")
           shutil.copytree("data", build / "data")
           shutil.copy2("LICENSE", build / "LICENSE")
           shutil.copy2("pack.mcmeta", build / "pack.mcmeta")
