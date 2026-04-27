@@ -24,8 +24,8 @@ jobs:
       - name: Install Python dependencies
         run: pip install pyyaml requests
 
-
       - name: Create temporary Crowdin config
+        shell: bash
         run: |
           cat > .crowdin-temp.yml <<'EOF'
           project_id_env: CROWDIN_PROJECT_ID
@@ -35,56 +35,21 @@ jobs:
 
           files:
             - source: /assets/enchantencore/lang/en_us.json
-              dest: /Enchantments Encore/en_us.json
+              dest: /Enchantments Encore.json
               translation: /assets/enchantencore/lang/%locale_with_underscore%.json
           EOF
 
-      - name: Back up en_us lang file
-        run: |
-          mkdir -p /tmp/enchantencore-lang-backup
-          cp assets/enchantencore/lang/en_us.json /tmp/enchantencore-lang-backup/en_us.json
-
-      - name: Upload Enchantments Encore source lang to Crowdin
+      - name: Upload Enchantments Encore source to Crowdin
         uses: crowdin/github-action@v2
         with:
           config: .crowdin-temp.yml
           upload_sources: true
           upload_translations: false
           download_translations: false
-          upload_sources_args: --delete-obsolete
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Download Enchantments Encore translations from Crowdin
-        uses: crowdin/github-action@v2
-        with:
-          config: .crowdin-temp.yml
-          upload_sources: false
-          upload_translations: false
-          download_translations: true
-          skip_untranslated_files: false
-        env:
-          CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
-          CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Restore protected en_us lang file
-        run: |
-          cp /tmp/enchantencore-lang-backup/en_us.json assets/enchantencore/lang/en_us.json
-
-      - name: Commit downloaded Crowdin translations
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add assets/enchantencore/lang
-          if git diff --cached --quiet; then
-            echo "No Crowdin translation changes to commit."
-          else
-            git commit -m "Update Enchantments Encore translations from Crowdin"
-            git push
-          fi
 
       - name: Read release metadata
         id: meta
