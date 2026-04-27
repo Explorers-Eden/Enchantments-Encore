@@ -1,7 +1,5 @@
 # Minecraft Version(s): 26.1.x
 ## Changes:
-- Added Curse of Blindness Enchantment (Applicable to Helmets)
+- Lang Files are now getting automatically synced with crowdin with new releases
 
 ## Fixes:
-- Added missing lang keys for wiki entries: Ping Tag, Poppy Peace
-- Added missing infos for Spears in en_us lang file
