@@ -5,6 +5,7 @@ on:
 
 permissions:
   contents: write
+  pull-requests: write
 
 jobs:
   release:
@@ -46,10 +47,11 @@ jobs:
           upload_sources: true
           upload_translations: false
           download_translations: false
+          create_pull_request: false
+          push_translations: false
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Protect English source file
         shell: bash
@@ -64,25 +66,44 @@ jobs:
           upload_translations: false
           download_translations: true
           skip_untranslated_files: false
+          create_pull_request: false
+          push_translations: false
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Restore English source file
+      - name: Clean downloaded translations and restore English source
         shell: bash
         run: |
+          set -euo pipefail
+
+          # The temporary Crowdin config must never be committed.
+          rm -f .crowdin-temp.yml
+
+          # Crowdin may export the source language as en_US.json. Minecraft uses en_us.json,
+          # and the source file from the repo must stay authoritative.
+          rm -f assets/enchantencore/lang/en_US.json
           cp /tmp/enchantencore-en_us.json assets/enchantencore/lang/en_us.json
 
-      - name: Commit downloaded translation files
+          # Crowdin exports locale names like de_DE.json, but Minecraft lang files are lowercase.
+          find assets/enchantencore/lang -maxdepth 1 -type f -name "*.json" | while read -r file; do
+            dir="$(dirname "$file")"
+            base="$(basename "$file")"
+            lower="$(echo "$base" | tr '[:upper:]' '[:lower:]')"
+            if [ "$base" != "$lower" ]; then
+              tmp="$dir/.tmp-$lower"
+              mv "$file" "$tmp"
+              mv "$tmp" "$dir/$lower"
+            fi
+          done
+
+      - name: Commit downloaded translation files to repo
         shell: bash
         run: |
           set -euo pipefail
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-          rm -f .crowdin-temp.yml
 
           git add assets/enchantencore/lang
           git restore --staged assets/enchantencore/lang/en_us.json || true
@@ -91,7 +112,7 @@ jobs:
             echo "No translation changes to commit"
           else
             git commit -m "Update Enchantments Encore translations from Crowdin"
-            git push
+            git push origin HEAD:${{ github.ref_name }}
           fi
 
       - name: Read release metadata
