@@ -21,21 +21,28 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install Python dependencies
+        run: pip install pyyaml requests
+
 
       - name: Create temporary Crowdin config
-        shell: bash
         run: |
-          cat > .crowdin-temp.yml <<'YAML'
+          cat > .crowdin-temp.yml <<'EOF'
           project_id_env: CROWDIN_PROJECT_ID
           api_token_env: CROWDIN_PERSONAL_TOKEN
-          base_path: "."
-          preserve_hierarchy: false
+          base_path: .
+          preserve_hierarchy: true
 
           files:
-            - source: assets/enchantencore/lang/en_us.json
-              dest: "Enchantments Encore/en_us.json"
-              translation: assets/enchantencore/lang/%locale_with_underscore%.json
-          YAML
+            - source: /assets/enchantencore/lang/en_us.json
+              dest: /Enchantments Encore/en_us.json
+              translation: /assets/enchantencore/lang/%locale_with_underscore%.json
+          EOF
+
+      - name: Back up en_us lang file
+        run: |
+          mkdir -p /tmp/enchantencore-lang-backup
+          cp assets/enchantencore/lang/en_us.json /tmp/enchantencore-lang-backup/en_us.json
 
       - name: Upload Enchantments Encore source lang to Crowdin
         uses: crowdin/github-action@v2
@@ -56,35 +63,26 @@ jobs:
           upload_sources: false
           upload_translations: false
           download_translations: true
-          skip_untranslated_strings: true
+          skip_untranslated_files: true
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-      - name: Protect en_us source lang
-        shell: bash
+      - name: Restore protected en_us lang file
         run: |
-          git restore -- assets/enchantencore/lang/en_us.json
+          cp /tmp/enchantencore-lang-backup/en_us.json assets/enchantencore/lang/en_us.json
 
       - name: Commit downloaded Crowdin translations
-        shell: bash
         run: |
-          set -euo pipefail
-
-          if git diff --quiet -- assets/enchantencore/lang; then
-            echo "No Crowdin translation changes to commit"
-            exit 0
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/enchantencore/lang
-          git reset -- assets/enchantencore/lang/en_us.json
-          git commit -m "Update Enchantments Encore translations from Crowdin"
-          git push origin HEAD:${{ github.ref_name }}
-
-      - name: Install Python dependencies
-        run: pip install pyyaml requests
+          if git diff --cached --quiet; then
+            echo "No Crowdin translation changes to commit."
+          else
+            git commit -m "Update Enchantments Encore translations from Crowdin"
+            git push
+          fi
 
       - name: Read release metadata
         id: meta
