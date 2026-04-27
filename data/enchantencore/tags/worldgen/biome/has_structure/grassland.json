@@ -9,10 +9,6 @@
         {"id": "biomesoplenty:field","required": false},
         {"id": "biomesoplenty:lush_savanna","required": false},
         {"id": "terralith:brushland","required": false},
-        {"id": "terralith:steppe","required": false},
-        {"id": "eden:meadow","required": false},
-        {"id": "eden:plains","required": false},
-        {"id": "eden:sunflower_plains","required": false},
-        {"id": "eden:savanna","required": false}
+        {"id": "terralith:steppe","required": false}
     ]
 }
