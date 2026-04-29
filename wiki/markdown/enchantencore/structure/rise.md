@@ -1,23 +1,16 @@
-# Rise
-
-## Summary
+# Contents
 
 The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Brick Stairs, Deepslate Tile Slab, Grass Block, Amethyst Block, Dirt, Spruce Stairs, Stone, Stripped Spruce Log, Bookshelf, Red Carpet, Stone Brick Wall, Glow Lichen, Stone Brick Slab, Chiseled Bookshelf, Mossy Stone Bricks, Spruce Trapdoor, Gravel, Polished Andesite, Black Stained Glass Pane, Amethyst Cluster, Large Amethyst Bud, Andesite, Oak Slab, Spruce Fence, Cobweb, Budding Amethyst, Deepslate Tile Stairs, Moss Carpet, Twisting Vines Plant, Medium Amethyst Bud, Spruce Slab, Chiseled Stone Bricks, Ladder, Small Amethyst Bud, Light Gray Candle, Shroomlight, Brown Candle, Chain, Deepslate Tile Wall, Twisting Vines, White Candle, Lectern, Oak Stairs, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Spruce Door, Dead Brain Coral, Dead Tube Coral Fan, Lantern, Brewing Stand, Campfire, Mossy Stone Brick Stairs, Potted Wither Rose, Purple Candle, Water Cauldron, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Chest, Chiseled Tuff, Decorated Pot, Nether Wart, Wither Skeleton Skull.
 
 Additionally, the following entities may spawn during its generation: Painting, Bat, End Crystal, Elder Guardian.
 
-### Loot Tables
 
-| Loot Table |
-|:-----|
-| enchantencore:all_enchants |
-
-
+## Per-Structure File Contents
 
 <details>
 <summary><strong>Rise/Balcony/Balcony Books</strong></summary>
 
-The structure is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Red Carpet, Spruce Stairs, Bookshelf, Stone Bricks, Chiseled Bookshelf, Cracked Stone Bricks, Stone Brick Stairs, Stone Brick Slab, Stripped Spruce Log, Oak Slab, Spruce Fence, Deepslate Tile Slab, Light Gray Candle, Ladder, Andesite, Glow Lichen, Polished Andesite.
+The structure part is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Red Carpet, Spruce Stairs, Bookshelf, Stone Bricks, Chiseled Bookshelf, Cracked Stone Bricks, Stone Brick Stairs, Stone Brick Slab, Stripped Spruce Log, Oak Slab, Spruce Fence, Deepslate Tile Slab, Light Gray Candle, Ladder, Andesite, Glow Lichen, Polished Andesite.
 
 ### Blocks
 
@@ -47,12 +40,12 @@ The structure is composed of the following blocks: Spruce Planks, Deepslate Tile
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -60,7 +53,7 @@ None found.
 <details>
 <summary><strong>Rise/Balcony/Balcony Crystal</strong></summary>
 
-The structure is composed of the following blocks: Spruce Planks, Amethyst Block, Deepslate Tiles, Cracked Deepslate Tiles, Stone Bricks, Cracked Stone Bricks, Amethyst Cluster, Large Amethyst Bud, Spruce Stairs, Stone Brick Stairs, Budding Amethyst, Stripped Spruce Log, Stone Brick Slab, Medium Amethyst Bud, Deepslate Tile Slab, Small Amethyst Bud, Andesite, Glow Lichen, Polished Andesite.
+The structure part is composed of the following blocks: Spruce Planks, Amethyst Block, Deepslate Tiles, Cracked Deepslate Tiles, Stone Bricks, Cracked Stone Bricks, Amethyst Cluster, Large Amethyst Bud, Spruce Stairs, Stone Brick Stairs, Budding Amethyst, Stripped Spruce Log, Stone Brick Slab, Medium Amethyst Bud, Deepslate Tile Slab, Small Amethyst Bud, Andesite, Glow Lichen, Polished Andesite.
 
 ### Blocks
 
@@ -89,12 +82,12 @@ The structure is composed of the following blocks: Spruce Planks, Amethyst Block
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -102,7 +95,7 @@ None found.
 <details>
 <summary><strong>Rise/Balcony/Balcony Normal</strong></summary>
 
-The structure is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Bricks, Red Carpet, Spruce Stairs, Cracked Stone Bricks, Stone Brick Stairs, Stone Brick Slab, Stripped Spruce Log, Bookshelf, Deepslate Tile Slab, Deepslate Tile Wall, Spruce Slab, Oak Slab, Spruce Trapdoor, Spruce Fence, Andesite, Glow Lichen, Polished Andesite.
+The structure part is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Bricks, Red Carpet, Spruce Stairs, Cracked Stone Bricks, Stone Brick Stairs, Stone Brick Slab, Stripped Spruce Log, Bookshelf, Deepslate Tile Slab, Deepslate Tile Wall, Spruce Slab, Oak Slab, Spruce Trapdoor, Spruce Fence, Andesite, Glow Lichen, Polished Andesite.
 
 Additionally, the following entities may spawn during its generation: Painting, End Crystal, Bat.
 
@@ -143,7 +136,7 @@ Additionally, the following entities may spawn during its generation: Painting, 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -151,7 +144,7 @@ None found.
 <details>
 <summary><strong>Rise/Balcony/Balcony Ruin</strong></summary>
 
-The structure is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Spruce Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tile Slab, Gravel, Stone Brick Stairs, Spruce Fence, Spruce Slab, Stone Brick Slab, Stripped Spruce Log, Light Gray Candle, Andesite, Glow Lichen, Polished Andesite.
+The structure part is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Spruce Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tile Slab, Gravel, Stone Brick Stairs, Spruce Fence, Spruce Slab, Stone Brick Slab, Stripped Spruce Log, Light Gray Candle, Andesite, Glow Lichen, Polished Andesite.
 
 ### Blocks
 
@@ -178,12 +171,12 @@ The structure is composed of the following blocks: Spruce Planks, Deepslate Tile
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -191,7 +184,7 @@ None found.
 <details>
 <summary><strong>Rise/Ground/Ground Books</strong></summary>
 
-The structure is composed of the following blocks: Red Carpet, Cracked Stone Bricks, Bookshelf, Stone Bricks, Chiseled Bookshelf, Brown Candle, Andesite, Lectern, Polished Andesite.
+The structure part is composed of the following blocks: Red Carpet, Cracked Stone Bricks, Bookshelf, Stone Bricks, Chiseled Bookshelf, Brown Candle, Andesite, Lectern, Polished Andesite.
 
 ### Blocks
 
@@ -210,12 +203,12 @@ The structure is composed of the following blocks: Red Carpet, Cracked Stone Bri
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -223,7 +216,7 @@ None found.
 <details>
 <summary><strong>Rise/Ground/Ground Crystal</strong></summary>
 
-The structure is composed of the following blocks: Amethyst Block, Cracked Stone Bricks, Stone Bricks, Large Amethyst Bud, Amethyst Cluster, Small Amethyst Bud, Budding Amethyst, Medium Amethyst Bud, Andesite, Polished Andesite.
+The structure part is composed of the following blocks: Amethyst Block, Cracked Stone Bricks, Stone Bricks, Large Amethyst Bud, Amethyst Cluster, Small Amethyst Bud, Budding Amethyst, Medium Amethyst Bud, Andesite, Polished Andesite.
 
 ### Blocks
 
@@ -243,12 +236,12 @@ The structure is composed of the following blocks: Amethyst Block, Cracked Stone
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -256,7 +249,7 @@ None found.
 <details>
 <summary><strong>Rise/Ground/Ground Guardian</strong></summary>
 
-The structure is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Bookshelf, Chiseled Bookshelf, Cobweb, Andesite, Lantern, Polished Andesite.
+The structure part is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Bookshelf, Chiseled Bookshelf, Cobweb, Andesite, Lantern, Polished Andesite.
 
 Additionally, the following entities may spawn during its generation: Painting, Bat, Elder Guardian.
 
@@ -285,7 +278,7 @@ Additionally, the following entities may spawn during its generation: Painting, 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -293,7 +286,7 @@ None found.
 <details>
 <summary><strong>Rise/Ground/Ground Ruin</strong></summary>
 
-The structure is composed of the following blocks: Cracked Stone Bricks, Gravel, Stone Bricks, Bookshelf, Moss Carpet, Cobweb, Andesite, Polished Andesite.
+The structure part is composed of the following blocks: Cracked Stone Bricks, Gravel, Stone Bricks, Bookshelf, Moss Carpet, Cobweb, Andesite, Polished Andesite.
 
 Additionally, the following entities may spawn during its generation: Painting.
 
@@ -320,7 +313,7 @@ Additionally, the following entities may spawn during its generation: Painting.
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -328,7 +321,7 @@ None found.
 <details>
 <summary><strong>Rise/Rise Big</strong></summary>
 
-The structure is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Grass Block, Spruce Planks, Stone, Deepslate Tile Slab, Dirt, Stone Brick Stairs, Deepslate Tiles, Cracked Deepslate Tiles, Stripped Spruce Log, Spruce Stairs, Glow Lichen, Stone Brick Wall, Mossy Stone Bricks, Stone Brick Slab, Black Stained Glass Pane, Polished Andesite, Andesite, Deepslate Tile Stairs, Chiseled Stone Bricks, Twisting Vines Plant, Shroomlight, Spruce Door, Mossy Stone Brick Stairs, Spruce Slab, Twisting Vines.
+The structure part is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Grass Block, Spruce Planks, Stone, Deepslate Tile Slab, Dirt, Stone Brick Stairs, Deepslate Tiles, Cracked Deepslate Tiles, Stripped Spruce Log, Spruce Stairs, Glow Lichen, Stone Brick Wall, Mossy Stone Bricks, Stone Brick Slab, Black Stained Glass Pane, Polished Andesite, Andesite, Deepslate Tile Stairs, Chiseled Stone Bricks, Twisting Vines Plant, Shroomlight, Spruce Door, Mossy Stone Brick Stairs, Spruce Slab, Twisting Vines.
 
 ### Blocks
 
@@ -365,12 +358,12 @@ The structure is composed of the following blocks: Cracked Stone Bricks, Stone B
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -378,7 +371,7 @@ None found.
 <details>
 <summary><strong>Rise/Rise Small</strong></summary>
 
-The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Deepslate Tile Slab, Stone Brick Stairs, Grass Block, Dirt, Stripped Spruce Log, Stone Brick Wall, Glow Lichen, Deepslate Tiles, Cracked Deepslate Tiles, Spruce Planks, Mossy Stone Bricks, Black Stained Glass Pane, Spruce Stairs, Polished Andesite, Chiseled Stone Bricks, Andesite, Twisting Vines Plant, Stone Brick Slab, Ladder, Shroomlight, Deepslate Tile Stairs, Spruce Door, Mossy Stone Brick Stairs, Twisting Vines.
+The structure part is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Deepslate Tile Slab, Stone Brick Stairs, Grass Block, Dirt, Stripped Spruce Log, Stone Brick Wall, Glow Lichen, Deepslate Tiles, Cracked Deepslate Tiles, Spruce Planks, Mossy Stone Bricks, Black Stained Glass Pane, Spruce Stairs, Polished Andesite, Chiseled Stone Bricks, Andesite, Twisting Vines Plant, Stone Brick Slab, Ladder, Shroomlight, Deepslate Tile Stairs, Spruce Door, Mossy Stone Brick Stairs, Twisting Vines.
 
 ### Blocks
 
@@ -414,12 +407,12 @@ The structure is composed of the following blocks: Stone Bricks, Cracked Stone B
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -427,7 +420,7 @@ None found.
 <details>
 <summary><strong>Rise/Small/Small Books</strong></summary>
 
-The structure is composed of the following blocks: Bookshelf, Cracked Stone Bricks, Stone Bricks, Chiseled Bookshelf, Oak Slab, Mossy Stone Bricks, Andesite.
+The structure part is composed of the following blocks: Bookshelf, Cracked Stone Bricks, Stone Bricks, Chiseled Bookshelf, Oak Slab, Mossy Stone Bricks, Andesite.
 
 ### Blocks
 
@@ -444,12 +437,12 @@ The structure is composed of the following blocks: Bookshelf, Cracked Stone Bric
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -457,7 +450,7 @@ None found.
 <details>
 <summary><strong>Rise/Small/Small Crystal</strong></summary>
 
-The structure is composed of the following blocks: Amethyst Block, Cracked Stone Bricks, Large Amethyst Bud, Stone Bricks, Amethyst Cluster, Small Amethyst Bud, Mossy Stone Bricks, Andesite.
+The structure part is composed of the following blocks: Amethyst Block, Cracked Stone Bricks, Large Amethyst Bud, Stone Bricks, Amethyst Cluster, Small Amethyst Bud, Mossy Stone Bricks, Andesite.
 
 ### Blocks
 
@@ -475,12 +468,12 @@ The structure is composed of the following blocks: Amethyst Block, Cracked Stone
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -488,7 +481,7 @@ None found.
 <details>
 <summary><strong>Rise/Small/Small Normal</strong></summary>
 
-The structure is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Oak Slab, Bookshelf, Chiseled Bookshelf, Mossy Stone Bricks, Andesite, Decorated Pot.
+The structure part is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Oak Slab, Bookshelf, Chiseled Bookshelf, Mossy Stone Bricks, Andesite, Decorated Pot.
 
 Additionally, the following entities may spawn during its generation: Painting.
 
@@ -515,7 +508,7 @@ Additionally, the following entities may spawn during its generation: Painting.
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -523,7 +516,7 @@ None found.
 <details>
 <summary><strong>Rise/Top/Top Dummy</strong></summary>
 
-The structure is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Stripped Spruce Log, Deepslate Tile Slab, Mossy Stone Bricks, Polished Andesite, Andesite.
+The structure part is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Stripped Spruce Log, Deepslate Tile Slab, Mossy Stone Bricks, Polished Andesite, Andesite.
 
 ### Blocks
 
@@ -545,12 +538,12 @@ The structure is composed of the following blocks: Spruce Planks, Spruce Stairs,
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -558,7 +551,7 @@ None found.
 <details>
 <summary><strong>Rise/Top/Top First</strong></summary>
 
-The structure is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Chain, Bookshelf, Cobweb, Stripped Spruce Log, Deepslate Tile Slab, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Dead Brain Coral, Dead Tube Coral Fan, Mossy Stone Bricks, Polished Andesite, Potted Wither Rose, Purple Candle, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Andesite, Chest, Chiseled Tuff, Wither Skeleton Skull.
+The structure part is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Chain, Bookshelf, Cobweb, Stripped Spruce Log, Deepslate Tile Slab, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Dead Brain Coral, Dead Tube Coral Fan, Mossy Stone Bricks, Polished Andesite, Potted Wither Rose, Purple Candle, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Andesite, Chest, Chiseled Tuff, Wither Skeleton Skull.
 
 ### Blocks
 
@@ -595,7 +588,7 @@ The structure is composed of the following blocks: Spruce Planks, Spruce Stairs,
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
@@ -610,7 +603,7 @@ None found.
 <details>
 <summary><strong>Rise/Upper/Upper Alchemy</strong></summary>
 
-The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Stairs, Deepslate Tile Slab, Deepslate Tiles, Stone Brick Stairs, Spruce Planks, Spruce Trapdoor, White Candle, Twisting Vines Plant, Brewing Stand, Campfire, Polished Andesite, Twisting Vines, Water Cauldron, Cracked Deepslate Tiles, Nether Wart.
+The structure part is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Stairs, Deepslate Tile Slab, Deepslate Tiles, Stone Brick Stairs, Spruce Planks, Spruce Trapdoor, White Candle, Twisting Vines Plant, Brewing Stand, Campfire, Polished Andesite, Twisting Vines, Water Cauldron, Cracked Deepslate Tiles, Nether Wart.
 
 ### Blocks
 
@@ -637,12 +630,12 @@ The structure is composed of the following blocks: Stone Bricks, Cracked Stone B
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -650,7 +643,7 @@ None found.
 <details>
 <summary><strong>Rise/Upper/Upper Books</strong></summary>
 
-The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Bookshelf, Deepslate Tile Slab, Chiseled Bookshelf, Deepslate Tiles, Oak Slab, Stone Brick Stairs, Cobweb, Lectern, Polished Andesite, Twisting Vines Plant, Cracked Deepslate Tiles, Twisting Vines.
+The structure part is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Bookshelf, Deepslate Tile Slab, Chiseled Bookshelf, Deepslate Tiles, Oak Slab, Stone Brick Stairs, Cobweb, Lectern, Polished Andesite, Twisting Vines Plant, Cracked Deepslate Tiles, Twisting Vines.
 
 ### Blocks
 
@@ -674,12 +667,12 @@ The structure is composed of the following blocks: Stone Bricks, Cracked Stone B
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -687,7 +680,7 @@ None found.
 <details>
 <summary><strong>Rise/Upper/Upper Crystal</strong></summary>
 
-The structure is composed of the following blocks: Amethyst Block, Stone Bricks, Cracked Stone Bricks, Amethyst Cluster, Deepslate Tile Slab, Large Amethyst Bud, Medium Amethyst Bud, Budding Amethyst, Deepslate Tiles, Stone Brick Stairs, Polished Andesite, Small Amethyst Bud, Twisting Vines Plant, Cracked Deepslate Tiles, Twisting Vines.
+The structure part is composed of the following blocks: Amethyst Block, Stone Bricks, Cracked Stone Bricks, Amethyst Cluster, Deepslate Tile Slab, Large Amethyst Bud, Medium Amethyst Bud, Budding Amethyst, Deepslate Tiles, Stone Brick Stairs, Polished Andesite, Small Amethyst Bud, Twisting Vines Plant, Cracked Deepslate Tiles, Twisting Vines.
 
 ### Blocks
 
@@ -712,12 +705,12 @@ The structure is composed of the following blocks: Amethyst Block, Stone Bricks,
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -725,7 +718,7 @@ None found.
 <details>
 <summary><strong>Rise/Upper2/Upper2 Books</strong></summary>
 
-The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Bookshelf, Stone Brick Stairs, Chiseled Bookshelf, Ladder, Cobweb, Oak Slab, Stone Brick Wall, Oak Stairs, Polished Andesite, Twisting Vines Plant, Mossy Stone Bricks, Twisting Vines.
+The structure part is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Bookshelf, Stone Brick Stairs, Chiseled Bookshelf, Ladder, Cobweb, Oak Slab, Stone Brick Wall, Oak Stairs, Polished Andesite, Twisting Vines Plant, Mossy Stone Bricks, Twisting Vines.
 
 ### Blocks
 
@@ -749,12 +742,12 @@ The structure is composed of the following blocks: Stone Bricks, Cracked Stone B
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
@@ -762,7 +755,7 @@ None found.
 <details>
 <summary><strong>Rise/Upper2/Upper2 Normal</strong></summary>
 
-The structure is composed of the following blocks: Spruce Trapdoor, Stone Bricks, Cracked Stone Bricks, Stone Brick Stairs, Cobweb, Stone Brick Wall, Polished Andesite, Twisting Vines Plant, Mossy Stone Bricks, Twisting Vines.
+The structure part is composed of the following blocks: Spruce Trapdoor, Stone Bricks, Cracked Stone Bricks, Stone Brick Stairs, Cobweb, Stone Brick Wall, Polished Andesite, Twisting Vines Plant, Mossy Stone Bricks, Twisting Vines.
 
 ### Blocks
 
@@ -782,12 +775,12 @@ The structure is composed of the following blocks: Spruce Trapdoor, Stone Bricks
 
 ### Entities
 
-None found.
+*None*
 
 
 ### Loot Tables
 
-None found.
+*None*
 
 
 </details>
