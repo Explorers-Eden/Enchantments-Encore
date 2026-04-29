@@ -2,13 +2,7 @@
 
 | Item | Stack Size | Pool | Weight | Chance |
 |:-----|:----------:|:----:|:------:|:------:|
-| Enchanted Book (enchantencore:treasure) | 1 | 1 | 5 | 14.3% |
-| Enchanted Book (minecraft:in_enchanting_table) | 1 | 1 | 5 | 14.3% |
-| Enchanted Book (minecraft:non_treasure) | 1 | 1 | 5 | 14.3% |
-| Enchanted Book (minecraft:on_mob_spawn_equipment) | 1 | 1 | 5 | 14.3% |
-| Enchanted Book (minecraft:on_random_loot) | 1 | 1 | 5 | 14.3% |
-| Enchanted Book (minecraft:tradeable) | 1 | 1 | 5 | 14.3% |
-| Enchanted Book (minecraft:treasure) | 1 | 1 | 5 | 14.3% |
+| Enchanted Book | 1 | 1 | 35 | 100.0% |
 | Lapis Lazuli | 1–16 | 2 | 20 | 24.1% |
 | Paper | 1–16 | 2 | 15 | 18.1% |
 | Book | 1–8 | 2 | 10 | 12.0% |

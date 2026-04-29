@@ -13,7 +13,7 @@
 | Diamond Pickaxe | 1 | 1 | 3 | 3.4% |
 | Diamond Shovel | 1 | 1 | 3 | 3.4% |
 | Diamond Sword | 1 | 1 | 3 | 3.4% |
-| Enchanted Book (enchantencore:treasure) | 1 | 1 | 3 | 3.4% |
+| Enchanted Book | 1 | 1 | 3 | 3.4% |
 | Iron Boots | 1 | 1 | 3 | 3.4% |
 | Iron Chestplate | 1 | 1 | 3 | 3.4% |
 | Iron Helmet | 1 | 1 | 3 | 3.4% |
@@ -27,5 +27,4 @@
 | Diamond Horse Armor | 1 | 1 | 1 | 1.1% |
 | Golden Horse Armor | 1 | 1 | 1 | 1.1% |
 | Iron Horse Armor | 1 | 1 | 1 | 1.1% |
-| Empty | 1 | 2 | 14 | 93.3% |
 | Spire Armor Trim Smithing Template | 1 | 2 | 1 | 6.7% |
