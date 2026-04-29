@@ -7,6 +7,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -21,6 +22,22 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:enchant_with_levels",
+              "levels": {
+                "min": 1,
+                "max": 40
+              },
+              "options": "#enchantencore:treasure"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:book",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -35,6 +52,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -49,6 +67,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -63,6 +82,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",
@@ -77,6 +97,7 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:book",
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:enchant_with_levels",

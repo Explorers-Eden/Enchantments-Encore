@@ -1,5 +1,6 @@
 # Minecraft Version(s): 26.1.x
 ## Changes:
 - Lang Files are now getting automatically synced with crowdin with new releases
+- Increased probability of getting Enchanted Books in loot of Rise structure
 
 ## Fixes:
