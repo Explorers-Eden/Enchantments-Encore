@@ -29,7 +29,6 @@ function walk(dir) {
 
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
-
     if (entry.isDirectory()) files = files.concat(walk(fullPath));
     else if (entry.isFile()) files.push(fullPath);
   }
@@ -59,7 +58,6 @@ function getStructureInfo(file) {
 
   const namespace = parts[dataIndex + 1];
   const relativeParts = parts.slice(structureIndex + 1);
-
   if (relativeParts.length === 0) return null;
 
   const topFolder =
@@ -69,11 +67,7 @@ function getStructureInfo(file) {
 
   const structureFile = relativeParts.join("/").replace(/\.nbt$/, "");
 
-  return {
-    namespace,
-    topFolder,
-    structureFile
-  };
+  return { namespace, topFolder, structureFile };
 }
 
 function collectLootTables(obj, set = new Set()) {
@@ -165,7 +159,7 @@ function renderCountTable(title, singular, rows) {
   if (rows.length === 0) {
     return `### ${title}
 
-None
+*None*
 `;
   }
 
@@ -181,7 +175,7 @@ function renderLootTableTable(lootTables) {
   if (lootTables.length === 0) {
     return `### Loot Tables
 
-None
+*None*
 `;
   }
 
@@ -225,9 +219,14 @@ ${renderLootTableTable(sortedLootTables(data.lootTables))}
 </details>`;
 }
 
-function generateMarkdown(groupName, structures, totals) {
+function renderSummarySection(totals) {
   return `# Contents
-${renderTextSummary(totals, false)}
+
+${renderTextSummary(totals, false)}`;
+}
+
+function generateMarkdown(groupName, structures, totals) {
+  return `${renderSummarySection(totals)}
 ## Per-Structure File Contents
 
 ${structures.map(entry => renderStructureSection(entry.structureFile, entry.data)).join("\n\n")}
