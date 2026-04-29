@@ -11,7 +11,8 @@ const IGNORED_BLOCKS = new Set([
   "minecraft:cave_air",
   "minecraft:void_air",
   "minecraft:water",
-  "minecraft:lava"
+  "minecraft:lava",
+  "minecraft:jigsaw"
 ]);
 
 const IGNORED_ENTITIES = new Set([
@@ -189,34 +190,51 @@ ${lootTables.map(id => `| ${id} |`).join("\n")}
 `;
 }
 
-function renderStructureSection(structureFile, data) {
-  return `## ${titleCase(structureFile)}
+function renderTextSummary(data) {
+  const blocks = sortedCountRows(data.blockCounts).map(([name]) => titleCase(name));
+  const entities = sortedCountRows(data.entityCounts).map(([name]) => titleCase(name));
 
-${renderCountTable("Blocks", "Block", sortedCountRows(data.blockCounts))}
+  const blocksLine =
+    blocks.length > 0
+      ? `The structure is composed of the following blocks: ${blocks.join(", ")}.`
+      : `The structure does not contain any notable blocks.`;
+
+  const entitiesLine =
+    entities.length > 0
+      ? `Additionally, the following entities may spawn during its generation: ${entities.join(", ")}.`
+      : ``;
+
+  return `${blocksLine}
+
+${entitiesLine ? entitiesLine + "\n\n" : ""}`;
+}
+
+function renderStructureSection(structureFile, data) {
+  return `<details>
+<summary><strong>${titleCase(structureFile)}</strong></summary>
+
+${renderTextSummary(data)}${renderCountTable("Blocks", "Block", sortedCountRows(data.blockCounts))}
 
 ${renderCountTable("Entities", "Entity", sortedCountRows(data.entityCounts))}
 
 ${renderLootTableTable(sortedLootTables(data.lootTables))}
-`;
+
+</details>`;
 }
 
 function renderSummarySection(totals) {
   return `## Summary
 
-${renderCountTable("Blocks", "Block", sortedCountRows(totals.blockCounts))}
-
-${renderCountTable("Entities", "Entity", sortedCountRows(totals.entityCounts))}
-
-${renderLootTableTable(sortedLootTables(totals.lootTables))}
+${renderTextSummary(totals)}${renderLootTableTable(sortedLootTables(totals.lootTables))}
 `;
 }
 
 function generateMarkdown(groupName, structures, totals) {
   return `# ${titleCase(groupName)}
 
-${structures.map(entry => renderStructureSection(entry.structureFile, entry.data)).join("\n\n")}
-
 ${renderSummarySection(totals)}
+
+${structures.map(entry => renderStructureSection(entry.structureFile, entry.data)).join("\n\n")}
 `;
 }
 
