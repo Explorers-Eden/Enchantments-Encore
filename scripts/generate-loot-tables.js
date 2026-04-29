@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const inputRoot = "data";
-const outputRoot = "markdown";
+const outputRoot = "wiki";
 
 function walk(dir) {
   let files = [];
@@ -13,7 +13,7 @@ function walk(dir) {
 
     if (entry.isDirectory()) {
       files = files.concat(walk(fullPath));
-    } else if (entry.isFile() && entry.name.endsWith(".json")) {
+    } else if (entry.isFile()) {
       files.push(fullPath);
     }
   }
@@ -40,17 +40,48 @@ function getStackSize(entry) {
     return `${count.min}–${count.max}`;
   }
 
+  if (count?.type === "minecraft:uniform") {
+    return `${count.min}–${count.max}`;
+  }
+
   return "1";
 }
 
 function getBookLabel(entry) {
-  const enchantFn = entry.functions?.find(
-    f => f.function === "minecraft:enchant_with_levels"
-  );
+  const enchantFn =
+    entry.functions?.find(f => f.function === "minecraft:enchant_with_levels") ||
+    entry.functions?.find(f => f.function === "minecraft:enchant_randomly");
 
   if (!enchantFn?.options) return "Enchanted Book";
 
   return `Enchanted Book (${titleCase(enchantFn.options)})`;
+}
+
+function getItemName(entry) {
+  if (entry.type === "minecraft:empty") return "Empty";
+
+  if (
+    entry.name === "minecraft:book" &&
+    entry.functions?.some(
+      f =>
+        f.function === "minecraft:enchant_with_levels" ||
+        f.function === "minecraft:enchant_randomly"
+    )
+  ) {
+    return getBookLabel(entry);
+  }
+
+  return titleCase(entry.name ?? "unknown");
+}
+
+function getRollLabel(rolls) {
+  if (typeof rolls === "number") return String(rolls);
+
+  if (rolls?.min !== undefined && rolls?.max !== undefined) {
+    return `${rolls.min}–${rolls.max}`;
+  }
+
+  return "1";
 }
 
 function renderPool(pool, index) {
@@ -59,28 +90,21 @@ function renderPool(pool, index) {
 
   const rows = entries
     .map(entry => {
-      const item =
-        entry.name === "minecraft:book" &&
-        entry.functions?.some(f => f.function === "minecraft:enchant_with_levels")
-          ? getBookLabel(entry)
-          : titleCase(entry.name ?? "unknown");
-
+      const item = getItemName(entry);
       const stackSize = getStackSize(entry);
       const weight = entry.weight ?? 1;
       const chanceValue = totalWeight > 0 ? weight / totalWeight : 0;
       const chance = `${(chanceValue * 100).toFixed(1)}%`;
 
-      return {
-        item,
-        stackSize,
-        weight,
-        chance,
-        chanceValue
-      };
+      return { item, stackSize, weight, chance, chanceValue };
     })
     .sort((a, b) => b.chanceValue - a.chanceValue || a.item.localeCompare(b.item));
 
-  return `## Pool ${index + 1}
+  const title = index === 0 ? "Main Loot" : `Pool ${index + 1}`;
+
+  return `## ${title}
+
+**Rolls:** ${getRollLabel(pool.rolls)}
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
@@ -105,18 +129,15 @@ function getLootTableInfo(file) {
   if (dataIndex === -1 || lootTableIndex === -1) return null;
   if (lootTableIndex !== dataIndex + 2) return null;
 
-  const namespace = parts[dataIndex + 1];
-  const relativeLootPath = parts.slice(lootTableIndex + 1).join(path.sep);
-
   return {
-    namespace,
-    relativeLootPath
+    namespace: parts[dataIndex + 1],
+    relativeLootPath: parts.slice(lootTableIndex + 1).join(path.sep)
   };
 }
 
 function removeStaleMarkdownFiles(validOutputFiles) {
-  const markdownFiles = walk(outputRoot).filter(file =>
-    file.split(path.sep).includes("loot_table") && file.endsWith(".md")
+  const markdownFiles = walk(outputRoot).filter(
+    file => file.split(path.sep).includes("loot_table") && file.endsWith(".md")
   );
 
   for (const file of markdownFiles) {
@@ -130,6 +151,7 @@ function removeStaleMarkdownFiles(validOutputFiles) {
 }
 
 const lootTableFiles = walk(inputRoot)
+  .filter(file => file.endsWith(".json"))
   .map(file => ({ file, info: getLootTableInfo(file) }))
   .filter(entry => entry.info !== null);
 
@@ -148,9 +170,7 @@ for (const { file, info } of lootTableFiles) {
   validOutputFiles.add(path.normalize(outputPath));
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-
-  const markdown = generateMarkdown(json, file);
-  fs.writeFileSync(outputPath, markdown);
+  fs.writeFileSync(outputPath, generateMarkdown(json, file));
 
   console.log(`Generated ${outputPath}`);
 }
