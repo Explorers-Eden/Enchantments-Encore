@@ -26,4 +26,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Generate loot table markdown
-          file_pattern: wiki/**/*.md
+          file_pattern: wiki/markdown/**/*.md

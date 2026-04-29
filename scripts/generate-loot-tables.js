@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const inputRoot = "data";
-const outputRoot = "wiki";
+const outputRoot = path.join("wiki", "markdown");
 
 function walk(dir) {
   let files = [];
