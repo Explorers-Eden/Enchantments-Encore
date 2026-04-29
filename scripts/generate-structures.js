@@ -1,3 +1,4 @@
+// scripts/generate-structures.js
 const fs = require("fs");
 const path = require("path");
 const nbt = require("prismarine-nbt");
@@ -54,9 +55,18 @@ function getStructureInfo(file) {
   if (dataIndex === -1 || structureIndex === -1) return null;
   if (structureIndex !== dataIndex + 2) return null;
 
+  const namespace = parts[dataIndex + 1];
+  const relativeParts = parts.slice(structureIndex + 1);
+
+  if (relativeParts.length === 0) return null;
+
+  const topFolder = relativeParts.length > 1
+    ? relativeParts[0]
+    : path.basename(relativeParts[0], ".nbt");
+
   return {
-    namespace: parts[dataIndex + 1],
-    relativePath: parts.slice(structureIndex + 1).join(path.sep)
+    namespace,
+    topFolder
   };
 }
 
@@ -123,13 +133,7 @@ function getBlockNameFromPaletteEntry(entry) {
   return entry?.Name ?? entry?.name ?? null;
 }
 
-function generateMarkdown(structure, sourcePath) {
-  const title = titleCase(path.basename(sourcePath, ".nbt"));
-
-  const blockCounts = new Map();
-  const entityCounts = new Map();
-  const lootTables = new Set();
-
+function collectStructureData(structure, totals) {
   const palette = getPalette(structure);
 
   for (const block of structure.blocks ?? []) {
@@ -137,10 +141,10 @@ function generateMarkdown(structure, sourcePath) {
     const blockName = getBlockNameFromPaletteEntry(state);
 
     if (blockName && !IGNORED_BLOCKS.has(blockName)) {
-      addCount(blockCounts, blockName);
+      addCount(totals.blockCounts, blockName);
     }
 
-    if (block.nbt) collectLootTables(block.nbt, lootTables);
+    if (block.nbt) collectLootTables(block.nbt, totals.lootTables);
   }
 
   for (const entity of structure.entities ?? []) {
@@ -148,23 +152,25 @@ function generateMarkdown(structure, sourcePath) {
     const entityId = entityData.id;
 
     if (entityId && !IGNORED_ENTITIES.has(entityId)) {
-      addCount(entityCounts, entityId);
+      addCount(totals.entityCounts, entityId);
     }
 
-    collectLootTables(entityData, lootTables);
+    collectLootTables(entityData, totals.lootTables);
   }
+}
 
-  const sortedBlocks = [...blockCounts.entries()].sort(
+function generateMarkdown(groupName, totals) {
+  const sortedBlocks = [...totals.blockCounts.entries()].sort(
     (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
   );
 
-  const sortedEntities = [...entityCounts.entries()].sort(
+  const sortedEntities = [...totals.entityCounts.entries()].sort(
     (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
   );
 
-  const sortedLootTables = [...lootTables].sort();
+  const sortedLootTables = [...totals.lootTables].sort();
 
-  return `# ${title}
+  return `# ${titleCase(groupName)}
 
 ${renderCountTable("Blocks", "Block", sortedBlocks)}
 
@@ -201,22 +207,44 @@ async function main() {
     .map(file => ({ file, info: getStructureInfo(file) }))
     .filter(entry => entry.info !== null);
 
-  const validOutputFiles = new Set();
+  const groups = new Map();
 
   for (const { file, info } of structureFiles) {
-    const structure = await readNbtFile(file);
+    const key = `${info.namespace}:${info.topFolder}`;
+
+    if (!groups.has(key)) {
+      groups.set(key, {
+        namespace: info.namespace,
+        topFolder: info.topFolder,
+        files: [],
+        blockCounts: new Map(),
+        entityCounts: new Map(),
+        lootTables: new Set()
+      });
+    }
+
+    groups.get(key).files.push(file);
+  }
+
+  const validOutputFiles = new Set();
+
+  for (const group of groups.values()) {
+    for (const file of group.files) {
+      const structure = await readNbtFile(file);
+      collectStructureData(structure, group);
+    }
 
     const outputPath = path.join(
       outputRoot,
-      info.namespace,
+      group.namespace,
       "structure",
-      info.relativePath.replace(/\.nbt$/, ".md")
+      `${group.topFolder}.md`
     );
 
     validOutputFiles.add(path.normalize(outputPath));
 
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, generateMarkdown(structure, file));
+    fs.writeFileSync(outputPath, generateMarkdown(group.topFolder, group));
 
     console.log(`Generated ${outputPath}`);
   }
