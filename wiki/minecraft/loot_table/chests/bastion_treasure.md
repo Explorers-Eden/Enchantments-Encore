@@ -1,6 +1,6 @@
 # Bastion Treasure
 
-## Main Loot
+## Pool 1
 
 **Rolls:** 3
 
@@ -29,7 +29,7 @@
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
-| Enchanted Book (Treasure) | 1 | 3 | 25.0% |
+| Enchanted Book (enchantencore:treasure) | 1 | 3 | 25.0% |
 | Crying Obsidian | 3–5 | 1 | 8.3% |
 | Gilded Blackstone | 5–15 | 1 | 8.3% |
 | Gold Block | 2–5 | 1 | 8.3% |

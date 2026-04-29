@@ -1,6 +1,6 @@
 # End City Treasure
 
-## Main Loot
+## Pool 1
 
 **Rolls:** 2–6
 
@@ -17,7 +17,7 @@
 | Diamond Pickaxe | 1 | 3 | 3.4% |
 | Diamond Shovel | 1 | 3 | 3.4% |
 | Diamond Sword | 1 | 3 | 3.4% |
-| Enchanted Book (Treasure) | 1 | 3 | 3.4% |
+| Enchanted Book (enchantencore:treasure) | 1 | 3 | 3.4% |
 | Iron Boots | 1 | 3 | 3.4% |
 | Iron Chestplate | 1 | 3 | 3.4% |
 | Iron Helmet | 1 | 3 | 3.4% |

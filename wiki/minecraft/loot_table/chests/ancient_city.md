@@ -1,6 +1,6 @@
 # Ancient City
 
-## Main Loot
+## Pool 1
 
 **Rolls:** 5–10
 
@@ -9,15 +9,15 @@
 | Coal | 6–15 | 7 | 7.9% |
 | Bone | 1–15 | 5 | 5.6% |
 | Book | 3–10 | 5 | 5.6% |
-| Enchanted Book (On Random Loot) | 1 | 5 | 5.6% |
+| Enchanted Book (minecraft:on_random_loot) | 1 | 5 | 5.6% |
 | Potion | 1–3 | 5 | 5.6% |
 | Soul Torch | 1–15 | 5 | 5.6% |
 | Disc Fragment 5 | 1–3 | 4 | 4.5% |
 | Echo Shard | 1–3 | 4 | 4.5% |
 | Amethyst Shard | 1–15 | 3 | 3.4% |
 | Candle | 1–4 | 3 | 3.4% |
-| Enchanted Book (Swift Sneak) | 1 | 3 | 3.4% |
-| Enchanted Book (Treasure) | 1 | 3 | 3.4% |
+| Enchanted Book (enchantencore:treasure) | 1 | 3 | 3.4% |
+| Enchanted Book (minecraft:swift_sneak) | 1 | 3 | 3.4% |
 | Experience Bottle | 1–3 | 3 | 3.4% |
 | Glow Berries | 1–15 | 3 | 3.4% |
 | Iron Leggings | 1 | 3 | 3.4% |

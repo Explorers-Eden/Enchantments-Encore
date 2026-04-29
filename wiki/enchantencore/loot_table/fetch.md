@@ -1,6 +1,6 @@
 # Fetch
 
-## Main Loot
+## Pool 1
 
 **Rolls:** 1
 

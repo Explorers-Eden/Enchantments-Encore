@@ -1,18 +1,18 @@
 # All Enchants
 
-## Main Loot
+## Pool 1
 
 **Rolls:** 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
-| Enchanted Book (In Enchanting Table) | 1 | 5 | 14.3% |
-| Enchanted Book (Non Treasure) | 1 | 5 | 14.3% |
-| Enchanted Book (On Mob Spawn Equipment) | 1 | 5 | 14.3% |
-| Enchanted Book (On Random Loot) | 1 | 5 | 14.3% |
-| Enchanted Book (Tradeable) | 1 | 5 | 14.3% |
-| Enchanted Book (Treasure) | 1 | 5 | 14.3% |
-| Enchanted Book (Treasure) | 1 | 5 | 14.3% |
+| Enchanted Book (enchantencore:treasure) | 1 | 5 | 14.3% |
+| Enchanted Book (minecraft:in_enchanting_table) | 1 | 5 | 14.3% |
+| Enchanted Book (minecraft:non_treasure) | 1 | 5 | 14.3% |
+| Enchanted Book (minecraft:on_mob_spawn_equipment) | 1 | 5 | 14.3% |
+| Enchanted Book (minecraft:on_random_loot) | 1 | 5 | 14.3% |
+| Enchanted Book (minecraft:tradeable) | 1 | 5 | 14.3% |
+| Enchanted Book (minecraft:treasure) | 1 | 5 | 14.3% |
 
 ## Pool 2
 
