@@ -1,3 +1,4 @@
+// scripts/generate-loot-tables.js
 const fs = require("fs");
 const path = require("path");
 
@@ -34,6 +35,7 @@ function getStackSize(entry) {
   if (!fn) return "1";
 
   const count = fn.count;
+
   if (typeof count === "number") return String(count);
 
   if (count?.min !== undefined && count?.max !== undefined) {
@@ -104,9 +106,7 @@ function renderPool(pool, index) {
     })
     .sort((a, b) => b.chanceValue - a.chanceValue || a.item.localeCompare(b.item));
 
-  return `## Pool ${index + 1}
-
-**Rolls:** ${getRollLabel(pool.rolls)}
+  return `### Pool ${index + 1} — Rolls: ${getRollLabel(pool.rolls)}
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
