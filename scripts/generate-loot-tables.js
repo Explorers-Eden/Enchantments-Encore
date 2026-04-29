@@ -78,20 +78,6 @@ function getItemName(entry) {
   return titleCase(entry.type ?? "unknown");
 }
 
-function getRollLabel(rolls) {
-  if (typeof rolls === "number") return String(rolls);
-
-  if (rolls?.min !== undefined && rolls?.max !== undefined) {
-    return `${rolls.min}–${rolls.max}`;
-  }
-
-  if (rolls?.type === "minecraft:uniform") {
-    return `${rolls.min}–${rolls.max}`;
-  }
-
-  return "1";
-}
-
 function flattenEntries(entries, inheritedWeight = 1) {
   const result = [];
 
@@ -133,7 +119,6 @@ function renderMergedPools(pools) {
   pools.forEach((pool, poolIndex) => {
     const flattenedEntries = flattenEntries(pool.entries ?? []);
     const totalWeight = flattenedEntries.reduce((sum, entry) => sum + entry.weight, 0);
-    const rolls = getRollLabel(pool.rolls);
 
     for (const entry of flattenedEntries) {
       const chanceValue = totalWeight > 0 ? entry.weight / totalWeight : 0;
@@ -142,7 +127,7 @@ function renderMergedPools(pools) {
         item: entry.item,
         stackSize: entry.stackSize,
         pool: poolIndex + 1,
-        rolls,
+        weight: entry.weight,
         chanceValue,
         chance: `${(chanceValue * 100).toFixed(1)}%`
       });
@@ -156,12 +141,10 @@ function renderMergedPools(pools) {
       a.item.localeCompare(b.item)
   );
 
-  return `### Loot (Merged Pools)
-
-| Item | Stack Size | Pool | Rolls | Chance |
-|:-----|:----------:|:----:|:-----:|:------:|
+  return `| Item | Stack Size | Pool | Weight | Chance |
+|:-----|:----------:|:----:|:------:|:------:|
 ${rows
-  .map(row => `| ${row.item} | ${row.stackSize} | ${row.pool} | ${row.rolls} | ${row.chance} |`)
+  .map(row => `| ${row.item} | ${row.stackSize} | ${row.pool} | ${row.weight} | ${row.chance} |`)
   .join("\n")}`;
 }
 
