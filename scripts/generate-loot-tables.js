@@ -11,22 +11,23 @@ function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
 
-    if (entry.isDirectory()) {
-      files = files.concat(walk(fullPath));
-    } else if (entry.isFile()) {
-      files.push(fullPath);
-    }
+    if (entry.isDirectory()) files = files.concat(walk(fullPath));
+    else if (entry.isFile()) files.push(fullPath);
   }
 
   return files;
 }
 
 function titleCase(id) {
-  return id
+  return String(id)
     .replace(/^#/, "")
     .replace(/^[^:]+:/, "")
     .replace(/_/g, " ")
     .replace(/\b\w/g, c => c.toUpperCase());
+}
+
+function cleanTag(id) {
+  return String(id).replace(/^#/, "");
 }
 
 function getStackSize(entry) {
@@ -55,7 +56,7 @@ function getBookLabel(entry) {
 
   if (!enchantFn?.options) return "Enchanted Book";
 
-  return `Enchanted Book (${String(enchantFn.options).replace(/^#/, "")})`;
+  return `Enchanted Book (${cleanTag(enchantFn.options)})`;
 }
 
 function getItemName(entry) {
@@ -72,7 +73,9 @@ function getItemName(entry) {
     return getBookLabel(entry);
   }
 
-  return titleCase(entry.name ?? "unknown");
+  if (entry.name) return titleCase(entry.name);
+
+  return titleCase(entry.type ?? "unknown");
 }
 
 function getRollLabel(rolls) {
@@ -89,27 +92,77 @@ function getRollLabel(rolls) {
   return "1";
 }
 
-function renderPool(pool, index) {
-  const entries = pool.entries ?? [];
-  const totalWeight = entries.reduce((sum, entry) => sum + (entry.weight ?? 1), 0);
+function flattenEntries(entries, inheritedWeight = 1) {
+  const result = [];
 
-  const rows = entries
-    .map(entry => {
-      const item = getItemName(entry);
-      const stackSize = getStackSize(entry);
-      const weight = entry.weight ?? 1;
-      const chanceValue = totalWeight > 0 ? weight / totalWeight : 0;
-      const chance = `${(chanceValue * 100).toFixed(1)}%`;
+  for (const entry of entries ?? []) {
+    const weight = entry.weight ?? 1;
+    const combinedWeight = inheritedWeight * weight;
 
-      return { item, stackSize, weight, chance, chanceValue };
-    })
-    .sort((a, b) => b.chanceValue - a.chanceValue || a.item.localeCompare(b.item));
+    if (
+      entry.type === "minecraft:alternatives" ||
+      entry.type === "minecraft:group" ||
+      entry.type === "minecraft:sequence"
+    ) {
+      result.push(...flattenEntries(entry.children ?? [], combinedWeight));
+      continue;
+    }
 
-  return `### Pool ${index + 1} (Rolls: ${getRollLabel(pool.rolls)})
+    if (entry.type === "minecraft:tag") {
+      result.push({
+        item: `Tag (${cleanTag(entry.name ?? "unknown")})`,
+        stackSize: getStackSize(entry),
+        weight: combinedWeight
+      });
+      continue;
+    }
 
-| Item | Stack Size | Weight | Chance |
-|:-----|:----------:|:------:|:------:|
-${rows.map(row => `| ${row.item} | ${row.stackSize} | ${row.weight} | ${row.chance} |`).join("\n")}`;
+    result.push({
+      item: getItemName(entry),
+      stackSize: getStackSize(entry),
+      weight: combinedWeight
+    });
+  }
+
+  return result;
+}
+
+function renderMergedPools(pools) {
+  const rows = [];
+
+  pools.forEach((pool, poolIndex) => {
+    const flattenedEntries = flattenEntries(pool.entries ?? []);
+    const totalWeight = flattenedEntries.reduce((sum, entry) => sum + entry.weight, 0);
+    const rolls = getRollLabel(pool.rolls);
+
+    for (const entry of flattenedEntries) {
+      const chanceValue = totalWeight > 0 ? entry.weight / totalWeight : 0;
+
+      rows.push({
+        item: entry.item,
+        stackSize: entry.stackSize,
+        pool: poolIndex + 1,
+        rolls,
+        chanceValue,
+        chance: `${(chanceValue * 100).toFixed(1)}%`
+      });
+    }
+  });
+
+  rows.sort(
+    (a, b) =>
+      a.pool - b.pool ||
+      b.chanceValue - a.chanceValue ||
+      a.item.localeCompare(b.item)
+  );
+
+  return `### Loot (Merged Pools)
+
+| Item | Stack Size | Pool | Rolls | Chance |
+|:-----|:----------:|:----:|:-----:|:------:|
+${rows
+  .map(row => `| ${row.item} | ${row.stackSize} | ${row.pool} | ${row.rolls} | ${row.chance} |`)
+  .join("\n")}`;
 }
 
 function generateMarkdown(json, sourcePath) {
@@ -118,7 +171,7 @@ function generateMarkdown(json, sourcePath) {
 
   return `# ${title}
 
-${pools.map(renderPool).join("\n\n")}
+${renderMergedPools(pools)}
 `;
 }
 
