@@ -1,8 +1,6 @@
 # End City Treasure
 
-## Pool 1
-
-**Rolls:** 2–6
+### Pool 1 — Rolls: 2–6
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
@@ -32,9 +30,7 @@
 | Golden Horse Armor | 1 | 1 | 1.1% |
 | Iron Horse Armor | 1 | 1 | 1.1% |
 
-## Pool 2
-
-**Rolls:** 1
+### Pool 2 — Rolls: 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|

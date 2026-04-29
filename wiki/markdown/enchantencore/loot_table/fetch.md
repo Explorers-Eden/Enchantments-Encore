@@ -1,8 +1,6 @@
 # Fetch
 
-## Pool 1
-
-**Rolls:** 1
+### Pool 1 — Rolls: 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|

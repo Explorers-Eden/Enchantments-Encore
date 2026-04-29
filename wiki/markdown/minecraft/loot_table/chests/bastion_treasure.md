@@ -1,8 +1,6 @@
 # Bastion Treasure
 
-## Pool 1
-
-**Rolls:** 3
+### Pool 1 — Rolls: 3
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
@@ -23,9 +21,7 @@
 | Ancient Debris | 2 | 4 | 4.0% |
 | Enchanted Golden Apple | 1 | 2 | 2.0% |
 
-## Pool 2
-
-**Rolls:** 3–4
+### Pool 2 — Rolls: 3–4
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
@@ -40,18 +36,14 @@
 | Quartz | 8–23 | 1 | 8.3% |
 | Spectral Arrow | 12–25 | 1 | 8.3% |
 
-## Pool 3
-
-**Rolls:** 1
+### Pool 3 — Rolls: 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
 | Empty | 1 | 11 | 91.7% |
 | Snout Armor Trim Smithing Template | 1 | 1 | 8.3% |
 
-## Pool 4
-
-**Rolls:** 1
+### Pool 4 — Rolls: 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|

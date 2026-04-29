@@ -1,8 +1,6 @@
 # Ancient City
 
-## Pool 1
-
-**Rolls:** 5–10
+### Pool 1 — Rolls: 5–10
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
@@ -36,9 +34,7 @@
 | Enchanted Golden Apple | 1–2 | 1 | 1.1% |
 | Music Disc Otherside | 1 | 1 | 1.1% |
 
-## Pool 2
-
-**Rolls:** 1
+### Pool 2 — Rolls: 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|

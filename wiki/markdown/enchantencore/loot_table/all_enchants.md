@@ -1,8 +1,6 @@
 # All Enchants
 
-## Pool 1
-
-**Rolls:** 1
+### Pool 1 — Rolls: 1
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
@@ -14,9 +12,7 @@
 | Enchanted Book (minecraft:tradeable) | 1 | 5 | 14.3% |
 | Enchanted Book (minecraft:treasure) | 1 | 5 | 14.3% |
 
-## Pool 2
-
-**Rolls:** 2–3
+### Pool 2 — Rolls: 2–3
 
 | Item | Stack Size | Weight | Chance |
 |:-----|:----------:|:------:|:------:|
