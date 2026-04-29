@@ -60,13 +60,17 @@ function getStructureInfo(file) {
 
   if (relativeParts.length === 0) return null;
 
-  const topFolder = relativeParts.length > 1
-    ? relativeParts[0]
-    : path.basename(relativeParts[0], ".nbt");
+  const topFolder =
+    relativeParts.length > 1
+      ? relativeParts[0]
+      : path.basename(relativeParts[0], ".nbt");
+
+  const structureFile = relativeParts.join("/").replace(/\.nbt$/, "");
 
   return {
     namespace,
-    topFolder
+    topFolder,
+    structureFile
   };
 }
 
@@ -80,14 +84,16 @@ None found.
 
   return `## ${title}
 
-| ${singular} | Count |
-|:-----|:-----:|
-${rows.map(([name, count]) => `| ${titleCase(name)} | ${count} |`).join("\n")}
+| ${singular} | Structure File | Count |
+|:-----|:-----|:-----:|
+${rows
+  .map(row => `| ${titleCase(row.name)} | ${row.structureFile} | ${row.count} |`)
+  .join("\n")}
 `;
 }
 
-function renderLootTableTable(lootTables) {
-  if (lootTables.length === 0) {
+function renderLootTableTable(rows) {
+  if (rows.length === 0) {
     return `## Loot Tables
 
 None found.
@@ -96,9 +102,9 @@ None found.
 
   return `## Loot Tables
 
-| Loot Table |
-|:-----|
-${lootTables.map(id => `| ${id} |`).join("\n")}
+| Loot Table | Structure File |
+|:-----|:-----|
+${rows.map(row => `| ${row.lootTable} | ${row.structureFile} |`).join("\n")}
 `;
 }
 
@@ -133,7 +139,7 @@ function getBlockNameFromPaletteEntry(entry) {
   return entry?.Name ?? entry?.name ?? null;
 }
 
-function collectStructureData(structure, totals) {
+function collectStructureData(structure, totals, structureFile) {
   const palette = getPalette(structure);
 
   for (const block of structure.blocks ?? []) {
@@ -141,10 +147,15 @@ function collectStructureData(structure, totals) {
     const blockName = getBlockNameFromPaletteEntry(state);
 
     if (blockName && !IGNORED_BLOCKS.has(blockName)) {
-      addCount(totals.blockCounts, blockName);
+      addCount(totals.blockCounts, `${blockName}||${structureFile}`);
     }
 
-    if (block.nbt) collectLootTables(block.nbt, totals.lootTables);
+    if (block.nbt) {
+      const lootTables = collectLootTables(block.nbt);
+      for (const lootTable of lootTables) {
+        totals.lootTables.add(`${lootTable}||${structureFile}`);
+      }
+    }
   }
 
   for (const entity of structure.entities ?? []) {
@@ -152,31 +163,64 @@ function collectStructureData(structure, totals) {
     const entityId = entityData.id;
 
     if (entityId && !IGNORED_ENTITIES.has(entityId)) {
-      addCount(totals.entityCounts, entityId);
+      addCount(totals.entityCounts, `${entityId}||${structureFile}`);
     }
 
-    collectLootTables(entityData, totals.lootTables);
+    const lootTables = collectLootTables(entityData);
+    for (const lootTable of lootTables) {
+      totals.lootTables.add(`${lootTable}||${structureFile}`);
+    }
   }
 }
 
+function splitCountRows(map) {
+  return [...map.entries()]
+    .map(([key, count]) => {
+      const [name, structureFile] = key.split("||");
+
+      return {
+        name,
+        structureFile,
+        count
+      };
+    })
+    .sort(
+      (a, b) =>
+        a.structureFile.localeCompare(b.structureFile) ||
+        b.count - a.count ||
+        a.name.localeCompare(b.name)
+    );
+}
+
+function splitLootTableRows(set) {
+  return [...set]
+    .map(key => {
+      const [lootTable, structureFile] = key.split("||");
+
+      return {
+        lootTable,
+        structureFile
+      };
+    })
+    .sort(
+      (a, b) =>
+        a.structureFile.localeCompare(b.structureFile) ||
+        a.lootTable.localeCompare(b.lootTable)
+    );
+}
+
 function generateMarkdown(groupName, totals) {
-  const sortedBlocks = [...totals.blockCounts.entries()].sort(
-    (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
-  );
-
-  const sortedEntities = [...totals.entityCounts.entries()].sort(
-    (a, b) => b[1] - a[1] || a[0].localeCompare(b[0])
-  );
-
-  const sortedLootTables = [...totals.lootTables].sort();
+  const blockRows = splitCountRows(totals.blockCounts);
+  const entityRows = splitCountRows(totals.entityCounts);
+  const lootTableRows = splitLootTableRows(totals.lootTables);
 
   return `# ${titleCase(groupName)}
 
-${renderCountTable("Blocks", "Block", sortedBlocks)}
+${renderCountTable("Blocks", "Block", blockRows)}
 
-${renderCountTable("Entities", "Entity", sortedEntities)}
+${renderCountTable("Entities", "Entity", entityRows)}
 
-${renderLootTableTable(sortedLootTables)}
+${renderLootTableTable(lootTableRows)}
 `;
 }
 
@@ -223,15 +267,18 @@ async function main() {
       });
     }
 
-    groups.get(key).files.push(file);
+    groups.get(key).files.push({
+      path: file,
+      structureFile: info.structureFile
+    });
   }
 
   const validOutputFiles = new Set();
 
   for (const group of groups.values()) {
     for (const file of group.files) {
-      const structure = await readNbtFile(file);
-      collectStructureData(structure, group);
+      const structure = await readNbtFile(file.path);
+      collectStructureData(structure, group, file.structureFile);
     }
 
     const outputPath = path.join(
