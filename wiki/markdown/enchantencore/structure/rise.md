@@ -1,344 +1,793 @@
 # Rise
 
-## Blocks
+## Summary
 
-| Block | Structure File | Count |
-|:-----|:-----|:-----:|
-| Spruce Planks | rise/balcony/balcony_books | 382 |
-| Deepslate Tiles | rise/balcony/balcony_books | 130 |
-| Cracked Deepslate Tiles | rise/balcony/balcony_books | 123 |
-| Red Carpet | rise/balcony/balcony_books | 92 |
-| Spruce Stairs | rise/balcony/balcony_books | 76 |
-| Bookshelf | rise/balcony/balcony_books | 59 |
-| Stone Bricks | rise/balcony/balcony_books | 59 |
-| Chiseled Bookshelf | rise/balcony/balcony_books | 58 |
-| Cracked Stone Bricks | rise/balcony/balcony_books | 54 |
-| Stone Brick Stairs | rise/balcony/balcony_books | 41 |
-| Stone Brick Slab | rise/balcony/balcony_books | 36 |
-| Stripped Spruce Log | rise/balcony/balcony_books | 31 |
-| Oak Slab | rise/balcony/balcony_books | 29 |
-| Spruce Fence | rise/balcony/balcony_books | 21 |
-| Deepslate Tile Slab | rise/balcony/balcony_books | 17 |
-| Light Gray Candle | rise/balcony/balcony_books | 17 |
-| Ladder | rise/balcony/balcony_books | 6 |
-| Andesite | rise/balcony/balcony_books | 2 |
-| Glow Lichen | rise/balcony/balcony_books | 2 |
-| Polished Andesite | rise/balcony/balcony_books | 2 |
-| Jigsaw | rise/balcony/balcony_books | 1 |
-| Spruce Planks | rise/balcony/balcony_crystal | 362 |
-| Amethyst Block | rise/balcony/balcony_crystal | 287 |
-| Deepslate Tiles | rise/balcony/balcony_crystal | 130 |
-| Cracked Deepslate Tiles | rise/balcony/balcony_crystal | 123 |
-| Stone Bricks | rise/balcony/balcony_crystal | 59 |
-| Cracked Stone Bricks | rise/balcony/balcony_crystal | 54 |
-| Amethyst Cluster | rise/balcony/balcony_crystal | 46 |
-| Large Amethyst Bud | rise/balcony/balcony_crystal | 40 |
-| Spruce Stairs | rise/balcony/balcony_crystal | 40 |
-| Stone Brick Stairs | rise/balcony/balcony_crystal | 29 |
-| Budding Amethyst | rise/balcony/balcony_crystal | 28 |
-| Stripped Spruce Log | rise/balcony/balcony_crystal | 26 |
-| Stone Brick Slab | rise/balcony/balcony_crystal | 24 |
-| Medium Amethyst Bud | rise/balcony/balcony_crystal | 21 |
-| Deepslate Tile Slab | rise/balcony/balcony_crystal | 17 |
-| Small Amethyst Bud | rise/balcony/balcony_crystal | 16 |
-| Andesite | rise/balcony/balcony_crystal | 2 |
-| Glow Lichen | rise/balcony/balcony_crystal | 2 |
-| Polished Andesite | rise/balcony/balcony_crystal | 2 |
-| Jigsaw | rise/balcony/balcony_crystal | 1 |
-| Spruce Planks | rise/balcony/balcony_normal | 382 |
-| Deepslate Tiles | rise/balcony/balcony_normal | 130 |
-| Cracked Deepslate Tiles | rise/balcony/balcony_normal | 123 |
-| Stone Bricks | rise/balcony/balcony_normal | 99 |
-| Red Carpet | rise/balcony/balcony_normal | 95 |
-| Spruce Stairs | rise/balcony/balcony_normal | 76 |
-| Cracked Stone Bricks | rise/balcony/balcony_normal | 65 |
-| Stone Brick Stairs | rise/balcony/balcony_normal | 37 |
-| Stone Brick Slab | rise/balcony/balcony_normal | 33 |
-| Stripped Spruce Log | rise/balcony/balcony_normal | 31 |
-| Bookshelf | rise/balcony/balcony_normal | 22 |
-| Deepslate Tile Slab | rise/balcony/balcony_normal | 17 |
-| Deepslate Tile Wall | rise/balcony/balcony_normal | 11 |
-| Spruce Slab | rise/balcony/balcony_normal | 10 |
-| Oak Slab | rise/balcony/balcony_normal | 9 |
-| Spruce Trapdoor | rise/balcony/balcony_normal | 8 |
-| Spruce Fence | rise/balcony/balcony_normal | 7 |
-| Andesite | rise/balcony/balcony_normal | 2 |
-| Glow Lichen | rise/balcony/balcony_normal | 2 |
-| Polished Andesite | rise/balcony/balcony_normal | 2 |
-| Jigsaw | rise/balcony/balcony_normal | 1 |
-| Spruce Planks | rise/balcony/balcony_ruin | 315 |
-| Deepslate Tiles | rise/balcony/balcony_ruin | 102 |
-| Cracked Deepslate Tiles | rise/balcony/balcony_ruin | 100 |
-| Spruce Stairs | rise/balcony/balcony_ruin | 52 |
-| Stone Bricks | rise/balcony/balcony_ruin | 49 |
-| Cracked Stone Bricks | rise/balcony/balcony_ruin | 45 |
-| Deepslate Tile Slab | rise/balcony/balcony_ruin | 45 |
-| Gravel | rise/balcony/balcony_ruin | 43 |
-| Stone Brick Stairs | rise/balcony/balcony_ruin | 40 |
-| Spruce Fence | rise/balcony/balcony_ruin | 33 |
-| Spruce Slab | rise/balcony/balcony_ruin | 33 |
-| Stone Brick Slab | rise/balcony/balcony_ruin | 28 |
-| Stripped Spruce Log | rise/balcony/balcony_ruin | 26 |
-| Light Gray Candle | rise/balcony/balcony_ruin | 7 |
-| Andesite | rise/balcony/balcony_ruin | 2 |
-| Glow Lichen | rise/balcony/balcony_ruin | 2 |
-| Polished Andesite | rise/balcony/balcony_ruin | 2 |
-| Jigsaw | rise/balcony/balcony_ruin | 1 |
-| Red Carpet | rise/ground/ground_books | 91 |
-| Cracked Stone Bricks | rise/ground/ground_books | 82 |
-| Bookshelf | rise/ground/ground_books | 69 |
-| Stone Bricks | rise/ground/ground_books | 54 |
-| Chiseled Bookshelf | rise/ground/ground_books | 50 |
-| Brown Candle | rise/ground/ground_books | 15 |
-| Andesite | rise/ground/ground_books | 3 |
-| Lectern | rise/ground/ground_books | 2 |
-| Polished Andesite | rise/ground/ground_books | 2 |
-| Jigsaw | rise/ground/ground_books | 1 |
-| Amethyst Block | rise/ground/ground_crystal | 151 |
-| Cracked Stone Bricks | rise/ground/ground_crystal | 82 |
-| Stone Bricks | rise/ground/ground_crystal | 54 |
-| Large Amethyst Bud | rise/ground/ground_crystal | 35 |
-| Amethyst Cluster | rise/ground/ground_crystal | 30 |
-| Small Amethyst Bud | rise/ground/ground_crystal | 12 |
-| Budding Amethyst | rise/ground/ground_crystal | 11 |
-| Medium Amethyst Bud | rise/ground/ground_crystal | 11 |
-| Andesite | rise/ground/ground_crystal | 3 |
-| Polished Andesite | rise/ground/ground_crystal | 2 |
-| Jigsaw | rise/ground/ground_crystal | 1 |
-| Cracked Stone Bricks | rise/ground/ground_guardian | 81 |
-| Stone Bricks | rise/ground/ground_guardian | 55 |
-| Bookshelf | rise/ground/ground_guardian | 44 |
-| Chiseled Bookshelf | rise/ground/ground_guardian | 25 |
-| Cobweb | rise/ground/ground_guardian | 8 |
-| Andesite | rise/ground/ground_guardian | 3 |
-| Lantern | rise/ground/ground_guardian | 3 |
-| Polished Andesite | rise/ground/ground_guardian | 2 |
-| Jigsaw | rise/ground/ground_guardian | 1 |
-| Cracked Stone Bricks | rise/ground/ground_ruin | 82 |
-| Gravel | rise/ground/ground_ruin | 69 |
-| Stone Bricks | rise/ground/ground_ruin | 55 |
-| Bookshelf | rise/ground/ground_ruin | 51 |
-| Moss Carpet | rise/ground/ground_ruin | 49 |
-| Cobweb | rise/ground/ground_ruin | 18 |
-| Andesite | rise/ground/ground_ruin | 2 |
-| Polished Andesite | rise/ground/ground_ruin | 2 |
-| Jigsaw | rise/ground/ground_ruin | 1 |
-| Cracked Stone Bricks | rise/rise_big | 1773 |
-| Stone Bricks | rise/rise_big | 1722 |
-| Grass Block | rise/rise_big | 568 |
-| Spruce Planks | rise/rise_big | 457 |
-| Stone | rise/rise_big | 407 |
-| Deepslate Tile Slab | rise/rise_big | 405 |
-| Dirt | rise/rise_big | 395 |
-| Stone Brick Stairs | rise/rise_big | 349 |
-| Deepslate Tiles | rise/rise_big | 301 |
-| Cracked Deepslate Tiles | rise/rise_big | 282 |
-| Stripped Spruce Log | rise/rise_big | 145 |
-| Spruce Stairs | rise/rise_big | 120 |
-| Glow Lichen | rise/rise_big | 118 |
-| Stone Brick Wall | rise/rise_big | 113 |
-| Mossy Stone Bricks | rise/rise_big | 91 |
-| Stone Brick Slab | rise/rise_big | 73 |
-| Black Stained Glass Pane | rise/rise_big | 64 |
-| Polished Andesite | rise/rise_big | 46 |
-| Andesite | rise/rise_big | 43 |
-| Deepslate Tile Stairs | rise/rise_big | 42 |
-| Chiseled Stone Bricks | rise/rise_big | 21 |
-| Twisting Vines Plant | rise/rise_big | 16 |
-| Shroomlight | rise/rise_big | 10 |
-| Jigsaw | rise/rise_big | 6 |
-| Spruce Door | rise/rise_big | 2 |
-| Mossy Stone Brick Stairs | rise/rise_big | 1 |
-| Spruce Slab | rise/rise_big | 1 |
-| Twisting Vines | rise/rise_big | 1 |
-| Stone Bricks | rise/rise_small | 934 |
-| Cracked Stone Bricks | rise/rise_small | 856 |
-| Deepslate Tile Slab | rise/rise_small | 279 |
-| Stone Brick Stairs | rise/rise_small | 212 |
-| Grass Block | rise/rise_small | 205 |
-| Dirt | rise/rise_small | 122 |
-| Stripped Spruce Log | rise/rise_small | 108 |
-| Stone Brick Wall | rise/rise_small | 104 |
-| Glow Lichen | rise/rise_small | 83 |
-| Deepslate Tiles | rise/rise_small | 80 |
-| Cracked Deepslate Tiles | rise/rise_small | 75 |
-| Spruce Planks | rise/rise_small | 69 |
-| Mossy Stone Bricks | rise/rise_small | 63 |
-| Black Stained Glass Pane | rise/rise_small | 40 |
-| Spruce Stairs | rise/rise_small | 36 |
-| Polished Andesite | rise/rise_small | 26 |
-| Chiseled Stone Bricks | rise/rise_small | 21 |
-| Andesite | rise/rise_small | 18 |
-| Twisting Vines Plant | rise/rise_small | 16 |
-| Stone Brick Slab | rise/rise_small | 15 |
-| Ladder | rise/rise_small | 13 |
-| Shroomlight | rise/rise_small | 10 |
-| Deepslate Tile Stairs | rise/rise_small | 7 |
-| Jigsaw | rise/rise_small | 4 |
-| Spruce Door | rise/rise_small | 2 |
-| Mossy Stone Brick Stairs | rise/rise_small | 1 |
-| Twisting Vines | rise/rise_small | 1 |
-| Bookshelf | rise/small/small_books | 12 |
-| Cracked Stone Bricks | rise/small/small_books | 7 |
-| Stone Bricks | rise/small/small_books | 6 |
-| Chiseled Bookshelf | rise/small/small_books | 5 |
-| Oak Slab | rise/small/small_books | 4 |
-| Mossy Stone Bricks | rise/small/small_books | 2 |
-| Andesite | rise/small/small_books | 1 |
-| Jigsaw | rise/small/small_books | 1 |
-| Amethyst Block | rise/small/small_crystal | 13 |
-| Cracked Stone Bricks | rise/small/small_crystal | 7 |
-| Large Amethyst Bud | rise/small/small_crystal | 6 |
-| Stone Bricks | rise/small/small_crystal | 6 |
-| Amethyst Cluster | rise/small/small_crystal | 3 |
-| Small Amethyst Bud | rise/small/small_crystal | 3 |
-| Mossy Stone Bricks | rise/small/small_crystal | 2 |
-| Andesite | rise/small/small_crystal | 1 |
-| Jigsaw | rise/small/small_crystal | 1 |
-| Cracked Stone Bricks | rise/small/small_normal | 7 |
-| Stone Bricks | rise/small/small_normal | 6 |
-| Oak Slab | rise/small/small_normal | 4 |
-| Bookshelf | rise/small/small_normal | 3 |
-| Chiseled Bookshelf | rise/small/small_normal | 3 |
-| Mossy Stone Bricks | rise/small/small_normal | 2 |
-| Andesite | rise/small/small_normal | 1 |
-| Decorated Pot | rise/small/small_normal | 1 |
-| Jigsaw | rise/small/small_normal | 1 |
-| Spruce Planks | rise/top/top_dummy | 53 |
-| Spruce Stairs | rise/top/top_dummy | 36 |
-| Cracked Deepslate Tiles | rise/top/top_dummy | 32 |
-| Stone Brick Stairs | rise/top/top_dummy | 24 |
-| Stone Bricks | rise/top/top_dummy | 24 |
-| Cracked Stone Bricks | rise/top/top_dummy | 18 |
-| Deepslate Tiles | rise/top/top_dummy | 16 |
-| Stripped Spruce Log | rise/top/top_dummy | 7 |
-| Deepslate Tile Slab | rise/top/top_dummy | 4 |
-| Mossy Stone Bricks | rise/top/top_dummy | 3 |
-| Polished Andesite | rise/top/top_dummy | 2 |
-| Andesite | rise/top/top_dummy | 1 |
-| Jigsaw | rise/top/top_dummy | 1 |
-| Spruce Planks | rise/top/top_first | 53 |
-| Spruce Stairs | rise/top/top_first | 36 |
-| Cracked Deepslate Tiles | rise/top/top_first | 32 |
-| Stone Brick Stairs | rise/top/top_first | 24 |
-| Stone Bricks | rise/top/top_first | 24 |
-| Cracked Stone Bricks | rise/top/top_first | 18 |
-| Deepslate Tiles | rise/top/top_first | 16 |
-| Chain | rise/top/top_first | 14 |
-| Bookshelf | rise/top/top_first | 12 |
-| Cobweb | rise/top/top_first | 7 |
-| Stripped Spruce Log | rise/top/top_first | 7 |
-| Deepslate Tile Slab | rise/top/top_first | 4 |
-| Mangrove Wall Hanging Sign | rise/top/top_first | 4 |
-| Mangrove Wall Sign | rise/top/top_first | 4 |
-| Mossy Stone Brick Slab | rise/top/top_first | 4 |
-| Dead Brain Coral | rise/top/top_first | 3 |
-| Dead Tube Coral Fan | rise/top/top_first | 3 |
-| Mossy Stone Bricks | rise/top/top_first | 3 |
-| Polished Andesite | rise/top/top_first | 2 |
-| Potted Wither Rose | rise/top/top_first | 2 |
-| Purple Candle | rise/top/top_first | 2 |
-| Waxed Oxidized Copper Bulb | rise/top/top_first | 2 |
-| Waxed Weathered Copper Bulb | rise/top/top_first | 2 |
-| Andesite | rise/top/top_first | 1 |
-| Chest | rise/top/top_first | 1 |
-| Chiseled Tuff | rise/top/top_first | 1 |
-| Jigsaw | rise/top/top_first | 1 |
-| Wither Skeleton Skull | rise/top/top_first | 1 |
-| Stone Bricks | rise/upper/upper_alchemy | 44 |
-| Cracked Stone Bricks | rise/upper/upper_alchemy | 33 |
-| Spruce Stairs | rise/upper/upper_alchemy | 22 |
-| Deepslate Tile Slab | rise/upper/upper_alchemy | 16 |
-| Deepslate Tiles | rise/upper/upper_alchemy | 10 |
-| Stone Brick Stairs | rise/upper/upper_alchemy | 10 |
-| Spruce Planks | rise/upper/upper_alchemy | 8 |
-| Spruce Trapdoor | rise/upper/upper_alchemy | 8 |
-| White Candle | rise/upper/upper_alchemy | 7 |
-| Twisting Vines Plant | rise/upper/upper_alchemy | 4 |
-| Brewing Stand | rise/upper/upper_alchemy | 2 |
-| Campfire | rise/upper/upper_alchemy | 2 |
-| Polished Andesite | rise/upper/upper_alchemy | 2 |
-| Twisting Vines | rise/upper/upper_alchemy | 2 |
-| Water Cauldron | rise/upper/upper_alchemy | 2 |
-| Cracked Deepslate Tiles | rise/upper/upper_alchemy | 1 |
-| Jigsaw | rise/upper/upper_alchemy | 1 |
-| Nether Wart | rise/upper/upper_alchemy | 1 |
-| Stone Bricks | rise/upper/upper_books | 45 |
-| Cracked Stone Bricks | rise/upper/upper_books | 33 |
-| Bookshelf | rise/upper/upper_books | 31 |
-| Deepslate Tile Slab | rise/upper/upper_books | 16 |
-| Chiseled Bookshelf | rise/upper/upper_books | 13 |
-| Deepslate Tiles | rise/upper/upper_books | 10 |
-| Oak Slab | rise/upper/upper_books | 9 |
-| Stone Brick Stairs | rise/upper/upper_books | 8 |
-| Cobweb | rise/upper/upper_books | 5 |
-| Lectern | rise/upper/upper_books | 3 |
-| Polished Andesite | rise/upper/upper_books | 3 |
-| Twisting Vines Plant | rise/upper/upper_books | 3 |
-| Cracked Deepslate Tiles | rise/upper/upper_books | 1 |
-| Jigsaw | rise/upper/upper_books | 1 |
-| Twisting Vines | rise/upper/upper_books | 1 |
-| Amethyst Block | rise/upper/upper_crystal | 73 |
-| Stone Bricks | rise/upper/upper_crystal | 45 |
-| Cracked Stone Bricks | rise/upper/upper_crystal | 33 |
-| Amethyst Cluster | rise/upper/upper_crystal | 22 |
-| Deepslate Tile Slab | rise/upper/upper_crystal | 16 |
-| Large Amethyst Bud | rise/upper/upper_crystal | 13 |
-| Medium Amethyst Bud | rise/upper/upper_crystal | 13 |
-| Budding Amethyst | rise/upper/upper_crystal | 11 |
-| Deepslate Tiles | rise/upper/upper_crystal | 10 |
-| Stone Brick Stairs | rise/upper/upper_crystal | 6 |
-| Polished Andesite | rise/upper/upper_crystal | 3 |
-| Small Amethyst Bud | rise/upper/upper_crystal | 3 |
-| Twisting Vines Plant | rise/upper/upper_crystal | 3 |
-| Cracked Deepslate Tiles | rise/upper/upper_crystal | 1 |
-| Jigsaw | rise/upper/upper_crystal | 1 |
-| Twisting Vines | rise/upper/upper_crystal | 1 |
-| Stone Bricks | rise/upper2/upper2_books | 59 |
-| Cracked Stone Bricks | rise/upper2/upper2_books | 50 |
-| Bookshelf | rise/upper2/upper2_books | 40 |
-| Stone Brick Stairs | rise/upper2/upper2_books | 35 |
-| Chiseled Bookshelf | rise/upper2/upper2_books | 29 |
-| Ladder | rise/upper2/upper2_books | 15 |
-| Cobweb | rise/upper2/upper2_books | 9 |
-| Oak Slab | rise/upper2/upper2_books | 8 |
-| Stone Brick Wall | rise/upper2/upper2_books | 6 |
-| Oak Stairs | rise/upper2/upper2_books | 5 |
-| Polished Andesite | rise/upper2/upper2_books | 3 |
-| Twisting Vines Plant | rise/upper2/upper2_books | 3 |
-| Mossy Stone Bricks | rise/upper2/upper2_books | 2 |
-| Jigsaw | rise/upper2/upper2_books | 1 |
-| Twisting Vines | rise/upper2/upper2_books | 1 |
-| Spruce Trapdoor | rise/upper2/upper2_normal | 106 |
-| Stone Bricks | rise/upper2/upper2_normal | 59 |
-| Cracked Stone Bricks | rise/upper2/upper2_normal | 50 |
-| Stone Brick Stairs | rise/upper2/upper2_normal | 35 |
-| Cobweb | rise/upper2/upper2_normal | 6 |
-| Stone Brick Wall | rise/upper2/upper2_normal | 6 |
-| Polished Andesite | rise/upper2/upper2_normal | 3 |
-| Twisting Vines Plant | rise/upper2/upper2_normal | 3 |
-| Mossy Stone Bricks | rise/upper2/upper2_normal | 2 |
-| Jigsaw | rise/upper2/upper2_normal | 1 |
-| Twisting Vines | rise/upper2/upper2_normal | 1 |
+The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Brick Stairs, Deepslate Tile Slab, Grass Block, Amethyst Block, Dirt, Spruce Stairs, Stone, Stripped Spruce Log, Bookshelf, Red Carpet, Stone Brick Wall, Glow Lichen, Stone Brick Slab, Chiseled Bookshelf, Mossy Stone Bricks, Spruce Trapdoor, Gravel, Polished Andesite, Black Stained Glass Pane, Amethyst Cluster, Large Amethyst Bud, Andesite, Oak Slab, Spruce Fence, Cobweb, Budding Amethyst, Deepslate Tile Stairs, Moss Carpet, Twisting Vines Plant, Medium Amethyst Bud, Spruce Slab, Chiseled Stone Bricks, Ladder, Small Amethyst Bud, Light Gray Candle, Shroomlight, Brown Candle, Chain, Deepslate Tile Wall, Twisting Vines, White Candle, Lectern, Oak Stairs, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Spruce Door, Dead Brain Coral, Dead Tube Coral Fan, Lantern, Brewing Stand, Campfire, Mossy Stone Brick Stairs, Potted Wither Rose, Purple Candle, Water Cauldron, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Chest, Chiseled Tuff, Decorated Pot, Nether Wart, Wither Skeleton Skull.
+
+Additionally, the following entities may spawn during its generation: Painting, Bat, End Crystal, Elder Guardian.
+
+### Loot Tables
+
+| Loot Table |
+|:-----|
+| enchantencore:all_enchants |
 
 
-## Entities
 
-| Entity | Structure File | Count |
-|:-----|:-----|:-----:|
-| Painting | rise/balcony/balcony_normal | 4 |
-| End Crystal | rise/balcony/balcony_normal | 2 |
-| Bat | rise/balcony/balcony_normal | 1 |
-| Painting | rise/ground/ground_guardian | 5 |
-| Bat | rise/ground/ground_guardian | 1 |
-| Elder Guardian | rise/ground/ground_guardian | 1 |
-| Painting | rise/ground/ground_ruin | 7 |
-| Painting | rise/small/small_normal | 5 |
+<details>
+<summary><strong>Rise/Balcony/Balcony Books</strong></summary>
+
+The structure is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Red Carpet, Spruce Stairs, Bookshelf, Stone Bricks, Chiseled Bookshelf, Cracked Stone Bricks, Stone Brick Stairs, Stone Brick Slab, Stripped Spruce Log, Oak Slab, Spruce Fence, Deepslate Tile Slab, Light Gray Candle, Ladder, Andesite, Glow Lichen, Polished Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Planks | 382 |
+| Deepslate Tiles | 130 |
+| Cracked Deepslate Tiles | 123 |
+| Red Carpet | 92 |
+| Spruce Stairs | 76 |
+| Bookshelf | 59 |
+| Stone Bricks | 59 |
+| Chiseled Bookshelf | 58 |
+| Cracked Stone Bricks | 54 |
+| Stone Brick Stairs | 41 |
+| Stone Brick Slab | 36 |
+| Stripped Spruce Log | 31 |
+| Oak Slab | 29 |
+| Spruce Fence | 21 |
+| Deepslate Tile Slab | 17 |
+| Light Gray Candle | 17 |
+| Ladder | 6 |
+| Andesite | 2 |
+| Glow Lichen | 2 |
+| Polished Andesite | 2 |
 
 
-## Loot Tables
+### Entities
 
-| Loot Table | Structure File |
-|:-----|:-----|
-| enchantencore:all_enchants | rise/top/top_first |
+None found.
 
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Balcony/Balcony Crystal</strong></summary>
+
+The structure is composed of the following blocks: Spruce Planks, Amethyst Block, Deepslate Tiles, Cracked Deepslate Tiles, Stone Bricks, Cracked Stone Bricks, Amethyst Cluster, Large Amethyst Bud, Spruce Stairs, Stone Brick Stairs, Budding Amethyst, Stripped Spruce Log, Stone Brick Slab, Medium Amethyst Bud, Deepslate Tile Slab, Small Amethyst Bud, Andesite, Glow Lichen, Polished Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Planks | 362 |
+| Amethyst Block | 287 |
+| Deepslate Tiles | 130 |
+| Cracked Deepslate Tiles | 123 |
+| Stone Bricks | 59 |
+| Cracked Stone Bricks | 54 |
+| Amethyst Cluster | 46 |
+| Large Amethyst Bud | 40 |
+| Spruce Stairs | 40 |
+| Stone Brick Stairs | 29 |
+| Budding Amethyst | 28 |
+| Stripped Spruce Log | 26 |
+| Stone Brick Slab | 24 |
+| Medium Amethyst Bud | 21 |
+| Deepslate Tile Slab | 17 |
+| Small Amethyst Bud | 16 |
+| Andesite | 2 |
+| Glow Lichen | 2 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Balcony/Balcony Normal</strong></summary>
+
+The structure is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Bricks, Red Carpet, Spruce Stairs, Cracked Stone Bricks, Stone Brick Stairs, Stone Brick Slab, Stripped Spruce Log, Bookshelf, Deepslate Tile Slab, Deepslate Tile Wall, Spruce Slab, Oak Slab, Spruce Trapdoor, Spruce Fence, Andesite, Glow Lichen, Polished Andesite.
+
+Additionally, the following entities may spawn during its generation: Painting, End Crystal, Bat.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Planks | 382 |
+| Deepslate Tiles | 130 |
+| Cracked Deepslate Tiles | 123 |
+| Stone Bricks | 99 |
+| Red Carpet | 95 |
+| Spruce Stairs | 76 |
+| Cracked Stone Bricks | 65 |
+| Stone Brick Stairs | 37 |
+| Stone Brick Slab | 33 |
+| Stripped Spruce Log | 31 |
+| Bookshelf | 22 |
+| Deepslate Tile Slab | 17 |
+| Deepslate Tile Wall | 11 |
+| Spruce Slab | 10 |
+| Oak Slab | 9 |
+| Spruce Trapdoor | 8 |
+| Spruce Fence | 7 |
+| Andesite | 2 |
+| Glow Lichen | 2 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+| Entity | Count |
+|:-----|:-----:|
+| Painting | 4 |
+| End Crystal | 2 |
+| Bat | 1 |
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Balcony/Balcony Ruin</strong></summary>
+
+The structure is composed of the following blocks: Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Spruce Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tile Slab, Gravel, Stone Brick Stairs, Spruce Fence, Spruce Slab, Stone Brick Slab, Stripped Spruce Log, Light Gray Candle, Andesite, Glow Lichen, Polished Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Planks | 315 |
+| Deepslate Tiles | 102 |
+| Cracked Deepslate Tiles | 100 |
+| Spruce Stairs | 52 |
+| Stone Bricks | 49 |
+| Cracked Stone Bricks | 45 |
+| Deepslate Tile Slab | 45 |
+| Gravel | 43 |
+| Stone Brick Stairs | 40 |
+| Spruce Fence | 33 |
+| Spruce Slab | 33 |
+| Stone Brick Slab | 28 |
+| Stripped Spruce Log | 26 |
+| Light Gray Candle | 7 |
+| Andesite | 2 |
+| Glow Lichen | 2 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Ground/Ground Books</strong></summary>
+
+The structure is composed of the following blocks: Red Carpet, Cracked Stone Bricks, Bookshelf, Stone Bricks, Chiseled Bookshelf, Brown Candle, Andesite, Lectern, Polished Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Red Carpet | 91 |
+| Cracked Stone Bricks | 82 |
+| Bookshelf | 69 |
+| Stone Bricks | 54 |
+| Chiseled Bookshelf | 50 |
+| Brown Candle | 15 |
+| Andesite | 3 |
+| Lectern | 2 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Ground/Ground Crystal</strong></summary>
+
+The structure is composed of the following blocks: Amethyst Block, Cracked Stone Bricks, Stone Bricks, Large Amethyst Bud, Amethyst Cluster, Small Amethyst Bud, Budding Amethyst, Medium Amethyst Bud, Andesite, Polished Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Amethyst Block | 151 |
+| Cracked Stone Bricks | 82 |
+| Stone Bricks | 54 |
+| Large Amethyst Bud | 35 |
+| Amethyst Cluster | 30 |
+| Small Amethyst Bud | 12 |
+| Budding Amethyst | 11 |
+| Medium Amethyst Bud | 11 |
+| Andesite | 3 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Ground/Ground Guardian</strong></summary>
+
+The structure is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Bookshelf, Chiseled Bookshelf, Cobweb, Andesite, Lantern, Polished Andesite.
+
+Additionally, the following entities may spawn during its generation: Painting, Bat, Elder Guardian.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Cracked Stone Bricks | 81 |
+| Stone Bricks | 55 |
+| Bookshelf | 44 |
+| Chiseled Bookshelf | 25 |
+| Cobweb | 8 |
+| Andesite | 3 |
+| Lantern | 3 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+| Entity | Count |
+|:-----|:-----:|
+| Painting | 5 |
+| Bat | 1 |
+| Elder Guardian | 1 |
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Ground/Ground Ruin</strong></summary>
+
+The structure is composed of the following blocks: Cracked Stone Bricks, Gravel, Stone Bricks, Bookshelf, Moss Carpet, Cobweb, Andesite, Polished Andesite.
+
+Additionally, the following entities may spawn during its generation: Painting.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Cracked Stone Bricks | 82 |
+| Gravel | 69 |
+| Stone Bricks | 55 |
+| Bookshelf | 51 |
+| Moss Carpet | 49 |
+| Cobweb | 18 |
+| Andesite | 2 |
+| Polished Andesite | 2 |
+
+
+### Entities
+
+| Entity | Count |
+|:-----|:-----:|
+| Painting | 7 |
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Rise Big</strong></summary>
+
+The structure is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Grass Block, Spruce Planks, Stone, Deepslate Tile Slab, Dirt, Stone Brick Stairs, Deepslate Tiles, Cracked Deepslate Tiles, Stripped Spruce Log, Spruce Stairs, Glow Lichen, Stone Brick Wall, Mossy Stone Bricks, Stone Brick Slab, Black Stained Glass Pane, Polished Andesite, Andesite, Deepslate Tile Stairs, Chiseled Stone Bricks, Twisting Vines Plant, Shroomlight, Spruce Door, Mossy Stone Brick Stairs, Spruce Slab, Twisting Vines.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Cracked Stone Bricks | 1773 |
+| Stone Bricks | 1722 |
+| Grass Block | 568 |
+| Spruce Planks | 457 |
+| Stone | 407 |
+| Deepslate Tile Slab | 405 |
+| Dirt | 395 |
+| Stone Brick Stairs | 349 |
+| Deepslate Tiles | 301 |
+| Cracked Deepslate Tiles | 282 |
+| Stripped Spruce Log | 145 |
+| Spruce Stairs | 120 |
+| Glow Lichen | 118 |
+| Stone Brick Wall | 113 |
+| Mossy Stone Bricks | 91 |
+| Stone Brick Slab | 73 |
+| Black Stained Glass Pane | 64 |
+| Polished Andesite | 46 |
+| Andesite | 43 |
+| Deepslate Tile Stairs | 42 |
+| Chiseled Stone Bricks | 21 |
+| Twisting Vines Plant | 16 |
+| Shroomlight | 10 |
+| Spruce Door | 2 |
+| Mossy Stone Brick Stairs | 1 |
+| Spruce Slab | 1 |
+| Twisting Vines | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Rise Small</strong></summary>
+
+The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Deepslate Tile Slab, Stone Brick Stairs, Grass Block, Dirt, Stripped Spruce Log, Stone Brick Wall, Glow Lichen, Deepslate Tiles, Cracked Deepslate Tiles, Spruce Planks, Mossy Stone Bricks, Black Stained Glass Pane, Spruce Stairs, Polished Andesite, Chiseled Stone Bricks, Andesite, Twisting Vines Plant, Stone Brick Slab, Ladder, Shroomlight, Deepslate Tile Stairs, Spruce Door, Mossy Stone Brick Stairs, Twisting Vines.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Stone Bricks | 934 |
+| Cracked Stone Bricks | 856 |
+| Deepslate Tile Slab | 279 |
+| Stone Brick Stairs | 212 |
+| Grass Block | 205 |
+| Dirt | 122 |
+| Stripped Spruce Log | 108 |
+| Stone Brick Wall | 104 |
+| Glow Lichen | 83 |
+| Deepslate Tiles | 80 |
+| Cracked Deepslate Tiles | 75 |
+| Spruce Planks | 69 |
+| Mossy Stone Bricks | 63 |
+| Black Stained Glass Pane | 40 |
+| Spruce Stairs | 36 |
+| Polished Andesite | 26 |
+| Chiseled Stone Bricks | 21 |
+| Andesite | 18 |
+| Twisting Vines Plant | 16 |
+| Stone Brick Slab | 15 |
+| Ladder | 13 |
+| Shroomlight | 10 |
+| Deepslate Tile Stairs | 7 |
+| Spruce Door | 2 |
+| Mossy Stone Brick Stairs | 1 |
+| Twisting Vines | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Small/Small Books</strong></summary>
+
+The structure is composed of the following blocks: Bookshelf, Cracked Stone Bricks, Stone Bricks, Chiseled Bookshelf, Oak Slab, Mossy Stone Bricks, Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Bookshelf | 12 |
+| Cracked Stone Bricks | 7 |
+| Stone Bricks | 6 |
+| Chiseled Bookshelf | 5 |
+| Oak Slab | 4 |
+| Mossy Stone Bricks | 2 |
+| Andesite | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Small/Small Crystal</strong></summary>
+
+The structure is composed of the following blocks: Amethyst Block, Cracked Stone Bricks, Large Amethyst Bud, Stone Bricks, Amethyst Cluster, Small Amethyst Bud, Mossy Stone Bricks, Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Amethyst Block | 13 |
+| Cracked Stone Bricks | 7 |
+| Large Amethyst Bud | 6 |
+| Stone Bricks | 6 |
+| Amethyst Cluster | 3 |
+| Small Amethyst Bud | 3 |
+| Mossy Stone Bricks | 2 |
+| Andesite | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Small/Small Normal</strong></summary>
+
+The structure is composed of the following blocks: Cracked Stone Bricks, Stone Bricks, Oak Slab, Bookshelf, Chiseled Bookshelf, Mossy Stone Bricks, Andesite, Decorated Pot.
+
+Additionally, the following entities may spawn during its generation: Painting.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Cracked Stone Bricks | 7 |
+| Stone Bricks | 6 |
+| Oak Slab | 4 |
+| Bookshelf | 3 |
+| Chiseled Bookshelf | 3 |
+| Mossy Stone Bricks | 2 |
+| Andesite | 1 |
+| Decorated Pot | 1 |
+
+
+### Entities
+
+| Entity | Count |
+|:-----|:-----:|
+| Painting | 5 |
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Top/Top Dummy</strong></summary>
+
+The structure is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Stripped Spruce Log, Deepslate Tile Slab, Mossy Stone Bricks, Polished Andesite, Andesite.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Planks | 53 |
+| Spruce Stairs | 36 |
+| Cracked Deepslate Tiles | 32 |
+| Stone Brick Stairs | 24 |
+| Stone Bricks | 24 |
+| Cracked Stone Bricks | 18 |
+| Deepslate Tiles | 16 |
+| Stripped Spruce Log | 7 |
+| Deepslate Tile Slab | 4 |
+| Mossy Stone Bricks | 3 |
+| Polished Andesite | 2 |
+| Andesite | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Top/Top First</strong></summary>
+
+The structure is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Chain, Bookshelf, Cobweb, Stripped Spruce Log, Deepslate Tile Slab, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Dead Brain Coral, Dead Tube Coral Fan, Mossy Stone Bricks, Polished Andesite, Potted Wither Rose, Purple Candle, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Andesite, Chest, Chiseled Tuff, Wither Skeleton Skull.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Planks | 53 |
+| Spruce Stairs | 36 |
+| Cracked Deepslate Tiles | 32 |
+| Stone Brick Stairs | 24 |
+| Stone Bricks | 24 |
+| Cracked Stone Bricks | 18 |
+| Deepslate Tiles | 16 |
+| Chain | 14 |
+| Bookshelf | 12 |
+| Cobweb | 7 |
+| Stripped Spruce Log | 7 |
+| Deepslate Tile Slab | 4 |
+| Mangrove Wall Hanging Sign | 4 |
+| Mangrove Wall Sign | 4 |
+| Mossy Stone Brick Slab | 4 |
+| Dead Brain Coral | 3 |
+| Dead Tube Coral Fan | 3 |
+| Mossy Stone Bricks | 3 |
+| Polished Andesite | 2 |
+| Potted Wither Rose | 2 |
+| Purple Candle | 2 |
+| Waxed Oxidized Copper Bulb | 2 |
+| Waxed Weathered Copper Bulb | 2 |
+| Andesite | 1 |
+| Chest | 1 |
+| Chiseled Tuff | 1 |
+| Wither Skeleton Skull | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+| Loot Table |
+|:-----|
+| enchantencore:all_enchants |
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Upper/Upper Alchemy</strong></summary>
+
+The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Stairs, Deepslate Tile Slab, Deepslate Tiles, Stone Brick Stairs, Spruce Planks, Spruce Trapdoor, White Candle, Twisting Vines Plant, Brewing Stand, Campfire, Polished Andesite, Twisting Vines, Water Cauldron, Cracked Deepslate Tiles, Nether Wart.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Stone Bricks | 44 |
+| Cracked Stone Bricks | 33 |
+| Spruce Stairs | 22 |
+| Deepslate Tile Slab | 16 |
+| Deepslate Tiles | 10 |
+| Stone Brick Stairs | 10 |
+| Spruce Planks | 8 |
+| Spruce Trapdoor | 8 |
+| White Candle | 7 |
+| Twisting Vines Plant | 4 |
+| Brewing Stand | 2 |
+| Campfire | 2 |
+| Polished Andesite | 2 |
+| Twisting Vines | 2 |
+| Water Cauldron | 2 |
+| Cracked Deepslate Tiles | 1 |
+| Nether Wart | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Upper/Upper Books</strong></summary>
+
+The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Bookshelf, Deepslate Tile Slab, Chiseled Bookshelf, Deepslate Tiles, Oak Slab, Stone Brick Stairs, Cobweb, Lectern, Polished Andesite, Twisting Vines Plant, Cracked Deepslate Tiles, Twisting Vines.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Stone Bricks | 45 |
+| Cracked Stone Bricks | 33 |
+| Bookshelf | 31 |
+| Deepslate Tile Slab | 16 |
+| Chiseled Bookshelf | 13 |
+| Deepslate Tiles | 10 |
+| Oak Slab | 9 |
+| Stone Brick Stairs | 8 |
+| Cobweb | 5 |
+| Lectern | 3 |
+| Polished Andesite | 3 |
+| Twisting Vines Plant | 3 |
+| Cracked Deepslate Tiles | 1 |
+| Twisting Vines | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Upper/Upper Crystal</strong></summary>
+
+The structure is composed of the following blocks: Amethyst Block, Stone Bricks, Cracked Stone Bricks, Amethyst Cluster, Deepslate Tile Slab, Large Amethyst Bud, Medium Amethyst Bud, Budding Amethyst, Deepslate Tiles, Stone Brick Stairs, Polished Andesite, Small Amethyst Bud, Twisting Vines Plant, Cracked Deepslate Tiles, Twisting Vines.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Amethyst Block | 73 |
+| Stone Bricks | 45 |
+| Cracked Stone Bricks | 33 |
+| Amethyst Cluster | 22 |
+| Deepslate Tile Slab | 16 |
+| Large Amethyst Bud | 13 |
+| Medium Amethyst Bud | 13 |
+| Budding Amethyst | 11 |
+| Deepslate Tiles | 10 |
+| Stone Brick Stairs | 6 |
+| Polished Andesite | 3 |
+| Small Amethyst Bud | 3 |
+| Twisting Vines Plant | 3 |
+| Cracked Deepslate Tiles | 1 |
+| Twisting Vines | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Upper2/Upper2 Books</strong></summary>
+
+The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Bookshelf, Stone Brick Stairs, Chiseled Bookshelf, Ladder, Cobweb, Oak Slab, Stone Brick Wall, Oak Stairs, Polished Andesite, Twisting Vines Plant, Mossy Stone Bricks, Twisting Vines.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Stone Bricks | 59 |
+| Cracked Stone Bricks | 50 |
+| Bookshelf | 40 |
+| Stone Brick Stairs | 35 |
+| Chiseled Bookshelf | 29 |
+| Ladder | 15 |
+| Cobweb | 9 |
+| Oak Slab | 8 |
+| Stone Brick Wall | 6 |
+| Oak Stairs | 5 |
+| Polished Andesite | 3 |
+| Twisting Vines Plant | 3 |
+| Mossy Stone Bricks | 2 |
+| Twisting Vines | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
+
+<details>
+<summary><strong>Rise/Upper2/Upper2 Normal</strong></summary>
+
+The structure is composed of the following blocks: Spruce Trapdoor, Stone Bricks, Cracked Stone Bricks, Stone Brick Stairs, Cobweb, Stone Brick Wall, Polished Andesite, Twisting Vines Plant, Mossy Stone Bricks, Twisting Vines.
+
+### Blocks
+
+| Block | Count |
+|:-----|:-----:|
+| Spruce Trapdoor | 106 |
+| Stone Bricks | 59 |
+| Cracked Stone Bricks | 50 |
+| Stone Brick Stairs | 35 |
+| Cobweb | 6 |
+| Stone Brick Wall | 6 |
+| Polished Andesite | 3 |
+| Twisting Vines Plant | 3 |
+| Mossy Stone Bricks | 2 |
+| Twisting Vines | 1 |
+
+
+### Entities
+
+None found.
+
+
+### Loot Tables
+
+None found.
+
+
+</details>
