@@ -5,7 +5,7 @@ const nbt = require("prismarine-nbt");
 
 const inputRoot = "data";
 const outputRoot = path.join("wiki", "markdown");
-const outputExtension = ".mb";
+const outputExtension = ".md";
 
 const IGNORED_BLOCKS = new Set([
   "minecraft:air",
