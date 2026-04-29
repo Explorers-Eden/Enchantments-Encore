@@ -1,4 +1,3 @@
-// scripts/generate-loot-tables.js
 const fs = require("fs");
 const path = require("path");
 
@@ -68,6 +67,15 @@ function resolveTextComponent(component) {
   return null;
 }
 
+function withInheritedFunctions(entry, inheritedFunctions = []) {
+  const functions = [
+    ...inheritedFunctions,
+    ...(entry.functions ?? [])
+  ];
+
+  return functions.length > 0 ? { ...entry, functions } : entry;
+}
+
 function getItemNameComponent(entry) {
   const componentSources = [
     entry.components,
@@ -121,20 +129,25 @@ function getLootTableFile(id) {
   return path.join(inputRoot, namespace, "loot_table", `${lootPath}.json`);
 }
 
-function flattenRawEntries(entries) {
+function flattenRawEntries(entries, inheritedFunctions = []) {
   const result = [];
 
   for (const entry of entries ?? []) {
+    const entryFunctions = [
+      ...inheritedFunctions,
+      ...(entry.functions ?? [])
+    ];
+
     if (
       entry.type === "minecraft:alternatives" ||
       entry.type === "minecraft:group" ||
       entry.type === "minecraft:sequence"
     ) {
-      result.push(...flattenRawEntries(entry.children ?? []));
+      result.push(...flattenRawEntries(entry.children ?? [], entryFunctions));
       continue;
     }
 
-    result.push(entry);
+    result.push(withInheritedFunctions(entry, inheritedFunctions));
   }
 
   return result;
@@ -153,7 +166,7 @@ function getSingleEntryFromLootTable(id, seen = new Set()) {
     const entries = [];
 
     for (const pool of json.pools ?? []) {
-      entries.push(...flattenRawEntries(pool.entries ?? []));
+      entries.push(...flattenRawEntries(pool.entries ?? [], pool.functions ?? []));
     }
 
     const nonEmptyEntries = entries.filter(e => e.type !== "minecraft:empty");
@@ -189,25 +202,32 @@ function getItemName(entry, seenLootTables = new Set()) {
   return titleCase(entry.type ?? "unknown");
 }
 
-function flattenEntries(entries, inheritedWeight = 1) {
+function flattenEntries(entries, inheritedWeight = 1, inheritedFunctions = []) {
   const result = [];
 
   for (const entry of entries ?? []) {
     const weight = entry.weight ?? 1;
     const combinedWeight = inheritedWeight * weight;
 
+    const entryFunctions = [
+      ...inheritedFunctions,
+      ...(entry.functions ?? [])
+    ];
+
+    const inheritedEntry = withInheritedFunctions(entry, inheritedFunctions);
+
     if (
       entry.type === "minecraft:alternatives" ||
       entry.type === "minecraft:group" ||
       entry.type === "minecraft:sequence"
     ) {
-      result.push(...flattenEntries(entry.children ?? [], combinedWeight));
+      result.push(...flattenEntries(entry.children ?? [], combinedWeight, entryFunctions));
       continue;
     }
 
     result.push({
-      item: getItemName(entry),
-      stackSize: getStackSize(entry),
+      item: getItemName(inheritedEntry),
+      stackSize: getStackSize(inheritedEntry),
       weight: combinedWeight
     });
   }
@@ -232,7 +252,7 @@ function renderMergedPools(pools) {
   const rows = [];
 
   pools.forEach((pool, poolIndex) => {
-    const flattenedEntries = flattenEntries(pool.entries ?? []);
+    const flattenedEntries = flattenEntries(pool.entries ?? [], 1, pool.functions ?? []);
     const nonEmptyFlattenedEntries = flattenedEntries.filter(entry => entry.item !== "Empty");
     const totalWeight = flattenedEntries.reduce((sum, entry) => sum + entry.weight, 0);
 
