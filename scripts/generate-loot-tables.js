@@ -54,7 +54,7 @@ function getBookLabel(entry) {
 
   if (!enchantFn?.options) return "Enchanted Book";
 
-  return `Enchanted Book (${titleCase(enchantFn.options)})`;
+  return `Enchanted Book (${String(enchantFn.options).replace(/^#/, "")})`;
 }
 
 function getItemName(entry) {
@@ -81,6 +81,10 @@ function getRollLabel(rolls) {
     return `${rolls.min}–${rolls.max}`;
   }
 
+  if (rolls?.type === "minecraft:uniform") {
+    return `${rolls.min}–${rolls.max}`;
+  }
+
   return "1";
 }
 
@@ -100,9 +104,7 @@ function renderPool(pool, index) {
     })
     .sort((a, b) => b.chanceValue - a.chanceValue || a.item.localeCompare(b.item));
 
-  const title = index === 0 ? "Main Loot" : `Pool ${index + 1}`;
-
-  return `## ${title}
+  return `## Pool ${index + 1}
 
 **Rolls:** ${getRollLabel(pool.rolls)}
 
