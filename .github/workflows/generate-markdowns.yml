@@ -1,4 +1,4 @@
-name: Generate Loot Table Markdown
+name: Generate Markdown
 
 on:
   workflow_dispatch:
@@ -19,11 +19,17 @@ jobs:
         with:
           node-version: 22
 
-      - name: Generate markdown files
+      - name: Install dependencies
+        run: npm install --no-save prismarine-nbt
+
+      - name: Generate loot table markdown
         run: node scripts/generate-loot-tables.js
+
+      - name: Generate structure markdown
+        run: node scripts/generate-structures.js
 
       - name: Commit generated markdown
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Generate loot table markdown
+          commit_message: Generate wiki markdown
           file_pattern: wiki/markdown/**/*.md
