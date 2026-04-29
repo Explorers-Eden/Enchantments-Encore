@@ -1,7 +1,9 @@
+// scripts/generate-loot-tables.js
 const fs = require("fs");
 const path = require("path");
 
 const inputRoot = "data";
+const assetsRoot = "assets";
 const outputRoot = path.join("wiki", "markdown");
 
 function walk(dir) {
@@ -18,6 +20,24 @@ function walk(dir) {
   return files;
 }
 
+function loadLangFiles() {
+  const result = {};
+
+  for (const file of walk(assetsRoot)) {
+    if (!file.endsWith(path.join("lang", "en_us.json"))) continue;
+
+    try {
+      Object.assign(result, JSON.parse(fs.readFileSync(file, "utf8")));
+    } catch {
+      console.warn(`Could not read lang file: ${file}`);
+    }
+  }
+
+  return result;
+}
+
+const lang = loadLangFiles();
+
 function titleCase(id) {
   return String(id)
     .replace(/^#/, "")
@@ -28,6 +48,50 @@ function titleCase(id) {
 
 function cleanTag(id) {
   return String(id).replace(/^#/, "");
+}
+
+function resolveTextComponent(component) {
+  if (component === undefined || component === null) return null;
+
+  if (typeof component === "string") return component;
+
+  if (typeof component === "object") {
+    if (component.translate === "filled_map.buried_treasure") {
+      return "Buried Treasure Map";
+    }
+
+    if (component.translate) {
+      return lang[component.translate] ?? component.fallback ?? component.translate;
+    }
+
+    if (component.text) return component.text;
+    if (component.fallback) return component.fallback;
+  }
+
+  return null;
+}
+
+function getItemNameComponent(entry) {
+  const componentSources = [
+    entry.components,
+    ...((entry.functions ?? [])
+      .filter(f => f.function === "minecraft:set_components")
+      .map(f => f.components) ?? [])
+  ];
+
+  for (const components of componentSources) {
+    const itemName =
+      components?.["minecraft:item_name"] ??
+      components?.item_name;
+
+    if (itemName !== undefined) return itemName;
+  }
+
+  const nameFn =
+    entry.functions?.find(f => f.function === "minecraft:set_name") ??
+    entry.functions?.find(f => f.function === "minecraft:set_custom_name");
+
+  return nameFn?.name;
 }
 
 function getStackSize(entry) {
@@ -49,28 +113,95 @@ function getStackSize(entry) {
   return "1";
 }
 
-function getBookLabel(entry) {
-  const enchantFn =
-    entry.functions?.find(f => f.function === "minecraft:enchant_with_levels") ||
-    entry.functions?.find(f => f.function === "minecraft:enchant_randomly");
-
-  if (!enchantFn?.options) return "Enchanted Book";
-
-  return `Enchanted Book (${cleanTag(enchantFn.options)})`;
-}
-
-function getItemName(entry) {
-  if (entry.type === "minecraft:empty") return "Empty";
-
-  if (
+function isEnchantedBook(entry) {
+  return (
     entry.name === "minecraft:book" &&
     entry.functions?.some(
       f =>
         f.function === "minecraft:enchant_with_levels" ||
         f.function === "minecraft:enchant_randomly"
     )
-  ) {
-    return getBookLabel(entry);
+  );
+}
+
+function getLootTableFile(id) {
+  const cleaned = cleanTag(id);
+  const [namespace, lootPath] = cleaned.includes(":")
+    ? cleaned.split(":")
+    : ["minecraft", cleaned];
+
+  return path.join(inputRoot, namespace, "loot_table", `${lootPath}.json`);
+}
+
+function flattenRawEntries(entries) {
+  const result = [];
+
+  for (const entry of entries ?? []) {
+    if (
+      entry.type === "minecraft:alternatives" ||
+      entry.type === "minecraft:group" ||
+      entry.type === "minecraft:sequence"
+    ) {
+      result.push(...flattenRawEntries(entry.children ?? []));
+      continue;
+    }
+
+    result.push(entry);
+  }
+
+  return result;
+}
+
+function getSingleEntryFromLootTable(id, seen = new Set()) {
+  const cleaned = cleanTag(id);
+
+  if (seen.has(cleaned)) return null;
+  seen.add(cleaned);
+
+  const file = getLootTableFile(cleaned);
+  if (!fs.existsSync(file)) return null;
+
+  try {
+    const json = JSON.parse(fs.readFileSync(file, "utf8"));
+    const entries = [];
+
+    for (const pool of json.pools ?? []) {
+      entries.push(...flattenRawEntries(pool.entries ?? []));
+    }
+
+    const nonEmptyEntries = entries.filter(e => e.type !== "minecraft:empty");
+
+    if (nonEmptyEntries.length === 1) {
+      return nonEmptyEntries[0];
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+function getItemName(entry, seenLootTables = new Set()) {
+  if (entry.type === "minecraft:empty") return "Empty";
+
+  if (entry.type === "minecraft:loot_table") {
+    const lootTable = cleanTag(entry.value ?? entry.name ?? "unknown");
+    const singleEntry = getSingleEntryFromLootTable(lootTable, seenLootTables);
+
+    if (singleEntry) {
+      return getItemName(singleEntry, seenLootTables);
+    }
+
+    return `Loot Table (${lootTable})`;
+  }
+
+  const customName = resolveTextComponent(getItemNameComponent(entry));
+  if (customName) return customName;
+
+  if (isEnchantedBook(entry)) return "Enchanted Book";
+
+  if (entry.type === "minecraft:tag") {
+    return `Tag (${cleanTag(entry.name ?? "unknown")})`;
   }
 
   if (entry.name) return titleCase(entry.name);
@@ -94,15 +225,6 @@ function flattenEntries(entries, inheritedWeight = 1) {
       continue;
     }
 
-    if (entry.type === "minecraft:tag") {
-      result.push({
-        item: `Tag (${cleanTag(entry.name ?? "unknown")})`,
-        stackSize: getStackSize(entry),
-        weight: combinedWeight
-      });
-      continue;
-    }
-
     result.push({
       item: getItemName(entry),
       stackSize: getStackSize(entry),
@@ -113,20 +235,46 @@ function flattenEntries(entries, inheritedWeight = 1) {
   return result;
 }
 
+function mergeRowsByItem(rows) {
+  const merged = new Map();
+
+  for (const row of rows) {
+    const key = `${row.pool}::${row.item}::${row.stackSize}`;
+
+    if (!merged.has(key)) {
+      merged.set(key, { ...row });
+      continue;
+    }
+
+    merged.get(key).weight += row.weight;
+  }
+
+  return [...merged.values()];
+}
+
 function renderMergedPools(pools) {
   const rows = [];
 
   pools.forEach((pool, poolIndex) => {
     const flattenedEntries = flattenEntries(pool.entries ?? []);
+    const nonEmptyFlattenedEntries = flattenedEntries.filter(entry => entry.item !== "Empty");
+
     const totalWeight = flattenedEntries.reduce((sum, entry) => sum + entry.weight, 0);
 
-    for (const entry of flattenedEntries) {
+    const mergedEntries = mergeRowsByItem(
+      nonEmptyFlattenedEntries.map(entry => ({
+        ...entry,
+        pool: poolIndex + 1
+      }))
+    );
+
+    for (const entry of mergedEntries) {
       const chanceValue = totalWeight > 0 ? entry.weight / totalWeight : 0;
 
       rows.push({
         item: entry.item,
         stackSize: entry.stackSize,
-        pool: poolIndex + 1,
+        pool: entry.pool,
         weight: entry.weight,
         chanceValue,
         chance: `${(chanceValue * 100).toFixed(1)}%`
