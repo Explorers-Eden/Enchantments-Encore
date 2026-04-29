@@ -2,7 +2,7 @@ const fs = require("fs");
 const path = require("path");
 
 const inputRoot = "data";
-const outputRoot = path.join("markdown", "loot_table");
+const outputRoot = "markdown";
 
 function walk(dir) {
   let files = [];
@@ -23,7 +23,6 @@ function walk(dir) {
 
 function titleCase(id) {
   return id
-    .replace(/^minecraft:/, "")
     .replace(/^#/, "")
     .replace(/^[^:]+:/, "")
     .replace(/_/g, " ")
@@ -56,7 +55,7 @@ function getBookLabel(entry) {
 
 function renderPool(pool, index) {
   const entries = pool.entries ?? [];
-  const totalWeight = entries.reduce((sum, e) => sum + (e.weight ?? 1), 0);
+  const totalWeight = entries.reduce((sum, entry) => sum + (entry.weight ?? 1), 0);
 
   const rows = entries
     .map(entry => {
@@ -98,18 +97,55 @@ ${pools.map(renderPool).join("\n\n")}
 `;
 }
 
-const lootTableFiles = walk(inputRoot).filter(file =>
-  file.split(path.sep).includes("loot_table")
-);
+function getLootTableInfo(file) {
+  const parts = file.split(path.sep);
+  const dataIndex = parts.indexOf("data");
+  const lootTableIndex = parts.indexOf("loot_table");
 
-for (const file of lootTableFiles) {
+  if (dataIndex === -1 || lootTableIndex === -1) return null;
+  if (lootTableIndex !== dataIndex + 2) return null;
+
+  const namespace = parts[dataIndex + 1];
+  const relativeLootPath = parts.slice(lootTableIndex + 1).join(path.sep);
+
+  return {
+    namespace,
+    relativeLootPath
+  };
+}
+
+function removeStaleMarkdownFiles(validOutputFiles) {
+  const markdownFiles = walk(outputRoot).filter(file =>
+    file.split(path.sep).includes("loot_table") && file.endsWith(".md")
+  );
+
+  for (const file of markdownFiles) {
+    const normalized = path.normalize(file);
+
+    if (!validOutputFiles.has(normalized)) {
+      fs.rmSync(file);
+      console.log(`Removed stale ${file}`);
+    }
+  }
+}
+
+const lootTableFiles = walk(inputRoot)
+  .map(file => ({ file, info: getLootTableInfo(file) }))
+  .filter(entry => entry.info !== null);
+
+const validOutputFiles = new Set();
+
+for (const { file, info } of lootTableFiles) {
   const json = JSON.parse(fs.readFileSync(file, "utf8"));
 
-  const relativeFromLootTable = file.split(`${path.sep}loot_table${path.sep}`)[1];
   const outputPath = path.join(
     outputRoot,
-    relativeFromLootTable.replace(/\.json$/, ".md")
+    info.namespace,
+    "loot_table",
+    info.relativeLootPath.replace(/\.json$/, ".md")
   );
+
+  validOutputFiles.add(path.normalize(outputPath));
 
   fs.mkdirSync(path.dirname(outputPath), { recursive: true });
 
@@ -118,3 +154,5 @@ for (const file of lootTableFiles) {
 
   console.log(`Generated ${outputPath}`);
 }
+
+removeStaleMarkdownFiles(validOutputFiles);
