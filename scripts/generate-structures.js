@@ -27,7 +27,6 @@ function walk(dir) {
 
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const fullPath = path.join(dir, entry.name);
-
     if (entry.isDirectory()) files = files.concat(walk(fullPath));
     else if (entry.isFile()) files.push(fullPath);
   }
@@ -57,7 +56,6 @@ function getStructureInfo(file) {
 
   const namespace = parts[dataIndex + 1];
   const relativeParts = parts.slice(structureIndex + 1);
-
   if (relativeParts.length === 0) return null;
 
   const topFolder =
@@ -72,40 +70,6 @@ function getStructureInfo(file) {
     topFolder,
     structureFile
   };
-}
-
-function renderCountTable(title, singular, rows) {
-  if (rows.length === 0) {
-    return `## ${title}
-
-None found.
-`;
-  }
-
-  return `## ${title}
-
-| ${singular} | Structure File | Count |
-|:-----|:-----|:-----:|
-${rows
-  .map(row => `| ${titleCase(row.name)} | ${row.structureFile} | ${row.count} |`)
-  .join("\n")}
-`;
-}
-
-function renderLootTableTable(rows) {
-  if (rows.length === 0) {
-    return `## Loot Tables
-
-None found.
-`;
-  }
-
-  return `## Loot Tables
-
-| Loot Table | Structure File |
-|:-----|:-----|
-${rows.map(row => `| ${row.lootTable} | ${row.structureFile} |`).join("\n")}
-`;
 }
 
 function collectLootTables(obj, set = new Set()) {
@@ -139,7 +103,11 @@ function getBlockNameFromPaletteEntry(entry) {
   return entry?.Name ?? entry?.name ?? null;
 }
 
-function collectStructureData(structure, totals, structureFile) {
+function collectStructureData(structure) {
+  const blockCounts = new Map();
+  const entityCounts = new Map();
+  const lootTables = new Set();
+
   const palette = getPalette(structure);
 
   for (const block of structure.blocks ?? []) {
@@ -147,15 +115,10 @@ function collectStructureData(structure, totals, structureFile) {
     const blockName = getBlockNameFromPaletteEntry(state);
 
     if (blockName && !IGNORED_BLOCKS.has(blockName)) {
-      addCount(totals.blockCounts, `${blockName}||${structureFile}`);
+      addCount(blockCounts, blockName);
     }
 
-    if (block.nbt) {
-      const lootTables = collectLootTables(block.nbt);
-      for (const lootTable of lootTables) {
-        totals.lootTables.add(`${lootTable}||${structureFile}`);
-      }
-    }
+    if (block.nbt) collectLootTables(block.nbt, lootTables);
   }
 
   for (const entity of structure.entities ?? []) {
@@ -163,64 +126,97 @@ function collectStructureData(structure, totals, structureFile) {
     const entityId = entityData.id;
 
     if (entityId && !IGNORED_ENTITIES.has(entityId)) {
-      addCount(totals.entityCounts, `${entityId}||${structureFile}`);
+      addCount(entityCounts, entityId);
     }
 
-    const lootTables = collectLootTables(entityData);
-    for (const lootTable of lootTables) {
-      totals.lootTables.add(`${lootTable}||${structureFile}`);
-    }
+    collectLootTables(entityData, lootTables);
+  }
+
+  return { blockCounts, entityCounts, lootTables };
+}
+
+function mergeTotals(target, source) {
+  for (const [key, count] of source.blockCounts.entries()) {
+    addCount(target.blockCounts, key, count);
+  }
+
+  for (const [key, count] of source.entityCounts.entries()) {
+    addCount(target.entityCounts, key, count);
+  }
+
+  for (const lootTable of source.lootTables) {
+    target.lootTables.add(lootTable);
   }
 }
 
-function splitCountRows(map) {
-  return [...map.entries()]
-    .map(([key, count]) => {
-      const [name, structureFile] = key.split("||");
-
-      return {
-        name,
-        structureFile,
-        count
-      };
-    })
-    .sort(
-      (a, b) =>
-        a.structureFile.localeCompare(b.structureFile) ||
-        b.count - a.count ||
-        a.name.localeCompare(b.name)
-    );
+function sortedCountRows(map) {
+  return [...map.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]));
 }
 
-function splitLootTableRows(set) {
-  return [...set]
-    .map(key => {
-      const [lootTable, structureFile] = key.split("||");
-
-      return {
-        lootTable,
-        structureFile
-      };
-    })
-    .sort(
-      (a, b) =>
-        a.structureFile.localeCompare(b.structureFile) ||
-        a.lootTable.localeCompare(b.lootTable)
-    );
+function sortedLootTables(set) {
+  return [...set].sort();
 }
 
-function generateMarkdown(groupName, totals) {
-  const blockRows = splitCountRows(totals.blockCounts);
-  const entityRows = splitCountRows(totals.entityCounts);
-  const lootTableRows = splitLootTableRows(totals.lootTables);
+function renderCountTable(title, singular, rows) {
+  if (rows.length === 0) {
+    return `### ${title}
 
+None found.
+`;
+  }
+
+  return `### ${title}
+
+| ${singular} | Count |
+|:-----|:-----:|
+${rows.map(([name, count]) => `| ${titleCase(name)} | ${count} |`).join("\n")}
+`;
+}
+
+function renderLootTableTable(lootTables) {
+  if (lootTables.length === 0) {
+    return `### Loot Tables
+
+None found.
+`;
+  }
+
+  return `### Loot Tables
+
+| Loot Table |
+|:-----|
+${lootTables.map(id => `| ${id} |`).join("\n")}
+`;
+}
+
+function renderStructureSection(structureFile, data) {
+  return `## ${titleCase(structureFile)}
+
+${renderCountTable("Blocks", "Block", sortedCountRows(data.blockCounts))}
+
+${renderCountTable("Entities", "Entity", sortedCountRows(data.entityCounts))}
+
+${renderLootTableTable(sortedLootTables(data.lootTables))}
+`;
+}
+
+function renderSummarySection(totals) {
+  return `## Summary
+
+${renderCountTable("Blocks", "Block", sortedCountRows(totals.blockCounts))}
+
+${renderCountTable("Entities", "Entity", sortedCountRows(totals.entityCounts))}
+
+${renderLootTableTable(sortedLootTables(totals.lootTables))}
+`;
+}
+
+function generateMarkdown(groupName, structures, totals) {
   return `# ${titleCase(groupName)}
 
-${renderCountTable("Blocks", "Block", blockRows)}
+${structures.map(entry => renderStructureSection(entry.structureFile, entry.data)).join("\n\n")}
 
-${renderCountTable("Entities", "Entity", entityRows)}
-
-${renderLootTableTable(lootTableRows)}
+${renderSummarySection(totals)}
 `;
 }
 
@@ -230,17 +226,21 @@ async function readNbtFile(file) {
   return nbt.simplify(parsed.parsed);
 }
 
-function removeStaleMarkdownFiles(validOutputFiles) {
-  const markdownFiles = walk(outputRoot).filter(
-    file => file.split(path.sep).includes("structure") && file.endsWith(".md")
-  );
+function removeStaleMarkdownFiles(validOutputFiles, namespaces) {
+  for (const namespace of namespaces) {
+    const structureRoot = path.join(outputRoot, namespace, "structure");
 
-  for (const file of markdownFiles) {
-    const normalized = path.normalize(file);
+    if (!fs.existsSync(structureRoot)) continue;
 
-    if (!validOutputFiles.has(normalized)) {
-      fs.rmSync(file);
-      console.log(`Removed stale ${file}`);
+    const markdownFiles = walk(structureRoot).filter(file => file.endsWith(".md"));
+
+    for (const file of markdownFiles) {
+      const normalized = path.normalize(file);
+
+      if (!validOutputFiles.has(normalized)) {
+        fs.rmSync(file);
+        console.log(`Removed stale ${file}`);
+      }
     }
   }
 }
@@ -260,10 +260,7 @@ async function main() {
       groups.set(key, {
         namespace: info.namespace,
         topFolder: info.topFolder,
-        files: [],
-        blockCounts: new Map(),
-        entityCounts: new Map(),
-        lootTables: new Set()
+        files: []
       });
     }
 
@@ -274,12 +271,31 @@ async function main() {
   }
 
   const validOutputFiles = new Set();
+  const namespaces = new Set();
 
   for (const group of groups.values()) {
+    namespaces.add(group.namespace);
+
+    const structures = [];
+    const totals = {
+      blockCounts: new Map(),
+      entityCounts: new Map(),
+      lootTables: new Set()
+    };
+
     for (const file of group.files) {
       const structure = await readNbtFile(file.path);
-      collectStructureData(structure, group, file.structureFile);
+      const data = collectStructureData(structure);
+
+      structures.push({
+        structureFile: file.structureFile,
+        data
+      });
+
+      mergeTotals(totals, data);
     }
+
+    structures.sort((a, b) => a.structureFile.localeCompare(b.structureFile));
 
     const outputPath = path.join(
       outputRoot,
@@ -291,12 +307,12 @@ async function main() {
     validOutputFiles.add(path.normalize(outputPath));
 
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, generateMarkdown(group.topFolder, group));
+    fs.writeFileSync(outputPath, generateMarkdown(group.topFolder, structures, totals));
 
     console.log(`Generated ${outputPath}`);
   }
 
-  removeStaleMarkdownFiles(validOutputFiles);
+  removeStaleMarkdownFiles(validOutputFiles, namespaces);
 }
 
 main().catch(error => {

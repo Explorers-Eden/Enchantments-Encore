@@ -294,17 +294,19 @@ function getLootTableInfo(file) {
   };
 }
 
-function removeStaleMarkdownFiles(validOutputFiles) {
-  const markdownFiles = walk(outputRoot).filter(
-    file => file.split(path.sep).includes("loot_table") && file.endsWith(".md")
-  );
+function removeStaleMarkdownFiles(validOutputFiles, namespaces) {
+  for (const namespace of namespaces) {
+    const lootTableRoot = path.join(outputRoot, namespace, "loot_table");
 
-  for (const file of markdownFiles) {
-    const normalized = path.normalize(file);
+    if (!fs.existsSync(lootTableRoot)) continue;
 
-    if (!validOutputFiles.has(normalized)) {
-      fs.rmSync(file);
-      console.log(`Removed stale ${file}`);
+    for (const file of walk(lootTableRoot).filter(file => file.endsWith(".md"))) {
+      const normalized = path.normalize(file);
+
+      if (!validOutputFiles.has(normalized)) {
+        fs.rmSync(file);
+        console.log(`Removed stale ${file}`);
+      }
     }
   }
 }
@@ -315,8 +317,11 @@ const lootTableFiles = walk(inputRoot)
   .filter(entry => entry.info !== null);
 
 const validOutputFiles = new Set();
+const namespaces = new Set();
 
 for (const { file, info } of lootTableFiles) {
+  namespaces.add(info.namespace);
+
   const json = JSON.parse(fs.readFileSync(file, "utf8"));
 
   const outputPath = path.join(
@@ -334,4 +339,4 @@ for (const { file, info } of lootTableFiles) {
   console.log(`Generated ${outputPath}`);
 }
 
-removeStaleMarkdownFiles(validOutputFiles);
+removeStaleMarkdownFiles(validOutputFiles, namespaces);
