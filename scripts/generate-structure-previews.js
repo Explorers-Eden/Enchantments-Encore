@@ -25,6 +25,58 @@ const IGNORED_BLOCKS = new Set([
   "minecraft:jigsaw"
 ]);
 
+const COLOR_OVERRIDES = {
+  "minecraft:amethyst_block": "#8f68c8",
+  "minecraft:amethyst_cluster": "#c196ff",
+  "minecraft:large_amethyst_bud": "#b282f2",
+  "minecraft:medium_amethyst_bud": "#a778e6",
+  "minecraft:small_amethyst_bud": "#9f71dc",
+  "minecraft:budding_amethyst": "#8060b5",
+  "minecraft:andesite": "#898989",
+  "minecraft:polished_andesite": "#999999",
+  "minecraft:bookshelf": "#a06d33",
+  "minecraft:chiseled_bookshelf": "#9a6a32",
+  "minecraft:brick": "#a5523d",
+  "minecraft:bricks": "#a5523d",
+  "minecraft:campfire": "#6a4632",
+  "minecraft:chain": "#55595f",
+  "minecraft:chest": "#b06f28",
+  "minecraft:cobweb": "#dddde5",
+  "minecraft:deepslate": "#4a4a50",
+  "minecraft:deepslate_tiles": "#3f4148",
+  "minecraft:cracked_deepslate_tiles": "#373940",
+  "minecraft:deepslate_tile_slab": "#3f4148",
+  "minecraft:deepslate_tile_stairs": "#3f4148",
+  "minecraft:deepslate_tile_wall": "#3f4148",
+  "minecraft:dirt": "#79533a",
+  "minecraft:grass_block": "#6faa43",
+  "minecraft:gravel": "#777777",
+  "minecraft:glow_lichen": "#8ca980",
+  "minecraft:lantern": "#d6a94a",
+  "minecraft:lectern": "#8c5a28",
+  "minecraft:moss_block": "#5f7f38",
+  "minecraft:moss_carpet": "#668a3a",
+  "minecraft:mossy_stone_bricks": "#697d57",
+  "minecraft:oak_slab": "#b98b4b",
+  "minecraft:oak_stairs": "#b98b4b",
+  "minecraft:polished_diorite": "#d0d0d0",
+  "minecraft:red_carpet": "#a82d2d",
+  "minecraft:shroomlight": "#e4ad5e",
+  "minecraft:spruce_planks": "#7a5330",
+  "minecraft:spruce_slab": "#7a5330",
+  "minecraft:spruce_stairs": "#7a5330",
+  "minecraft:spruce_trapdoor": "#76502f",
+  "minecraft:spruce_fence": "#76502f",
+  "minecraft:stripped_spruce_log": "#9a6d3d",
+  "minecraft:stone": "#858585",
+  "minecraft:stone_bricks": "#777777",
+  "minecraft:cracked_stone_bricks": "#656565",
+  "minecraft:stone_brick_slab": "#777777",
+  "minecraft:stone_brick_stairs": "#777777",
+  "minecraft:stone_brick_wall": "#777777",
+  "minecraft:water": "#3d75c4",
+};
+
 function walk(dir) {
   let files = [];
   if (!fs.existsSync(dir)) return files;
@@ -136,86 +188,20 @@ function hslToHex(h, s, l) {
   });
 }
 
-const COLOR_SCHEMES = [
-  // High-priority specific visual identities.
-  { patterns: ["amethyst", "purple"], color: "#8f68c8" },
-  { patterns: ["budding_amethyst"], color: "#8060b5" },
-  { patterns: ["chest", "barrel"], color: "#b06f28" },
-  { patterns: ["bookshelf", "lectern"], color: "#9a6a32" },
-  { patterns: ["cobweb"], color: "#dddde5" },
-  { patterns: ["chain", "iron", "anvil"], color: "#55595f" },
-  { patterns: ["lantern", "torch", "candle", "glowstone", "shroomlight", "sea_lantern"], color: "#d6a94a" },
-  { patterns: ["red_carpet", "red_wool"], color: "#a82d2d" },
-
-  // Stone families.
-  { patterns: ["deepslate", "blackstone", "basalt"], color: "#3f4148" },
-  { patterns: ["tuff"], color: "#77746d" },
-  { patterns: ["andesite", "diorite", "granite"], color: "#898989" },
-  { patterns: ["stone", "cobblestone", "brick"], color: "#777777" },
-  { patterns: ["mossy_stone"], color: "#697d57" },
-
-  // Natural blocks.
-  { patterns: ["grass_block", "grass"], color: "#6faa43" },
-  { patterns: ["moss", "azalea", "leaf", "leaves", "vine"], color: "#668a3a" },
-  { patterns: ["dirt", "mud", "podzol", "rooted_dirt"], color: "#79533a" },
-  { patterns: ["sand", "sandstone"], color: "#d6c27a" },
-  { patterns: ["gravel"], color: "#777777" },
-  { patterns: ["clay"], color: "#9aa4ad" },
-  { patterns: ["snow", "ice"], color: "#d7eef4" },
-
-  // Wood families.
-  { patterns: ["spruce"], color: "#7a5330" },
-  { patterns: ["oak"], color: "#b98b4b" },
-  { patterns: ["birch"], color: "#d6c27a" },
-  { patterns: ["jungle"], color: "#b07a45" },
-  { patterns: ["acacia"], color: "#b05b32" },
-  { patterns: ["dark_oak"], color: "#5a3822" },
-  { patterns: ["mangrove"], color: "#8d3f32" },
-  { patterns: ["cherry"], color: "#d89aa8" },
-  { patterns: ["bamboo"], color: "#c4b85f" },
-  { patterns: ["crimson"], color: "#7e2e49" },
-  { patterns: ["warped"], color: "#2f8c86" },
-  { patterns: ["planks", "log", "wood", "stem", "hyphae", "slab", "stairs", "fence", "door", "trapdoor", "sign"], color: "#8a5a2f" },
-
-  // Liquids, glass, metals, ores.
-  { patterns: ["water"], color: "#3d75c4" },
-  { patterns: ["lava"], color: "#e65a1e" },
-  { patterns: ["glass"], color: "#9ed0dd" },
-  { patterns: ["copper"], color: "#b87953" },
-  { patterns: ["gold"], color: "#e1b84c" },
-  { patterns: ["diamond"], color: "#5fd0d6" },
-  { patterns: ["emerald"], color: "#34b65a" },
-  { patterns: ["lapis"], color: "#3459c9" },
-  { patterns: ["redstone"], color: "#b11f1f" },
-  { patterns: ["coal"], color: "#2f2f2f" },
-  { patterns: ["quartz"], color: "#d8d0c0" },
-
-  // Generic color names.
-  { patterns: ["white"], color: "#dddddd" },
-  { patterns: ["light_gray"], color: "#aaaaaa" },
-  { patterns: ["gray"], color: "#777777" },
-  { patterns: ["black"], color: "#252525" },
-  { patterns: ["brown"], color: "#7a4c2a" },
-  { patterns: ["red"], color: "#a82d2d" },
-  { patterns: ["orange"], color: "#d87a32" },
-  { patterns: ["yellow"], color: "#d6c24a" },
-  { patterns: ["lime"], color: "#8bc34a" },
-  { patterns: ["green"], color: "#4f8c3a" },
-  { patterns: ["cyan"], color: "#3aa6a6" },
-  { patterns: ["light_blue"], color: "#6eaed6" },
-  { patterns: ["blue"], color: "#3459c9" },
-  { patterns: ["magenta"], color: "#b04bb3" },
-  { patterns: ["pink"], color: "#d88aa8" }
-];
-
 function getBlockColor(blockName) {
+  if (COLOR_OVERRIDES[blockName]) return COLOR_OVERRIDES[blockName];
+
   const short = blockName.replace(/^minecraft:/, "");
 
-  for (const scheme of COLOR_SCHEMES) {
-    if (scheme.patterns.some(pattern => short.includes(pattern))) {
-      return scheme.color;
-    }
-  }
+  if (short.includes("leaves")) return "#4f8c3a";
+  if (short.includes("log") || short.includes("wood") || short.includes("planks")) return "#8a5a2f";
+  if (short.includes("stone") || short.includes("slate") || short.includes("tuff")) return "#777777";
+  if (short.includes("sand")) return "#d6c27a";
+  if (short.includes("copper")) return "#b87953";
+  if (short.includes("glass")) return "#9ed0dd";
+  if (short.includes("moss")) return "#668a3a";
+  if (short.includes("water")) return "#3d75c4";
+  if (short.includes("lava")) return "#e65a1e";
 
   return hashColor(blockName);
 }
