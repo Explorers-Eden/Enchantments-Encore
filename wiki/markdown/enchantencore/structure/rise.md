@@ -1,7 +1,6 @@
 # Generated Loot.
 
 There is one loot table used in this structure:
-<br>
 
 <details>
 <summary><strong>enchantencore:all_enchants</strong> (1 use)</summary>
