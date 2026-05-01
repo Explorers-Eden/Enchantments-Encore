@@ -660,9 +660,14 @@ ${content}
 </details>`);
   }
 
-  return `# Generated Loot.
+const intro =
+  sorted.length === 1
+    ? `There is one loot table used in this structure:`
+    : `There are ${sorted.length} loot tables used in this structure:`;
 
-There are ${sorted.length} loot tables used in this structure:
+return `# Generated Loot.
+
+${intro}
 <br>
 
 ${tables.join("\n\n")}
