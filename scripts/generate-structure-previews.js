@@ -12,11 +12,11 @@ const vanillaAssetRoot = process.env.VANILLA_ASSET_ROOT ?? path.join(".cache", "
 const generateCenterView = String(process.env.STRUCTURE_PREVIEW_CENTER_VIEW ?? "true") !== "false";
 const centerViewSuffix = process.env.STRUCTURE_PREVIEW_CENTER_SUFFIX ?? "-center";
 
-const tileWidth = Number(process.env.STRUCTURE_PREVIEW_TILE_WIDTH ?? 18);
-const tileHeight = Number(process.env.STRUCTURE_PREVIEW_TILE_HEIGHT ?? 10);
-const blockHeight = Number(process.env.STRUCTURE_PREVIEW_BLOCK_HEIGHT ?? 12);
-const padding = Number(process.env.STRUCTURE_PREVIEW_PADDING ?? 36);
-const maxImageSize = Number(process.env.STRUCTURE_PREVIEW_MAX_SIZE ?? 2400);
+const tileWidth = Number(process.env.STRUCTURE_PREVIEW_TILE_WIDTH ?? 32);
+const tileHeight = Number(process.env.STRUCTURE_PREVIEW_TILE_HEIGHT ?? 18);
+const blockHeight = Number(process.env.STRUCTURE_PREVIEW_BLOCK_HEIGHT ?? 22);
+const padding = Number(process.env.STRUCTURE_PREVIEW_PADDING ?? 48);
+const maxImageSize = Number(process.env.STRUCTURE_PREVIEW_MAX_SIZE ?? 2600);
 const transparentBackground = String(process.env.STRUCTURE_PREVIEW_TRANSPARENT ?? "true") !== "false";
 
 const IGNORED_BLOCKS = new Set([
@@ -206,6 +206,71 @@ function readTextureAsset(assetPath) {
   }
 }
 
+
+function stringifyProperties(properties = {}) {
+  return Object.entries(properties)
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([key, value]) => `${key}=${value}`)
+    .join(",");
+}
+
+function parseVariantKey(key) {
+  if (!key) return {};
+
+  const result = {};
+  for (const part of key.split(",")) {
+    const [name, value] = part.split("=");
+    if (name && value !== undefined) result[name] = value;
+  }
+  return result;
+}
+
+function variantMatchesBlockState(variantKey, properties = {}) {
+  const variant = parseVariantKey(variantKey);
+
+  for (const [key, value] of Object.entries(variant)) {
+    if (String(properties[key]) !== String(value)) return false;
+  }
+
+  return true;
+}
+
+function getModelIdFromBlockState(blockName, properties = {}) {
+  const [namespace, blockPath] = splitResourceLocation(blockName);
+  const blockState = readJsonAsset(`assets/${namespace}/blockstates/${blockPath}.json`);
+
+  if (!blockState) return `${namespace}:block/${blockPath}`;
+
+  if (blockState.variants) {
+    const exactKey = stringifyProperties(properties);
+    let variant = blockState.variants[exactKey];
+
+    if (!variant) {
+      const matchingKey = Object.keys(blockState.variants).find(key =>
+        variantMatchesBlockState(key, properties)
+      );
+      if (matchingKey) variant = blockState.variants[matchingKey];
+    }
+
+    if (!variant) {
+      variant = blockState.variants[""] ?? Object.values(blockState.variants)[0];
+    }
+
+    if (Array.isArray(variant)) variant = variant[0];
+    if (variant?.model) return variant.model;
+  }
+
+  if (Array.isArray(blockState.multipart)) {
+    for (const part of blockState.multipart) {
+      let apply = part.apply;
+      if (Array.isArray(apply)) apply = apply[0];
+      if (apply?.model) return apply.model;
+    }
+  }
+
+  return `${namespace}:block/${blockPath}`;
+}
+
 function resolveTextureReference(textureRef, textures = {}) {
   let current = textureRef;
 
@@ -243,9 +308,8 @@ function mergeModelTextures(modelId, seen = new Set()) {
   return textures;
 }
 
-function getTextureIdForBlock(blockName, face) {
-  const [namespace, blockPath] = splitResourceLocation(blockName);
-  const modelId = `${namespace}:block/${blockPath}`;
+function getTextureIdForBlock(block, face) {
+  const modelId = getModelIdFromBlockState(block.name, block.properties);
   const textures = mergeModelTextures(modelId);
 
   const preferred =
@@ -266,8 +330,8 @@ function getTextureIdForBlock(blockName, face) {
   return resolveTextureReference(preferred, textures);
 }
 
-function getTextureForBlockFace(blockName, face) {
-  const textureId = getTextureIdForBlock(blockName, face);
+function getTextureForBlockFace(block, face) {
+  const textureId = getTextureIdForBlock(block, face);
   if (!textureId) return null;
 
   const [namespace, texturePath] = splitResourceLocation(textureId);
@@ -440,7 +504,7 @@ function drawTexturedPolygon(png, face) {
 
   const width = Math.max(1, maxX - minX);
   const height = Math.max(1, maxY - minY);
-  const texture = getTextureForBlockFace(face.blockName, face.face);
+  const texture = getTextureForBlockFace(face.block, face.face);
   const fallback = fallbackColorForBlock(face.blockName);
 
   for (let y = minY; y <= maxY; y++) {
@@ -476,6 +540,7 @@ function makeCubeFaces(block, offsetX, offsetY, scale) {
   return [
     {
       face: "top",
+      block,
       blockName: name,
       points: [p010, p110, p111, p011],
       shade: 1.12,
@@ -483,6 +548,7 @@ function makeCubeFaces(block, offsetX, offsetY, scale) {
     },
     {
       face: "left",
+      block,
       blockName: name,
       points: [p001, p011, p111, p101],
       shade: 0.78,
@@ -490,6 +556,7 @@ function makeCubeFaces(block, offsetX, offsetY, scale) {
     },
     {
       face: "right",
+      block,
       blockName: name,
       points: [p100, p110, p111, p101],
       shade: 0.95,
@@ -515,7 +582,8 @@ function collectBlocksFromStructure(structure) {
       x: Number(pos[0]),
       y: Number(pos[1]),
       z: Number(pos[2]),
-      name: blockName
+      name: blockName,
+      properties: state?.Properties ?? state?.properties ?? {}
     });
   }
 
@@ -725,7 +793,7 @@ async function main() {
     }
   }
 
-  console.log(`Texture assets used: ${textureHitStats.hits} loaded, ${textureHitStats.misses} missing/fallback.`);
+  console.log(`Texture files loaded: ${textureHitStats.hits} loaded, ${textureHitStats.misses} missing/fallback.`);
   removeStaleOutputFiles(validOutputFiles);
 }
 
