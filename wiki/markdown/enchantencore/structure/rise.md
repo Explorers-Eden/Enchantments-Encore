@@ -1,3 +1,20 @@
+# Generated Loot.
+
+The structure generates 1 loot container which uses the `enchantencore:all_enchants` loot table.
+<br>
+
+| Item | Stack Size | Pool | Weight | Chance |
+|:-----|:----------:|:----:|:------:|:------:|
+| Enchanted Book | 1 | 1 | 35 | 100.0% |
+| Lapis Lazuli | 1–16 | 2 | 20 | 24.1% |
+| Paper | 1–16 | 2 | 15 | 18.1% |
+| Book | 1–8 | 2 | 10 | 12.0% |
+| Experience Bottle | 1–8 | 2 | 10 | 12.0% |
+| Obsidian | 1–8 | 2 | 10 | 12.0% |
+| Chiseled Bookshelf | 1–3 | 2 | 5 | 6.0% |
+| Deepslate Lapis Ore | 1–2 | 2 | 5 | 6.0% |
+| Lapis Ore | 1–2 | 2 | 5 | 6.0% |
+| Bookshelf | 1–2 | 2 | 3 | 3.6% |
 # Contents
 
 The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Brick Stairs, Deepslate Tile Slab, Grass Block, Amethyst Block, Dirt, Spruce Stairs, Stone, Stripped Spruce Log, Bookshelf, Red Carpet, Stone Brick Wall, Glow Lichen, Stone Brick Slab, Chiseled Bookshelf, Mossy Stone Bricks, Spruce Trapdoor, Gravel, Polished Andesite, Black Stained Glass Pane, Amethyst Cluster, Large Amethyst Bud, Andesite, Oak Slab, Spruce Fence, Cobweb, Budding Amethyst, Deepslate Tile Stairs, Moss Carpet, Twisting Vines Plant, Medium Amethyst Bud, Spruce Slab, Chiseled Stone Bricks, Ladder, Small Amethyst Bud, Light Gray Candle, Shroomlight, Brown Candle, Chain, Deepslate Tile Wall, Twisting Vines, White Candle, Lectern, Oak Stairs, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Spruce Door, Dead Brain Coral, Dead Tube Coral Fan, Lantern, Brewing Stand, Campfire, Mossy Stone Brick Stairs, Potted Wither Rose, Purple Candle, Water Cauldron, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Chest, Chiseled Tuff, Decorated Pot, Nether Wart, Wither Skeleton Skull.
@@ -593,9 +610,9 @@ The structure part is composed of the following blocks: Spruce Planks, Spruce St
 
 ### Loot Tables
 
-| Loot Table |
-|:-----|
-| enchantencore:all_enchants |
+| Loot Table | Count |
+|:-----|:-----:|
+| enchantencore:all_enchants | 1 |
 
 
 </details>
