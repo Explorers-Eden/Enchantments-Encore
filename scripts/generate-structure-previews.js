@@ -346,29 +346,34 @@ function normalizeBlocks(blocks) {
 }
 
 function computeBounds(blocks, scale = 1) {
-  const points = [];
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minY = Infinity;
+  let maxY = -Infinity;
+
+  const update = point => {
+    if (point.x < minX) minX = point.x;
+    if (point.x > maxX) maxX = point.x;
+    if (point.y < minY) minY = point.y;
+    if (point.y > maxY) maxY = point.y;
+  };
 
   for (const block of blocks) {
-    for (const corner of [
-      [block.x, block.y, block.z],
-      [block.x + 1, block.y, block.z],
-      [block.x, block.y + 1, block.z],
-      [block.x + 1, block.y + 1, block.z],
-      [block.x, block.y, block.z + 1],
-      [block.x + 1, block.y, block.z + 1],
-      [block.x, block.y + 1, block.z + 1],
-      [block.x + 1, block.y + 1, block.z + 1]
-    ]) {
-      points.push(isoPoint(corner[0], corner[1], corner[2], 0, 0, scale));
-    }
+    update(isoPoint(block.x, block.y, block.z, 0, 0, scale));
+    update(isoPoint(block.x + 1, block.y, block.z, 0, 0, scale));
+    update(isoPoint(block.x, block.y + 1, block.z, 0, 0, scale));
+    update(isoPoint(block.x + 1, block.y + 1, block.z, 0, 0, scale));
+    update(isoPoint(block.x, block.y, block.z + 1, 0, 0, scale));
+    update(isoPoint(block.x + 1, block.y, block.z + 1, 0, 0, scale));
+    update(isoPoint(block.x, block.y + 1, block.z + 1, 0, 0, scale));
+    update(isoPoint(block.x + 1, block.y + 1, block.z + 1, 0, 0, scale));
   }
 
-  return {
-    minX: Math.min(...points.map(p => p.x)),
-    maxX: Math.max(...points.map(p => p.x)),
-    minY: Math.min(...points.map(p => p.y)),
-    maxY: Math.max(...points.map(p => p.y))
-  };
+  if (!Number.isFinite(minX)) {
+    return { minX: 0, maxX: 1, minY: 0, maxY: 1 };
+  }
+
+  return { minX, maxX, minY, maxY };
 }
 
 function fillBackground(png) {
