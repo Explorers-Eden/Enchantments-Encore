@@ -644,6 +644,8 @@ async function main() {
     groups.get(key).files.push(file);
   }
 
+  console.log(`Found ${structureFiles.length} structure file(s) in ${groups.size} generated structure group(s).`);
+
   const validOutputFiles = new Set();
 
   for (const group of groups.values()) {
@@ -657,7 +659,8 @@ async function main() {
     fs.writeFileSync(outputPath, renderBlocksToPng(blocks));
     stats.mainImages++;
 
-    console.log(`Generated ${outputPath} from ${group.files.length} structure part(s)`);
+    const mainSize = fs.statSync(outputPath).size;
+    console.log(`Generated ${outputPath} from ${group.files.length} structure part(s), ${mainSize} bytes`);
 
     if (generateCenterView) {
       const centerOutputPath = path.join(outputRoot, group.namespace, `${group.topFolder}${centerViewSuffix}.png`);
@@ -667,8 +670,13 @@ async function main() {
       fs.writeFileSync(centerOutputPath, renderCenterViewToPng(blocks));
       stats.centerImages++;
 
-      console.log(`Generated ${centerOutputPath} from center crop`);
+      const centerSize = fs.statSync(centerOutputPath).size;
+      console.log(`Generated ${centerOutputPath} from center crop, ${centerSize} bytes`);
     }
+  }
+
+  if (groups.size === 0) {
+    console.warn("No structure groups were found. Expected files like data/<namespace>/structure/<structure>/*.nbt or data/<namespace>/structure/<structure>.nbt.");
   }
 
   console.log(`Generated ${stats.mainImages} main preview(s) and ${stats.centerImages} center preview(s).`);

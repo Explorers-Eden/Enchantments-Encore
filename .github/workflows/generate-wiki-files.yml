@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -40,10 +42,38 @@ jobs:
       - name: Generate structure preview images
         run: node scripts/generate-structure-previews.js
 
-      - name: Commit generated wiki files
-        uses: stefanzweifel/git-auto-commit-action@v5
+      - name: Show generated wiki files
+        run: |
+          echo "Generated markdown files:"
+          find wiki/markdown -type f -name "*.md" -print | sort || true
+          echo ""
+          echo "Generated structure preview images:"
+          find wiki/images/structures -type f -name "*.png" -print | sort || true
+          echo ""
+          echo "Git status:"
+          git status --short
+
+      - name: Upload generated preview images as artifact
+        uses: actions/upload-artifact@v4
         with:
-          commit_message: Generate wiki files
-          file_pattern: |
-            wiki/markdown/**/*.md
-            wiki/images/structures/**/*.png
+          name: generated-structure-preview-images
+          path: wiki/images/structures/**/*.png
+          if-no-files-found: warn
+
+      - name: Commit generated wiki files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add -A wiki/markdown wiki/images/structures
+
+          if git diff --cached --quiet; then
+            echo "No generated wiki changes to commit."
+            exit 0
+          fi
+
+          git commit -m "Generate wiki files"
+          git push
