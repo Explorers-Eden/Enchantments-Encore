@@ -22,7 +22,7 @@ There is one loot table used in this structure:
 
 # Contents
 
-The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Brick Stairs, Deepslate Tile Slab, Grass Block, Amethyst Block, Dirt, Spruce Stairs, Stone, Stripped Spruce Log, Bookshelf, Red Carpet, Stone Brick Wall, Glow Lichen, Stone Brick Slab, Chiseled Bookshelf, Mossy Stone Bricks, Spruce Trapdoor, Gravel, Polished Andesite, Black Stained Glass Pane, Amethyst Cluster, Large Amethyst Bud, Andesite, Oak Slab, Spruce Fence, Cobweb, Budding Amethyst, Deepslate Tile Stairs, Moss Carpet, Twisting Vines Plant, Medium Amethyst Bud, Spruce Slab, Chiseled Stone Bricks, Ladder, Small Amethyst Bud, Light Gray Candle, Shroomlight, Brown Candle, Chain, Deepslate Tile Wall, Twisting Vines, White Candle, Lectern, Oak Stairs, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Spruce Door, Dead Brain Coral, Dead Tube Coral Fan, Lantern, Brewing Stand, Campfire, Mossy Stone Brick Stairs, Potted Wither Rose, Purple Candle, Water Cauldron, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Chest, Chiseled Tuff, Decorated Pot, Nether Wart, Wither Skeleton Skull.
+The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Deepslate Tile Slab, Stone Brick Stairs, Grass Block, Amethyst Block, Dirt, Spruce Stairs, Stone, Stripped Spruce Log, Bookshelf, Red Carpet, Stone Brick Wall, Glow Lichen, Stone Brick Slab, Chiseled Bookshelf, Mossy Stone Bricks, Spruce Trapdoor, Gravel, Black Stained Glass Pane, Polished Andesite, Amethyst Cluster, Large Amethyst Bud, Andesite, Oak Slab, Spruce Fence, Cobweb, Budding Amethyst, Deepslate Tile Stairs, Moss Carpet, Twisting Vines Plant, Medium Amethyst Bud, Spruce Slab, Chiseled Stone Bricks, Ladder, Small Amethyst Bud, Light Gray Candle, Shroomlight, Brown Candle, Chain, Deepslate Tile Wall, Twisting Vines, White Candle, Lectern, Oak Stairs, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Spruce Door, Dead Brain Coral, Dead Tube Coral Fan, Lantern, Brewing Stand, Campfire, Mossy Stone Brick Stairs, Potted Wither Rose, Purple Candle, Water Cauldron, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Chest, Chiseled Tuff, Decorated Pot, Nether Wart, Wither Skeleton Skull.
 
 Additionally, the following entities may spawn during its generation: Painting, Bat, End Crystal, Elder Guardian.
 
@@ -527,41 +527,6 @@ Additionally, the following entities may spawn during its generation: Painting.
 | Entity | Count |
 |:-----|:-----:|
 | Painting | 5 |
-
-
-### Loot Tables
-
-*None*
-
-
-</details>
-
-<details>
-<summary><strong>Rise/Top/Top Dummy</strong></summary>
-
-The structure part is composed of the following blocks: Spruce Planks, Spruce Stairs, Cracked Deepslate Tiles, Stone Brick Stairs, Stone Bricks, Cracked Stone Bricks, Deepslate Tiles, Stripped Spruce Log, Deepslate Tile Slab, Mossy Stone Bricks, Polished Andesite, Andesite.
-
-### Blocks
-
-| Block | Count |
-|:-----|:-----:|
-| Spruce Planks | 53 |
-| Spruce Stairs | 36 |
-| Cracked Deepslate Tiles | 32 |
-| Stone Brick Stairs | 24 |
-| Stone Bricks | 24 |
-| Cracked Stone Bricks | 18 |
-| Deepslate Tiles | 16 |
-| Stripped Spruce Log | 7 |
-| Deepslate Tile Slab | 4 |
-| Mossy Stone Bricks | 3 |
-| Polished Andesite | 2 |
-| Andesite | 1 |
-
-
-### Entities
-
-*None*
 
 
 ### Loot Tables
