@@ -2,11 +2,6 @@ name: Generate Wiki Files
 
 on:
   workflow_dispatch:
-    inputs:
-      minecraft_version:
-        description: "Minecraft version for vanilla textures/assets"
-        required: false
-        default: ""
 
 permissions:
   contents: write
@@ -31,11 +26,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/vanilla-assets
-          key: vanilla-assets-${{ github.event.inputs.minecraft_version || hashFiles('release_infos.yml', 'pack.mcmeta') }}
+          key: vanilla-assets-${{ hashFiles('release_infos.yml', 'pack.mcmeta') }}
 
       - name: Download vanilla assets
-        env:
-          MC_VERSION: ${{ github.event.inputs.minecraft_version }}
         run: node scripts/download-vanilla-assets.js
 
       - name: Generate loot table markdown
