@@ -143,27 +143,6 @@ function fetchJson(url) {
   });
 }
 
-async function fetchVanillaLootTableJson(id) {
-  const cleaned = cleanTag(id);
-  const [namespace, lootPath] = cleaned.includes(":")
-    ? cleaned.split(":")
-    : ["minecraft", cleaned];
-
-  if (namespace !== "minecraft" || !vanillaLootTableVersion) return null;
-
-  const url = `https://raw.githubusercontent.com/misode/mcmeta/${vanillaLootTableVersion}/data/minecraft/loot_table/${lootPath}.json`;
-  const json = await fetchJson(url);
-
-  if (json) {
-    console.log(`Fetched vanilla loot table ${cleaned} from mcmeta ${vanillaLootTableVersion}`);
-  } else {
-    console.warn(`Could not find vanilla loot table ${cleaned} in repo or mcmeta ${vanillaLootTableVersion}`);
-  }
-
-  return json;
-}
-
-
 function titleCase(id) {
   return String(id)
     .replace(/^#/, "")
@@ -371,6 +350,40 @@ function getLootTableFile(id) {
   return path.join(inputRoot, namespace, "loot_table", `${lootPath}.json`);
 }
 
+async function fetchVanillaLootTableJson(id) {
+  const cleaned = cleanTag(id);
+  const [namespace, lootPath] = cleaned.includes(":")
+    ? cleaned.split(":")
+    : ["minecraft", cleaned];
+
+  if (namespace !== "minecraft" || !vanillaLootTableVersion) return null;
+
+  const url = `https://raw.githubusercontent.com/misode/mcmeta/${vanillaLootTableVersion}/data/minecraft/loot_table/${lootPath}.json`;
+  const json = await fetchJson(url);
+
+  if (json) {
+    console.log(`Fetched vanilla loot table ${cleaned} from mcmeta ${vanillaLootTableVersion}`);
+  } else {
+    console.warn(`Could not find vanilla loot table ${cleaned} in repo or mcmeta ${vanillaLootTableVersion}`);
+  }
+
+  return json;
+}
+
+async function loadLootTableJson(id) {
+  const file = getLootTableFile(id);
+
+  if (fs.existsSync(file)) {
+    try {
+      return JSON.parse(fs.readFileSync(file, "utf8"));
+    } catch {
+      console.warn(`Could not read loot table: ${file}`);
+    }
+  }
+
+  return await fetchVanillaLootTableJson(id);
+}
+
 function flattenRawEntries(entries, inheritedFunctions = []) {
   const result = [];
 
@@ -395,16 +408,15 @@ function flattenRawEntries(entries, inheritedFunctions = []) {
   return result;
 }
 
-function getSingleEntryFromLootTable(id, seen = new Set()) {
+async function getSingleEntryFromLootTable(id, seen = new Set()) {
   const cleaned = cleanTag(id);
   if (seen.has(cleaned)) return null;
   seen.add(cleaned);
 
-  const file = getLootTableFile(cleaned);
-  if (!fs.existsSync(file)) return null;
+  const json = await loadLootTableJson(cleaned);
+  if (!json) return null;
 
   try {
-    const json = JSON.parse(fs.readFileSync(file, "utf8"));
     const entries = [];
 
     for (const pool of json.pools ?? []) {
@@ -420,14 +432,14 @@ function getSingleEntryFromLootTable(id, seen = new Set()) {
   return null;
 }
 
-function getItemName(entry, seenLootTables = new Set()) {
+async function getItemName(entry, seenLootTables = new Set()) {
   if (entry.type === "minecraft:empty") return "Empty";
 
   if (entry.type === "minecraft:loot_table") {
     const lootTable = cleanTag(entry.value ?? entry.name ?? "unknown");
-    const singleEntry = getSingleEntryFromLootTable(lootTable, seenLootTables);
+    const singleEntry = await getSingleEntryFromLootTable(lootTable, seenLootTables);
 
-    if (singleEntry) return getItemName(singleEntry, seenLootTables);
+    if (singleEntry) return await getItemName(singleEntry, seenLootTables);
 
     return `Loot Table (${lootTable})`;
   }
@@ -444,7 +456,12 @@ function getItemName(entry, seenLootTables = new Set()) {
   return titleCase(entry.type ?? "unknown");
 }
 
-function flattenEntries(entries, inheritedWeight = 1, inheritedFunctions = []) {
+async function flattenEntries(
+  entries,
+  inheritedWeight = 1,
+  inheritedFunctions = [],
+  seenLootTables = new Set()
+) {
   const result = [];
 
   for (const entry of entries ?? []) {
@@ -456,19 +473,69 @@ function flattenEntries(entries, inheritedWeight = 1, inheritedFunctions = []) {
       ...(entry.functions ?? [])
     ];
 
-    const inheritedEntry = withInheritedFunctions(entry, inheritedFunctions);
-
     if (
       entry.type === "minecraft:alternatives" ||
       entry.type === "minecraft:group" ||
       entry.type === "minecraft:sequence"
     ) {
-      result.push(...flattenEntries(entry.children ?? [], combinedWeight, entryFunctions));
+      result.push(
+        ...await flattenEntries(
+          entry.children ?? [],
+          combinedWeight,
+          entryFunctions,
+          seenLootTables
+        )
+      );
       continue;
     }
 
+    if (entry.type === "minecraft:loot_table") {
+      const lootTable = cleanTag(entry.value ?? entry.name ?? "unknown");
+
+      if (seenLootTables.has(lootTable)) {
+        result.push({
+          item: `Loot Table (${lootTable})`,
+          stackSize: getStackSize(withInheritedFunctions(entry, inheritedFunctions)),
+          weight: combinedWeight
+        });
+        continue;
+      }
+
+      const nestedJson = await loadLootTableJson(lootTable);
+
+      if (!nestedJson) {
+        result.push({
+          item: `Loot Table (${lootTable})`,
+          stackSize: getStackSize(withInheritedFunctions(entry, inheritedFunctions)),
+          weight: combinedWeight
+        });
+        continue;
+      }
+
+      const nextSeenLootTables = new Set(seenLootTables);
+      nextSeenLootTables.add(lootTable);
+
+      for (const nestedPool of nestedJson.pools ?? []) {
+        result.push(
+          ...await flattenEntries(
+            nestedPool.entries ?? [],
+            combinedWeight,
+            [
+              ...entryFunctions,
+              ...(nestedPool.functions ?? [])
+            ],
+            nextSeenLootTables
+          )
+        );
+      }
+
+      continue;
+    }
+
+    const inheritedEntry = withInheritedFunctions(entry, inheritedFunctions);
+
     result.push({
-      item: getItemName(inheritedEntry),
+      item: await getItemName(inheritedEntry, seenLootTables),
       stackSize: getStackSize(inheritedEntry),
       weight: combinedWeight
     });
@@ -490,11 +557,11 @@ function mergeRowsByItem(rows) {
   return [...merged.values()];
 }
 
-function renderMergedPools(pools) {
+async function renderMergedPools(pools) {
   const rows = [];
 
-  pools.forEach((pool, poolIndex) => {
-    const flattenedEntries = flattenEntries(pool.entries ?? [], 1, pool.functions ?? []);
+  for (const [poolIndex, pool] of (pools ?? []).entries()) {
+    const flattenedEntries = await flattenEntries(pool.entries ?? [], 1, pool.functions ?? [], new Set());
     const nonEmptyFlattenedEntries = flattenedEntries.filter(entry => entry.item !== "Empty");
     const totalWeight = flattenedEntries.reduce((sum, entry) => sum + entry.weight, 0);
 
@@ -517,7 +584,7 @@ function renderMergedPools(pools) {
         chance: `${(chanceValue * 100).toFixed(1)}%`
       });
     }
-  });
+  }
 
   rows.sort(
     (a, b) =>
@@ -531,20 +598,6 @@ function renderMergedPools(pools) {
 ${rows
   .map(row => `| ${row.item} | ${row.stackSize} | ${row.pool} | ${row.weight} | ${row.chance} |`)
   .join("\n")}`;
-}
-
-async function loadLootTableJson(id) {
-  const file = getLootTableFile(id);
-
-  if (fs.existsSync(file)) {
-    try {
-      return JSON.parse(fs.readFileSync(file, "utf8"));
-    } catch {
-      console.warn(`Could not read loot table: ${file}`);
-    }
-  }
-
-  return await fetchVanillaLootTableJson(id);
 }
 
 function renderCountTable(title, singular, rows) {
@@ -581,46 +634,39 @@ ${lootTables.map(([id, count]) => `| ${id} | ${count} |`).join("\n")}
 
 async function renderGeneratedLootSection(lootTables) {
   const sorted = sortedLootTables(lootTables);
-  const totalLootContainers = sorted.reduce((sum, [, count]) => sum + count, 0);
 
-  if (sorted.length === 0 || totalLootContainers === 0) {
+  if (sorted.length === 0) {
     return "";
   }
 
-  const lootList = sorted.map(([id]) => `\`${id}\``).join(", ");
-  const intro =
-    sorted.length === 1
-      ? `The structure generates ${totalLootContainers} loot ${pluralize(totalLootContainers, "container")} which ${totalLootContainers === 1 ? "uses" : "use"} the ${lootList} loot table.`
-      : `The structure generates ${totalLootContainers} loot ${pluralize(totalLootContainers, "container")} using ${sorted.length} loot tables: ${lootList}.`;
-
   const tables = [];
 
-  for (const [id] of sorted) {
+  for (const [id, count] of sorted) {
     const json = await loadLootTableJson(id);
 
-    if (!json) {
-      tables.push(`## ${id}
+    let content;
 
-Could not find this loot table locally or in mcmeta ${vanillaLootTableVersion ?? "unknown"}.
-`);
-      continue;
+    if (!json) {
+      content = `Could not find this loot table locally or in mcmeta ${vanillaLootTableVersion ?? "unknown"}.`;
+    } else {
+      content = await renderMergedPools(json.pools ?? []);
     }
 
-    tables.push(
-      sorted.length === 1
-        ? renderMergedPools(json.pools ?? [])
-        : `## ${id}
+    tables.push(`<details>
+<summary><strong>${id}</strong> (${count} ${pluralize(count, "use")})</summary>
 
-${renderMergedPools(json.pools ?? [])}`
-    );
+${content}
+
+</details>`);
   }
 
   return `# Generated Loot.
 
-${intro}
+There are ${sorted.length} loot tables used in this structure:
 <br>
 
 ${tables.join("\n\n")}
+
 `;
 }
 
@@ -663,7 +709,10 @@ ${renderTextSummary(totals, false)}`;
 }
 
 async function generateMarkdown(groupName, structures, totals) {
-  return `${await renderGeneratedLootSection(totals.lootTables)}${renderSummarySection(totals)}
+  const generatedLoot = await renderGeneratedLootSection(totals.lootTables);
+
+  return `${generatedLoot}${renderSummarySection(totals)}
+
 ## Per-Structure File Contents
 
 ${structures.map(entry => renderStructureSection(entry.structureFile, entry.data)).join("\n\n")}
