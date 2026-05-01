@@ -1,18 +1,22 @@
 // scripts/generate-structure-previews.js
 const fs = require("fs");
 const path = require("path");
+const zlib = require("zlib");
 const nbt = require("prismarine-nbt");
 const { PNG } = require("pngjs");
 
 const inputRoot = process.env.STRUCTURE_INPUT_ROOT ?? "data";
 const outputRoot = process.env.STRUCTURE_PREVIEW_OUTPUT_ROOT ?? path.join("wiki", "images", "structures");
+const vanillaAssetRoot = process.env.VANILLA_ASSET_ROOT ?? path.join(".cache", "vanilla-assets");
+
+const generateCenterView = String(process.env.STRUCTURE_PREVIEW_CENTER_VIEW ?? "true") !== "false";
+const centerViewSuffix = process.env.STRUCTURE_PREVIEW_CENTER_SUFFIX ?? "-center";
 
 const tileWidth = Number(process.env.STRUCTURE_PREVIEW_TILE_WIDTH ?? 18);
 const tileHeight = Number(process.env.STRUCTURE_PREVIEW_TILE_HEIGHT ?? 10);
 const blockHeight = Number(process.env.STRUCTURE_PREVIEW_BLOCK_HEIGHT ?? 12);
 const padding = Number(process.env.STRUCTURE_PREVIEW_PADDING ?? 36);
 const maxImageSize = Number(process.env.STRUCTURE_PREVIEW_MAX_SIZE ?? 2400);
-
 const transparentBackground = String(process.env.STRUCTURE_PREVIEW_TRANSPARENT ?? "true") !== "false";
 
 const IGNORED_BLOCKS = new Set([
@@ -25,6 +29,11 @@ const IGNORED_BLOCKS = new Set([
   "minecraft:jigsaw"
 ]);
 
+const zipEntryCache = new Map();
+const modelCache = new Map();
+const textureCache = new Map();
+const fallbackColorCache = new Map();
+
 function walk(dir) {
   let files = [];
   if (!fs.existsSync(dir)) return files;
@@ -36,6 +45,15 @@ function walk(dir) {
   }
 
   return files;
+}
+
+function splitResourceLocation(id, defaultNamespace = "minecraft") {
+  if (String(id).includes(":")) {
+    const [namespace, ...rest] = String(id).split(":");
+    return [namespace, rest.join(":")];
+  }
+
+  return [defaultNamespace, String(id)];
 }
 
 function getStructureInfo(file) {
@@ -74,30 +92,177 @@ async function readNbtFile(file) {
   return nbt.simplify(parsed.parsed);
 }
 
-function hexToRgb(hex) {
-  const cleaned = hex.replace("#", "");
-  return {
-    r: parseInt(cleaned.slice(0, 2), 16),
-    g: parseInt(cleaned.slice(2, 4), 16),
-    b: parseInt(cleaned.slice(4, 6), 16)
-  };
+function getVanillaClientJar() {
+  if (!fs.existsSync(vanillaAssetRoot)) return null;
+
+  const direct = walk(vanillaAssetRoot).find(file => file.endsWith("client.jar"));
+  return direct ?? null;
 }
 
-function rgbToHex({ r, g, b }) {
-  const toHex = value => Math.max(0, Math.min(255, Math.round(value))).toString(16).padStart(2, "0");
-  return `#${toHex(r)}${toHex(g)}${toHex(b)}`;
+function readZipEntries(zipFile) {
+  if (zipEntryCache.has(zipFile)) return zipEntryCache.get(zipFile);
+
+  const buffer = fs.readFileSync(zipFile);
+  const entries = new Map();
+  let offset = 0;
+
+  while (offset < buffer.length - 30) {
+    const signature = buffer.readUInt32LE(offset);
+    if (signature !== 0x04034b50) break;
+
+    const compressionMethod = buffer.readUInt16LE(offset + 8);
+    const compressedSize = buffer.readUInt32LE(offset + 18);
+    const fileNameLength = buffer.readUInt16LE(offset + 26);
+    const extraFieldLength = buffer.readUInt16LE(offset + 28);
+    const fileName = buffer.slice(offset + 30, offset + 30 + fileNameLength).toString("utf8");
+    const dataStart = offset + 30 + fileNameLength + extraFieldLength;
+    const dataEnd = dataStart + compressedSize;
+
+    if (!fileName.endsWith("/")) {
+      entries.set(fileName, {
+        compressionMethod,
+        data: buffer.slice(dataStart, dataEnd)
+      });
+    }
+
+    offset = dataEnd;
+  }
+
+  zipEntryCache.set(zipFile, entries);
+  return entries;
 }
 
-function shade(hex, amount) {
-  const rgb = hexToRgb(hex);
-  return rgbToHex({
-    r: rgb.r * amount,
-    g: rgb.g * amount,
-    b: rgb.b * amount
-  });
+function readZipFile(zipFile, entryName) {
+  if (!zipFile || !fs.existsSync(zipFile)) return null;
+
+  const entry = readZipEntries(zipFile).get(entryName);
+  if (!entry) return null;
+
+  if (entry.compressionMethod === 0) return entry.data;
+  if (entry.compressionMethod === 8) return zlib.inflateRawSync(entry.data);
+
+  return null;
+}
+
+function readAssetBuffer(assetPath) {
+  const local = path.join(...assetPath.split("/"));
+  if (fs.existsSync(local)) return fs.readFileSync(local);
+
+  const jar = getVanillaClientJar();
+  if (!jar) return null;
+
+  return readZipFile(jar, assetPath);
+}
+
+function readJsonAsset(assetPath) {
+  if (modelCache.has(assetPath)) return modelCache.get(assetPath);
+
+  const buffer = readAssetBuffer(assetPath);
+  if (!buffer) {
+    modelCache.set(assetPath, null);
+    return null;
+  }
+
+  try {
+    const json = JSON.parse(buffer.toString("utf8"));
+    modelCache.set(assetPath, json);
+    return json;
+  } catch {
+    modelCache.set(assetPath, null);
+    return null;
+  }
+}
+
+function readTextureAsset(assetPath) {
+  if (textureCache.has(assetPath)) return textureCache.get(assetPath);
+
+  const buffer = readAssetBuffer(assetPath);
+  if (!buffer) {
+    textureCache.set(assetPath, null);
+    return null;
+  }
+
+  try {
+    const png = PNG.sync.read(buffer);
+    textureCache.set(assetPath, png);
+    return png;
+  } catch {
+    textureCache.set(assetPath, null);
+    return null;
+  }
+}
+
+function resolveTextureReference(textureRef, textures = {}) {
+  let current = textureRef;
+
+  for (let i = 0; i < 16; i++) {
+    if (!current || typeof current !== "string") return null;
+
+    if (current.startsWith("#")) {
+      current = textures[current.slice(1)];
+      continue;
+    }
+
+    return current;
+  }
+
+  return null;
+}
+
+function mergeModelTextures(modelId, seen = new Set()) {
+  const [namespace, modelPath] = splitResourceLocation(modelId);
+  const key = `${namespace}:${modelPath}`;
+
+  if (seen.has(key)) return {};
+  seen.add(key);
+
+  const model = readJsonAsset(`assets/${namespace}/models/${modelPath}.json`);
+  if (!model) return {};
+
+  const textures = {};
+
+  if (model.parent) {
+    Object.assign(textures, mergeModelTextures(model.parent, seen));
+  }
+
+  Object.assign(textures, model.textures ?? {});
+  return textures;
+}
+
+function getTextureIdForBlock(blockName, face) {
+  const [namespace, blockPath] = splitResourceLocation(blockName);
+  const modelId = `${namespace}:block/${blockPath}`;
+  const textures = mergeModelTextures(modelId);
+
+  const preferred =
+    (face === "top" ? textures.top : null) ??
+    (face === "left" || face === "right" ? textures.side : null) ??
+    textures.all ??
+    textures.side ??
+    textures.end ??
+    textures.front ??
+    textures.north ??
+    textures.south ??
+    textures.east ??
+    textures.west ??
+    textures.particle ??
+    Object.values(textures).find(value => typeof value === "string") ??
+    null;
+
+  return resolveTextureReference(preferred, textures);
+}
+
+function getTextureForBlockFace(blockName, face) {
+  const textureId = getTextureIdForBlock(blockName, face);
+  if (!textureId) return null;
+
+  const [namespace, texturePath] = splitResourceLocation(textureId);
+  return readTextureAsset(`assets/${namespace}/textures/${texturePath}.png`);
 }
 
 function hashColor(text) {
+  if (fallbackColorCache.has(text)) return fallbackColorCache.get(text);
+
   let hash = 0;
   for (let i = 0; i < text.length; i++) {
     hash = ((hash << 5) - hash + text.charCodeAt(i)) | 0;
@@ -106,11 +271,13 @@ function hashColor(text) {
   const hue = Math.abs(hash) % 360;
   const saturation = 28 + (Math.abs(hash >> 8) % 28);
   const lightness = 45 + (Math.abs(hash >> 16) % 18);
+  const color = hslToRgb(hue, saturation, lightness);
 
-  return hslToHex(hue, saturation, lightness);
+  fallbackColorCache.set(text, color);
+  return color;
 }
 
-function hslToHex(h, s, l) {
+function hslToRgb(h, s, l) {
   s /= 100;
   l /= 100;
 
@@ -129,137 +296,87 @@ function hslToHex(h, s, l) {
   else if (h < 300) [r, g, b] = [x, 0, c];
   else [r, g, b] = [c, 0, x];
 
-  return rgbToHex({
-    r: (r + m) * 255,
-    g: (g + m) * 255,
-    b: (b + m) * 255
-  });
+  return {
+    r: Math.round((r + m) * 255),
+    g: Math.round((g + m) * 255),
+    b: Math.round((b + m) * 255)
+  };
 }
 
-const COLOR_SCHEMES = [
-  // High-priority specific visual identities.
-  { patterns: ["amethyst", "purple"], color: "#8f68c8" },
-  { patterns: ["budding_amethyst"], color: "#8060b5" },
-  { patterns: ["chest", "barrel"], color: "#b06f28" },
-  { patterns: ["bookshelf", "lectern"], color: "#9a6a32" },
-  { patterns: ["cobweb"], color: "#dddde5" },
-  { patterns: ["chain", "iron", "anvil"], color: "#55595f" },
-  { patterns: ["lantern", "torch", "candle", "glowstone", "shroomlight", "sea_lantern"], color: "#d6a94a" },
-  { patterns: ["red_carpet", "red_wool"], color: "#a82d2d" },
-
-  // Stone families.
-  { patterns: ["deepslate", "blackstone", "basalt"], color: "#3f4148" },
-  { patterns: ["tuff"], color: "#77746d" },
-  { patterns: ["andesite", "diorite", "granite"], color: "#898989" },
-  { patterns: ["stone", "cobblestone", "brick"], color: "#777777" },
-  { patterns: ["mossy_stone"], color: "#697d57" },
-
-  // Natural blocks.
-  { patterns: ["grass_block", "grass"], color: "#6faa43" },
-  { patterns: ["moss", "azalea", "leaf", "leaves", "vine"], color: "#668a3a" },
-  { patterns: ["dirt", "mud", "podzol", "rooted_dirt"], color: "#79533a" },
-  { patterns: ["sand", "sandstone"], color: "#d6c27a" },
-  { patterns: ["gravel"], color: "#777777" },
-  { patterns: ["clay"], color: "#9aa4ad" },
-  { patterns: ["snow", "ice"], color: "#d7eef4" },
-
-  // Wood families.
-  { patterns: ["spruce"], color: "#7a5330" },
-  { patterns: ["oak"], color: "#b98b4b" },
-  { patterns: ["birch"], color: "#d6c27a" },
-  { patterns: ["jungle"], color: "#b07a45" },
-  { patterns: ["acacia"], color: "#b05b32" },
-  { patterns: ["dark_oak"], color: "#5a3822" },
-  { patterns: ["mangrove"], color: "#8d3f32" },
-  { patterns: ["cherry"], color: "#d89aa8" },
-  { patterns: ["bamboo"], color: "#c4b85f" },
-  { patterns: ["crimson"], color: "#7e2e49" },
-  { patterns: ["warped"], color: "#2f8c86" },
-  { patterns: ["planks", "log", "wood", "stem", "hyphae", "slab", "stairs", "fence", "door", "trapdoor", "sign"], color: "#8a5a2f" },
-
-  // Liquids, glass, metals, ores.
-  { patterns: ["water"], color: "#3d75c4" },
-  { patterns: ["lava"], color: "#e65a1e" },
-  { patterns: ["glass"], color: "#9ed0dd" },
-  { patterns: ["copper"], color: "#b87953" },
-  { patterns: ["gold"], color: "#e1b84c" },
-  { patterns: ["diamond"], color: "#5fd0d6" },
-  { patterns: ["emerald"], color: "#34b65a" },
-  { patterns: ["lapis"], color: "#3459c9" },
-  { patterns: ["redstone"], color: "#b11f1f" },
-  { patterns: ["coal"], color: "#2f2f2f" },
-  { patterns: ["quartz"], color: "#d8d0c0" },
-
-  // Generic color names.
-  { patterns: ["white"], color: "#dddddd" },
-  { patterns: ["light_gray"], color: "#aaaaaa" },
-  { patterns: ["gray"], color: "#777777" },
-  { patterns: ["black"], color: "#252525" },
-  { patterns: ["brown"], color: "#7a4c2a" },
-  { patterns: ["red"], color: "#a82d2d" },
-  { patterns: ["orange"], color: "#d87a32" },
-  { patterns: ["yellow"], color: "#d6c24a" },
-  { patterns: ["lime"], color: "#8bc34a" },
-  { patterns: ["green"], color: "#4f8c3a" },
-  { patterns: ["cyan"], color: "#3aa6a6" },
-  { patterns: ["light_blue"], color: "#6eaed6" },
-  { patterns: ["blue"], color: "#3459c9" },
-  { patterns: ["magenta"], color: "#b04bb3" },
-  { patterns: ["pink"], color: "#d88aa8" }
-];
-
-function getBlockColor(blockName) {
+function fallbackColorForBlock(blockName) {
   const short = blockName.replace(/^minecraft:/, "");
 
-  for (const scheme of COLOR_SCHEMES) {
-    if (scheme.patterns.some(pattern => short.includes(pattern))) {
-      return scheme.color;
-    }
-  }
+  if (short.includes("leaves")) return { r: 79, g: 140, b: 58 };
+  if (short.includes("grass") || short.includes("moss")) return { r: 102, g: 138, b: 58 };
+  if (short.includes("dirt") || short.includes("mud")) return { r: 121, g: 83, b: 58 };
+  if (short.includes("spruce")) return { r: 122, g: 83, b: 48 };
+  if (short.includes("oak")) return { r: 185, g: 139, b: 75 };
+  if (short.includes("log") || short.includes("wood") || short.includes("planks")) return { r: 138, g: 90, b: 47 };
+  if (short.includes("deepslate") || short.includes("blackstone") || short.includes("basalt")) return { r: 63, g: 65, b: 72 };
+  if (short.includes("stone") || short.includes("tuff") || short.includes("andesite")) return { r: 119, g: 119, b: 119 };
+  if (short.includes("sand")) return { r: 214, g: 194, b: 122 };
+  if (short.includes("amethyst") || short.includes("purple")) return { r: 143, g: 104, b: 200 };
+  if (short.includes("water")) return { r: 61, g: 117, b: 196 };
+  if (short.includes("lava")) return { r: 230, g: 90, b: 30 };
+  if (short.includes("glass")) return { r: 158, g: 208, b: 221 };
+  if (short.includes("copper")) return { r: 184, g: 121, b: 83 };
+  if (short.includes("bookshelf") || short.includes("lectern")) return { r: 154, g: 106, b: 50 };
+  if (short.includes("chest") || short.includes("barrel")) return { r: 176, g: 111, b: 40 };
 
   return hashColor(blockName);
 }
 
-function drawPixel(png, x, y, color, alpha = 255) {
+function sampleTexture(texture, u, v) {
+  if (!texture) return null;
+
+  const x = Math.max(0, Math.min(texture.width - 1, Math.floor(u * texture.width)));
+  const y = Math.max(0, Math.min(texture.height - 1, Math.floor(v * texture.height)));
+  const idx = (texture.width * y + x) << 2;
+  const alpha = texture.data[idx + 3];
+
+  if (alpha < 16) return null;
+
+  return {
+    r: texture.data[idx],
+    g: texture.data[idx + 1],
+    b: texture.data[idx + 2],
+    a: alpha
+  };
+}
+
+function shadeColor(color, factor) {
+  return {
+    r: Math.max(0, Math.min(255, Math.round(color.r * factor))),
+    g: Math.max(0, Math.min(255, Math.round(color.g * factor))),
+    b: Math.max(0, Math.min(255, Math.round(color.b * factor))),
+    a: color.a ?? 255
+  };
+}
+
+function blendPixel(png, x, y, color) {
   x = Math.round(x);
   y = Math.round(y);
 
   if (x < 0 || y < 0 || x >= png.width || y >= png.height) return;
 
   const idx = (png.width * y + x) << 2;
-  const rgb = hexToRgb(color);
+  const alpha = (color.a ?? 255) / 255;
 
-  if (alpha === 255 || png.data[idx + 3] === 0) {
-    png.data[idx] = rgb.r;
-    png.data[idx + 1] = rgb.g;
-    png.data[idx + 2] = rgb.b;
-    png.data[idx + 3] = alpha;
+  if (alpha >= 1 || png.data[idx + 3] === 0) {
+    png.data[idx] = color.r;
+    png.data[idx + 1] = color.g;
+    png.data[idx + 2] = color.b;
+    png.data[idx + 3] = Math.round(alpha * 255);
     return;
   }
 
   const existingAlpha = png.data[idx + 3] / 255;
-  const newAlpha = alpha / 255;
-  const outAlpha = newAlpha + existingAlpha * (1 - newAlpha);
+  const outAlpha = alpha + existingAlpha * (1 - alpha);
 
-  png.data[idx] = Math.round((rgb.r * newAlpha + png.data[idx] * existingAlpha * (1 - newAlpha)) / outAlpha);
-  png.data[idx + 1] = Math.round((rgb.g * newAlpha + png.data[idx + 1] * existingAlpha * (1 - newAlpha)) / outAlpha);
-  png.data[idx + 2] = Math.round((rgb.b * newAlpha + png.data[idx + 2] * existingAlpha * (1 - newAlpha)) / outAlpha);
+  png.data[idx] = Math.round((color.r * alpha + png.data[idx] * existingAlpha * (1 - alpha)) / outAlpha);
+  png.data[idx + 1] = Math.round((color.g * alpha + png.data[idx + 1] * existingAlpha * (1 - alpha)) / outAlpha);
+  png.data[idx + 2] = Math.round((color.b * alpha + png.data[idx + 2] * existingAlpha * (1 - alpha)) / outAlpha);
   png.data[idx + 3] = Math.round(outAlpha * 255);
-}
-
-function drawPolygon(png, points, color, alpha = 255) {
-  const minY = Math.floor(Math.min(...points.map(p => p.y)));
-  const maxY = Math.ceil(Math.max(...points.map(p => p.y)));
-  const minX = Math.floor(Math.min(...points.map(p => p.x)));
-  const maxX = Math.ceil(Math.max(...points.map(p => p.x)));
-
-  for (let y = minY; y <= maxY; y++) {
-    for (let x = minX; x <= maxX; x++) {
-      if (pointInPolygon(x + 0.5, y + 0.5, points)) {
-        drawPixel(png, x, y, color, alpha);
-      }
-    }
-  }
 }
 
 function pointInPolygon(x, y, polygon) {
@@ -281,6 +398,49 @@ function pointInPolygon(x, y, polygon) {
   return inside;
 }
 
+function bilinearPoint(points, u, v) {
+  const [p00, p10, p11, p01] = points;
+
+  const top = {
+    x: p00.x + (p10.x - p00.x) * u,
+    y: p00.y + (p10.y - p00.y) * u
+  };
+
+  const bottom = {
+    x: p01.x + (p11.x - p01.x) * u,
+    y: p01.y + (p11.y - p01.y) * u
+  };
+
+  return {
+    x: top.x + (bottom.x - top.x) * v,
+    y: top.y + (bottom.y - top.y) * v
+  };
+}
+
+function drawTexturedPolygon(png, face) {
+  const points = face.points;
+  const minY = Math.floor(Math.min(...points.map(p => p.y)));
+  const maxY = Math.ceil(Math.max(...points.map(p => p.y)));
+  const minX = Math.floor(Math.min(...points.map(p => p.x)));
+  const maxX = Math.ceil(Math.max(...points.map(p => p.x)));
+
+  const width = Math.max(1, maxX - minX);
+  const height = Math.max(1, maxY - minY);
+  const texture = getTextureForBlockFace(face.blockName, face.face);
+  const fallback = fallbackColorForBlock(face.blockName);
+
+  for (let y = minY; y <= maxY; y++) {
+    for (let x = minX; x <= maxX; x++) {
+      if (!pointInPolygon(x + 0.5, y + 0.5, points)) continue;
+
+      const u = Math.max(0, Math.min(1, (x - minX) / width));
+      const v = Math.max(0, Math.min(1, (y - minY) / height));
+      const sampled = sampleTexture(texture, u, v) ?? fallback;
+      blendPixel(png, x, y, shadeColor(sampled, face.shade));
+    }
+  }
+}
+
 function isoPoint(x, y, z, offsetX, offsetY, scale = 1) {
   return {
     x: offsetX + (x - z) * (tileWidth / 2) * scale,
@@ -289,9 +449,8 @@ function isoPoint(x, y, z, offsetX, offsetY, scale = 1) {
 }
 
 function makeCubeFaces(block, offsetX, offsetY, scale) {
-  const { x, y, z, color } = block;
+  const { x, y, z, name } = block;
 
-  const p000 = isoPoint(x, y, z, offsetX, offsetY, scale);
   const p100 = isoPoint(x + 1, y, z, offsetX, offsetY, scale);
   const p010 = isoPoint(x, y + 1, z, offsetX, offsetY, scale);
   const p110 = isoPoint(x + 1, y + 1, z, offsetX, offsetY, scale);
@@ -302,18 +461,24 @@ function makeCubeFaces(block, offsetX, offsetY, scale) {
 
   return [
     {
+      face: "top",
+      blockName: name,
       points: [p010, p110, p111, p011],
-      color: shade(color, 1.15),
+      shade: 1.12,
       depth: x + y + z + 3
     },
     {
+      face: "left",
+      blockName: name,
       points: [p001, p011, p111, p101],
-      color: shade(color, 0.82),
+      shade: 0.78,
       depth: x + y + z + 2
     },
     {
+      face: "right",
+      blockName: name,
       points: [p100, p110, p111, p101],
-      color: shade(color, 0.96),
+      shade: 0.95,
       depth: x + y + z + 2.1
     }
   ];
@@ -336,8 +501,7 @@ function collectBlocksFromStructure(structure) {
       x: Number(pos[0]),
       y: Number(pos[1]),
       z: Number(pos[2]),
-      name: blockName,
-      color: getBlockColor(blockName)
+      name: blockName
     });
   }
 
@@ -395,7 +559,7 @@ function fillBackground(png) {
 
   for (let y = 0; y < png.height; y++) {
     for (let x = 0; x < png.width; x++) {
-      drawPixel(png, x, y, "#101820", 255);
+      blendPixel(png, x, y, { r: 16, g: 24, b: 32, a: 255 });
     }
   }
 }
@@ -433,7 +597,78 @@ function renderBlocksToPng(blocks) {
   faces.sort((a, b) => a.depth - b.depth);
 
   for (const face of faces) {
-    drawPolygon(png, face.points, face.color, 255);
+    drawTexturedPolygon(png, face);
+  }
+
+  return PNG.sync.write(png);
+}
+
+
+function getTopVisibleBlocks(blocks) {
+  const topByColumn = new Map();
+
+  for (const block of blocks) {
+    const key = `${block.x},${block.z}`;
+    const existing = topByColumn.get(key);
+
+    if (!existing || block.y > existing.y) {
+      topByColumn.set(key, block);
+    }
+  }
+
+  return [...topByColumn.values()];
+}
+
+function renderCenterViewToPng(blocks) {
+  blocks = normalizeBlocks(blocks);
+
+  if (blocks.length === 0) {
+    const png = new PNG({ width: 32, height: 32 });
+    fillBackground(png);
+    return PNG.sync.write(png);
+  }
+
+  const visibleBlocks = getTopVisibleBlocks(blocks);
+
+  const minX = Math.min(...visibleBlocks.map(block => block.x));
+  const maxX = Math.max(...visibleBlocks.map(block => block.x));
+  const minZ = Math.min(...visibleBlocks.map(block => block.z));
+  const maxZ = Math.max(...visibleBlocks.map(block => block.z));
+
+  const structureWidth = maxX - minX + 1;
+  const structureDepth = maxZ - minZ + 1;
+
+  const baseTileSize = Number(process.env.STRUCTURE_PREVIEW_CENTER_TILE_SIZE ?? 10);
+  const baseWidth = structureWidth * baseTileSize + padding * 2;
+  const baseHeight = structureDepth * baseTileSize + padding * 2;
+  const scale = Math.min(1, maxImageSize / Math.max(baseWidth, baseHeight));
+  const tileSize = Math.max(1, Math.floor(baseTileSize * scale));
+
+  const width = Math.max(1, structureWidth * tileSize + padding * 2);
+  const height = Math.max(1, structureDepth * tileSize + padding * 2);
+
+  const png = new PNG({ width, height });
+  fillBackground(png);
+
+  const centerX = (minX + maxX) / 2;
+  const centerZ = (minZ + maxZ) / 2;
+
+  visibleBlocks.sort((a, b) => a.y - b.y);
+
+  for (const block of visibleBlocks) {
+    const x = Math.round(width / 2 + (block.x - centerX - 0.5) * tileSize);
+    const z = Math.round(height / 2 + (block.z - centerZ - 0.5) * tileSize);
+    const texture = getTextureForBlockFace(block.name, "top");
+    const fallback = fallbackColorForBlock(block.name);
+
+    for (let py = 0; py < tileSize; py++) {
+      for (let px = 0; px < tileSize; px++) {
+        const u = tileSize <= 1 ? 0 : px / (tileSize - 1);
+        const v = tileSize <= 1 ? 0 : py / (tileSize - 1);
+        const sampled = sampleTexture(texture, u, v) ?? fallback;
+        blendPixel(png, x + px, z + py, shadeColor(sampled, 1.08));
+      }
+    }
   }
 
   return PNG.sync.write(png);
@@ -499,6 +734,21 @@ async function main() {
     fs.writeFileSync(outputPath, renderBlocksToPng(blocks));
 
     console.log(`Generated ${outputPath} from ${group.files.length} structure part(s)`);
+
+    if (generateCenterView) {
+      const centerOutputPath = path.join(
+        outputRoot,
+        group.namespace,
+        `${group.topFolder}${centerViewSuffix}.png`
+      );
+
+      validOutputFiles.add(path.normalize(centerOutputPath));
+
+      fs.mkdirSync(path.dirname(centerOutputPath), { recursive: true });
+      fs.writeFileSync(centerOutputPath, renderCenterViewToPng(blocks));
+
+      console.log(`Generated ${centerOutputPath} from the structure center`);
+    }
   }
 
   removeStaleOutputFiles(validOutputFiles);
