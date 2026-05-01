@@ -25,58 +25,6 @@ const IGNORED_BLOCKS = new Set([
   "minecraft:jigsaw"
 ]);
 
-const COLOR_OVERRIDES = {
-  "minecraft:amethyst_block": "#8f68c8",
-  "minecraft:amethyst_cluster": "#c196ff",
-  "minecraft:large_amethyst_bud": "#b282f2",
-  "minecraft:medium_amethyst_bud": "#a778e6",
-  "minecraft:small_amethyst_bud": "#9f71dc",
-  "minecraft:budding_amethyst": "#8060b5",
-  "minecraft:andesite": "#898989",
-  "minecraft:polished_andesite": "#999999",
-  "minecraft:bookshelf": "#a06d33",
-  "minecraft:chiseled_bookshelf": "#9a6a32",
-  "minecraft:brick": "#a5523d",
-  "minecraft:bricks": "#a5523d",
-  "minecraft:campfire": "#6a4632",
-  "minecraft:chain": "#55595f",
-  "minecraft:chest": "#b06f28",
-  "minecraft:cobweb": "#dddde5",
-  "minecraft:deepslate": "#4a4a50",
-  "minecraft:deepslate_tiles": "#3f4148",
-  "minecraft:cracked_deepslate_tiles": "#373940",
-  "minecraft:deepslate_tile_slab": "#3f4148",
-  "minecraft:deepslate_tile_stairs": "#3f4148",
-  "minecraft:deepslate_tile_wall": "#3f4148",
-  "minecraft:dirt": "#79533a",
-  "minecraft:grass_block": "#6faa43",
-  "minecraft:gravel": "#777777",
-  "minecraft:glow_lichen": "#8ca980",
-  "minecraft:lantern": "#d6a94a",
-  "minecraft:lectern": "#8c5a28",
-  "minecraft:moss_block": "#5f7f38",
-  "minecraft:moss_carpet": "#668a3a",
-  "minecraft:mossy_stone_bricks": "#697d57",
-  "minecraft:oak_slab": "#b98b4b",
-  "minecraft:oak_stairs": "#b98b4b",
-  "minecraft:polished_diorite": "#d0d0d0",
-  "minecraft:red_carpet": "#a82d2d",
-  "minecraft:shroomlight": "#e4ad5e",
-  "minecraft:spruce_planks": "#7a5330",
-  "minecraft:spruce_slab": "#7a5330",
-  "minecraft:spruce_stairs": "#7a5330",
-  "minecraft:spruce_trapdoor": "#76502f",
-  "minecraft:spruce_fence": "#76502f",
-  "minecraft:stripped_spruce_log": "#9a6d3d",
-  "minecraft:stone": "#858585",
-  "minecraft:stone_bricks": "#777777",
-  "minecraft:cracked_stone_bricks": "#656565",
-  "minecraft:stone_brick_slab": "#777777",
-  "minecraft:stone_brick_stairs": "#777777",
-  "minecraft:stone_brick_wall": "#777777",
-  "minecraft:water": "#3d75c4",
-};
-
 function walk(dir) {
   let files = [];
   if (!fs.existsSync(dir)) return files;
@@ -124,6 +72,191 @@ async function readNbtFile(file) {
   const buffer = fs.readFileSync(file);
   const parsed = await nbt.parse(buffer);
   return nbt.simplify(parsed.parsed);
+}
+
+const textureColorCache = new Map();
+const blockColorCache = new Map();
+const modelCache = new Map();
+
+function readJsonIfExists(file) {
+  if (modelCache.has(file)) return modelCache.get(file);
+
+  if (!fs.existsSync(file)) {
+    modelCache.set(file, null);
+    return null;
+  }
+
+  try {
+    const json = JSON.parse(fs.readFileSync(file, "utf8"));
+    modelCache.set(file, json);
+    return json;
+  } catch {
+    modelCache.set(file, null);
+    return null;
+  }
+}
+
+function splitResourceLocation(id, defaultNamespace = "minecraft") {
+  if (String(id).includes(":")) {
+    const [namespace, ...rest] = String(id).split(":");
+    return [namespace, rest.join(":")];
+  }
+
+  return [defaultNamespace, String(id)];
+}
+
+function getModelFileForBlock(blockName) {
+  const [namespace, id] = splitResourceLocation(blockName);
+  return path.join("assets", namespace, "models", "block", `${id}.json`);
+}
+
+function getTextureFile(textureId, defaultNamespace = "minecraft") {
+  const [namespace, texturePath] = splitResourceLocation(textureId, defaultNamespace);
+  return path.join("assets", namespace, "textures", `${texturePath}.png`);
+}
+
+function resolveTextureReference(textureRef, modelTextures = {}) {
+  let current = textureRef;
+
+  for (let i = 0; i < 16; i++) {
+    if (!current || typeof current !== "string") return null;
+
+    if (current.startsWith("#")) {
+      current = modelTextures[current.slice(1)];
+      continue;
+    }
+
+    return current;
+  }
+
+  return null;
+}
+
+function mergeModelTextures(model, namespace, seenModels = new Set()) {
+  const textures = {};
+
+  if (!model || typeof model !== "object") return textures;
+
+  if (model.parent && typeof model.parent === "string") {
+    const parentId = model.parent;
+    const [parentNamespace, parentPath] = splitResourceLocation(parentId, namespace);
+    const parentKey = `${parentNamespace}:${parentPath}`;
+
+    if (!seenModels.has(parentKey)) {
+      seenModels.add(parentKey);
+
+      const parentFile = path.join(
+        "assets",
+        parentNamespace,
+        "models",
+        `${parentPath}.json`
+      );
+
+      Object.assign(
+        textures,
+        mergeModelTextures(readJsonIfExists(parentFile), parentNamespace, seenModels)
+      );
+    }
+  }
+
+  Object.assign(textures, model.textures ?? {});
+  return textures;
+}
+
+function averageTextureColor(textureFile) {
+  if (textureColorCache.has(textureFile)) return textureColorCache.get(textureFile);
+
+  if (!fs.existsSync(textureFile)) {
+    textureColorCache.set(textureFile, null);
+    return null;
+  }
+
+  try {
+    const png = PNG.sync.read(fs.readFileSync(textureFile));
+
+    let r = 0;
+    let g = 0;
+    let b = 0;
+    let totalWeight = 0;
+
+    for (let y = 0; y < png.height; y++) {
+      for (let x = 0; x < png.width; x++) {
+        const idx = (png.width * y + x) << 2;
+        const alpha = png.data[idx + 3];
+
+        if (alpha < 32) continue;
+
+        const weight = alpha / 255;
+        r += png.data[idx] * weight;
+        g += png.data[idx + 1] * weight;
+        b += png.data[idx + 2] * weight;
+        totalWeight += weight;
+      }
+    }
+
+    if (totalWeight === 0) {
+      textureColorCache.set(textureFile, null);
+      return null;
+    }
+
+    const color = rgbToHex({
+      r: r / totalWeight,
+      g: g / totalWeight,
+      b: b / totalWeight
+    });
+
+    textureColorCache.set(textureFile, color);
+    return color;
+  } catch {
+    textureColorCache.set(textureFile, null);
+    return null;
+  }
+}
+
+function chooseTextureReference(textures) {
+  if (!textures || typeof textures !== "object") return null;
+
+  return (
+    textures.all ??
+    textures.side ??
+    textures.top ??
+    textures.end ??
+    textures.front ??
+    textures.north ??
+    textures.south ??
+    textures.east ??
+    textures.west ??
+    textures.particle ??
+    Object.values(textures).find(value => typeof value === "string") ??
+    null
+  );
+}
+
+function getDynamicBlockColor(blockName) {
+  if (blockColorCache.has(blockName)) return blockColorCache.get(blockName);
+
+  const [namespace] = splitResourceLocation(blockName);
+  const model = readJsonIfExists(getModelFileForBlock(blockName));
+
+  if (!model) {
+    blockColorCache.set(blockName, null);
+    return null;
+  }
+
+  const textures = mergeModelTextures(model, namespace);
+  const textureRef = chooseTextureReference(textures);
+  const resolvedTexture = resolveTextureReference(textureRef, textures);
+
+  if (!resolvedTexture) {
+    blockColorCache.set(blockName, null);
+    return null;
+  }
+
+  const textureFile = getTextureFile(resolvedTexture, namespace);
+  const color = averageTextureColor(textureFile);
+
+  blockColorCache.set(blockName, color);
+  return color;
 }
 
 function hexToRgb(hex) {
@@ -189,19 +322,25 @@ function hslToHex(h, s, l) {
 }
 
 function getBlockColor(blockName) {
-  if (COLOR_OVERRIDES[blockName]) return COLOR_OVERRIDES[blockName];
+  const dynamicColor = getDynamicBlockColor(blockName);
+  if (dynamicColor) return dynamicColor;
 
   const short = blockName.replace(/^minecraft:/, "");
 
   if (short.includes("leaves")) return "#4f8c3a";
-  if (short.includes("log") || short.includes("wood") || short.includes("planks")) return "#8a5a2f";
-  if (short.includes("stone") || short.includes("slate") || short.includes("tuff")) return "#777777";
+  if (short.includes("log") || short.includes("wood") || short.includes("stem") || short.includes("hyphae")) return "#8a5a2f";
+  if (short.includes("planks") || short.includes("slab") || short.includes("stairs") || short.includes("fence") || short.includes("door") || short.includes("trapdoor")) return "#8a5a2f";
+  if (short.includes("stone") || short.includes("slate") || short.includes("tuff") || short.includes("andesite") || short.includes("diorite") || short.includes("granite")) return "#777777";
   if (short.includes("sand")) return "#d6c27a";
   if (short.includes("copper")) return "#b87953";
   if (short.includes("glass")) return "#9ed0dd";
-  if (short.includes("moss")) return "#668a3a";
+  if (short.includes("moss") || short.includes("grass")) return "#668a3a";
   if (short.includes("water")) return "#3d75c4";
   if (short.includes("lava")) return "#e65a1e";
+  if (short.includes("amethyst")) return "#8f68c8";
+  if (short.includes("carpet") || short.includes("wool")) return "#a85a5a";
+  if (short.includes("bookshelf") || short.includes("lectern")) return "#9a6a32";
+  if (short.includes("chest") || short.includes("barrel")) return "#b06f28";
 
   return hashColor(blockName);
 }
