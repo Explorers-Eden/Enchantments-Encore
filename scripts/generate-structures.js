@@ -668,7 +668,6 @@ const intro =
 return `# Generated Loot.
 
 ${intro}
-<br>
 
 ${tables.join("\n\n")}
 
