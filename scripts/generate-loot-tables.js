@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const https = require("https");
 
 const inputRoot = "data";
 const assetsRoot = "assets";
@@ -36,6 +37,114 @@ function loadLangFiles() {
 }
 
 const lang = loadLangFiles();
+
+function compareVersionParts(a, b) {
+  const aParts = String(a).split(".").map(part => Number(part));
+  const bParts = String(b).split(".").map(part => Number(part));
+  const length = Math.max(aParts.length, bParts.length);
+
+  for (let i = 0; i < length; i++) {
+    const aValue = Number.isFinite(aParts[i]) ? aParts[i] : 0;
+    const bValue = Number.isFinite(bParts[i]) ? bParts[i] : 0;
+
+    if (aValue !== bValue) return aValue - bValue;
+  }
+
+  return String(a).localeCompare(String(b));
+}
+
+function getLatestMinecraftVersionFromReleaseInfo() {
+  const file = "release_infos.yml";
+  if (!fs.existsSync(file)) return null;
+
+  const lines = fs.readFileSync(file, "utf8").split(/\r?\n/);
+  const versions = [];
+  let inVersions = false;
+  let versionsIndent = null;
+
+  for (const line of lines) {
+    const match = line.match(/^(\s*)Versions\s*:/);
+
+    if (match) {
+      inVersions = true;
+      versionsIndent = match[1].length;
+      continue;
+    }
+
+    if (!inVersions) continue;
+
+    const currentIndent = line.match(/^(\s*)/)?.[1].length ?? 0;
+
+    if (line.trim() && currentIndent <= versionsIndent && !line.trim().startsWith("-")) {
+      break;
+    }
+
+    const versionMatch = line.match(/^\s*-\s*["']?([^"'\s#]+)["']?/);
+    if (versionMatch) versions.push(versionMatch[1]);
+  }
+
+  if (versions.length === 0) return null;
+
+  return versions.sort(compareVersionParts).at(-1);
+}
+
+const vanillaLootTableVersion = getLatestMinecraftVersionFromReleaseInfo();
+
+function fetchJson(url) {
+  return new Promise(resolve => {
+    https
+      .get(
+        url,
+        {
+          headers: {
+            "User-Agent": "Explorers-Eden-Markdown-Generator"
+          }
+        },
+        response => {
+          if (response.statusCode !== 200) {
+            response.resume();
+            resolve(null);
+            return;
+          }
+
+          let body = "";
+          response.setEncoding("utf8");
+          response.on("data", chunk => {
+            body += chunk;
+          });
+          response.on("end", () => {
+            try {
+              resolve(JSON.parse(body));
+            } catch {
+              resolve(null);
+            }
+          });
+        }
+      )
+      .on("error", () => resolve(null));
+  });
+}
+
+async function fetchVanillaLootTableJson(id) {
+  const cleaned = cleanTag(id);
+  const [namespace, lootPath] = cleaned.includes(":")
+    ? cleaned.split(":")
+    : ["minecraft", cleaned];
+
+  if (namespace !== "minecraft" || !vanillaLootTableVersion) return null;
+
+  const url = `https://raw.githubusercontent.com/misode/mcmeta/${vanillaLootTableVersion}/data/minecraft/loot_table/${lootPath}.json`;
+  const json = await fetchJson(url);
+
+  if (json) {
+    console.log(`Fetched vanilla loot table ${cleaned} from mcmeta ${vanillaLootTableVersion}`);
+  } else {
+    console.warn(`Could not find vanilla loot table ${cleaned} in repo or mcmeta ${vanillaLootTableVersion}`);
+  }
+
+  return json;
+}
+
 
 function titleCase(id) {
   return String(id)
@@ -129,6 +238,20 @@ function getLootTableFile(id) {
   return path.join(inputRoot, namespace, "loot_table", `${lootPath}.json`);
 }
 
+async function loadLootTableJson(id) {
+  const file = getLootTableFile(id);
+
+  if (fs.existsSync(file)) {
+    try {
+      return JSON.parse(fs.readFileSync(file, "utf8"));
+    } catch {
+      console.warn(`Could not read loot table: ${file}`);
+    }
+  }
+
+  return await fetchVanillaLootTableJson(id);
+}
+
 function flattenRawEntries(entries, inheritedFunctions = []) {
   const result = [];
 
@@ -153,16 +276,15 @@ function flattenRawEntries(entries, inheritedFunctions = []) {
   return result;
 }
 
-function getSingleEntryFromLootTable(id, seen = new Set()) {
+async function getSingleEntryFromLootTable(id, seen = new Set()) {
   const cleaned = cleanTag(id);
   if (seen.has(cleaned)) return null;
   seen.add(cleaned);
 
-  const file = getLootTableFile(cleaned);
-  if (!fs.existsSync(file)) return null;
+  const json = await loadLootTableJson(cleaned);
+  if (!json) return null;
 
   try {
-    const json = JSON.parse(fs.readFileSync(file, "utf8"));
     const entries = [];
 
     for (const pool of json.pools ?? []) {
@@ -178,14 +300,14 @@ function getSingleEntryFromLootTable(id, seen = new Set()) {
   return null;
 }
 
-function getItemName(entry, seenLootTables = new Set()) {
+async function getItemName(entry, seenLootTables = new Set()) {
   if (entry.type === "minecraft:empty") return "Empty";
 
   if (entry.type === "minecraft:loot_table") {
     const lootTable = cleanTag(entry.value ?? entry.name ?? "unknown");
-    const singleEntry = getSingleEntryFromLootTable(lootTable, seenLootTables);
+    const singleEntry = await getSingleEntryFromLootTable(lootTable, seenLootTables);
 
-    if (singleEntry) return getItemName(singleEntry, seenLootTables);
+    if (singleEntry) return await getItemName(singleEntry, seenLootTables);
 
     return `Loot Table (${lootTable})`;
   }
@@ -202,7 +324,7 @@ function getItemName(entry, seenLootTables = new Set()) {
   return titleCase(entry.type ?? "unknown");
 }
 
-function flattenEntries(entries, inheritedWeight = 1, inheritedFunctions = []) {
+async function flattenEntries(entries, inheritedWeight = 1, inheritedFunctions = []) {
   const result = [];
 
   for (const entry of entries ?? []) {
@@ -221,12 +343,12 @@ function flattenEntries(entries, inheritedWeight = 1, inheritedFunctions = []) {
       entry.type === "minecraft:group" ||
       entry.type === "minecraft:sequence"
     ) {
-      result.push(...flattenEntries(entry.children ?? [], combinedWeight, entryFunctions));
+      result.push(...await flattenEntries(entry.children ?? [], combinedWeight, entryFunctions));
       continue;
     }
 
     result.push({
-      item: getItemName(inheritedEntry),
+      item: await getItemName(inheritedEntry),
       stackSize: getStackSize(inheritedEntry),
       weight: combinedWeight
     });
@@ -248,11 +370,11 @@ function mergeRowsByItem(rows) {
   return [...merged.values()];
 }
 
-function renderMergedPools(pools) {
+async function renderMergedPools(pools) {
   const rows = [];
 
-  pools.forEach((pool, poolIndex) => {
-    const flattenedEntries = flattenEntries(pool.entries ?? [], 1, pool.functions ?? []);
+  for (const [poolIndex, pool] of (pools ?? []).entries()) {
+    const flattenedEntries = await flattenEntries(pool.entries ?? [], 1, pool.functions ?? []);
     const nonEmptyFlattenedEntries = flattenedEntries.filter(entry => entry.item !== "Empty");
     const totalWeight = flattenedEntries.reduce((sum, entry) => sum + entry.weight, 0);
 
@@ -275,7 +397,7 @@ function renderMergedPools(pools) {
         chance: `${(chanceValue * 100).toFixed(1)}%`
       });
     }
-  });
+  }
 
   rows.sort(
     (a, b) =>
@@ -291,12 +413,12 @@ ${rows
   .join("\n")}`;
 }
 
-function generateMarkdown(json, sourcePath) {
+async function generateMarkdown(json, sourcePath) {
   const title = titleCase(path.basename(sourcePath, ".json"));
 
   return `# ${title}
 
-${renderMergedPools(json.pools ?? [])}
+${await renderMergedPools(json.pools ?? [])}
 `;
 }
 
@@ -331,32 +453,39 @@ function removeStaleMarkdownFiles(validOutputFiles, namespaces) {
   }
 }
 
-const lootTableFiles = walk(inputRoot)
-  .filter(file => file.endsWith(".json"))
-  .map(file => ({ file, info: getLootTableInfo(file) }))
-  .filter(entry => entry.info !== null);
+async function main() {
+  const lootTableFiles = walk(inputRoot)
+    .filter(file => file.endsWith(".json"))
+    .map(file => ({ file, info: getLootTableInfo(file) }))
+    .filter(entry => entry.info !== null);
 
-const validOutputFiles = new Set();
-const namespaces = new Set();
+  const validOutputFiles = new Set();
+  const namespaces = new Set();
 
-for (const { file, info } of lootTableFiles) {
-  namespaces.add(info.namespace);
+  for (const { file, info } of lootTableFiles) {
+    namespaces.add(info.namespace);
 
-  const json = JSON.parse(fs.readFileSync(file, "utf8"));
+    const json = JSON.parse(fs.readFileSync(file, "utf8"));
 
-  const outputPath = path.join(
-    outputRoot,
-    info.namespace,
-    "loot_table",
-    info.relativePath.replace(/\.json$/, ".md")
-  );
+    const outputPath = path.join(
+      outputRoot,
+      info.namespace,
+      "loot_table",
+      info.relativePath.replace(/\.json$/, ".md")
+    );
 
-  validOutputFiles.add(path.normalize(outputPath));
+    validOutputFiles.add(path.normalize(outputPath));
 
-  fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-  fs.writeFileSync(outputPath, generateMarkdown(json, file));
+    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+    fs.writeFileSync(outputPath, await generateMarkdown(json, file));
 
-  console.log(`Generated ${outputPath}`);
+    console.log(`Generated ${outputPath}`);
+  }
+
+  removeStaleMarkdownFiles(validOutputFiles, namespaces);
 }
 
-removeStaleMarkdownFiles(validOutputFiles, namespaces);
+main().catch(error => {
+  console.error(error);
+  process.exit(1);
+});
