@@ -1,7 +1,10 @@
 # Generated Loot.
 
-The structure generates 1 loot container which uses the `enchantencore:all_enchants` loot table.
+There are 1 loot tables used in this structure:
 <br>
+
+<details>
+<summary><strong>enchantencore:all_enchants</strong> (1 use)</summary>
 
 | Item | Stack Size | Pool | Weight | Chance |
 |:-----|:----------:|:----:|:------:|:------:|
@@ -15,11 +18,15 @@ The structure generates 1 loot container which uses the `enchantencore:all_encha
 | Deepslate Lapis Ore | 1–2 | 2 | 5 | 6.0% |
 | Lapis Ore | 1–2 | 2 | 5 | 6.0% |
 | Bookshelf | 1–2 | 2 | 3 | 3.6% |
+
+</details>
+
 # Contents
 
 The structure is composed of the following blocks: Stone Bricks, Cracked Stone Bricks, Spruce Planks, Deepslate Tiles, Cracked Deepslate Tiles, Stone Brick Stairs, Deepslate Tile Slab, Grass Block, Amethyst Block, Dirt, Spruce Stairs, Stone, Stripped Spruce Log, Bookshelf, Red Carpet, Stone Brick Wall, Glow Lichen, Stone Brick Slab, Chiseled Bookshelf, Mossy Stone Bricks, Spruce Trapdoor, Gravel, Polished Andesite, Black Stained Glass Pane, Amethyst Cluster, Large Amethyst Bud, Andesite, Oak Slab, Spruce Fence, Cobweb, Budding Amethyst, Deepslate Tile Stairs, Moss Carpet, Twisting Vines Plant, Medium Amethyst Bud, Spruce Slab, Chiseled Stone Bricks, Ladder, Small Amethyst Bud, Light Gray Candle, Shroomlight, Brown Candle, Chain, Deepslate Tile Wall, Twisting Vines, White Candle, Lectern, Oak Stairs, Mangrove Wall Hanging Sign, Mangrove Wall Sign, Mossy Stone Brick Slab, Spruce Door, Dead Brain Coral, Dead Tube Coral Fan, Lantern, Brewing Stand, Campfire, Mossy Stone Brick Stairs, Potted Wither Rose, Purple Candle, Water Cauldron, Waxed Oxidized Copper Bulb, Waxed Weathered Copper Bulb, Chest, Chiseled Tuff, Decorated Pot, Nether Wart, Wither Skeleton Skull.
 
 Additionally, the following entities may spawn during its generation: Painting, Bat, End Crystal, Elder Guardian.
+
 
 
 ## Per-Structure File Contents
