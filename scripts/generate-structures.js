@@ -748,7 +748,287 @@ function removeStaleOutputFiles(validOutputFiles, namespaces) {
   }
 }
 
+
+function getWorldgenStructureInfo(file) {
+  const parts = file.split(path.sep);
+  const dataIndex = parts.indexOf("data");
+  const worldgenIndex = parts.indexOf("worldgen");
+  const structureIndex = parts.indexOf("structure");
+
+  if (dataIndex === -1 || worldgenIndex === -1 || structureIndex === -1) return null;
+  if (worldgenIndex !== dataIndex + 2 || structureIndex !== worldgenIndex + 1) return null;
+
+  const namespace = parts[dataIndex + 1];
+  const relativePath = parts.slice(structureIndex + 1).join("/").replace(/\.json$/, "");
+
+  return {
+    namespace,
+    id: `${namespace}:${relativePath}`,
+    relativePath
+  };
+}
+
+function readJsonIfExists(file) {
+  if (!fs.existsSync(file)) return null;
+
+  try {
+    return JSON.parse(fs.readFileSync(file, "utf8"));
+  } catch {
+    return null;
+  }
+}
+
+function splitResourceLocation(id, defaultNamespace = "minecraft") {
+  if (String(id).includes(":")) {
+    const [namespace, ...rest] = String(id).split(":");
+    return [namespace, rest.join(":")];
+  }
+
+  return [defaultNamespace, String(id)];
+}
+
+function addResourceLocation(value, result) {
+  if (typeof value !== "string") return;
+  if (value === "minecraft:empty") return;
+  if (!value.includes(":")) return;
+  if (value.startsWith("#")) return;
+  result.add(value);
+}
+
+function collectTemplatePoolsFromObject(value, result = new Set()) {
+  if (value === null || value === undefined) return result;
+
+  if (typeof value === "string") {
+    addResourceLocation(value, result);
+    return result;
+  }
+
+  if (Array.isArray(value)) {
+    for (const item of value) collectTemplatePoolsFromObject(item, result);
+    return result;
+  }
+
+  if (typeof value === "object") {
+    for (const [key, nested] of Object.entries(value)) {
+      if (
+        key === "start_pool" ||
+        key === "fallback" ||
+        key === "pool" ||
+        key === "template_pool" ||
+        key === "target_pool"
+      ) {
+        collectTemplatePoolsFromObject(nested, result);
+        continue;
+      }
+
+      collectTemplatePoolsFromObject(nested, result);
+    }
+  }
+
+  return result;
+}
+
+function getTemplatePoolFile(poolId) {
+  const [namespace, poolPath] = splitResourceLocation(poolId);
+  return path.join(inputRoot, namespace, "worldgen", "template_pool", `${poolPath}.json`);
+}
+
+function getStructureNbtFileFromLocation(location) {
+  const [namespace, structurePath] = splitResourceLocation(location);
+  return path.join(inputRoot, namespace, "structure", `${structurePath}.nbt`);
+}
+
+function collectElementLocations(element, result = new Set()) {
+  if (!element || typeof element !== "object") return result;
+
+  if (typeof element.location === "string") {
+    result.add(element.location);
+  }
+
+  if (Array.isArray(element.elements)) {
+    for (const nested of element.elements) {
+      collectElementLocations(nested.element ?? nested, result);
+    }
+  }
+
+  if (element.element) {
+    collectElementLocations(element.element, result);
+  }
+
+  return result;
+}
+
+function collectJigsawPoolsFromNbt(value, result = new Set()) {
+  if (value === null || value === undefined) return result;
+
+  if (Array.isArray(value)) {
+    for (const item of value) collectJigsawPoolsFromNbt(item, result);
+    return result;
+  }
+
+  if (typeof value !== "object") return result;
+
+  const blockId = value.id ?? value.Id ?? value.Name ?? value.name;
+  const likelyJigsaw =
+    blockId === "minecraft:jigsaw" ||
+    value.pool !== undefined ||
+    value.target_pool !== undefined ||
+    value.final_state !== undefined;
+
+  if (likelyJigsaw) {
+    addResourceLocation(value.pool, result);
+    addResourceLocation(value.target_pool, result);
+  }
+
+  for (const nested of Object.values(value)) {
+    collectJigsawPoolsFromNbt(nested, result);
+  }
+
+  return result;
+}
+
+async function collectJigsawPoolsFromStructureFile(structureFile) {
+  if (!fs.existsSync(structureFile)) return new Set();
+
+  try {
+    const structure = await readNbtFile(structureFile);
+    return collectJigsawPoolsFromNbt(structure);
+  } catch (error) {
+    console.warn(`Could not inspect jigsaw pools in ${structureFile}: ${error.message}`);
+    return new Set();
+  }
+}
+
+async function collectStructureFilesFromTemplatePool(poolId, seenPools = new Set(), result = new Set()) {
+  if (seenPools.has(poolId)) return result;
+  seenPools.add(poolId);
+
+  const poolFile = getTemplatePoolFile(poolId);
+  const poolJson = readJsonIfExists(poolFile);
+  if (!poolJson) return result;
+
+  for (const element of poolJson.elements ?? []) {
+    const elementData = element.element ?? element;
+    const locations = collectElementLocations(elementData);
+
+    for (const location of locations) {
+      const structureFile = getStructureNbtFileFromLocation(location);
+
+      if (!fs.existsSync(structureFile)) continue;
+
+      const alreadyHadFile = result.has(structureFile);
+      result.add(structureFile);
+
+      if (!alreadyHadFile) {
+        const jigsawPools = await collectJigsawPoolsFromStructureFile(structureFile);
+
+        for (const nestedPool of jigsawPools) {
+          await collectStructureFilesFromTemplatePool(nestedPool, seenPools, result);
+        }
+      }
+    }
+  }
+
+  if (poolJson.fallback && poolJson.fallback !== "minecraft:empty") {
+    await collectStructureFilesFromTemplatePool(poolJson.fallback, seenPools, result);
+  }
+
+  return result;
+}
+
+async function collectStructureFilesForWorldgenStructure(worldgenFile) {
+  const info = getWorldgenStructureInfo(worldgenFile);
+  const json = readJsonIfExists(worldgenFile);
+  if (!info || !json) return null;
+
+  const pools = collectTemplatePoolsFromObject(json);
+  const files = new Set();
+
+  for (const poolId of pools) {
+    await collectStructureFilesFromTemplatePool(poolId, new Set(), files);
+  }
+
+  return {
+    namespace: info.namespace,
+    relativePath: info.relativePath,
+    id: info.id,
+    files: [...files].sort()
+  };
+}
+
+
 async function main() {
+  const worldgenStructureFiles = walk(inputRoot)
+    .filter(file => file.endsWith(".json"))
+    .filter(file => getWorldgenStructureInfo(file) !== null)
+    .sort();
+
+  const validOutputFiles = new Set();
+  const namespaces = new Set();
+
+  if (worldgenStructureFiles.length > 0) {
+    console.log(`Generating structure markdown from ${worldgenStructureFiles.length} worldgen structure file(s).`);
+
+    for (const worldgenFile of worldgenStructureFiles) {
+      const worldgenInfo = getWorldgenStructureInfo(worldgenFile);
+      const group = await collectStructureFilesForWorldgenStructure(worldgenFile);
+
+      if (!group || group.files.length === 0) {
+        console.warn(`No template NBT files found for worldgen structure ${worldgenFile}`);
+        continue;
+      }
+
+      namespaces.add(worldgenInfo.namespace);
+
+      const structures = [];
+      const totals = {
+        blockCounts: new Map(),
+        entityCounts: new Map(),
+        lootTables: new Map()
+      };
+
+      for (const file of group.files) {
+        const structure = await readNbtFile(file);
+        const data = collectStructureData(structure);
+        const structureInfo = getStructureInfo(file);
+
+        structures.push({
+          structureFile: structureInfo?.structureFile ?? file,
+          data
+        });
+
+        mergeTotals(totals, data);
+      }
+
+      structures.sort((a, b) => a.structureFile.localeCompare(b.structureFile));
+
+      // This is the requested output shape:
+      // data/<namespace>/worldgen/structure/foo/bar.json
+      // -> wiki/markdown/<namespace>/structure/foo/bar.md
+      const outputPath = path.join(
+        outputRoot,
+        worldgenInfo.namespace,
+        "structure",
+        `${worldgenInfo.relativePath}${outputExtension}`
+      );
+
+      validOutputFiles.add(path.normalize(outputPath));
+
+      fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+      fs.writeFileSync(
+        outputPath,
+        await generateMarkdown(worldgenInfo.relativePath, structures, totals)
+      );
+
+      console.log(`Generated ${outputPath} from ${worldgenFile}`);
+    }
+
+    removeStaleOutputFiles(validOutputFiles, namespaces);
+    return;
+  }
+
+  console.log("No worldgen structure JSON files found; falling back to raw NBT structure grouping.");
+
   const structureFiles = walk(inputRoot)
     .filter(file => file.endsWith(".nbt"))
     .map(file => ({ file, info: getStructureInfo(file) }))
@@ -772,9 +1052,6 @@ async function main() {
       structureFile: info.structureFile
     });
   }
-
-  const validOutputFiles = new Set();
-  const namespaces = new Set();
 
   for (const group of groups.values()) {
     namespaces.add(group.namespace);
