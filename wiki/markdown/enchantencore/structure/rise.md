@@ -1,6 +1,6 @@
 # Generated Loot.
 
-There are 1 loot tables used in this structure:
+There is one loot table used in this structure:
 <br>
 
 <details>
