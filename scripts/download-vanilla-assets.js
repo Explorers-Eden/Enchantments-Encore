@@ -2,8 +2,10 @@
 const fs = require("fs");
 const path = require("path");
 const https = require("https");
+const { execFileSync } = require("child_process");
 
 const assetRoot = path.join(".cache", "vanilla-assets");
+const extractedRoot = path.join(assetRoot, "assets");
 
 function fetchJson(url) {
   return new Promise((resolve, reject) => {
@@ -144,7 +146,6 @@ function getPackFormatFallbackVersion() {
     const pack = JSON.parse(fs.readFileSync("pack.mcmeta", "utf8"));
     const format = Number(pack?.pack?.pack_format);
 
-    // Approximate fallback map; release_infos.yml or workflow input is preferred.
     if (format >= 80) return "1.21.8";
     if (format >= 71) return "1.21.6";
     if (format >= 61) return "1.21.4";
@@ -159,7 +160,7 @@ function getPackFormatFallbackVersion() {
   return null;
 }
 
-async function getVersionId() {
+async function resolveMinecraftVersion() {
   const requested =
     process.env.MC_VERSION?.trim() ||
     getLatestVersionFromReleaseInfo() ||
@@ -172,12 +173,49 @@ async function getVersionId() {
     return requested;
   }
 
-  console.warn(`Minecraft version "${requested}" was not found in Mojang manifest. Falling back to latest release ${manifest.latest.release}.`);
+  console.warn(`Minecraft version "${requested}" from release_infos.yml was not found in Mojang manifest. Falling back to latest release ${manifest.latest.release}.`);
   return manifest.latest.release;
 }
 
+function extractVanillaAssets(jarPath, versionId) {
+  const marker = path.join(assetRoot, versionId, ".extracted");
+
+  if (
+    fs.existsSync(marker) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "textures", "block")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "models", "block"))
+  ) {
+    console.log(`Vanilla assets for ${versionId} already extracted.`);
+    return;
+  }
+
+  fs.rmSync(extractedRoot, { recursive: true, force: true });
+  fs.mkdirSync(assetRoot, { recursive: true });
+
+  console.log("Extracting vanilla block models and textures...");
+
+  // GitHub ubuntu runners include unzip. This avoids fragile custom jar parsing and gives
+  // the renderer normal files at .cache/vanilla-assets/assets/minecraft/...
+  execFileSync(
+    "unzip",
+    [
+      "-qq",
+      "-o",
+      jarPath,
+      "assets/minecraft/models/block/*",
+      "assets/minecraft/textures/block/*",
+      "-d",
+      assetRoot
+    ],
+    { stdio: "inherit" }
+  );
+
+  fs.mkdirSync(path.dirname(marker), { recursive: true });
+  fs.writeFileSync(marker, "ok\n");
+}
+
 async function main() {
-  const versionId = await getVersionId();
+  const versionId = await resolveMinecraftVersion();
   const manifest = await fetchJson("https://piston-meta.mojang.com/mc/game/version_manifest_v2.json");
   const version = manifest.versions.find(entry => entry.id === versionId);
 
@@ -192,11 +230,13 @@ async function main() {
     throw new Error(`Could not find client jar for Minecraft ${versionId}`);
   }
 
-  const jarPath = path.join(assetRoot, `${versionId}`, "client.jar");
+  const jarPath = path.join(assetRoot, versionId, "client.jar");
   await download(clientUrl, jarPath);
 
+  extractVanillaAssets(jarPath, versionId);
+
   fs.writeFileSync(path.join(assetRoot, "version.txt"), versionId);
-  console.log(`Downloaded vanilla client assets for Minecraft ${versionId}`);
+  console.log(`Vanilla block assets ready for Minecraft ${versionId}`);
 }
 
 main().catch(error => {

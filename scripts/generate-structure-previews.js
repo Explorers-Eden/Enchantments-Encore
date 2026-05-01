@@ -33,6 +33,10 @@ const zipEntryCache = new Map();
 const modelCache = new Map();
 const textureCache = new Map();
 const fallbackColorCache = new Map();
+const textureHitStats = {
+  hits: 0,
+  misses: 0
+};
 
 function walk(dir) {
   let files = [];
@@ -145,9 +149,16 @@ function readZipFile(zipFile, entryName) {
 }
 
 function readAssetBuffer(assetPath) {
+  // 1. Repo resource-pack assets, e.g. assets/<namespace>/...
   const local = path.join(...assetPath.split("/"));
   if (fs.existsSync(local)) return fs.readFileSync(local);
 
+  // 2. Extracted vanilla assets from scripts/download-vanilla-assets.js,
+  // e.g. .cache/vanilla-assets/assets/minecraft/...
+  const extracted = path.join(vanillaAssetRoot, ...assetPath.split("/"));
+  if (fs.existsSync(extracted)) return fs.readFileSync(extracted);
+
+  // 3. Backward-compatible jar fallback.
   const jar = getVanillaClientJar();
   if (!jar) return null;
 
@@ -178,15 +189,18 @@ function readTextureAsset(assetPath) {
 
   const buffer = readAssetBuffer(assetPath);
   if (!buffer) {
+    textureHitStats.misses++;
     textureCache.set(assetPath, null);
     return null;
   }
 
   try {
     const png = PNG.sync.read(buffer);
+    textureHitStats.hits++;
     textureCache.set(assetPath, png);
     return png;
   } catch {
+    textureHitStats.misses++;
     textureCache.set(assetPath, null);
     return null;
   }
@@ -604,75 +618,35 @@ function renderBlocksToPng(blocks) {
 }
 
 
-function getTopVisibleBlocks(blocks) {
-  const topByColumn = new Map();
+function getBlocksNearCenter(blocks) {
+  if (blocks.length === 0) return blocks;
 
-  for (const block of blocks) {
-    const key = `${block.x},${block.z}`;
-    const existing = topByColumn.get(key);
-
-    if (!existing || block.y > existing.y) {
-      topByColumn.set(key, block);
-    }
-  }
-
-  return [...topByColumn.values()];
-}
-
-function renderCenterViewToPng(blocks) {
-  blocks = normalizeBlocks(blocks);
-
-  if (blocks.length === 0) {
-    const png = new PNG({ width: 32, height: 32 });
-    fillBackground(png);
-    return PNG.sync.write(png);
-  }
-
-  const visibleBlocks = getTopVisibleBlocks(blocks);
-
-  const minX = Math.min(...visibleBlocks.map(block => block.x));
-  const maxX = Math.max(...visibleBlocks.map(block => block.x));
-  const minZ = Math.min(...visibleBlocks.map(block => block.z));
-  const maxZ = Math.max(...visibleBlocks.map(block => block.z));
-
-  const structureWidth = maxX - minX + 1;
-  const structureDepth = maxZ - minZ + 1;
-
-  const baseTileSize = Number(process.env.STRUCTURE_PREVIEW_CENTER_TILE_SIZE ?? 10);
-  const baseWidth = structureWidth * baseTileSize + padding * 2;
-  const baseHeight = structureDepth * baseTileSize + padding * 2;
-  const scale = Math.min(1, maxImageSize / Math.max(baseWidth, baseHeight));
-  const tileSize = Math.max(1, Math.floor(baseTileSize * scale));
-
-  const width = Math.max(1, structureWidth * tileSize + padding * 2);
-  const height = Math.max(1, structureDepth * tileSize + padding * 2);
-
-  const png = new PNG({ width, height });
-  fillBackground(png);
+  const normalized = normalizeBlocks(blocks);
+  const minX = Math.min(...normalized.map(block => block.x));
+  const maxX = Math.max(...normalized.map(block => block.x));
+  const minZ = Math.min(...normalized.map(block => block.z));
+  const maxZ = Math.max(...normalized.map(block => block.z));
 
   const centerX = (minX + maxX) / 2;
   const centerZ = (minZ + maxZ) / 2;
 
-  visibleBlocks.sort((a, b) => a.y - b.y);
+  const radiusX = Math.max(8, Math.ceil((maxX - minX + 1) * 0.32));
+  const radiusZ = Math.max(8, Math.ceil((maxZ - minZ + 1) * 0.32));
 
-  for (const block of visibleBlocks) {
-    const x = Math.round(width / 2 + (block.x - centerX - 0.5) * tileSize);
-    const z = Math.round(height / 2 + (block.z - centerZ - 0.5) * tileSize);
-    const texture = getTextureForBlockFace(block.name, "top");
-    const fallback = fallbackColorForBlock(block.name);
+  const centerBlocks = normalized.filter(block =>
+    Math.abs(block.x - centerX) <= radiusX &&
+    Math.abs(block.z - centerZ) <= radiusZ
+  );
 
-    for (let py = 0; py < tileSize; py++) {
-      for (let px = 0; px < tileSize; px++) {
-        const u = tileSize <= 1 ? 0 : px / (tileSize - 1);
-        const v = tileSize <= 1 ? 0 : py / (tileSize - 1);
-        const sampled = sampleTexture(texture, u, v) ?? fallback;
-        blendPixel(png, x + px, z + py, shadeColor(sampled, 1.08));
-      }
-    }
-  }
-
-  return PNG.sync.write(png);
+  return centerBlocks.length > 0 ? centerBlocks : normalized;
 }
+
+function renderCenterViewToPng(blocks) {
+  const centerBlocks = getBlocksNearCenter(blocks);
+  return renderBlocksToPng(centerBlocks);
+}
+
+
 
 async function loadBlocksForFiles(files) {
   const allBlocks = [];
@@ -751,6 +725,7 @@ async function main() {
     }
   }
 
+  console.log(`Texture assets used: ${textureHitStats.hits} loaded, ${textureHitStats.misses} missing/fallback.`);
   removeStaleOutputFiles(validOutputFiles);
 }
 
