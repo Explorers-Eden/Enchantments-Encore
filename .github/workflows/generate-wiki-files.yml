@@ -22,7 +22,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install --no-save prismarine-nbt pngjs gifenc
+        run: npm install --no-save prismarine-nbt pngjs
 
       - name: Cache vanilla assets
         uses: actions/cache@v4
@@ -60,7 +60,7 @@ jobs:
           if find data -type f \( -path '*/worldgen/structure/*.json' -o -path '*/structure/*.nbt' \) -print -quit 2>/dev/null | grep -q .; then
             node scripts/generate-structure-previews.js
           else
-            echo "No structure files found; skipping structure preview GIF generation."
+            echo "No structure files found; skipping structure preview PNG generation."
           fi
 
       - name: Show generated wiki files
@@ -76,7 +76,7 @@ jobs:
           echo ""
           echo "Generated structure preview images:"
           if [ -d wiki/images/structures ]; then
-            find wiki/images/structures -type f -name "*.gif" -print | sort
+            find wiki/images/structures -type f -name "*.png" -print | sort
           else
             echo "No wiki/images/structures directory found."
           fi
@@ -88,7 +88,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: generated-structure-preview-images
-          path: wiki/images/structures/**/*.gif
+          path: wiki/images/structures/**/*.png
           if-no-files-found: warn
 
       - name: Commit generated wiki files

@@ -3,7 +3,6 @@ const fs = require("fs");
 const path = require("path");
 const nbt = require("prismarine-nbt");
 const { PNG } = require("pngjs");
-const { GIFEncoder, quantize, applyPalette } = require("gifenc");
 
 const inputRoot = process.env.STRUCTURE_INPUT_ROOT ?? "data";
 const outputRoot = process.env.STRUCTURE_PREVIEW_OUTPUT_ROOT ?? path.join("wiki", "images", "structures");
@@ -14,10 +13,16 @@ const tileWidth = Number(process.env.STRUCTURE_PREVIEW_TILE_WIDTH ?? 32);
 const tileHeight = Number(process.env.STRUCTURE_PREVIEW_TILE_HEIGHT ?? 18);
 const blockHeight = Number(process.env.STRUCTURE_PREVIEW_BLOCK_HEIGHT ?? 22);
 const padding = Number(process.env.STRUCTURE_PREVIEW_PADDING ?? 48);
-const maxImageSize = Number(process.env.STRUCTURE_PREVIEW_MAX_SIZE ?? 2800);
+const maxImageSize = Number(process.env.STRUCTURE_PREVIEW_MAX_SIZE ?? 900);
 const transparentBackground = String(process.env.STRUCTURE_PREVIEW_TRANSPARENT ?? "true") !== "false";
-const gifFrames = Math.max(1, Number(process.env.STRUCTURE_PREVIEW_GIF_FRAMES ?? 60));
-const gifDelay = Math.max(1, Number(process.env.STRUCTURE_PREVIEW_GIF_DELAY ?? 160));
+const pngCompressionLevel = Math.min(9, Math.max(0, Number(process.env.STRUCTURE_PREVIEW_PNG_COMPRESSION ?? 9)));
+
+const previewRotations = [
+  { name: "north", degrees: 0 },
+  { name: "east", degrees: 90 },
+  { name: "south", degrees: 180 },
+  { name: "west", degrees: 270 }
+];
 
 const IGNORED_BLOCKS = new Set([
   "minecraft:air",
@@ -964,9 +969,15 @@ function collectBlocksFromStructure(structure) {
 function normalizeBlocks(blocks) {
   if (blocks.length === 0) return blocks;
 
-  const minX = Math.min(...blocks.map(b => b.x));
-  const minY = Math.min(...blocks.map(b => b.y));
-  const minZ = Math.min(...blocks.map(b => b.z));
+  let minX = Infinity;
+  let minY = Infinity;
+  let minZ = Infinity;
+
+  for (const block of blocks) {
+    if (block.x < minX) minX = block.x;
+    if (block.y < minY) minY = block.y;
+    if (block.z < minZ) minZ = block.z;
+  }
 
   return blocks.map(block => ({
     ...block,
@@ -1018,10 +1029,17 @@ function fillBackground(png) {
 function getRotationCenter(blocks) {
   if (blocks.length === 0) return { x: 0, z: 0 };
 
-  const minX = Math.min(...blocks.map(block => block.x));
-  const maxX = Math.max(...blocks.map(block => block.x + 1));
-  const minZ = Math.min(...blocks.map(block => block.z));
-  const maxZ = Math.max(...blocks.map(block => block.z + 1));
+  let minX = Infinity;
+  let maxX = -Infinity;
+  let minZ = Infinity;
+  let maxZ = -Infinity;
+
+  for (const block of blocks) {
+    if (block.x < minX) minX = block.x;
+    if (block.x + 1 > maxX) maxX = block.x + 1;
+    if (block.z < minZ) minZ = block.z;
+    if (block.z + 1 > maxZ) maxZ = block.z + 1;
+  }
 
   return {
     x: (minX + maxX) / 2,
@@ -1029,32 +1047,16 @@ function getRotationCenter(blocks) {
   };
 }
 
-function getRotationDegrees(frame) {
-  if (gifFrames <= 1) return 0;
+function getScaledBounds(blocks, rotation) {
+  const baseBounds = computeBounds(blocks, 1, rotation);
+  const baseWidth = baseBounds.maxX - baseBounds.minX + padding * 2;
+  const baseHeight = baseBounds.maxY - baseBounds.minY + padding * 2;
+  const scale = Math.min(1, maxImageSize / Math.max(baseWidth, baseHeight));
 
-  return (frame / gifFrames) * 360;
-}
-
-function getAnimatedBounds(blocks, scale = 1, center = getRotationCenter(blocks)) {
-  let bounds = null;
-
-  for (let frame = 0; frame < gifFrames; frame++) {
-    const frameBounds = computeBounds(blocks, scale, {
-      degrees: getRotationDegrees(frame),
-      center
-    });
-
-    bounds = bounds
-      ? {
-          minX: Math.min(bounds.minX, frameBounds.minX),
-          maxX: Math.max(bounds.maxX, frameBounds.maxX),
-          minY: Math.min(bounds.minY, frameBounds.minY),
-          maxY: Math.max(bounds.maxY, frameBounds.maxY)
-        }
-      : frameBounds;
-  }
-
-  return bounds ?? { minX: 0, maxX: 1, minY: 0, maxY: 1 };
+  return {
+    scale,
+    bounds: computeBounds(blocks, scale, rotation)
+  };
 }
 
 function renderBlocksToPngFrame(blocks, options = {}) {
@@ -1086,69 +1088,35 @@ function renderBlocksToPngFrame(blocks, options = {}) {
   return png;
 }
 
-function encodeGifFrame(gif, png) {
-  const rgba = new Uint8Array(png.data);
-  const opaqueRgba = [];
-
-  for (let i = 0; i < rgba.length; i += 4) {
-    if (transparentBackground && rgba[i + 3] === 0) continue;
-    opaqueRgba.push(rgba[i], rgba[i + 1], rgba[i + 2], 255);
-  }
-
-  const opaquePalette = opaqueRgba.length > 0 ? quantize(new Uint8Array(opaqueRgba), 255) : [];
-  const palette = [[0, 0, 0], ...opaquePalette];
-  const index = new Uint8Array(png.width * png.height);
-
-  if (opaquePalette.length > 0) {
-    const opaqueIndexes = applyPalette(new Uint8Array(opaqueRgba), opaquePalette);
-    let opaqueCursor = 0;
-
-    for (let source = 0, target = 0; source < rgba.length; source += 4, target++) {
-      if (transparentBackground && rgba[source + 3] === 0) {
-        index[target] = 0;
-      } else {
-        index[target] = opaqueIndexes[opaqueCursor++] + 1;
-      }
-    }
-  }
-
-  gif.writeFrame(index, png.width, png.height, {
-    palette,
-    delay: gifDelay,
-    transparent: transparentBackground,
-    transparentIndex: 0
+function encodePng(png) {
+  return PNG.sync.write(png, {
+    colorType: 6,
+    inputColorType: 6,
+    deflateLevel: pngCompressionLevel,
+    filterType: 4
   });
 }
 
-function renderBlocksToGif(blocks) {
+function renderBlocksToPngViews(blocks) {
   blocks = normalizeBlocks(blocks);
 
   if (blocks.length === 0) {
-    const gif = GIFEncoder();
-    encodeGifFrame(gif, renderBlocksToPngFrame([], { bounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 }, scale: 1 }));
-    gif.finish();
-    return Buffer.from(gif.bytesView());
+    const blank = renderBlocksToPngFrame([], { bounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 }, scale: 1 });
+    return previewRotations.map(view => ({ ...view, buffer: encodePng(blank) }));
   }
 
   const center = getRotationCenter(blocks);
-  const baseBounds = getAnimatedBounds(blocks, 1, center);
-  const baseWidth = baseBounds.maxX - baseBounds.minX + padding * 2;
-  const baseHeight = baseBounds.maxY - baseBounds.minY + padding * 2;
-  const scale = Math.min(1, maxImageSize / Math.max(baseWidth, baseHeight));
-  const bounds = getAnimatedBounds(blocks, scale, center);
-  const gif = GIFEncoder();
 
-  for (let frame = 0; frame < gifFrames; frame++) {
-    const rotation = {
-      degrees: getRotationDegrees(frame),
-      center
+  return previewRotations.map(view => {
+    const rotation = { degrees: view.degrees, center };
+    const { bounds, scale } = getScaledBounds(blocks, rotation);
+    const png = renderBlocksToPngFrame(blocks, { bounds, scale, rotation });
+
+    return {
+      ...view,
+      buffer: encodePng(png)
     };
-
-    encodeGifFrame(gif, renderBlocksToPngFrame(blocks, { bounds, scale, rotation }));
-  }
-
-  gif.finish();
-  return Buffer.from(gif.bytesView());
+  });
 }
 
 function readJsonIfExists(file) {
@@ -1681,7 +1649,7 @@ async function loadBlocksForFiles(files) {
 function removeStaleOutputFiles(validOutputFiles) {
   if (!fs.existsSync(outputRoot)) return;
 
-  for (const file of walk(outputRoot).filter(file => file.endsWith(".gif"))) {
+  for (const file of walk(outputRoot).filter(file => file.endsWith(".png") || file.endsWith(".gif"))) {
     const normalized = path.normalize(file);
 
     if (!validOutputFiles.has(normalized)) {
@@ -1711,21 +1679,26 @@ async function main() {
     const blocks = Array.isArray(group.blocks) && group.blocks.length > 0
       ? group.blocks
       : await loadBlocksForFiles(group.files);
-    const outputPath = path.join(outputRoot, group.namespace, `${group.outputName}.gif`);
+    const outputDir = path.join(outputRoot, group.namespace, group.outputName);
+    const views = renderBlocksToPngViews(blocks);
 
-    validOutputFiles.add(path.normalize(outputPath));
+    fs.mkdirSync(outputDir, { recursive: true });
 
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, renderBlocksToGif(blocks));
-    stats.mainImages++;
+    let totalSize = 0;
+    for (const view of views) {
+      const outputPath = path.join(outputDir, `${view.name}.png`);
+      validOutputFiles.add(path.normalize(outputPath));
+      fs.writeFileSync(outputPath, view.buffer);
+      totalSize += fs.statSync(outputPath).size;
+      stats.mainImages++;
+    }
 
-    const mainSize = fs.statSync(outputPath).size;
-    console.log(`Generated ${outputPath} from ${group.files.length} structure part(s), ${blocks.length} block(s), ${mainSize} bytes`);
+    console.log(`Generated ${views.length} PNG preview(s) in ${outputDir} from ${group.files.length} structure part(s), ${blocks.length} block(s), ${totalSize} total bytes`);
   }
 
   if (groups.size === 0) console.warn("No structure groups were found.");
 
-  console.log(`Generated ${stats.mainImages} animated preview GIF(s).`);
+  console.log(`Generated ${stats.mainImages} static preview PNG(s).`);
   console.log(`Baked ${stats.bakedQuads} model quad(s), skipped ${stats.skippedMissingModels} block model(s) with no renderable elements.`);
   console.log(`Texture files loaded: ${stats.textureHits}; missing/fallback lookups: ${stats.textureMisses}.`);
 
