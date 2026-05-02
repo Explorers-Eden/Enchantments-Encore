@@ -161,13 +161,19 @@ async function resolveMinecraftVersion() {
 }
 
 function extractVanillaAssets(jarPath, versionId) {
-  const marker = path.join(assetRoot, versionId, ".extracted-v2");
+  const marker = path.join(assetRoot, versionId, ".extracted-v5-full-block-model-baker");
 
   if (
     fs.existsSync(marker) &&
-    fs.existsSync(path.join(extractedRoot, "minecraft", "blockstates")) &&
-    fs.existsSync(path.join(extractedRoot, "minecraft", "models", "block")) &&
-    fs.existsSync(path.join(extractedRoot, "minecraft", "textures", "block"))
+    fs.existsSync(path.join(extractedRoot, "minecraft", "blockstates", "chain.json")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "blockstates", "lever.json")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "blockstates", "oak_button.json")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "models", "block", "chain.json")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "models", "block", "lever.json")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "textures", "block", "chain.png")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "textures", "block", "lever.png")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "textures", "block", "stone.png")) &&
+    fs.existsSync(path.join(extractedRoot, "minecraft", "textures", "block", "oak_planks.png"))
   ) {
     console.log(`Vanilla block assets for ${versionId} already extracted.`);
     return;
