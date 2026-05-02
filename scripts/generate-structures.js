@@ -665,7 +665,7 @@ const intro =
     ? `There is one loot table used in this structure:`
     : `There are ${sorted.length} loot tables used in this structure:`;
 
-return `# Generated Loot.
+return `# Generated Loot
 
 ${intro}
 

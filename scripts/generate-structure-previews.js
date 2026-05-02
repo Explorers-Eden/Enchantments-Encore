@@ -3,6 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const nbt = require("prismarine-nbt");
 const { PNG } = require("pngjs");
+const { GIFEncoder, quantize, applyPalette } = require("gifenc");
 
 const inputRoot = process.env.STRUCTURE_INPUT_ROOT ?? "data";
 const outputRoot = process.env.STRUCTURE_PREVIEW_OUTPUT_ROOT ?? path.join("wiki", "images", "structures");
@@ -15,6 +16,8 @@ const blockHeight = Number(process.env.STRUCTURE_PREVIEW_BLOCK_HEIGHT ?? 22);
 const padding = Number(process.env.STRUCTURE_PREVIEW_PADDING ?? 48);
 const maxImageSize = Number(process.env.STRUCTURE_PREVIEW_MAX_SIZE ?? 2800);
 const transparentBackground = String(process.env.STRUCTURE_PREVIEW_TRANSPARENT ?? "true") !== "false";
+const gifFrames = Math.max(1, Number(process.env.STRUCTURE_PREVIEW_GIF_FRAMES ?? 60));
+const gifDelay = Math.max(1, Number(process.env.STRUCTURE_PREVIEW_GIF_DELAY ?? 160));
 
 const IGNORED_BLOCKS = new Set([
   "minecraft:air",
@@ -670,11 +673,32 @@ function applyBlockstateRotation(point, rotation) {
   return rotated;
 }
 
+function rotateWorldPoint(point, rotationDegrees, center = { x: 0, z: 0 }) {
+  if (!rotationDegrees) return point;
+
+  const angle = (rotationDegrees * Math.PI) / 180;
+  const cos = Math.cos(angle);
+  const sin = Math.sin(angle);
+  const x = point.x - center.x;
+  const z = point.z - center.z;
+
+  return {
+    ...point,
+    x: center.x + x * cos - z * sin,
+    z: center.z + x * sin + z * cos
+  };
+}
+
 function isoPoint(x, y, z, offsetX, offsetY, scale = 1) {
   return {
     x: offsetX + (x - z) * (tileWidth / 2) * scale,
     y: offsetY + (x + z) * (tileHeight / 2) * scale - y * blockHeight * scale
   };
+}
+
+function projectPoint(point, offsetX, offsetY, scale, rotation = null) {
+  const rotated = rotation ? rotateWorldPoint(point, rotation.degrees, rotation.center) : point;
+  return isoPoint(rotated.x, rotated.y, rotated.z, offsetX, offsetY, scale);
 }
 
 function faceShade(faceName) {
@@ -844,7 +868,7 @@ function bakeBlockModel(blockName, properties = {}) {
   return baked;
 }
 
-function makeBlockQuads(block, offsetX, offsetY, scale) {
+function makeBlockQuads(block, offsetX, offsetY, scale, rotation = null) {
   const bakedModel = bakeBlockModel(block.name, block.properties);
   const quads = [];
 
@@ -859,8 +883,10 @@ function makeBlockQuads(block, offsetX, offsetY, scale) {
       ...bakedQuad,
       blockName: block.name,
       block,
-      screen: worldPoints.map(point => isoPoint(point.x, point.y, point.z, offsetX, offsetY, scale)),
-      depth: block.x + block.y + block.z + bakedQuad.depthOffset
+      screen: worldPoints.map(point => projectPoint(point, offsetX, offsetY, scale, rotation)),
+      depth: worldPoints
+        .map(point => (rotation ? rotateWorldPoint(point, rotation.degrees, rotation.center) : point))
+        .reduce((sum, point) => sum + point.x + point.y + point.z, 0) / worldPoints.length
     });
   }
 
@@ -938,17 +964,9 @@ function collectBlocksFromStructure(structure) {
 function normalizeBlocks(blocks) {
   if (blocks.length === 0) return blocks;
 
-  // Avoid spreading large block arrays into Math.min. Very large structures can
-  // exceed V8's argument/call-stack limit when using Math.min(...array).
-  let minX = Infinity;
-  let minY = Infinity;
-  let minZ = Infinity;
-
-  for (const block of blocks) {
-    if (block.x < minX) minX = block.x;
-    if (block.y < minY) minY = block.y;
-    if (block.z < minZ) minZ = block.z;
-  }
+  const minX = Math.min(...blocks.map(b => b.x));
+  const minY = Math.min(...blocks.map(b => b.y));
+  const minZ = Math.min(...blocks.map(b => b.z));
 
   return blocks.map(block => ({
     ...block,
@@ -958,7 +976,7 @@ function normalizeBlocks(blocks) {
   }));
 }
 
-function computeBounds(blocks, scale = 1) {
+function computeBounds(blocks, scale = 1, rotation = null) {
   let minX = Infinity;
   let maxX = -Infinity;
   let minY = Infinity;
@@ -972,14 +990,14 @@ function computeBounds(blocks, scale = 1) {
   };
 
   for (const block of blocks) {
-    update(isoPoint(block.x, block.y, block.z, 0, 0, scale));
-    update(isoPoint(block.x + 1, block.y, block.z, 0, 0, scale));
-    update(isoPoint(block.x, block.y + 1, block.z, 0, 0, scale));
-    update(isoPoint(block.x + 1, block.y + 1, block.z, 0, 0, scale));
-    update(isoPoint(block.x, block.y, block.z + 1, 0, 0, scale));
-    update(isoPoint(block.x + 1, block.y, block.z + 1, 0, 0, scale));
-    update(isoPoint(block.x, block.y + 1, block.z + 1, 0, 0, scale));
-    update(isoPoint(block.x + 1, block.y + 1, block.z + 1, 0, 0, scale));
+    update(projectPoint({ x: block.x, y: block.y, z: block.z }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x + 1, y: block.y, z: block.z }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x, y: block.y + 1, z: block.z }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x + 1, y: block.y + 1, z: block.z }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x, y: block.y, z: block.z + 1 }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x + 1, y: block.y, z: block.z + 1 }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x, y: block.y + 1, z: block.z + 1 }, 0, 0, scale, rotation));
+    update(projectPoint({ x: block.x + 1, y: block.y + 1, z: block.z + 1 }, 0, 0, scale, rotation));
   }
 
   if (!Number.isFinite(minX)) return { minX: 0, maxX: 1, minY: 0, maxY: 1 };
@@ -997,34 +1015,66 @@ function fillBackground(png) {
   }
 }
 
-function renderBlocksToPng(blocks) {
-  blocks = normalizeBlocks(blocks);
+function getRotationCenter(blocks) {
+  if (blocks.length === 0) return { x: 0, z: 0 };
 
-  if (blocks.length === 0) {
-    const png = new PNG({ width: 32, height: 32 });
-    fillBackground(png);
-    return PNG.sync.write(png);
+  const minX = Math.min(...blocks.map(block => block.x));
+  const maxX = Math.max(...blocks.map(block => block.x + 1));
+  const minZ = Math.min(...blocks.map(block => block.z));
+  const maxZ = Math.max(...blocks.map(block => block.z + 1));
+
+  return {
+    x: (minX + maxX) / 2,
+    z: (minZ + maxZ) / 2
+  };
+}
+
+function getRotationDegrees(frame) {
+  if (gifFrames <= 1) return 0;
+
+  return (frame / gifFrames) * 360;
+}
+
+function getAnimatedBounds(blocks, scale = 1, center = getRotationCenter(blocks)) {
+  let bounds = null;
+
+  for (let frame = 0; frame < gifFrames; frame++) {
+    const frameBounds = computeBounds(blocks, scale, {
+      degrees: getRotationDegrees(frame),
+      center
+    });
+
+    bounds = bounds
+      ? {
+          minX: Math.min(bounds.minX, frameBounds.minX),
+          maxX: Math.max(bounds.maxX, frameBounds.maxX),
+          minY: Math.min(bounds.minY, frameBounds.minY),
+          maxY: Math.max(bounds.maxY, frameBounds.maxY)
+        }
+      : frameBounds;
   }
 
-  const baseBounds = computeBounds(blocks, 1);
-  const baseWidth = baseBounds.maxX - baseBounds.minX + padding * 2;
-  const baseHeight = baseBounds.maxY - baseBounds.minY + padding * 2;
-  const scale = Math.min(1, maxImageSize / Math.max(baseWidth, baseHeight));
-  const bounds = computeBounds(blocks, scale);
+  return bounds ?? { minX: 0, maxX: 1, minY: 0, maxY: 1 };
+}
 
+function renderBlocksToPngFrame(blocks, options = {}) {
+  const rotation = options.rotation ?? null;
+  const scale = options.scale ?? 1;
+  const bounds = options.bounds ?? computeBounds(blocks, scale, rotation);
   const width = Math.max(1, Math.ceil(bounds.maxX - bounds.minX + padding * 2));
   const height = Math.max(1, Math.ceil(bounds.maxY - bounds.minY + padding * 2));
 
   const png = new PNG({ width, height });
   fillBackground(png);
 
+  if (blocks.length === 0) return png;
+
   const offsetX = padding - bounds.minX;
   const offsetY = padding - bounds.minY;
-
   const quads = [];
 
   for (const block of blocks) {
-    quads.push(...makeBlockQuads(block, offsetX, offsetY, scale));
+    quads.push(...makeBlockQuads(block, offsetX, offsetY, scale, rotation));
   }
 
   quads.sort((a, b) => a.depth - b.depth);
@@ -1033,7 +1083,72 @@ function renderBlocksToPng(blocks) {
     drawTexturedQuad(png, quad);
   }
 
-  return PNG.sync.write(png);
+  return png;
+}
+
+function encodeGifFrame(gif, png) {
+  const rgba = new Uint8Array(png.data);
+  const opaqueRgba = [];
+
+  for (let i = 0; i < rgba.length; i += 4) {
+    if (transparentBackground && rgba[i + 3] === 0) continue;
+    opaqueRgba.push(rgba[i], rgba[i + 1], rgba[i + 2], 255);
+  }
+
+  const opaquePalette = opaqueRgba.length > 0 ? quantize(new Uint8Array(opaqueRgba), 255) : [];
+  const palette = [[0, 0, 0], ...opaquePalette];
+  const index = new Uint8Array(png.width * png.height);
+
+  if (opaquePalette.length > 0) {
+    const opaqueIndexes = applyPalette(new Uint8Array(opaqueRgba), opaquePalette);
+    let opaqueCursor = 0;
+
+    for (let source = 0, target = 0; source < rgba.length; source += 4, target++) {
+      if (transparentBackground && rgba[source + 3] === 0) {
+        index[target] = 0;
+      } else {
+        index[target] = opaqueIndexes[opaqueCursor++] + 1;
+      }
+    }
+  }
+
+  gif.writeFrame(index, png.width, png.height, {
+    palette,
+    delay: gifDelay,
+    transparent: transparentBackground,
+    transparentIndex: 0
+  });
+}
+
+function renderBlocksToGif(blocks) {
+  blocks = normalizeBlocks(blocks);
+
+  if (blocks.length === 0) {
+    const gif = GIFEncoder();
+    encodeGifFrame(gif, renderBlocksToPngFrame([], { bounds: { minX: 0, maxX: 1, minY: 0, maxY: 1 }, scale: 1 }));
+    gif.finish();
+    return Buffer.from(gif.bytesView());
+  }
+
+  const center = getRotationCenter(blocks);
+  const baseBounds = getAnimatedBounds(blocks, 1, center);
+  const baseWidth = baseBounds.maxX - baseBounds.minX + padding * 2;
+  const baseHeight = baseBounds.maxY - baseBounds.minY + padding * 2;
+  const scale = Math.min(1, maxImageSize / Math.max(baseWidth, baseHeight));
+  const bounds = getAnimatedBounds(blocks, scale, center);
+  const gif = GIFEncoder();
+
+  for (let frame = 0; frame < gifFrames; frame++) {
+    const rotation = {
+      degrees: getRotationDegrees(frame),
+      center
+    };
+
+    encodeGifFrame(gif, renderBlocksToPngFrame(blocks, { bounds, scale, rotation }));
+  }
+
+  gif.finish();
+  return Buffer.from(gif.bytesView());
 }
 
 function readJsonIfExists(file) {
@@ -1277,7 +1392,7 @@ async function loadBlocksForFiles(files) {
 function removeStaleOutputFiles(validOutputFiles) {
   if (!fs.existsSync(outputRoot)) return;
 
-  for (const file of walk(outputRoot).filter(file => file.endsWith(".png"))) {
+  for (const file of walk(outputRoot).filter(file => file.endsWith(".gif"))) {
     const normalized = path.normalize(file);
 
     if (!validOutputFiles.has(normalized)) {
@@ -1305,12 +1420,12 @@ async function main() {
     group.files.sort();
 
     const blocks = await loadBlocksForFiles(group.files);
-    const outputPath = path.join(outputRoot, group.namespace, `${group.outputName}.png`);
+    const outputPath = path.join(outputRoot, group.namespace, `${group.outputName}.gif`);
 
     validOutputFiles.add(path.normalize(outputPath));
 
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, renderBlocksToPng(blocks));
+    fs.writeFileSync(outputPath, renderBlocksToGif(blocks));
     stats.mainImages++;
 
     const mainSize = fs.statSync(outputPath).size;
@@ -1319,7 +1434,7 @@ async function main() {
 
   if (groups.size === 0) console.warn("No structure groups were found.");
 
-  console.log(`Generated ${stats.mainImages} preview image(s).`);
+  console.log(`Generated ${stats.mainImages} animated preview GIF(s).`);
   console.log(`Baked ${stats.bakedQuads} model quad(s), skipped ${stats.skippedMissingModels} block model(s) with no renderable elements.`);
   console.log(`Texture files loaded: ${stats.textureHits}; missing/fallback lookups: ${stats.textureMisses}.`);
 

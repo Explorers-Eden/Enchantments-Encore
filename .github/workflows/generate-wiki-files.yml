@@ -22,7 +22,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm install --no-save prismarine-nbt pngjs
+        run: npm install --no-save prismarine-nbt pngjs gifenc
 
       - name: Cache vanilla assets
         uses: actions/cache@v4
@@ -48,7 +48,7 @@ jobs:
           find wiki/markdown -type f -name "*.md" -print | sort || true
           echo ""
           echo "Generated structure preview images:"
-          find wiki/images/structures -type f -name "*.png" -print | sort || true
+          find wiki/images/structures -type f -name "*.gif" -print | sort || true
           echo ""
           echo "Git status:"
           git status --short
@@ -57,7 +57,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: generated-structure-preview-images
-          path: wiki/images/structures/**/*.png
+          path: wiki/images/structures/**/*.gif
           if-no-files-found: warn
 
       - name: Commit generated wiki files
