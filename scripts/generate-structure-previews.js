@@ -1621,14 +1621,36 @@ function getStructureSize(structure) {
   };
 }
 
+function unwrapNbtValue(value) {
+  if (value && typeof value === "object" && !Array.isArray(value)) {
+    if (Object.prototype.hasOwnProperty.call(value, "value")) return unwrapNbtValue(value.value);
+    if (Object.prototype.hasOwnProperty.call(value, "Value")) return unwrapNbtValue(value.Value);
+  }
+  return value;
+}
+
 function getJigsawNbtValue(nbtData, key) {
   if (!nbtData || typeof nbtData !== "object") return undefined;
-  return nbtData[key] ?? nbtData[key.replace(/_([a-z])/g, (_, c) => c.toUpperCase())] ?? nbtData[key.toUpperCase()];
+
+  const camelKey = key.replace(/_([a-z])/g, (_, c) => c.toUpperCase());
+  const pascalKey = camelKey.charAt(0).toUpperCase() + camelKey.slice(1);
+  const candidates = [key, camelKey, pascalKey, key.toUpperCase()];
+
+  for (const candidate of candidates) {
+    if (Object.prototype.hasOwnProperty.call(nbtData, candidate)) {
+      return unwrapNbtValue(nbtData[candidate]);
+    }
+  }
+
+  return undefined;
 }
 
 function normalizeResourceLocationForCompare(value) {
-  if (typeof value !== "string") return null;
-  if (!value) return null;
+  value = unwrapNbtValue(value);
+  if (value === null || value === undefined) return null;
+  if (typeof value !== "string") value = String(value);
+  value = value.trim().replace(/^['"]|['"]$/g, "");
+  if (!value || value === "minecraft:empty") return null;
   return value.includes(":") ? value : `minecraft:${value}`;
 }
 
@@ -1650,6 +1672,9 @@ function getJigsawInfo(block, state) {
     z: getFirstNumber(pos[2]),
     name: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "name")),
     target: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "target")),
+    // target_pool is the pool to draw the next piece from. pool is connector
+    // metadata and is only used when matching to a child connector.
+    targetPool: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "target_pool")),
     pool: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "pool")),
     finalState: getJigsawNbtValue(nbtData, "final_state"),
     orientation,
@@ -1827,6 +1852,134 @@ function chooseTemplatePoolLocations(poolJson) {
     .flatMap(choice => choice.locations ?? (choice.location ? [choice.location] : []));
 }
 
+function hasTemplatePool(poolId) {
+  return !!poolId && poolId !== "minecraft:empty" && fs.existsSync(getTemplatePoolFile(poolId));
+}
+
+function getJigsawExpansionPool(jigsaw) {
+  // Dynamic schema support:
+  // - New/custom exports may expose the outgoing template pool as `target_pool`.
+  // - Vanilla structure-template NBT commonly stores that same outgoing pool in
+  //   `pool`.  Only treat `pool` as an expansion source when it resolves to an
+  //   actual template_pool JSON in the current repo, so connector-only values do
+  //   not accidentally expand.
+  if (hasTemplatePool(jigsaw.targetPool)) return jigsaw.targetPool;
+  if (hasTemplatePool(jigsaw.pool)) return jigsaw.pool;
+  return null;
+}
+
+function getJigsawConnectorPool(jigsaw, expansionPool = null) {
+  // In some data sets `pool` is connector metadata; in vanilla-style NBT it is
+  // the expansion pool.  Do not use it as connector metadata when it is the same
+  // value we are expanding from.
+  if (!jigsaw?.pool) return null;
+  if (expansionPool && jigsaw.pool === expansionPool) return null;
+  return jigsaw.pool;
+}
+
+function weightedPoolChoiceOrder(choices, seedText) {
+  const remaining = choices.filter(choice => (choice.weight ?? 0) > 0);
+  const ordered = [];
+  let salt = 0;
+
+  // Weighted without replacement: first choice is a correct weighted roll. If
+  // that element cannot physically connect/fit, try the remaining elements in
+  // weighted-random order instead of falling back to index 0 or rendering all.
+  while (remaining.length > 0) {
+    const choice = chooseWeightedEntry(remaining, `${seedText}|candidate|${salt++}`) ?? remaining[0];
+    ordered.push(choice);
+    const index = remaining.indexOf(choice);
+    if (index >= 0) remaining.splice(index, 1);
+    else break;
+  }
+
+  return ordered;
+}
+
+async function chooseStructuresFromTemplatePool(poolId, seenPools = new Set(), seedText = previewSeed) {
+  if (!poolId || poolId === "minecraft:empty" || seenPools.has(poolId)) return [];
+  seenPools.add(poolId);
+
+  const poolJson = readJsonIfExists(getTemplatePoolFile(poolId));
+  if (!poolJson) return [];
+  stats.poolsRead++;
+
+  const choices = getTemplatePoolChoices(poolJson);
+  const ordered = weightedPoolChoiceOrder(choices, `${seedText}|pool|${poolId}`);
+  const candidates = [];
+
+  for (const choice of ordered) {
+    // Preserve empty/non-structure entries as a valid no-child result when they
+    // win the weighted roll. Later entries are only tried if a chosen structure
+    // exists but cannot connect/fit.
+    if (!choice?.location) {
+      candidates.push({ empty: true, weight: choice?.weight ?? 0 });
+      continue;
+    }
+
+    candidates.push({
+      location: choice.location,
+      structureFile: getStructureNbtFileFromLocation(choice.location),
+      weight: choice.weight
+    });
+  }
+
+  if (candidates.length > 0) return candidates;
+
+  if (poolJson.fallback && poolJson.fallback !== "minecraft:empty") {
+    return chooseStructuresFromTemplatePool(poolJson.fallback, seenPools, `${seedText}|fallback`);
+  }
+
+  return [];
+}
+
+function connectorCompatibilityScore(parent, child, expansionPool) {
+  let score = 0;
+
+  // Primary jigsaw connector rule: the parent asks for `target`, and the child
+  // connector offers `name`. This is the rule that should drive attachment.
+  if (parent.target && child.name && child.name === parent.target) score += 1000;
+
+  // Mirrored metadata is common in generated structures and is safe as a
+  // secondary signal, but it must never replace parent.target -> child.name.
+  if (parent.name && child.target && child.target === parent.name) score += 100;
+
+  // Some custom/exported jigsaws use `pool` as connector metadata. Use it only
+  // as a weak tie-breaker/fallback, never as the expansion source and never as a
+  // hard requirement.
+  const parentConnectorPool = getJigsawConnectorPool(parent, expansionPool);
+  const childConnectorPool = getJigsawConnectorPool(child, null);
+  if (parentConnectorPool && childConnectorPool && childConnectorPool === parentConnectorPool) score += 25;
+
+  // Named connectors should not attach to unrelated named connectors. Pool-only
+  // matches are allowed only when no names are available.
+  if ((parent.target || child.name) && score === 0) return -1;
+
+  return score;
+}
+
+function findCompatibleChildConnectors(parent, childJigsaws, expansionPool, parentFrontVector = null) {
+  const scored = [];
+
+  for (const child of childJigsaws) {
+    const score = connectorCompatibilityScore(parent, child, expansionPool);
+    if (score < 0) continue;
+
+    const orientationScore = parentFrontVector
+      ? (getQuarterTurnsToFace(directionToVector(child.front), parentFrontVector) >= 0 ? 5 : 0)
+      : 0;
+
+    scored.push({ child, score: score + orientationScore });
+  }
+
+  scored.sort((a, b) => b.score - a.score);
+  return scored.map(entry => entry.child);
+}
+
+function findCompatibleChildConnector(parent, childJigsaws, expansionPool, parentFrontVector = null) {
+  return findCompatibleChildConnectors(parent, childJigsaws, expansionPool, parentFrontVector)[0] ?? null;
+}
+
 async function chooseStructureFromTemplatePool(poolId, seenPools = new Set(), seedText = previewSeed) {
   if (!poolId || poolId === "minecraft:empty" || seenPools.has(poolId)) return null;
   seenPools.add(poolId);
@@ -1874,7 +2027,9 @@ function makeBlockKey(block) {
   return `${block.x},${block.y},${block.z}`;
 }
 
-async function assembleJigsawStructureFromPool(startPool, maxDepth = 7) {
+async function assembleJigsawStructureFromPool(startPool, options = {}) {
+  const maxDepth = options.maxDepth ?? 7;
+  const maxDistanceFromCenter = options.maxDistanceFromCenter ?? null;
   const start = await chooseStructureFromTemplatePool(startPool, new Set(), `${startPool}|start`);
   if (!start) return { blocks: [], files: [], resolvedJigsaws: 0 };
 
@@ -1890,6 +2045,7 @@ async function assembleJigsawStructureFromPool(startPool, maxDepth = 7) {
   const placed = new Set();
   const placedFiles = new Set();
   let resolvedJigsaws = 0;
+  let startBounds = null;
 
   while (queue.length > 0) {
     const item = queue.shift();
@@ -1901,6 +2057,7 @@ async function assembleJigsawStructureFromPool(startPool, maxDepth = 7) {
     const structure = await readNbtFile(item.structureFile);
     const size = getStructureSize(structure);
     const transformedBlocks = transformStructureBlocks(structure, item.offset, item.quarterTurns);
+    if (item.depth === 0 && !startBounds) startBounds = getBlockBounds(transformedBlocks);
 
     for (const block of transformedBlocks) {
       const key = makeBlockKey(block);
@@ -1926,52 +2083,71 @@ async function assembleJigsawStructureFromPool(startPool, maxDepth = 7) {
 
       // Only actual jigsaw blocks inside the currently placed structure can extend
       // the assembly. Do not scan arbitrary worldgen JSON or all template-pool files.
-      if (!parent.pool || parent.pool === "minecraft:empty") continue;
+      const expansionPool = getJigsawExpansionPool(parent);
+      if (!expansionPool) continue;
 
       const worldParent = transformJigsaw(parent, size, item.offset, item.quarterTurns);
-      const childChoice = await chooseStructureFromTemplatePool(parent.pool, new Set(), `${item.structureFile}|${item.offset.x},${item.offset.y},${item.offset.z}|${item.quarterTurns}|${parent.x},${parent.y},${parent.z}|${parent.name}|${parent.target}|${parent.pool}`);
-      if (!childChoice) continue;
+      const seedText = `${item.structureFile}|${item.offset.x},${item.offset.y},${item.offset.z}|${item.quarterTurns}|${parent.x},${parent.y},${parent.z}|${parent.name}|${parent.target}|${parent.targetPool}|${parent.pool}`;
+      const childChoices = await chooseStructuresFromTemplatePool(expansionPool, new Set(), seedText);
+      if (childChoices.length === 0) continue;
 
-      const childStructure = await readNbtFile(childChoice.structureFile);
-      const childSize = getStructureSize(childStructure);
-      const childJigsaws = getJigsawsFromStructure(childStructure);
-      const childConnector = childJigsaws.find(jigsaw => jigsaw.name === parent.target) ?? null;
-      if (!childConnector) continue;
+      let placedChild = false;
+      for (const childChoice of childChoices) {
+        if (childChoice.empty) break;
 
-      const parentFront = worldParent.frontVector ?? directionToVector(worldParent.front);
-      const childFront = directionToVector(childConnector.front);
-      const childTurns = getQuarterTurnsToFace(childFront, parentFront);
-      const rotatedChildConnector = rotateYPosition(childConnector, childSize, childTurns);
-      const attach = {
-        x: worldParent.x + parentFront.x,
-        y: worldParent.y + parentFront.y,
-        z: worldParent.z + parentFront.z
-      };
-      const childOffset = {
-        x: attach.x - rotatedChildConnector.x,
-        y: attach.y - rotatedChildConnector.y,
-        z: attach.z - rotatedChildConnector.z
-      };
+        if (!fs.existsSync(childChoice.structureFile)) continue;
 
-      const childBlocks = transformStructureBlocks(childStructure, childOffset, childTurns);
-      const overlapsExistingBlock = childBlocks.some(block => occupied.has(makeBlockKey(block)));
-      if (overlapsExistingBlock) continue;
+        const childStructure = await readNbtFile(childChoice.structureFile);
+        const childSize = getStructureSize(childStructure);
+        const childJigsaws = getJigsawsFromStructure(childStructure);
+        const parentFront = worldParent.frontVector ?? directionToVector(worldParent.front);
+        const childConnectors = findCompatibleChildConnectors(parent, childJigsaws, expansionPool, parentFront);
+        if (childConnectors.length === 0) continue;
 
-      resolvedJigsaws++;
-      stats.jigsawPoolsFollowed++;
-      stats.jigsawBlocksResolved++;
+        for (const childConnector of childConnectors) {
+          const childFront = directionToVector(childConnector.front);
+          const childTurns = getQuarterTurnsToFace(childFront, parentFront);
+          const rotatedChildConnector = rotateYPosition(childConnector, childSize, childTurns);
+          const attach = {
+            x: worldParent.x + parentFront.x,
+            y: worldParent.y + parentFront.y,
+            z: worldParent.z + parentFront.z
+          };
+          const childOffset = {
+            x: attach.x - rotatedChildConnector.x,
+            y: attach.y - rotatedChildConnector.y,
+            z: attach.z - rotatedChildConnector.z
+          };
 
-      queue.push({
-        structureFile: childChoice.structureFile,
-        offset: childOffset,
-        quarterTurns: childTurns,
-        depth: item.depth + 1,
-        consumedConnector: {
-          x: childConnector.x,
-          y: childConnector.y,
-          z: childConnector.z
+          const childBlocks = transformStructureBlocks(childStructure, childOffset, childTurns);
+          if (!isWithinMaxDistanceFromStart(childBlocks, startBounds, maxDistanceFromCenter)) continue;
+
+          const overlapsExistingBlock = childBlocks.some(block => occupied.has(makeBlockKey(block)));
+          if (overlapsExistingBlock) continue;
+
+          resolvedJigsaws++;
+          stats.jigsawPoolsFollowed++;
+          stats.jigsawBlocksResolved++;
+
+          queue.push({
+            structureFile: childChoice.structureFile,
+            offset: childOffset,
+            quarterTurns: childTurns,
+            depth: item.depth + 1,
+            consumedConnector: {
+              x: childConnector.x,
+              y: childConnector.y,
+              z: childConnector.z
+            }
+          });
+          placedChild = true;
+          break;
         }
-      });
+
+        if (placedChild) break;
+      }
+
+      if (!placedChild) continue;
     }
   }
 
@@ -1996,6 +2172,104 @@ function findFirstValueForKey(value, wantedKey) {
   return null;
 }
 
+
+function clampNumber(value, min, max, fallback = null) {
+  const number = Number(unwrapNbtValue(value));
+  if (!Number.isFinite(number)) return fallback;
+  return Math.max(min, Math.min(max, Math.trunc(number)));
+}
+
+function getNestedFirstValue(value, ...keys) {
+  for (const key of keys) {
+    const found = findFirstValueForKey(value, key);
+    if (found !== null && found !== undefined) return unwrapNbtValue(found);
+  }
+  return undefined;
+}
+
+function parseMaxDistanceFromCenter(value, terrainAdaptation = "none") {
+  value = unwrapNbtValue(value);
+  if (value === null || value === undefined) return null;
+
+  const maxHorizontal = terrainAdaptation === "none" ? 128 : 116;
+
+  if (typeof value === "number" || typeof value === "string") {
+    const horizontal = clampNumber(value, 1, maxHorizontal, null);
+    if (horizontal === null) return null;
+    return { horizontal, vertical: horizontal };
+  }
+
+  if (typeof value === "object") {
+    const horizontalValue = value.horizontal ?? value.Horizontal ?? getNestedFirstValue(value, "horizontal", "Horizontal");
+    const verticalValue = value.vertical ?? value.Vertical ?? getNestedFirstValue(value, "vertical", "Vertical");
+    const horizontal = clampNumber(horizontalValue, 1, maxHorizontal, null);
+    if (horizontal === null) return null;
+    const vertical = clampNumber(verticalValue ?? 4064, 1, 4064, 4064);
+    return { horizontal, vertical };
+  }
+
+  return null;
+}
+
+function parseJigsawGenerationConstraints(json) {
+  const sizeValue = json.size ?? json.Size ?? getNestedFirstValue(json, "size", "Size");
+  const size = sizeValue === undefined ? null : clampNumber(sizeValue, 0, 20, null);
+  const maxDistanceValue = json.max_distance_from_center
+    ?? json.maxDistanceFromCenter
+    ?? getNestedFirstValue(json, "max_distance_from_center", "maxDistanceFromCenter");
+  const terrainAdaptation = String(json.terrain_adaptation ?? json.terrainAdaptation ?? "none");
+  const maxDistanceFromCenter = parseMaxDistanceFromCenter(maxDistanceValue, terrainAdaptation);
+
+  return {
+    // Preserve the existing preview safety depth when the structure JSON omits
+    // size. When size exists, follow Minecraft's 0..20 generation-depth limit.
+    maxDepth: size === null ? 7 : size,
+    maxDistanceFromCenter
+  };
+}
+
+function getBlockBounds(blocks) {
+  if (!Array.isArray(blocks) || blocks.length === 0) return null;
+  const bounds = {
+    minX: Infinity,
+    minY: Infinity,
+    minZ: Infinity,
+    maxX: -Infinity,
+    maxY: -Infinity,
+    maxZ: -Infinity
+  };
+
+  for (const block of blocks) {
+    bounds.minX = Math.min(bounds.minX, block.x);
+    bounds.minY = Math.min(bounds.minY, block.y);
+    bounds.minZ = Math.min(bounds.minZ, block.z);
+    bounds.maxX = Math.max(bounds.maxX, block.x);
+    bounds.maxY = Math.max(bounds.maxY, block.y);
+    bounds.maxZ = Math.max(bounds.maxZ, block.z);
+  }
+
+  return bounds;
+}
+
+function intervalGap(aMin, aMax, bMin, bMax) {
+  if (aMax < bMin) return bMin - aMax;
+  if (bMax < aMin) return aMin - bMax;
+  return 0;
+}
+
+function isWithinMaxDistanceFromStart(candidateBlocks, startBounds, maxDistanceFromCenter) {
+  if (!maxDistanceFromCenter || !startBounds) return true;
+  const candidateBounds = getBlockBounds(candidateBlocks);
+  if (!candidateBounds) return true;
+
+  const dx = intervalGap(candidateBounds.minX, candidateBounds.maxX, startBounds.minX, startBounds.maxX);
+  const dz = intervalGap(candidateBounds.minZ, candidateBounds.maxZ, startBounds.minZ, startBounds.maxZ);
+  const dy = intervalGap(candidateBounds.minY, candidateBounds.maxY, startBounds.minY, startBounds.maxY);
+  const horizontal = Math.max(dx, dz);
+
+  return horizontal <= maxDistanceFromCenter.horizontal && dy <= maxDistanceFromCenter.vertical;
+}
+
 async function collectStructureFilesForWorldgenStructure(worldgenFile) {
   const info = getWorldgenStructureInfo(worldgenFile);
   const json = readJsonIfExists(worldgenFile);
@@ -2010,8 +2284,8 @@ async function collectStructureFilesForWorldgenStructure(worldgenFile) {
     return null;
   }
 
-  const maxDepth = Math.max(1, Number(json.size ?? json.max_distance_from_center ?? json.maxDistanceFromCenter ?? 7));
-  const assembled = await assembleJigsawStructureFromPool(startPool, maxDepth);
+  const constraints = parseJigsawGenerationConstraints(json);
+  const assembled = await assembleJigsawStructureFromPool(startPool, constraints);
 
   return {
     namespace: info.namespace,
