@@ -1,4 +1,4 @@
-# Generated Loot.
+# Generated Loot
 
 There is one loot table used in this structure:
 
