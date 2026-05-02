@@ -1306,6 +1306,285 @@ async function collectStructureFilesFromTemplatePool(poolId, seenPools = new Set
   return result;
 }
 
+
+function getFirstNumber(value, fallback = 0) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : fallback;
+}
+
+function getStructureSize(structure) {
+  const size = structure.size ?? structure.Size ?? [0, 0, 0];
+  return {
+    x: getFirstNumber(size[0]),
+    y: getFirstNumber(size[1]),
+    z: getFirstNumber(size[2])
+  };
+}
+
+function getJigsawNbtValue(nbtData, key) {
+  if (!nbtData || typeof nbtData !== "object") return undefined;
+  return nbtData[key] ?? nbtData[key.replace(/_([a-z])/g, (_, c) => c.toUpperCase())] ?? nbtData[key.toUpperCase()];
+}
+
+function normalizeResourceLocationForCompare(value) {
+  if (typeof value !== "string") return null;
+  if (!value) return null;
+  return value.includes(":") ? value : `minecraft:${value}`;
+}
+
+function getJigsawInfo(block, state) {
+  const blockName = getBlockNameFromPaletteEntry(state);
+  if (blockName !== "minecraft:jigsaw") return null;
+
+  const nbtData = block.nbt;
+  const pos = block.pos ?? block.position;
+  if (!nbtData || !Array.isArray(pos) || pos.length < 3) return null;
+
+  const properties = state?.Properties ?? state?.properties ?? {};
+  const orientation = properties.orientation ?? properties.Orientation ?? "north_up";
+  const [front = "north", top = "up"] = String(orientation).split("_");
+
+  return {
+    x: getFirstNumber(pos[0]),
+    y: getFirstNumber(pos[1]),
+    z: getFirstNumber(pos[2]),
+    name: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "name")),
+    target: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "target")),
+    pool: normalizeResourceLocationForCompare(getJigsawNbtValue(nbtData, "pool")),
+    finalState: getJigsawNbtValue(nbtData, "final_state"),
+    orientation,
+    front,
+    top
+  };
+}
+
+function getJigsawsFromStructure(structure) {
+  const palette = getPalette(structure);
+  const jigsaws = [];
+
+  for (const block of structure.blocks ?? []) {
+    const state = palette[block.state];
+    const info = getJigsawInfo(block, state);
+    if (info) jigsaws.push(info);
+  }
+
+  return jigsaws;
+}
+
+function directionToVector(direction) {
+  switch (direction) {
+    case "north": return { x: 0, y: 0, z: -1 };
+    case "south": return { x: 0, y: 0, z: 1 };
+    case "west": return { x: -1, y: 0, z: 0 };
+    case "east": return { x: 1, y: 0, z: 0 };
+    case "down": return { x: 0, y: -1, z: 0 };
+    case "up":
+    default: return { x: 0, y: 1, z: 0 };
+  }
+}
+
+function rotateYVector(vector, quarterTurns) {
+  let x = vector.x;
+  let z = vector.z;
+  const turns = ((quarterTurns % 4) + 4) % 4;
+
+  for (let i = 0; i < turns; i++) {
+    const nextX = -z;
+    const nextZ = x;
+    x = nextX;
+    z = nextZ;
+  }
+
+  return { x, y: vector.y, z };
+}
+
+function vectorKey(vector) {
+  return `${vector.x},${vector.y},${vector.z}`;
+}
+
+function rotateYPosition(pos, size, quarterTurns) {
+  const turns = ((quarterTurns % 4) + 4) % 4;
+  let x = pos.x;
+  let z = pos.z;
+  let sx = size.x;
+  let sz = size.z;
+
+  for (let i = 0; i < turns; i++) {
+    const nextX = sz - 1 - z;
+    const nextZ = x;
+    x = nextX;
+    z = nextZ;
+    const oldSx = sx;
+    sx = sz;
+    sz = oldSx;
+  }
+
+  return { x, y: pos.y, z };
+}
+
+function rotateYDirection(direction, quarterTurns) {
+  const horizontal = ["north", "east", "south", "west"];
+  const index = horizontal.indexOf(direction);
+  if (index === -1) return direction;
+  return horizontal[(index + quarterTurns + 400) % 4];
+}
+
+function rotateYProperties(properties, quarterTurns) {
+  const rotated = { ...(properties ?? {}) };
+
+  if (rotated.facing) rotated.facing = rotateYDirection(rotated.facing, quarterTurns);
+  if (rotated.horizontal_facing) rotated.horizontal_facing = rotateYDirection(rotated.horizontal_facing, quarterTurns);
+  if (rotated.orientation) {
+    const [front, top = "up"] = String(rotated.orientation).split("_");
+    rotated.orientation = `${rotateYDirection(front, quarterTurns)}_${rotateYDirection(top, quarterTurns)}`;
+  }
+
+  return rotated;
+}
+
+function transformStructureBlocks(structure, offset, quarterTurns = 0) {
+  const size = getStructureSize(structure);
+
+  return collectBlocksFromStructure(structure).map(block => {
+    const rotated = rotateYPosition(block, size, quarterTurns);
+
+    return {
+      ...block,
+      x: rotated.x + offset.x,
+      y: rotated.y + offset.y,
+      z: rotated.z + offset.z,
+      properties: rotateYProperties(block.properties, quarterTurns)
+    };
+  });
+}
+
+function transformJigsaw(jigsaw, size, offset, quarterTurns = 0) {
+  const rotated = rotateYPosition(jigsaw, size, quarterTurns);
+  const frontVector = rotateYVector(directionToVector(jigsaw.front), quarterTurns);
+
+  return {
+    ...jigsaw,
+    x: rotated.x + offset.x,
+    y: rotated.y + offset.y,
+    z: rotated.z + offset.z,
+    frontVector
+  };
+}
+
+function chooseTemplatePoolLocations(poolJson) {
+  const locations = [];
+
+  for (const element of poolJson?.elements ?? []) {
+    const elementData = element.element ?? element;
+    const elementLocations = [...collectElementLocations(elementData)];
+    if (elementLocations.length > 0) locations.push(...elementLocations);
+  }
+
+  return locations;
+}
+
+async function chooseStructureFromTemplatePool(poolId, seenPools = new Set()) {
+  if (!poolId || poolId === "minecraft:empty" || seenPools.has(poolId)) return null;
+  seenPools.add(poolId);
+
+  const poolJson = readJsonIfExists(getTemplatePoolFile(poolId));
+  if (!poolJson) return null;
+  stats.poolsRead++;
+
+  for (const location of chooseTemplatePoolLocations(poolJson)) {
+    const structureFile = getStructureNbtFileFromLocation(location);
+    if (fs.existsSync(structureFile)) return { location, structureFile };
+  }
+
+  if (poolJson.fallback && poolJson.fallback !== "minecraft:empty") {
+    return chooseStructureFromTemplatePool(poolJson.fallback, seenPools);
+  }
+
+  return null;
+}
+
+function getQuarterTurnsToFace(childFront, parentFront) {
+  const desired = { x: -parentFront.x, y: -parentFront.y, z: -parentFront.z };
+
+  for (let turns = 0; turns < 4; turns++) {
+    if (vectorKey(rotateYVector(childFront, turns)) === vectorKey(desired)) return turns;
+  }
+
+  return 0;
+}
+
+function makeBlockKey(block) {
+  return `${block.x},${block.y},${block.z}`;
+}
+
+async function assembleJigsawStructureFromPool(startPool, maxDepth = 7) {
+  const start = await chooseStructureFromTemplatePool(startPool);
+  if (!start) return [];
+
+  const blocks = [];
+  const occupied = new Set();
+  const queue = [{ structureFile: start.structureFile, offset: { x: 0, y: 0, z: 0 }, quarterTurns: 0, depth: 0 }];
+  const placed = new Set();
+
+  while (queue.length > 0) {
+    const item = queue.shift();
+    const placedKey = `${item.structureFile}|${item.offset.x},${item.offset.y},${item.offset.z}|${item.quarterTurns}`;
+    if (placed.has(placedKey)) continue;
+    placed.add(placedKey);
+
+    const structure = await readNbtFile(item.structureFile);
+    const size = getStructureSize(structure);
+
+    for (const block of transformStructureBlocks(structure, item.offset, item.quarterTurns)) {
+      const key = makeBlockKey(block);
+      if (occupied.has(key)) continue;
+      occupied.add(key);
+      blocks.push(block);
+    }
+
+    if (item.depth >= maxDepth) continue;
+
+    for (const parent of getJigsawsFromStructure(structure)) {
+      if (!parent.pool || parent.pool === "minecraft:empty") continue;
+
+      const worldParent = transformJigsaw(parent, size, item.offset, item.quarterTurns);
+      const childChoice = await chooseStructureFromTemplatePool(parent.pool);
+      if (!childChoice) continue;
+
+      stats.jigsawPoolsFollowed++;
+      const childStructure = await readNbtFile(childChoice.structureFile);
+      const childSize = getStructureSize(childStructure);
+      const childJigsaws = getJigsawsFromStructure(childStructure);
+      const childConnector = childJigsaws.find(jigsaw => jigsaw.name === parent.target) ?? childJigsaws[0];
+      if (!childConnector) continue;
+
+      const parentFront = worldParent.frontVector ?? directionToVector(worldParent.front);
+      const childFront = directionToVector(childConnector.front);
+      const childTurns = getQuarterTurnsToFace(childFront, parentFront);
+      const rotatedChildConnector = rotateYPosition(childConnector, childSize, childTurns);
+      const attach = {
+        x: worldParent.x + parentFront.x,
+        y: worldParent.y + parentFront.y,
+        z: worldParent.z + parentFront.z
+      };
+      const childOffset = {
+        x: attach.x - rotatedChildConnector.x,
+        y: attach.y - rotatedChildConnector.y,
+        z: attach.z - rotatedChildConnector.z
+      };
+
+      queue.push({
+        structureFile: childChoice.structureFile,
+        offset: childOffset,
+        quarterTurns: childTurns,
+        depth: item.depth + 1
+      });
+    }
+  }
+
+  return blocks;
+}
+
 async function collectStructureFilesForWorldgenStructure(worldgenFile) {
   const info = getWorldgenStructureInfo(worldgenFile);
   const json = readJsonIfExists(worldgenFile);
@@ -1313,6 +1592,14 @@ async function collectStructureFilesForWorldgenStructure(worldgenFile) {
 
   const pools = collectTemplatePoolsFromObject(json);
   const files = new Set();
+  let blocks = [];
+
+  const startPool = normalizeResourceLocationForCompare(json.start_pool ?? json.startPool);
+  const maxDepth = Math.max(1, Number(json.size ?? json.max_distance_from_center ?? 7));
+
+  if (startPool) {
+    blocks = await assembleJigsawStructureFromPool(startPool, maxDepth);
+  }
 
   for (const poolId of pools) {
     await collectStructureFilesFromTemplatePool(poolId, new Set(), files);
@@ -1322,7 +1609,8 @@ async function collectStructureFilesForWorldgenStructure(worldgenFile) {
     namespace: info.namespace,
     relativePath: info.relativePath,
     id: info.id,
-    files: [...files].sort()
+    files: [...files].sort(),
+    blocks
   };
 }
 
@@ -1371,7 +1659,8 @@ async function getWorldgenStructureGroups() {
     groups.set(group.id, {
       namespace: group.namespace,
       outputName: group.relativePath,
-      files: group.files
+      files: group.files,
+      blocks: group.blocks
     });
   }
 
@@ -1419,7 +1708,9 @@ async function main() {
   for (const group of groups.values()) {
     group.files.sort();
 
-    const blocks = await loadBlocksForFiles(group.files);
+    const blocks = Array.isArray(group.blocks) && group.blocks.length > 0
+      ? group.blocks
+      : await loadBlocksForFiles(group.files);
     const outputPath = path.join(outputRoot, group.namespace, `${group.outputName}.gif`);
 
     validOutputFiles.add(path.normalize(outputPath));

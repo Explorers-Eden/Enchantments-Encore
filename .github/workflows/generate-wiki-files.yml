@@ -34,21 +34,52 @@ jobs:
         run: node scripts/download-vanilla-assets.js
 
       - name: Generate loot table markdown
-        run: node scripts/generate-loot-tables.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find data -type f -path '*/loot_table/*.json' -print -quit 2>/dev/null | grep -q .; then
+            node scripts/generate-loot-tables.js
+          else
+            echo "No loot table files found; skipping loot table markdown generation."
+          fi
 
       - name: Generate structure markdown
-        run: node scripts/generate-structures.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find data -type f \( -path '*/worldgen/structure/*.json' -o -path '*/structure/*.nbt' \) -print -quit 2>/dev/null | grep -q .; then
+            node scripts/generate-structures.js
+          else
+            echo "No structure files found; skipping structure markdown generation."
+          fi
 
       - name: Generate structure preview images
-        run: node scripts/generate-structure-previews.js
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find data -type f \( -path '*/worldgen/structure/*.json' -o -path '*/structure/*.nbt' \) -print -quit 2>/dev/null | grep -q .; then
+            node scripts/generate-structure-previews.js
+          else
+            echo "No structure files found; skipping structure preview GIF generation."
+          fi
 
       - name: Show generated wiki files
+        shell: bash
         run: |
+          set -euo pipefail
           echo "Generated markdown files:"
-          find wiki/markdown -type f -name "*.md" -print | sort || true
+          if [ -d wiki/markdown ]; then
+            find wiki/markdown -type f -name "*.md" -print | sort
+          else
+            echo "No wiki/markdown directory found."
+          fi
           echo ""
           echo "Generated structure preview images:"
-          find wiki/images/structures -type f -name "*.gif" -print | sort || true
+          if [ -d wiki/images/structures ]; then
+            find wiki/images/structures -type f -name "*.gif" -print | sort
+          else
+            echo "No wiki/images/structures directory found."
+          fi
           echo ""
           echo "Git status:"
           git status --short
@@ -68,7 +99,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add -A wiki/markdown wiki/images/structures
+          if [ ! -d wiki ]; then
+            echo "No wiki directory exists; skipping commit."
+            exit 0
+          fi
+
+          git add -A wiki
 
           if git diff --cached --quiet; then
             echo "No generated wiki changes to commit."
