@@ -7,7 +7,7 @@
 The datapack also adds a unique Structure which has always a guaranteed enchantment from this data pack in it.
 
 ## ⭐ Enchantments Overview
-A comprehensive overview of all enchantments and their infos can be found here: [Click Me!](https://enchantments.explorerseden.eu/)
+A comprehensive overview of all enchantments and their infos can be found here: [Click Me!](https://explorerseden.eu/enchantments)
 
 Starting with v3.2 there also is an in-game wiki accessible via the pause menu to quickly check enchantments you don't know yet.
 
