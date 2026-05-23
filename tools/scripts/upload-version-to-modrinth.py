@@ -10,8 +10,8 @@ with open(os.environ["CHANGELOG_PATH"], "r", encoding="utf-8") as f:
     changelog = f.read()
 
 file_name = os.environ["FILE_NAME"]
-mime_type = os.environ.get("MIME_TYPE", "application/octet-stream")
-upload_kind = os.environ.get("UPLOAD_KIND", "version")
+file_mime_type = os.environ["FILE_MIME_TYPE"]
+label = os.environ.get("MODRINTH_UPLOAD_LABEL", "version")
 
 payload = {
     "project_id": os.environ["PROJECT_ID"],
@@ -28,24 +28,22 @@ payload = {
     "primary_file": "file",
 }
 
-headers = {
-    "Authorization": token,
-    "User-Agent": "Explorers-Eden-Enchantments-Encore-GitHub-Action",
-}
-
 with open(file_name, "rb") as f:
     response = requests.post(
         "https://api.modrinth.com/v2/version",
-        headers=headers,
+        headers={
+            "Authorization": token,
+            "User-Agent": "Explorers-Eden-GitHub-Action",
+        },
         files={
             "data": (None, json.dumps(payload), "application/json"),
-            "file": (file_name, f, mime_type),
+            "file": (file_name, f, file_mime_type),
         },
         timeout=300,
     )
 
 if response.status_code >= 300:
     print(response.text)
-    raise RuntimeError(f"Modrinth {upload_kind} upload failed: {response.status_code}")
+    raise RuntimeError(f"Modrinth {label} upload failed: {response.status_code}")
 
-print(f"Modrinth {upload_kind} version uploaded successfully")
+print(f"Modrinth {label} version uploaded successfully")

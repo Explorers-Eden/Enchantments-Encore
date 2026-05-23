@@ -1,7 +1,11 @@
 Project-ID: GD1QoExk
+Mod-ID: mr_enchantments_encore
+Namespace: enchantencore
+Slug: enchantments-encore
+Name: Enchantments Encore
 
 Meta Data:
-  Versions: 
+  Versions:
     - 26.1
     - 26.1.1
     - 26.1.2

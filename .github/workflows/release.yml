@@ -5,48 +5,60 @@ on:
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-  release:
+  sync-translations:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Install Python dependencies
-        run: pip install pyyaml requests
+      - name: Install dependencies
+        run: pip install pyyaml
 
-      - name: Create temporary Crowdin config
-        shell: bash
-        run: scripts/create-crowdin-config.sh
+      - name: Read project metadata
+        id: meta
+        run: python tools/scripts/read-release-metadata.py
 
-      - name: Upload Enchantments Encore source to Crowdin
+      - name: Check for translatable content
+        id: check
+        run: |
+          if [ -f "assets/${{ steps.meta.outputs.namespace }}/lang/en_us.json" ]; then
+            echo "has_lang=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_lang=false" >> "$GITHUB_OUTPUT"
+            echo "No lang files found, skipping translation sync"
+          fi
+
+      - name: Create Crowdin config
+        if: steps.check.outputs.has_lang == 'true'
+        run: python tools/scripts/create-crowdin-config.py
+
+      - name: Backup English source lang
+        if: steps.check.outputs.has_lang == 'true'
+        env:
+          NAMESPACE: ${{ steps.meta.outputs.namespace }}
+        run: bash tools/scripts/backup-lang.sh
+
+      - name: Upload source to Crowdin
+        if: steps.check.outputs.has_lang == 'true'
         uses: crowdin/github-action@v2
         with:
           config: .crowdin-temp.yml
           upload_sources: true
           upload_translations: false
           download_translations: false
-          create_pull_request: false
-          push_translations: false
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-      - name: Protect English source file
-        shell: bash
-        run: scripts/protect-english-source.sh
-
-      - name: Download Enchantments Encore translations from Crowdin
+      - name: Download translations from Crowdin
+        if: steps.check.outputs.has_lang == 'true'
         uses: crowdin/github-action@v2
         with:
           config: .crowdin-temp.yml
@@ -54,24 +66,43 @@ jobs:
           upload_translations: false
           download_translations: true
           skip_untranslated_files: false
-          create_pull_request: false
           push_translations: false
+          create_pull_request: false
         env:
           CROWDIN_PROJECT_ID: ${{ secrets.CROWDIN_PROJECT_ID }}
           CROWDIN_PERSONAL_TOKEN: ${{ secrets.CROWDIN_PERSONAL_TOKEN }}
 
-      - name: Clean downloaded translations and restore English source
-        shell: bash
-        run: scripts/clean-crowdin-translations.sh
+      - name: Clean up Crowdin files
+        if: steps.check.outputs.has_lang == 'true'
+        env:
+          NAMESPACE: ${{ steps.meta.outputs.namespace }}
+        run: bash tools/scripts/cleanup-crowdin-files.sh
 
-      - name: Commit downloaded translation files to repo
-        shell: bash
-        run: scripts/commit-translation-files.sh
+      - name: Commit translation updates
+        if: steps.check.outputs.has_lang == 'true'
+        env:
+          NAMESPACE: ${{ steps.meta.outputs.namespace }}
+          NAME: ${{ steps.meta.outputs.name }}
+        run: bash tools/scripts/commit-crowdin-updates.sh
+
+  build-and-release:
+    needs: sync-translations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install pyyaml requests
 
       - name: Read release metadata
         id: meta
-        shell: bash
-        run: python scripts/read-release-metadata.py
+        run: python tools/scripts/read-release-metadata.py
 
       - name: Build datapack zip and universal mod jar
         env:
@@ -79,9 +110,15 @@ jobs:
           JAR_NAME: ${{ steps.meta.outputs.jar_name }}
           VERSION_NUMBER: ${{ steps.meta.outputs.version_number }}
           PROJECT_ID: ${{ steps.meta.outputs.project_id }}
-        run: python scripts/build-release-assets.py
+          MOD_ID: ${{ steps.meta.outputs.mod_id }}
+          NAMESPACE: ${{ steps.meta.outputs.namespace }}
+          SLUG: ${{ steps.meta.outputs.slug }}
+          NAME: ${{ steps.meta.outputs.name }}
+          DESCRIPTION: ${{ steps.meta.outputs.description }}
+          ICON: ${{ steps.meta.outputs.icon }}
+        run: python tools/scripts/build-release-artifacts.py
 
-      - name: Create or update GitHub Release
+      - name: Create or update GitHub release
         env:
           GH_TOKEN: ${{ github.token }}
           TAG_NAME: ${{ steps.meta.outputs.tag_name }}
@@ -90,7 +127,7 @@ jobs:
           ZIP_NAME: ${{ steps.meta.outputs.zip_name }}
           JAR_NAME: ${{ steps.meta.outputs.jar_name }}
           IS_PRERELEASE: ${{ steps.meta.outputs.is_prerelease }}
-        run: scripts/create-or-update-github-release.sh
+        run: bash tools/scripts/create-or-update-github-release.sh
 
       - name: Upload datapack version to Modrinth
         env:
@@ -103,9 +140,9 @@ jobs:
           GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
           FILE_NAME: ${{ steps.meta.outputs.zip_name }}
           LOADERS_JSON: '["datapack"]'
-          MIME_TYPE: application/zip
-          UPLOAD_KIND: datapack
-        run: python scripts/upload-modrinth-version.py
+          FILE_MIME_TYPE: application/zip
+          MODRINTH_UPLOAD_LABEL: datapack
+        run: python tools/scripts/upload-version-to-modrinth.py
 
       - name: Upload universal mod version to Modrinth
         env:
@@ -118,6 +155,6 @@ jobs:
           GAME_VERSIONS_JSON: ${{ steps.meta.outputs.game_versions_json }}
           FILE_NAME: ${{ steps.meta.outputs.jar_name }}
           LOADERS_JSON: '["fabric", "forge", "quilt", "neoforge"]'
-          MIME_TYPE: application/java-archive
-          UPLOAD_KIND: universal mod
-        run: python scripts/upload-modrinth-version.py
+          FILE_MIME_TYPE: application/java-archive
+          MODRINTH_UPLOAD_LABEL: universal mod
+        run: python tools/scripts/upload-version-to-modrinth.py
