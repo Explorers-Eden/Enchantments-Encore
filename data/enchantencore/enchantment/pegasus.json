@@ -30,7 +30,7 @@
           "entity": "this",
           "predicate": {
             "passenger": {
-              "type": "minecraft:player"
+              "minecraft:entity_type": "minecraft:player"
             }
           }
         }

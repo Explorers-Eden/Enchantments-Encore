@@ -34,7 +34,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "#enchantencore:nether"
+              "minecraft:entity_type": "#enchantencore:nether"
             }
           }
         }
@@ -62,7 +62,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "type": "#enchantencore:nether"
+                  "minecraft:entity_type": "#enchantencore:nether"
                 }
               },
               {

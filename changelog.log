@@ -2,5 +2,11 @@
 ## Changes:
 - Lang Files are now getting automatically synced with crowdin with new releases
 - Increased probability of getting Enchanted Books in loot of Rise structure
+- Projectiles shot by a Crossbow with Flare enchantment now also explode after 1-5 seconds (increases with level (lvl 1 = 1 sec)) when no entity/block was hit before
+- Projectiles shot by a Crossbow with Flare enchantment now get removed when they explode
+- Added Velocity enchantment (doubles speed of shot projectiles. Can be obtained in enchanting tables and on random loot)
+- Added Incognito enchantment (hides the wearers name tag. Can be obtained by trading books and on random loot)
+- Added Bounce enchantment (lets the wearer bounce all over the place. Can be obtained in enchanting tables and on random loot)
+- Removed trigger for chat messages from the ingame wiki with links to our new wiki (Entries on the wiki will be created by me over time)
 
 ## Fixes:

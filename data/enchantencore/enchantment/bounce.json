@@ -1,0 +1,61 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.bounce"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/boots",
+  "supported_items": "#minecraft:enchantable/foot_armor",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 25
+  },
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 25
+  },
+  "anvil_cost": 8,
+  "slots": [
+    "feet"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "id": "enchantencore:bounciness",
+        "attribute": "minecraft:bounciness",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": 2,
+          "per_level_above_first": 2
+        },
+        "operation": "add_value"
+      },
+      {
+        "id": "enchantencore:safefall",
+        "attribute": "minecraft:safe_fall_distance",
+        "amount": 2.5,
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:air_drag_modifier",
+        "id": "enchantencore:airdrag",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.2,
+          "per_level_above_first": -0.2
+        },
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:friction_modifier",
+        "id": "enchantencore:friction_modifier",
+        "amount": {
+          "type": "minecraft:linear",
+          "base": -0.2,
+          "per_level_above_first": -0.2
+        },
+        "operation": "add_value"
+      }
+    ]
+  }
+}

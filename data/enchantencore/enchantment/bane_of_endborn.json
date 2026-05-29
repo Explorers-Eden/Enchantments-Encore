@@ -34,7 +34,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "#enchantencore:end"
+              "minecraft:entity_type": "#enchantencore:end"
             }
           }
         }
@@ -62,7 +62,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "type": "#enchantencore:end"
+                  "minecraft:entity_type": "#enchantencore:end"
                 }
               },
               {

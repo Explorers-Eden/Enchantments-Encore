@@ -3,7 +3,7 @@ import os
 import urllib.request
 import yaml
 
-with open("release_infos.yml", "r", encoding="utf-8") as f:
+with open("tools/release_infos.yml", "r", encoding="utf-8") as f:
     info = yaml.safe_load(f)
 
 mod_id = info.get("Mod-ID")

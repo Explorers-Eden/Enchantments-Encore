@@ -1,0 +1,3 @@
+execute as @n[type=#enchantencore:hard_projectiles,distance=..2] store result entity @s Motion[0] double 0.00001 run data get entity @s Motion[0] 200000
+execute as @n[type=#enchantencore:hard_projectiles,distance=..2] store result entity @s Motion[1] double 0.00001 run data get entity @s Motion[1] 200000
+execute as @n[type=#enchantencore:hard_projectiles,distance=..2] store result entity @s Motion[2] double 0.00001 run data get entity @s Motion[2] 200000

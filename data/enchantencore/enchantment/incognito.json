@@ -1,0 +1,36 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.incognito"
+  },
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 31,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 41,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "head"
+  ],
+  "effects": {
+    "minecraft:attributes": [
+      {
+        "attribute": "minecraft:name_tag_distance",
+        "id": "incognito_name_tag_distance",
+        "amount": -99999999999,
+        "operation": "add_value"
+      },
+      {
+        "attribute": "minecraft:below_name_distance",
+        "id": "incognito_below_name_distance",
+        "amount": -99999999999,
+        "operation": "add_value"
+      }
+    ]
+  }
+}

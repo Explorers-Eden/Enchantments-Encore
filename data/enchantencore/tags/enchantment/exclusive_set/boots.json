@@ -31,6 +31,10 @@
     {
       "id": "enchantencore:strafe",
       "required": false
+    },
+    {
+      "id": "enchantencore:bounce",
+      "required": false
     }
   ]
 }

@@ -42,7 +42,7 @@
           "condition": "minecraft:entity_properties",
           "entity": "direct_attacker",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles"
           }
         }
       },
@@ -57,7 +57,7 @@
           "condition": "minecraft:entity_properties",
           "entity": "direct_attacker",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles"
           }
         }
       },
@@ -72,7 +72,7 @@
           "condition": "minecraft:entity_properties",
           "entity": "direct_attacker",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles"
           }
         }
       }

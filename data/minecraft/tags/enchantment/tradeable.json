@@ -97,6 +97,10 @@
       "required": false
     },
     {
+      "id": "enchantencore:incognito",
+      "required": false
+    },
+    {
       "id": "enchantencore:bane_of_bosses",
       "required": false
     },

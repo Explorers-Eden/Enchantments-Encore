@@ -34,7 +34,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "this",
             "predicate": {
-              "type": "#enchantencore:bosses"
+              "minecraft:entity_type": "#enchantencore:bosses"
             }
           }
         }
@@ -62,7 +62,7 @@
                 "condition": "minecraft:entity_properties",
                 "entity": "this",
                 "predicate": {
-                  "type": "#enchantencore:bosses"
+                  "minecraft:entity_type": "#enchantencore:bosses"
                 }
               },
               {

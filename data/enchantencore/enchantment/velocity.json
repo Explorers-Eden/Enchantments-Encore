@@ -1,0 +1,34 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.velocity"
+  },
+  "supported_items": [
+    "minecraft:bow",
+    "minecraft:crossbow",
+    "minecraft:trident"
+  ],
+  "weight": 1,
+  "max_level": 1,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 6
+  },
+  "max_cost": {
+    "base": 46,
+    "per_level_above_first": 7
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:projectile_spawned": [
+      {
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:velocity"
+        }
+      }
+    ]
+  }
+}

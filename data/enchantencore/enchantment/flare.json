@@ -32,7 +32,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#enchantencore:hard_projectiles"
+              "minecraft:entity_type": "#enchantencore:hard_projectiles"
             }
           },
           {
@@ -67,7 +67,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#enchantencore:hard_projectiles"
+              "minecraft:entity_type": "#enchantencore:hard_projectiles"
             }
           },
           {
@@ -102,7 +102,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#enchantencore:hard_projectiles"
+              "minecraft:entity_type": "#enchantencore:hard_projectiles"
             }
           },
           {
@@ -137,7 +137,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#enchantencore:hard_projectiles"
+              "minecraft:entity_type": "#enchantencore:hard_projectiles"
             }
           },
           {
@@ -172,7 +172,7 @@
             "condition": "minecraft:entity_properties",
             "entity": "direct_attacker",
             "predicate": {
-              "type": "#enchantencore:hard_projectiles"
+              "minecraft:entity_type": "#enchantencore:hard_projectiles"
             }
           },
           {
@@ -206,8 +206,12 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles",
-            "nbt": "{Tags:[\"ee.flare.1\"]}"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles",
+            "minecraft:entity_tags": {
+              "any_of": [
+                "ee.flare.1"
+              ]
+            }
           }
         }
       },
@@ -220,8 +224,12 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles",
-            "nbt": "{Tags:[\"ee.flare.2\"]}"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles",
+            "minecraft:entity_tags": {
+              "any_of": [
+                "ee.flare.2"
+              ]
+            }
           }
         }
       },
@@ -234,8 +242,12 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles",
-            "nbt": "{Tags:[\"ee.flare.3\"]}"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles",
+            "minecraft:entity_tags": {
+              "any_of": [
+                "ee.flare.3"
+              ]
+            }
           }
         }
       },
@@ -248,8 +260,12 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles",
-            "nbt": "{Tags:[\"ee.flare.4\"]}"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles",
+            "minecraft:entity_tags": {
+              "any_of": [
+                "ee.flare.4"
+              ]
+            }
           }
         }
       },
@@ -262,8 +278,12 @@
           "condition": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
-            "type": "#enchantencore:hard_projectiles",
-            "nbt": " {Tags:[\"ee.flare.5\"]}"
+            "minecraft:entity_type": "#enchantencore:hard_projectiles",
+            "minecraft:entity_tags": {
+              "any_of": [
+                "ee.flare.5"
+              ]
+            }
           }
         }
       }

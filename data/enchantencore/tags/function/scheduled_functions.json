@@ -1,6 +1,5 @@
 {
   "values": [
-    "enchantencore:wiki/init",
     "enchantencore:leaf_jumper/kill",
     "enchantencore:guard",
     "enchantencore:illumination/kill",
@@ -10,6 +9,7 @@
     "enchantencore:regrowth/init",
     "enchantencore:strafe/timer",
     "enchantencore:anchor/remove",
-    "enchantencore:add_enchantable_component/init"
+    "enchantencore:add_enchantable_component/init",
+    "enchantencore:flare/timer"
   ]
 }

@@ -69,16 +69,18 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type": "minecraft:player",
-                "type_specific": {
-                  "type": "minecraft:player",
+                "minecraft:type_specific/player": {
                   "input": {
                     "left": false,
                     "right": true,
                     "sprint": true
                   }
                 },
-                "nbt": "{Tags:[\"enchantencore.not_strafing\"]}"
+                "minecraft:entity_tags": {
+                  "any_of": [
+                    "enchantencore.not_strafing"
+                  ]
+                }
               }
             }
           ]
@@ -133,16 +135,18 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type": "minecraft:player",
-                "type_specific": {
-                  "type": "minecraft:player",
+                "minecraft:type_specific/player": {
                   "input": {
                     "left": true,
                     "right": false,
                     "sprint": true
                   }
                 },
-                "nbt": "{Tags:[\"enchantencore.not_strafing\"]}"
+                "minecraft:entity_tags": {
+                  "any_of": [
+                    "enchantencore.not_strafing"
+                  ]
+                }
               }
             }
           ]

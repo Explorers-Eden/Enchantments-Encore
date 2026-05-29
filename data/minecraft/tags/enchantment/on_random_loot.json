@@ -21,6 +21,14 @@
       "required": false
     },
     {
+      "id": "enchantencore:incognito",
+      "required": false
+    },
+    {
+      "id": "enchantencore:velocity",
+      "required": false
+    },
+    {
       "id": "enchantencore:ender_shot",
       "required": false
     },
@@ -206,6 +214,10 @@
     },
     {
       "id": "enchantencore:surfer",
+      "required": false
+    },
+    {
+      "id": "enchantencore:bounce",
       "required": false
     }
   ]

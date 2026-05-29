@@ -1,0 +1,16 @@
+{
+  "condition": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "minecraft:entity_type": "#enchantencore:hard_projectiles",
+    "minecraft:entity_tags": {
+      "any_of": [
+        "ee.flare.1",
+        "ee.flare.2",
+        "ee.flare.3",
+        "ee.flare.4",
+        "ee.flare.5"
+      ]
+    }
+  }
+}

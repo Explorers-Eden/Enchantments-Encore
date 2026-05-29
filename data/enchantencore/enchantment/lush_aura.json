@@ -83,7 +83,7 @@
                   "condition": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
-                    "type": "minecraft:armor_stand",
+                    "minecraft:entity_type": "minecraft:armor_stand",
                     "periodic_tick": 10
                   }
                 }
@@ -106,8 +106,7 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific": {
-                  "type": "minecraft:player",
+                "minecraft:type_specific/player": {
                   "input": {
                     "forward": true,
                     "backward": false
@@ -119,8 +118,7 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific": {
-                  "type": "minecraft:player",
+                "minecraft:type_specific/player": {
                   "input": {
                     "backward": false,
                     "left": true
@@ -132,8 +130,7 @@
               "condition": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
-                "type_specific": {
-                  "type": "minecraft:player",
+                "minecraft:type_specific/player": {
                   "input": {
                     "backward": false,
                     "right": true
