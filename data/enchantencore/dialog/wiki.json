@@ -2619,25 +2619,6 @@
     {
       "label": [
         {
-          "translate": "enchantment.enchantencore.sting"
-        },
-        " ",
-        {
-          "sprite": "minecraft:item/crossbow_standby",
-          "atlas": "minecraft:items"
-        }
-      ],
-      "tooltip": {
-        "translate": "wiki.enchantencore.sting"
-      },
-      "action": {
-        "type": "minecraft:open_url",
-        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/sting"
-      }
-    },
-    {
-      "label": [
-        {
           "translate": "enchantment.enchantencore.strafe"
         },
         " ",

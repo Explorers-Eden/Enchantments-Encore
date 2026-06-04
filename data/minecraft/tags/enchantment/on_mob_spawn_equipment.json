@@ -77,10 +77,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:poppy_peace",
-      "required": false
-    },
-    {
       "id": "enchantencore:pickpocket",
       "required": false
     },

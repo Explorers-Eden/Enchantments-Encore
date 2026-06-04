@@ -9,10 +9,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:sting",
-      "required": false
-    },
-    {
       "id": "enchantencore:forge_shot",
       "required": false
     },

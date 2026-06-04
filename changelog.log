@@ -8,5 +8,7 @@
 - Added Incognito enchantment (hides the wearers name tag. Can be obtained by trading books and on random loot)
 - Added Bounce enchantment (lets the wearer bounce all over the place. Can be obtained in enchanting tables and on random loot)
 - Removed trigger for chat messages from the ingame wiki with links to our new wiki (Entries on the wiki will be created by me over time)
+- Removed Poppy Peace and Sting enchantments due to changes of how Entity Anger works
 
 ## Fixes:
+- Fixed a typo in Pufferfish enchantment description

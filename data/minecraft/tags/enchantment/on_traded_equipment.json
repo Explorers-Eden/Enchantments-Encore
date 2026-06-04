@@ -29,10 +29,6 @@
       "required": false
     },
     {
-      "id": "enchantencore:sting",
-      "required": false
-    },
-    {
       "id": "enchantencore:swift_slash",
       "required": false
     },
@@ -114,10 +110,6 @@
     },
     {
       "id": "enchantencore:scholar_of_mobs",
-      "required": false
-    },
-    {
-      "id": "enchantencore:poppy_peace",
       "required": false
     },
     {
