@@ -1,6 +1,3 @@
-<img src="https://explorerseden.eu/enchtants_title.png" alt="header" width=100%>
-<br><br>
-
 ## 📖 Description
 **Enchantments Encore** adds a vast array of new enchantments to the game which can be obtained in any vanilla way. Some are obtainable in loot chests or in an enchanting table, others are tradable at villager. Even mobs can spawn with some of the new enchantments on their equipment.
 
