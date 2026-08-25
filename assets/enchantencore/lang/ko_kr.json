@@ -1,7 +1,7 @@
 {
     "menu.enchantencore.desc.wiki.option": "Pick an Enchantment you'd like to learn more about.",
     "menu.enchantencore.title.external": "Enchantments Encore",
-    "menu.enchantencore.title.wiki": "",
+    "menu.enchantencore.title.wiki": "Enchantments Encore: Wiki",
     "enchantment.enchantencore.anchor": "고정",
     "enchantment.enchantencore.bounce": "바운스",
     "enchantment.enchantencore.velocity": "속도",
@@ -56,7 +56,7 @@
     "enchantment.enchantencore.hunger_aspect": "Hunger Aspect",
     "enchantment.enchantencore.ice_alloy": "Ice Alloy",
     "enchantment.enchantencore.infested_aspect": "Infested Aspect",
-    "enchantment.enchantencore.invisibility_cloak": "",
+    "enchantment.enchantencore.invisibility_cloak": "Invisibility Cloak",
     "enchantment.enchantencore.leech": "Leech",
     "enchantment.enchantencore.levitation_aspect": "Levitation Aspect",
     "enchantment.enchantencore.lightning_bolt": "Lightning Bolt",
