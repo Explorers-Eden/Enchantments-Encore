@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.bane_of_raiders"
+    "translate": "enchantment.enchantencore.bane_of_raiders",
+    "fallback": "Bane of Raiders"
   },
     "exclusive_set": "#minecraft:exclusive_set/damage",
     "supported_items": "#enchantencore:weapons",

@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.seeker"
+      "translate": "enchantment.enchantencore.seeker",
+      "fallback": "Seeker"
     },
     "supported_items": "#minecraft:enchantable/head_armor",
     "weight": 2,

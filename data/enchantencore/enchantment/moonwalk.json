@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.moonwalk"
+    "translate": "enchantment.enchantencore.moonwalk",
+    "fallback": "Moonwalk"
   },
   "supported_items": [
     "minecraft:elytra",

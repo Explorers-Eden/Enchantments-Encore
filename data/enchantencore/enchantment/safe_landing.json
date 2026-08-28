@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.safe_landing"
+    "translate": "enchantment.enchantencore.safe_landing",
+    "fallback": "Safe Landing"
   },
     "supported_items": "minecraft:elytra",
     "exclusive_set": "#enchantencore:exclusive_set/elytra",

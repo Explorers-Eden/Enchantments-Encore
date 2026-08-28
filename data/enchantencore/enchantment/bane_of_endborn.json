@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.bane_of_endborn"
+    "translate": "enchantment.enchantencore.bane_of_endborn",
+    "fallback": "Bane of Endborn"
   },
     "exclusive_set": "#minecraft:exclusive_set/damage",
     "supported_items": "#enchantencore:weapons",

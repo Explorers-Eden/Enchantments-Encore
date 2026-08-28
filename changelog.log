@@ -1,5 +1,7 @@
 # Minecraft Version(s): 26.2
 ## Changes:
+- Removed Message Dialog when loading the data pack for the first time
+- Added fallback translation keys
 
 ## Fixes:
-- Flare enchantment killing Victim on hit
+- Game crashing when either using the Resource Pack without the Data Pack or in some cases with the mod version in combination with other mods (exp.: Travelers Backpack)

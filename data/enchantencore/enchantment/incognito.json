@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.incognito"
+    "translate": "enchantment.enchantencore.incognito",
+    "fallback": "Incognito"
   },
   "supported_items": "#minecraft:enchantable/head_armor",
   "weight": 1,

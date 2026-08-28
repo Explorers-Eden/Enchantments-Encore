@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.boltbringer"
+      "translate": "enchantment.enchantencore.boltbringer",
+      "fallback": "Boltbringer"
     },
     "supported_items": "minecraft:mace",
     "weight": 2,

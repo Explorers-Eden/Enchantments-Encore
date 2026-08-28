@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.velocity"
+    "translate": "enchantment.enchantencore.velocity",
+    "fallback": "Velocity"
   },
   "supported_items": [
     "minecraft:bow",

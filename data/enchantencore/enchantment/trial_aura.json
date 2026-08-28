@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.trial_aura"
+    "translate": "enchantment.enchantencore.trial_aura",
+    "fallback": "Trial Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.switch"
+    "translate": "enchantment.enchantencore.switch",
+    "fallback": "Switch"
   },
   "exclusive_set": "#enchantencore:exclusive_set/pufferfish",
   "supported_items": "#minecraft:enchantable/trident",

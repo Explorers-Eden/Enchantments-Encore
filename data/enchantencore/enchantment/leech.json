@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.leech"
+    "translate": "enchantment.enchantencore.leech",
+    "fallback": "Leech"
   },
     "supported_items": "#enchantencore:weapons",
     "primary_items": "#minecraft:enchantable/melee_weapon",

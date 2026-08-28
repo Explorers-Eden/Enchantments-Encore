@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.death_curse"
+      "translate": "enchantment.enchantencore.death_curse",
+      "fallback": "Curse of Death"
     },
     "supported_items": "#minecraft:enchantable/melee_weapon",
     "weight": 2,

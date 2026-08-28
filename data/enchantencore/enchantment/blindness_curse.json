@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.blindness_curse"
+    "translate": "enchantment.enchantencore.blindness_curse",
+    "fallback": "Curse of Blindness"
   },
   "supported_items": "#minecraft:enchantable/head_armor",
   "weight": 2,

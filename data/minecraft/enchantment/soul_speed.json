@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.minecraft.soul_speed"
+      "translate": "enchantment.minecraft.soul_speed",
+      "fallback": "Soul Speed"
     },
     "exclusive_set": "#enchantencore:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",

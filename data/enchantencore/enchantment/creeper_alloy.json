@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.creeper_alloy"
+    "translate": "enchantment.enchantencore.creeper_alloy",
+    "fallback": "Creeper Alloy"
   },
   "exclusive_set": "#enchantencore:exclusive_set/alloy",
   "supported_items": "#minecraft:chest_armor",

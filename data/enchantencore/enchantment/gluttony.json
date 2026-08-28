@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.gluttony"
+    "translate": "enchantment.enchantencore.gluttony",
+    "fallback": "Gluttony"
   },
     "exclusive_set": "#enchantencore:exclusive_set/all_tools",
     "supported_items": "#enchantencore:all_tools",

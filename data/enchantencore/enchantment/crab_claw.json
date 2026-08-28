@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.crab_claw"
+    "translate": "enchantment.enchantencore.crab_claw",
+    "fallback": "Crab Claw"
   },
     "supported_items": "#enchantencore:all_tools",
     "exclusive_set": "#enchantencore:exclusive_set/reach",

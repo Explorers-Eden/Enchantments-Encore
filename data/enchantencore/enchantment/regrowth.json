@@ -1,7 +1,8 @@
 {
   "anvil_cost": 8,
   "description": {
-    "translate": "enchantment.enchantencore.regrowth"
+    "translate": "enchantment.enchantencore.regrowth",
+    "fallback": "Regrowth"
   },
   "effects": {
     "minecraft:hit_block": [

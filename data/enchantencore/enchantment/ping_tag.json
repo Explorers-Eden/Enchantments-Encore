@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.ping_tag"
+      "translate": "enchantment.enchantencore.ping_tag",
+      "fallback": "Ping Tag"
     },
     "supported_items": "#enchantencore:valid_for_ping_tag",
     "primary_items": "minecraft:bow",

@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.flaming_aura"
+    "translate": "enchantment.enchantencore.flaming_aura",
+    "fallback": "Flaming Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

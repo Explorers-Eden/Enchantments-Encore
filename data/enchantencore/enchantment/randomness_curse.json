@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.randomness_curse"
+    "translate": "enchantment.enchantencore.randomness_curse",
+    "fallback": "Curse of Randomness"
   },
   "supported_items": "#enchantencore:all_tools",
   "weight": 2,

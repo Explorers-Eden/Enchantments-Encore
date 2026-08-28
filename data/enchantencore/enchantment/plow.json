@@ -2,7 +2,8 @@
   "exclusive_set": "#enchantencore:exclusive_set/regrowth",
   "anvil_cost": 2,
   "description": {
-    "translate": "enchantment.enchantencore.plow"
+    "translate": "enchantment.enchantencore.plow",
+    "fallback": "Plow"
   },
   "effects": {
     "minecraft:hit_block": [

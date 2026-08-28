@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.rabbit_foot"
+    "translate": "enchantment.enchantencore.rabbit_foot",
+    "fallback": "Rabbit Foot"
   },
     "supported_items": "#minecraft:foot_armor",
     "weight": 10,

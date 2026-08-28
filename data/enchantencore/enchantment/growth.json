@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.growth"
+    "translate": "enchantment.enchantencore.growth",
+    "fallback": "Growth"
   },
     "exclusive_set": "#enchantencore:exclusive_set/height",
     "supported_items": "#enchantencore:valid_for_growth",

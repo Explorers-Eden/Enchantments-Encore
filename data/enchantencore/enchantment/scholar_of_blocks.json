@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.scholar_of_blocks"
+    "translate": "enchantment.enchantencore.scholar_of_blocks",
+    "fallback": "Scholar of Blocks"
   },
     "exclusive_set": "#enchantencore:exclusive_set/exp",
     "supported_items": "#enchantencore:no_weapons",

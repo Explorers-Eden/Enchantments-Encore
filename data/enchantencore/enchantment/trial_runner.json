@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.trial_runner"
+      "translate": "enchantment.enchantencore.trial_runner",
+      "fallback": "Trial Runner"
     },
     "supported_items": "#minecraft:foot_armor",
     "weight": 1,

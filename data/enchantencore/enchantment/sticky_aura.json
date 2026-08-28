@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.sticky_aura"
+    "translate": "enchantment.enchantencore.sticky_aura",
+    "fallback": "Sticky Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

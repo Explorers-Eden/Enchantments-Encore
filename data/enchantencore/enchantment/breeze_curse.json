@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.breeze_curse"
+      "translate": "enchantment.enchantencore.breeze_curse",
+      "fallback": "Curse of Breeze"
     },
     "supported_items": "#minecraft:enchantable/melee_weapon",
     "weight": 2,

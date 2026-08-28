@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.crispbread"
+    "translate": "enchantment.enchantencore.crispbread",
+    "fallback": "Crispbread"
   },
     "exclusive_set": "#enchantencore:exclusive_set/shield",
     "supported_items": "minecraft:shield",

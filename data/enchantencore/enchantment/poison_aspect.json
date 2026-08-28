@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.poison_aspect"
+    "translate": "enchantment.enchantencore.poison_aspect",
+    "fallback": "Poison Aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

@@ -2,7 +2,8 @@
   "exclusive_set": "#enchantencore:exclusive_set/saddle",
   "anvil_cost": 8,
   "description": {
-    "translate": "enchantment.enchantencore.surfer"
+    "translate": "enchantment.enchantencore.surfer",
+    "fallback": "Surfer"
   },
   "effects": {
     "minecraft:location_changed": [

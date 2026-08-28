@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.pacifier"
+    "translate": "enchantment.enchantencore.pacifier",
+    "fallback": "Pacifier"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

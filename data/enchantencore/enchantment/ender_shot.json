@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.ender_shot"
+    "translate": "enchantment.enchantencore.ender_shot",
+    "fallback": "Ender Shot"
   },
     "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
     "supported_items": "#enchantencore:all_bows",

@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.anchor"
+    "translate": "enchantment.enchantencore.anchor",
+    "fallback": "Anchor"
   },
   "supported_items": "#enchantencore:valid_for_anchor",
   "weight": 2,

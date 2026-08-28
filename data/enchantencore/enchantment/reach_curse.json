@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.reach_curse"
+    "translate": "enchantment.enchantencore.reach_curse",
+    "fallback": "Curse of Reach"
   },
     "supported_items": "#enchantencore:all_tools",
     "exclusive_set": "#enchantencore:exclusive_set/reach",

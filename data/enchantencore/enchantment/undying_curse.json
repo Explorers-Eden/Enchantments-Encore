@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.undying_curse"
+    "translate": "enchantment.enchantencore.undying_curse",
+    "fallback": "Curse of Undying"
   },
   "supported_items": "#enchantencore:all_tools",
   "weight": 2,

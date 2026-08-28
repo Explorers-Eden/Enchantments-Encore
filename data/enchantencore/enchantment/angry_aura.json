@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.angry_aura"
+    "translate": "enchantment.enchantencore.angry_aura",
+    "fallback": "Angry Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

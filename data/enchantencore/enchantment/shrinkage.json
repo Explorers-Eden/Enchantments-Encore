@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.shrinkage"
+    "translate": "enchantment.enchantencore.shrinkage",
+    "fallback": "Shrinkage"
   },
     "exclusive_set": "#enchantencore:exclusive_set/height",
     "supported_items": "#enchantencore:valid_for_shrinkage",

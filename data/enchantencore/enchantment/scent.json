@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.scent"
+      "translate": "enchantment.enchantencore.scent",
+      "fallback": "Scent"
     },
     "exclusive_set": "#enchantencore:exclusive_set/wolf_armor",
     "supported_items": "minecraft:wolf_armor",

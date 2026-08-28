@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.wind_aspect"
+    "translate": "enchantment.enchantencore.wind_aspect",
+    "fallback": "Wind Aspect"
   },
     "exclusive_set": "#enchantencore:exclusive_set/aspect",
     "supported_items": "#minecraft:enchantable/fire_aspect",

@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.lush_aura"
+    "translate": "enchantment.enchantencore.lush_aura",
+    "fallback": "Lush Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

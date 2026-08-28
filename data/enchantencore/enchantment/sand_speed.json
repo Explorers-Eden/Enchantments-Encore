@@ -1,6 +1,7 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.sand_speed"
+    "translate": "enchantment.enchantencore.sand_speed",
+    "fallback": "Sand Speed"
   },
     "exclusive_set": "#enchantencore:exclusive_set/boots",
     "supported_items": "#minecraft:enchantable/foot_armor",

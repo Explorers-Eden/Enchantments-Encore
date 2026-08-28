@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.implosion"
+    "translate": "enchantment.enchantencore.implosion",
+    "fallback": "Implosion"
   },
   "exclusive_set": "#enchantencore:exclusive_set/crossbow",
   "supported_items": "#enchantencore:all_bows",

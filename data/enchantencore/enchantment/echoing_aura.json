@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.echoing_aura"
+    "translate": "enchantment.enchantencore.echoing_aura",
+    "fallback": "Echoing Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

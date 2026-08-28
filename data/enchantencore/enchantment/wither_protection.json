@@ -1,7 +1,8 @@
 {
 	"anvil_cost": 4,
     "description": {
-        "translate": "enchantment.enchantencore.wither_protection"
+        "translate": "enchantment.enchantencore.wither_protection",
+        "fallback": "Wither Protection"
       },
 	"effects": {
 		"minecraft:damage_protection": [

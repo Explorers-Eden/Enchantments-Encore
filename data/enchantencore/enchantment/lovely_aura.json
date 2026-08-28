@@ -1,6 +1,7 @@
 {
   "description": {
-    "translate": "enchantment.enchantencore.lovely_aura"
+    "translate": "enchantment.enchantencore.lovely_aura",
+    "fallback": "Lovely Aura"
   },
   "exclusive_set": "#enchantencore:aura",
   "supported_items": "#minecraft:head_armor",

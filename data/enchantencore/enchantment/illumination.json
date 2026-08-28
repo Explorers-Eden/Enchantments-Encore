@@ -1,6 +1,7 @@
 {
     "description": {
-        "translate": "enchantment.enchantencore.illumination"
+        "translate": "enchantment.enchantencore.illumination",
+        "fallback": "Illumination"
     },
     "exclusive_set": "#enchantencore:exclusive_set/helmet",
     "supported_items": "#minecraft:enchantable/head_armor",

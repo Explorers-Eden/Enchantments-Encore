@@ -1,6 +1,7 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.replenish"
+      "translate": "enchantment.enchantencore.replenish",
+      "fallback": "Replenish"
     },
     "exclusive_set": "#enchantencore:exclusive_set/replenish",
     "supported_items": "#enchantencore:all_bows",
