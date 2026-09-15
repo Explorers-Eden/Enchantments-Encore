@@ -1,9 +1,7 @@
-[
-    {
-      "condition": "minecraft:entity_properties",
-      "entity": "this",
-      "predicate": {
-        "nbt": "{HurtTime:0s}"
-      }
-    }
-  ]
+{
+  "type": "minecraft:entity_properties",
+  "entity": "this",
+  "predicate": {
+    "nbt": "{HurtTime:0s}"
+  }
+}

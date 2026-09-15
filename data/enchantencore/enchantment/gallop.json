@@ -2,47 +2,47 @@
     "exclusive_set": "#enchantencore:exclusive_set/saddle",
     "anvil_cost": 8,
     "description": {
-      "translate": "enchantment.enchantencore.gallop",
-      "fallback": "Gallop"
+        "translate": "enchantment.enchantencore.gallop",
+        "fallback": "Gallop"
     },
     "effects": {
-      "minecraft:location_changed": [
-        {
-          "requirements": {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "passenger": {
-                "minecraft:entity_type": "minecraft:player"
-              }
+        "minecraft:location_changed": [
+            {
+                "requirements": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "passenger": {
+                            "minecraft:entity_type": "minecraft:player"
+                        }
+                    }
+                },
+                "effect": {
+                    "type": "minecraft:attribute",
+                    "attribute": "minecraft:movement_speed",
+                    "id": "enchantencore:gallop.mov_speed",
+                    "amount": {
+                        "type": "minecraft:linear",
+                        "base": 0.075,
+                        "per_level_above_first": 0.05
+                    },
+                    "operation": "add_value"
+                }
             }
-          },
-          "effect": {
-            "type": "minecraft:attribute",
-            "attribute": "minecraft:movement_speed",
-            "id": "enchantencore:gallop.mov_speed",
-            "amount": {
-              "type": "minecraft:linear",
-              "base": 0.075,
-              "per_level_above_first": 0.05
-            },
-            "operation": "add_value"
-          }
-        }
-      ]
+        ]
     },
     "max_cost": {
-      "base": 25,
-      "per_level_above_first": 10
+        "base": 25,
+        "per_level_above_first": 10
     },
     "max_level": 3,
     "min_cost": {
-      "base": 10,
-      "per_level_above_first": 10
+        "base": 10,
+        "per_level_above_first": 10
     },
     "slots": [
-      "saddle"
+        "saddle"
     ],
     "supported_items": "minecraft:saddle",
     "weight": 1
-  }
+}

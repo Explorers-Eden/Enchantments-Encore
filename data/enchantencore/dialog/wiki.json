@@ -499,6 +499,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.color_blindness_curse",
+          "fallback": "Curse of Color Blindness"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.color_blindness_curse",
+        "fallback": "Wearer becomes color blind when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/color_blindness_curse"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.crab_claw",
           "fallback": "Crab Claw"
         },
@@ -601,6 +622,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/creeper_alloy"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.creeper_vision_curse",
+          "fallback": "Curse of Creeper Vision"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.creeper_vision_curse",
+        "fallback": "Wearer sees the world with the eyes of a Creeper \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/creeper_vision_curse"
       }
     },
     {
@@ -906,6 +948,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/ender_shot"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.ender_vision_curse",
+          "fallback": "Curse of Ender Vision"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.ender_vision_curse",
+        "fallback": "Wearer sees the world with the eyes of an Enderman \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/ender_vision_curse"
       }
     },
     {
@@ -1779,6 +1842,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.mirror_vision_curse",
+          "fallback": "Curse of Mirror Vision"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.mirror_vision_curse",
+        "fallback": "Wearers vision is mirrored when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/mirror_vision_curse"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.moonwalk",
           "fallback": "Moonwalk"
         },
@@ -2170,6 +2254,51 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/pickpocket"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.ping_tag",
+          "fallback": "Ping Tag"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/bow",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/crossbow_standby",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/iron_axe",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/iron_sword",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/iron_spear",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/trident",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/mace",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.ping_tag",
+        "fallback": "Indicates that an entity has been hit by playing a ping sound \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Crossbows, Bows, Axes, Swords, Spears, Tridents, Maces\n\n\u2022 \u00a7lIncompabilities\u00a7r: -\n\n\u2022 \u00a7lLoot Sources\u00a7r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/ping_tag"
       }
     },
     {
@@ -2693,6 +2822,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.shortsight_curse",
+          "fallback": "Curse of Shortsight"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.shortsight_curse",
+        "fallback": "Blurs the wearers vision when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/shortsight_curse"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.shrinkage",
           "fallback": "Shrinkage"
         },
@@ -2817,6 +2967,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/sparking_aura"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.spider_vision_curse",
+          "fallback": "Curse of Spider Vision"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.spider_vision_curse",
+        "fallback": "Wearer sees the world with the eyes of a Spider \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/spider_vision_curse"
       }
     },
     {
@@ -3116,6 +3287,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/velocity"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.void_vision_curse",
+          "fallback": "Curse of Void Vision"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_helmet",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.void_vision_curse",
+        "fallback": "Wearer sees the world with the eyes of the Void \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/void_vision_curse"
       }
     },
     {

@@ -1,0 +1,22 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.creeper_vision_curse",
+    "fallback": "Curse of Creeper Vision"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/vision_based",
+  "supported_items": "#minecraft:enchantable/head_armor",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 5
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 50
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "head"
+  ]
+}

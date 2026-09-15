@@ -59,7 +59,7 @@
 					"max_amplifier": 19
 				},
 				"requirements": {
-					"condition": "minecraft:random_chance",
+					"type": "minecraft:random_chance",
 					"chance": 0.1
 				}
 			},
@@ -75,7 +75,7 @@
 					"max_amplifier": 6
 				},
 				"requirements": {
-					"condition": "minecraft:random_chance",
+					"type": "minecraft:random_chance",
 					"chance": 0.1
 				}
 			}
@@ -83,15 +83,15 @@
 		"minecraft:damage_immunity": [
 			{
 				"requirements": {
-					"condition": "minecraft:damage_source_properties",
+					"type": "minecraft:damage_source_properties",
 					"predicate": {
 						"tags": [
 							{
-								"id": "enchantencore:in_wall",
+								"id": "#enchantencore:in_wall",
 								"expected": true
 							},
 							{
-								"id": "minecraft:bypasses_wolf_armor",
+								"id": "#minecraft:bypasses_wolf_armor",
 								"expected": false
 							}
 						]

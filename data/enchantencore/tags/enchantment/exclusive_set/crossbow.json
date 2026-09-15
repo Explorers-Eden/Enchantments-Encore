@@ -1,80 +1,23 @@
 {
   "values": [
-    {
-      "id": "minecraft:quick_charge",
-      "required": false
-    },
-    {
-      "id": "minecraft:infinity",
-      "required": false
-    },
-    {
-      "id": "enchantencore:evokers_wrath",
-      "required": false
-    },
-    {
-      "id": "enchantencore:lightning_bolt",
-      "required": false
-    },
-    {
-      "id": "enchantencore:forge_shot",
-      "required": false
-    },
-    {
-      "id": "enchantencore:ender_shot",
-      "required": false
-    },
-    {
-      "id": "enchantencore:poison_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:blindness_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:glowing_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:hunger_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:invisibility_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:levitation_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:poison_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:regeneration_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:saturation_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:slowness_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:weakness_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:wither_splash",
-      "required": false
-    },
-    {
-      "id": "enchantencore:implosion",
-      "required": false
-    }
+    { "id": "enchantencore:blindness_splash", "required": false },
+    { "id": "enchantencore:ender_shot", "required": false },
+    { "id": "enchantencore:evokers_wrath", "required": false },
+    { "id": "enchantencore:forge_shot", "required": false },
+    { "id": "enchantencore:glowing_splash", "required": false },
+    { "id": "enchantencore:hunger_splash", "required": false },
+    { "id": "enchantencore:implosion", "required": false },
+    { "id": "enchantencore:invisibility_splash", "required": false },
+    { "id": "enchantencore:levitation_splash", "required": false },
+    { "id": "enchantencore:lightning_bolt", "required": false },
+    { "id": "enchantencore:poison_splash", "required": false },
+    { "id": "enchantencore:poison_splash", "required": false },
+    { "id": "enchantencore:regeneration_splash", "required": false },
+    { "id": "enchantencore:saturation_splash", "required": false },
+    { "id": "enchantencore:slowness_splash", "required": false },
+    { "id": "enchantencore:weakness_splash", "required": false },
+    { "id": "enchantencore:wither_splash", "required": false },
+    { "id": "minecraft:infinity", "required": false },
+    { "id": "minecraft:quick_charge", "required": false }
   ]
 }

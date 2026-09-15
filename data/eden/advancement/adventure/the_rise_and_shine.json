@@ -1,0 +1,49 @@
+{
+  "parent": "eden:adventure/scholarly_treasure",
+  "display": {
+    "icon": {
+      "id": "minecraft:enchanted_book"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.title",
+      "fallback": "The Rise and Shine"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.description",
+      "fallback": "Loot a treasure enchantment from the top of the Rise"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "location": {
+              "structures": "enchantencore:rise"
+            }
+          }
+        },
+        "items": [
+          {
+            "items": [
+              "minecraft:enchanted_book"
+            ],
+            "predicates": {
+              "minecraft:stored_enchantments": [
+                {
+                  "enchantments": "#enchantencore:treasure"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

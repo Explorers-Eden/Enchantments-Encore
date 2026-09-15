@@ -23,12 +23,12 @@
     "tick": [
       {
         "requirements": {
-          "condition": "all_of",
+          "type": "all_of",
           "terms": [
             {
-              "condition": "inverted",
+              "type": "inverted",
               "term": {
-                "condition": "entity_properties",
+                "type": "entity_properties",
                 "entity": "this",
                 "predicate": {
                   "passenger": {}
@@ -36,7 +36,7 @@
               }
             },
             {
-              "condition": "entity_properties",
+              "type": "entity_properties",
               "entity": "this",
               "predicate": {
                 "periodic_tick": 10

@@ -1,24 +1,9 @@
 {
   "values": [
-    {
-      "id": "enchantencore:magma_walker",
-      "required": false
-    },
-    {
-      "id": "enchantencore:crop_dance",
-      "required": false
-    },
-    {
-      "id": "enchantencore:summer_walker",
-      "required": false
-    },
-    {
-      "id": "enchantencore:grass_walker",
-      "required": false
-    },
-    {
-      "id": "enchantencore:electric_walker",
-      "required": false
-    }
+    { "id": "enchantencore:crop_dance", "required": false },
+    { "id": "enchantencore:electric_walker", "required": false },
+    { "id": "enchantencore:grass_walker", "required": false },
+    { "id": "enchantencore:magma_walker", "required": false },
+    { "id": "enchantencore:summer_walker", "required": false }
   ]
 }

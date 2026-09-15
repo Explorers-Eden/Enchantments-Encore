@@ -1,0 +1,12 @@
+{
+  "values": [
+    { "id": "enchantencore:color_blindness_curse", "required": false },
+    { "id": "enchantencore:creeper_vision_curse", "required": false },
+    { "id": "enchantencore:ender_vision_curse", "required": false },
+    { "id": "enchantencore:mirror_vision_curse", "required": false },
+    { "id": "enchantencore:night_vision", "required": false },
+    { "id": "enchantencore:shortsight_curse", "required": false },
+    { "id": "enchantencore:spider_vision_curse", "required": false },
+    { "id": "enchantencore:void_vision_curse", "required": false }
+  ]
+}

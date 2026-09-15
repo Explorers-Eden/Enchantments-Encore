@@ -1,16 +1,15 @@
 {
-    "values": [
-      "minecraft:blaze",
-      "minecraft:wither_skeleton",
-      "minecraft:strider",
-      "minecraft:skeleton",
-      "minecraft:zombified_piglin",
-      "minecraft:piglin",
-      "minecraft:piglin_brute",
-      "minecraft:enderman",
-      "minecraft:zoglin",
-      "minecraft:hoglin",
-      "minecraft:ghast"
-    ]
-  }
-  
+  "values": [
+    "minecraft:blaze",
+    "minecraft:enderman",
+    "minecraft:ghast",
+    "minecraft:hoglin",
+    "minecraft:piglin",
+    "minecraft:piglin_brute",
+    "minecraft:skeleton",
+    "minecraft:strider",
+    "minecraft:wither_skeleton",
+    "minecraft:zoglin",
+    "minecraft:zombified_piglin"
+  ]
+}

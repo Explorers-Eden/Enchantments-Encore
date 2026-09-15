@@ -1,7 +1,6 @@
 {
-    "values": [
-      "#enchantencore:all_enchantable",
-      "minecraft:wolf_armor"
-    ]
-  }
-  
+  "values": [
+    "#enchantencore:all_enchantable",
+    "minecraft:wolf_armor"
+  ]
+}

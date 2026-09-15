@@ -1,12 +1,11 @@
 {
-    "values": [
-      "#minecraft:axes",
-      "#minecraft:pickaxes",
-      "#minecraft:shovels",
-      "#minecraft:hoes",
-      "minecraft:flint_and_steel",
-      "minecraft:shears",
-      "minecraft:brush"
-    ]
-  }
-  
+  "values": [
+    "#minecraft:axes",
+    "#minecraft:hoes",
+    "#minecraft:pickaxes",
+    "#minecraft:shovels",
+    "minecraft:brush",
+    "minecraft:flint_and_steel",
+    "minecraft:shears"
+  ]
+}

@@ -6,6 +6,13 @@
     "value": [
       {
         "enchantments": [
+          "enchantencore:void_vision_curse",
+          "enchantencore:creeper_vision_curse",
+          "enchantencore:spider_vision_curse",
+          "enchantencore:shortsight_curse",
+          "enchantencore:ender_vision_curse",
+          "enchantencore:color_blindness_curse",
+          "enchantencore:mirror_vision_curse",
           "enchantencore:hiding_curse",
           "enchantencore:reach_curse",
           "enchantencore:fragility_curse",

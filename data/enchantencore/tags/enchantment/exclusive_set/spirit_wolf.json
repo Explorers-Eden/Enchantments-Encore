@@ -1,21 +1,8 @@
 {
-    "values": [
-      {
-        "id": "enchantencore:spirit_boar",
-        "required": false
-      },
-      {
-        "id": "enchantencore:spirit_bear",
-        "required": false
-      },
-      {
-        "id": "enchantencore:scorpion_spirit",
-        "required": false
-      },
-      {
-        "id": "enchantencore:ghost_spirit",
-        "required": false
-      }
-    ]
-  }
-  
+  "values": [
+    { "id": "enchantencore:ghost_spirit", "required": false },
+    { "id": "enchantencore:scorpion_spirit", "required": false },
+    { "id": "enchantencore:spirit_bear", "required": false },
+    { "id": "enchantencore:spirit_boar", "required": false }
+  ]
+}

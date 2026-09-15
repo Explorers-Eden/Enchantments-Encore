@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_helmet"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.night_owl.title",
+      "fallback": "Night Owl"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.night_owl.description",
+      "fallback": "Wear a helmet enchanted with Night Vision"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "head": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:night_vision"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

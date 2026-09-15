@@ -1,9 +1,9 @@
 {
   "values": [
-    "minecraft:wheat",
+    "minecraft:beetroots",
     "minecraft:carrots",
     "minecraft:potatoes",
-    "minecraft:beetroots",
-    "minecraft:sweet_berry_bush"
+    "minecraft:sweet_berry_bush",
+    "minecraft:wheat"
   ]
 }

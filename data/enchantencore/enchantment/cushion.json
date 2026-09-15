@@ -3,9 +3,9 @@
 	"description": {
 		"translate": "enchantment.enchantencore.cushion",
 		"fallback": "Cushion"
-  },
-  "exclusive_set": "#enchantencore:exclusive_set/elytra",
-  "supported_items": "minecraft:elytra",
+	},
+	"exclusive_set": "#enchantencore:exclusive_set/elytra",
+	"supported_items": "minecraft:elytra",
 	"effects": {
 		"minecraft:damage_protection": [
 			{
@@ -18,12 +18,12 @@
 					}
 				},
 				"requirements": {
-					"condition": "minecraft:damage_source_properties",
+					"type": "minecraft:damage_source_properties",
 					"predicate": {
 						"tags": [
 							{
 								"expected": true,
-								"id": "enchantencore:fly_into_wall"
+								"id": "#enchantencore:fly_into_wall"
 							}
 						]
 					}

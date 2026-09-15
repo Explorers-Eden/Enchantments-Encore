@@ -28,33 +28,36 @@
           "type": "minecraft:run_function",
           "function": "enchantencore:flare/get_data_1"
         },
-        "requirements": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "direct_attacker",
-            "predicate": {
-              "minecraft:entity_type": "#enchantencore:hard_projectiles"
-            }
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "attacker",
-            "predicate": {
-              "equipment": {
-                "mainhand": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "enchantencore:flare",
-                        "levels": 1
-                      }
-                    ]
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "minecraft:entity_type": "#enchantencore:hard_projectiles"
+              }
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "enchantencore:flare",
+                          "levels": 1
+                        }
+                      ]
+                    }
                   }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "enchanted": "attacker",
@@ -63,33 +66,36 @@
           "type": "minecraft:run_function",
           "function": "enchantencore:flare/get_data_2"
         },
-        "requirements": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "direct_attacker",
-            "predicate": {
-              "minecraft:entity_type": "#enchantencore:hard_projectiles"
-            }
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "attacker",
-            "predicate": {
-              "equipment": {
-                "mainhand": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "enchantencore:flare",
-                        "levels": 2
-                      }
-                    ]
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "minecraft:entity_type": "#enchantencore:hard_projectiles"
+              }
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "enchantencore:flare",
+                          "levels": 2
+                        }
+                      ]
+                    }
                   }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "enchanted": "attacker",
@@ -98,33 +104,36 @@
           "type": "minecraft:run_function",
           "function": "enchantencore:flare/get_data_3"
         },
-        "requirements": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "direct_attacker",
-            "predicate": {
-              "minecraft:entity_type": "#enchantencore:hard_projectiles"
-            }
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "attacker",
-            "predicate": {
-              "equipment": {
-                "mainhand": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "enchantencore:flare",
-                        "levels": 3
-                      }
-                    ]
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "minecraft:entity_type": "#enchantencore:hard_projectiles"
+              }
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "enchantencore:flare",
+                          "levels": 3
+                        }
+                      ]
+                    }
                   }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "enchanted": "attacker",
@@ -133,33 +142,36 @@
           "type": "minecraft:run_function",
           "function": "enchantencore:flare/get_data_4"
         },
-        "requirements": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "direct_attacker",
-            "predicate": {
-              "minecraft:entity_type": "#enchantencore:hard_projectiles"
-            }
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "attacker",
-            "predicate": {
-              "equipment": {
-                "mainhand": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "enchantencore:flare",
-                        "levels": 4
-                      }
-                    ]
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "minecraft:entity_type": "#enchantencore:hard_projectiles"
+              }
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "enchantencore:flare",
+                          "levels": 4
+                        }
+                      ]
+                    }
                   }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       },
       {
         "enchanted": "attacker",
@@ -168,33 +180,36 @@
           "type": "minecraft:run_function",
           "function": "enchantencore:flare/get_data_5"
         },
-        "requirements": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "direct_attacker",
-            "predicate": {
-              "minecraft:entity_type": "#enchantencore:hard_projectiles"
-            }
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "attacker",
-            "predicate": {
-              "equipment": {
-                "mainhand": {
-                  "predicates": {
-                    "minecraft:enchantments": [
-                      {
-                        "enchantments": "enchantencore:flare",
-                        "levels": 5
-                      }
-                    ]
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "minecraft:entity_type": "#enchantencore:hard_projectiles"
+              }
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "attacker",
+              "predicate": {
+                "equipment": {
+                  "mainhand": {
+                    "predicates": {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "enchantencore:flare",
+                          "levels": 5
+                        }
+                      ]
+                    }
                   }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     ],
     "minecraft:hit_block": [
@@ -204,7 +219,7 @@
           "function": "enchantencore:flare/get_data_1"
         },
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
             "minecraft:entity_type": "#enchantencore:hard_projectiles",
@@ -222,7 +237,7 @@
           "function": "enchantencore:flare/get_data_2"
         },
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
             "minecraft:entity_type": "#enchantencore:hard_projectiles",
@@ -240,7 +255,7 @@
           "function": "enchantencore:flare/get_data_3"
         },
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
             "minecraft:entity_type": "#enchantencore:hard_projectiles",
@@ -258,7 +273,7 @@
           "function": "enchantencore:flare/get_data_4"
         },
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
             "minecraft:entity_type": "#enchantencore:hard_projectiles",
@@ -276,7 +291,7 @@
           "function": "enchantencore:flare/get_data_5"
         },
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
             "minecraft:entity_type": "#enchantencore:hard_projectiles",

@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/trail_walker",
+  "display": {
+    "icon": {
+      "id": "minecraft:leather_boots"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.full_stride.title",
+      "fallback": "Full Stride"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.full_stride.description",
+      "fallback": "Wear boots enchanted with a movement enchantment"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:movement_boots"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

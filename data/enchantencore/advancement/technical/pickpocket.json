@@ -4,23 +4,20 @@
       "trigger": "minecraft:player_interacted_with_entity",
       "conditions": {
         "player": {
-          "equipment": {
-            "chest": {
-              "predicates": {
-                "minecraft:enchantments": [
-                  {
-                    "enchantments": "enchantencore:pickpocket",
-                    "levels": {
-                      "min": 1
-                    }
-                  }
-                ]
-              }
+          "type": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "enchantencore.pickpocket": {
+              "min": 1
             }
           }
         },
         "entity": {
-          "minecraft:entity_type": "minecraft:villager"
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:villager"
+          }
         }
       }
     }

@@ -1,12 +1,6 @@
 {
   "values": [
-    {
-      "id": "minecraft:infinity",
-      "required": false
-    },
-    {
-      "id": "enchantencore:replenish",
-      "required": false
-    }
+    { "id": "enchantencore:replenish", "required": false },
+    { "id": "minecraft:infinity", "required": false }
   ]
 }

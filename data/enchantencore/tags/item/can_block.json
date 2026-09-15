@@ -1,8 +1,7 @@
 {
-    "values": [
-      "#minecraft:enchantable/melee_weapon",
-      "#minecraft:axes",
-      "minecraft:mace"
-    ]
-  }
-  
+  "values": [
+    "#minecraft:axes",
+    "#minecraft:enchantable/melee_weapon",
+    "minecraft:mace"
+  ]
+}

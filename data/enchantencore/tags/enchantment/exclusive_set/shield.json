@@ -1,24 +1,9 @@
 {
   "values": [
-    {
-      "id": "enchantencore:hardened",
-      "required": false
-    },
-    {
-      "id": "enchantencore:crispbread",
-      "required": false
-    },
-    {
-      "id": "enchantencore:rejuvenation",
-      "required": false
-    },
-    {
-      "id": "enchantencore:cleansing",
-      "required": false
-    },
-    {
-      "id": "enchantencore:ominous_healing",
-      "required": false
-    }
+    { "id": "enchantencore:cleansing", "required": false },
+    { "id": "enchantencore:crispbread", "required": false },
+    { "id": "enchantencore:hardened", "required": false },
+    { "id": "enchantencore:ominous_healing", "required": false },
+    { "id": "enchantencore:rejuvenation", "required": false }
   ]
 }

@@ -1,0 +1,72 @@
+{
+    "targets": {
+        "swap": {}
+    },
+    "passes": [
+        {
+            "vertex_shader": "minecraft:core/screenquad",
+            "fragment_shader": "enchantencore:post/nightvision",
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "minecraft:main"
+                }
+            ],
+            "output": "swap",
+            "uniforms": {
+                "NightVisionConfig": [
+                    {
+                        "name": "Gain",
+                        "type": "float",
+                        "value": 2.5
+                    },
+                    {
+                        "name": "GammaExponent",
+                        "type": "float",
+                        "value": 0.6
+                    },
+                    {
+                        "name": "NoiseAmount",
+                        "type": "float",
+                        "value": 0.05
+                    },
+                    {
+                        "name": "VignetteAmount",
+                        "type": "float",
+                        "value": 1.0
+                    },
+                    {
+                        "name": "VignetteSize",
+                        "type": "float",
+                        "value": 1.0
+                    },
+                    {
+                        "name": "TintStrength",
+                        "type": "float",
+                        "value": 0.85
+                    }
+                ]
+            }
+        },
+        {
+            "vertex_shader": "minecraft:core/screenquad",
+            "fragment_shader": "minecraft:post/blit",
+            "inputs": [
+                {
+                    "sampler_name": "In",
+                    "target": "swap"
+                }
+            ],
+            "uniforms": {
+                "BlitConfig": [
+                    {
+                        "name": "ColorModulate",
+                        "type": "vec4",
+                        "value": [ 1.0, 1.0, 1.0, 1.0 ]
+                    }
+                ]
+            },
+            "output": "minecraft:main"
+        }
+    ]
+}

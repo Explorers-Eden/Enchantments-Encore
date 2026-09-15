@@ -1,13 +1,6 @@
 {
-    "values": [
-      {
-        "id": "enchantencore:gallop",
-        "required": false
-      },
-      {
-        "id": "enchantencore:surfer",
-        "required": false
-      }
-    ]
-  }
-  
+  "values": [
+    { "id": "enchantencore:gallop", "required": false },
+    { "id": "enchantencore:surfer", "required": false }
+  ]
+}

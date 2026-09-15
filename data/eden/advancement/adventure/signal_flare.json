@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:bow"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.signal_flare.title",
+      "fallback": "Signal Flare"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.signal_flare.description",
+      "fallback": "Equip a bow or crossbow enchanted with Flare"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:flare"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

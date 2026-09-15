@@ -1,16 +1,7 @@
 {
   "values": [
-    {
-      "id": "enchantencore:scholar_of_mobs",
-      "required": false
-    },
-    {
-      "id": "enchantencore:scholar_of_blocks",
-      "required": false
-    },
-    {
-      "id": "enchantplus:sword/xp_boost",
-      "required": false
-  }
+    { "id": "enchantencore:scholar_of_blocks", "required": false },
+    { "id": "enchantencore:scholar_of_mobs", "required": false },
+    { "id": "enchantplus:sword/xp_boost", "required": false }
   ]
 }

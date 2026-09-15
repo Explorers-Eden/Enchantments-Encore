@@ -1,6 +1,8 @@
-[
+{
+  "type": "minecraft:sequence",
+  "functions": [
     {
-      "function": "minecraft:set_components",
+      "type": "minecraft:set_components",
       "components": {
         "minecraft:blocks_attacks": {
           "block_delay_seconds": 1,
@@ -17,9 +19,10 @@
       }
     },
     {
-      "function": "minecraft:set_custom_data",
+      "type": "minecraft:set_custom_data",
       "tag": {
         "enchantencore": "has_guard"
       }
     }
   ]
+}

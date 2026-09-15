@@ -1,20 +1,8 @@
 {
   "values": [
-    {
-      "id": "enchantencore:growth",
-      "required": false
-    },
-    {
-      "id": "enchantencore:shrinkage",
-      "required": false
-    },
-    {
-      "id": "enchantplus:leggings/oversize",
-      "required": false
-  },
-  {
-      "id": "enchantplus:leggings/dwarfed",
-      "required": false
-  }
+    { "id": "enchantencore:growth", "required": false },
+    { "id": "enchantencore:shrinkage", "required": false },
+    { "id": "enchantplus:leggings/dwarfed", "required": false },
+    { "id": "enchantplus:leggings/oversize", "required": false }
   ]
 }

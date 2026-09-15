@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:mace"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.bolt_from_the_blue.title",
+      "fallback": "Bolt from the Blue"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.bolt_from_the_blue.description",
+      "fallback": "Land a kill with a mace enchanted with Boltbringer"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:boltbringer"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

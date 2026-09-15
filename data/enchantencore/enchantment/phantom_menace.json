@@ -29,30 +29,33 @@
             "per_level_above_first": 2.5
           }
         },
-        "requirements": [
-          {
-            "condition": "minecraft:any_of",
-            "terms": [
-              {
-                "condition": "minecraft:entity_properties",
-                "entity": "direct_attacker",
-                "predicate": {
-                  "minecraft:entity_type": "#enchantencore:hard_projectiles"
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:any_of",
+              "terms": [
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "direct_attacker",
+                  "predicate": {
+                    "minecraft:entity_type": "#enchantencore:hard_projectiles"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:entity_type": "minecraft:phantom",
+                "flags": {
+                  "is_on_ground": false
                 }
               }
-            ]
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "minecraft:entity_type": "minecraft:phantom",
-              "flags": {
-                "is_on_ground": false
-              }
             }
-          }
-        ]
+          ]
+        }
       }
     ]
   }

@@ -1,0 +1,70 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:diamond_chestplate"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.well_warded.title",
+      "fallback": "Well Warded"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.well_warded.description",
+      "fallback": "Wear a full armor set with a pack protection enchantment on every piece"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "head": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:protection_types"
+                    }
+                  ]
+                }
+              },
+              "chest": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:protection_types"
+                    }
+                  ]
+                }
+              },
+              "legs": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:protection_types"
+                    }
+                  ]
+                }
+              },
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:protection_types"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

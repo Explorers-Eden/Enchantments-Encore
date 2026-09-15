@@ -1,20 +1,8 @@
 {
   "values": [
-    {
-      "id": "enchantencore:night_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:day_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:nether_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:end_protection",
-      "required": false
-    }
+    { "id": "enchantencore:day_protection", "required": false },
+    { "id": "enchantencore:end_protection", "required": false },
+    { "id": "enchantencore:nether_protection", "required": false },
+    { "id": "enchantencore:night_protection", "required": false }
   ]
 }

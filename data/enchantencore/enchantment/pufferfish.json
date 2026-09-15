@@ -28,23 +28,26 @@
           "type": "minecraft:summon_entity",
           "entity": "minecraft:pufferfish"
         },
-        "requirements": [
-          {
-            "condition": "minecraft:random_chance",
-            "chance": 0.5
-          },
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "block": {
-                  "blocks": "minecraft:water"
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:random_chance",
+              "chance": 0.5
+            },
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "location": {
+                  "block": {
+                    "blocks": "minecraft:water"
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     ]
   }

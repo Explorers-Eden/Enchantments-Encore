@@ -8,47 +8,67 @@
   "effects": {
     "minecraft:hit_block": [
       {
-        "requirements": [
-          {
-            "condition": "minecraft:any_of",
-            "terms": [
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:grass_block"
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:farmland"
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:dirt"
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:coarse_dirt"
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:dirt_path"
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:rooted_dirt"
+        "requirements": {
+          "type": "minecraft:any_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:grass_block"
+                }
               }
-            ]
-          }
-        ],
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:farmland"
+                }
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:dirt"
+                }
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:coarse_dirt"
+                }
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:dirt_path"
+                }
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:rooted_dirt"
+                }
+              }
+            }
+          ]
+        },
         "effect": {
           "type": "minecraft:all_of",
           "effects": [
             {
               "type": "minecraft:replace_disk",
               "block_state": {
-                "type": "minecraft:simple_state_provider",
-                "state": {
-                  "Name": "minecraft:farmland"
-                }
+                "type": "minecraft:simple",
+                "state": "minecraft:farmland"
               },
               "predicate": {
                 "type": "minecraft:all_of",
@@ -116,10 +136,8 @@
             {
               "type": "minecraft:replace_disk",
               "block_state": {
-                "type": "minecraft:simple_state_provider",
-                "state": {
-                  "Name": "minecraft:air"
-                }
+                "type": "minecraft:simple",
+                "state": "minecraft:air"
               },
               "offset": [
                 0,

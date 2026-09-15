@@ -1,15 +1,24 @@
 {
   "values": [
-    "enchantencore:leaf_jumper/kill",
-    "enchantencore:guard",
-    "enchantencore:illumination/kill",
-    "enchantencore:seeker/init",
-    "enchantencore:crop_dance/reset_sneak_time",
-    "enchantencore:10_tick_schedule",
-    "enchantencore:regrowth/init",
-    "enchantencore:strafe/timer",
-    "enchantencore:anchor/remove",
     "enchantencore:add_enchantable_component/init",
-    "enchantencore:flare/timer"
+    "enchantencore:anchor/remove",
+    "enchantencore:color_blindness_curse",
+    "enchantencore:creeper_vision_curse",
+    "enchantencore:crop_dance/reset_sneak_time",
+    "enchantencore:ender_vision_curse",
+    "enchantencore:flare/timer",
+    "enchantencore:guard",
+    "enchantencore:idle_check",
+    "enchantencore:illumination/kill",
+    "enchantencore:leaf_jumper/kill",
+    "enchantencore:mirror_vision_curse",
+    "enchantencore:night_vision",
+    "enchantencore:pickpocket/tracker",
+    "enchantencore:regrowth/init",
+    "enchantencore:seeker/init",
+    "enchantencore:shortsight_curse",
+    "enchantencore:spider_vision_curse",
+    "enchantencore:strafe/timer",
+    "enchantencore:void_vision_curse"
   ]
 }

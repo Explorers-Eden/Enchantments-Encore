@@ -32,7 +32,7 @@
           ]
         },
         "requirements": {
-          "condition": "minecraft:entity_properties",
+          "type": "minecraft:entity_properties",
           "entity": "this",
           "predicate": {
             "minecraft:entity_type": "#enchantencore:hard_projectiles"
@@ -54,10 +54,10 @@
           ]
         },
         "requirements": {
-          "condition": "minecraft:all_of",
+          "type": "minecraft:all_of",
           "terms": [
             {
-              "condition": "minecraft:entity_properties",
+              "type": "minecraft:entity_properties",
               "entity": "direct_attacker",
               "predicate": {
                 "minecraft:entity_type": "#enchantencore:hard_projectiles"

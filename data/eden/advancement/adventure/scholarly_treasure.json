@@ -1,0 +1,38 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:emerald"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.scholarly_treasure.title",
+      "fallback": "Scholarly Treasure"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description",
+      "fallback": "Buy a treasure enchantment from a Master Librarian"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:villager_trade",
+      "conditions": {
+        "item": {
+          "items": [
+            "minecraft:enchanted_book"
+          ],
+          "predicates": {
+            "minecraft:stored_enchantments": [
+              {
+                "enchantments": "#enchantencore:treasure"
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

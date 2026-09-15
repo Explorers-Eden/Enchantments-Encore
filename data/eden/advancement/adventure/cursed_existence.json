@@ -1,0 +1,64 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:wither_skeleton_skull"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.cursed_existence.title",
+      "fallback": "Cursed Existence"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.cursed_existence.description",
+      "fallback": "Own four different cursed items at once"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:death_curse"
+                }
+              ]
+            }
+          },
+          {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:blindness_curse"
+                }
+              ]
+            }
+          },
+          {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:ownership_curse"
+                }
+              ]
+            }
+          },
+          {
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:caravan_curse"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

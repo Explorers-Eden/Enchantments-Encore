@@ -1,7 +1,6 @@
 {
-    "values": [
-        "#minecraft:harnesses",
-        "minecraft:saddle"
-    ]
-  }
-  
+  "values": [
+    "#minecraft:harnesses",
+    "minecraft:saddle"
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "values": [
-    "minecraft:saddle",
-    "#enchantencore:all_nautilus_armor",
     "#enchantencore:all_horse_armor",
+    "#enchantencore:all_nautilus_armor",
     "#minecraft:harnesses",
-    "minecraft:wolf_armor",
-    "minecraft:shield"
+    "minecraft:saddle",
+    "minecraft:shield",
+    "minecraft:wolf_armor"
   ]
 }

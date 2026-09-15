@@ -1,62 +1,61 @@
 {
    "description": {
-    "translate": "enchantment.enchantencore.weaving_aspect",
-    "fallback": "Weaving Aspect"
-  },
-    "exclusive_set": "#enchantencore:exclusive_set/aspect",
-    "supported_items": "#minecraft:enchantable/fire_aspect",
-    "primary_items": "#minecraft:enchantable/melee_weapon",
-    "weight": 2,
-    "max_level": 2,
-    "min_cost": {
+      "translate": "enchantment.enchantencore.weaving_aspect",
+      "fallback": "Weaving Aspect"
+   },
+   "exclusive_set": "#enchantencore:exclusive_set/aspect",
+   "supported_items": "#minecraft:enchantable/fire_aspect",
+   "primary_items": "#minecraft:enchantable/melee_weapon",
+   "weight": 2,
+   "max_level": 2,
+   "min_cost": {
       "base": 10,
       "per_level_above_first": 20
-    },
-    "max_cost": {
+   },
+   "max_cost": {
       "base": 60,
       "per_level_above_first": 20
-    },
-    "anvil_cost": 4,
-    "slots": [
+   },
+   "anvil_cost": 4,
+   "slots": [
       "mainhand"
-    ],
-    "effects": {
+   ],
+   "effects": {
       "minecraft:post_attack": [
-        {
-          "enchanted": "attacker",
-          "affected": "victim",
-          "effect": {
-            "type": "minecraft:apply_mob_effect",
-            "to_apply": "minecraft:weaving",
-            "min_duration": {
-              "type": "minecraft:linear",
-              "base": 1,
-              "per_level_above_first": 0
+         {
+            "enchanted": "attacker",
+            "affected": "victim",
+            "effect": {
+               "type": "minecraft:apply_mob_effect",
+               "to_apply": "minecraft:weaving",
+               "min_duration": {
+                  "type": "minecraft:linear",
+                  "base": 1,
+                  "per_level_above_first": 0
+               },
+               "max_duration": {
+                  "type": "minecraft:linear",
+                  "base": 2,
+                  "per_level_above_first": 2
+               },
+               "min_amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0,
+                  "per_level_above_first": 1
+               },
+               "max_amplifier": {
+                  "type": "minecraft:linear",
+                  "base": 0,
+                  "per_level_above_first": 1
+               }
             },
-            "max_duration": {
-              "type": "minecraft:linear",
-              "base": 2,
-              "per_level_above_first": 2
-            },
-            "min_amplifier": {
-              "type": "minecraft:linear",
-              "base": 0,
-              "per_level_above_first": 1
-            },
-            "max_amplifier": {
-              "type": "minecraft:linear",
-              "base": 0,
-              "per_level_above_first": 1
+            "requirements": {
+               "type": "minecraft:damage_source_properties",
+               "predicate": {
+                  "is_direct": true
+               }
             }
-          },
-          "requirements": {
-            "condition": "minecraft:damage_source_properties",
-            "predicate": {
-              "is_direct": true
-            }
-          }
-        }
+         }
       ]
-    }
-  }
-  
+   }
+}

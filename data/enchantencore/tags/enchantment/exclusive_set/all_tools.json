@@ -1,12 +1,6 @@
 {
   "values": [
-    {
-      "id": "enchantencore:crab_claw",
-      "required": false
-    },
-    {
-      "id": "enchantencore:gluttony",
-      "required": false
-    }
+    { "id": "enchantencore:crab_claw", "required": false },
+    { "id": "enchantencore:gluttony", "required": false }
   ]
 }

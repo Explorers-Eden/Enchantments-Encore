@@ -1,36 +1,12 @@
 {
   "values": [
-    {
-      "id": "enchantencore:night_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:day_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:nether_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:end_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:wither_protection",
-      "required": false
-    },
-    {
-      "id": "enchantencore:thorns_protection",
-      "required": false
-    },
-    {
-      "id": "enchantplus:armor/lifeplus",
-      "required": false
-  },
-  {
-      "id": "enchantplus:armor/fury",
-      "required": false
-  }
+    { "id": "enchantencore:day_protection", "required": false },
+    { "id": "enchantencore:end_protection", "required": false },
+    { "id": "enchantencore:nether_protection", "required": false },
+    { "id": "enchantencore:night_protection", "required": false },
+    { "id": "enchantencore:thorns_protection", "required": false },
+    { "id": "enchantencore:wither_protection", "required": false },
+    { "id": "enchantplus:armor/fury", "required": false },
+    { "id": "enchantplus:armor/lifeplus", "required": false }
   ]
 }

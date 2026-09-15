@@ -5,13 +5,13 @@
   "double_trade_price_enchantments": "#enchantencore:treasure",
   "given_item_modifiers": [
     {
-      "function": "minecraft:enchant_randomly",
+      "type": "minecraft:enchant_randomly",
       "include_additional_cost_component": true,
       "only_compatible": false,
       "options": "#enchantencore:treasure"
     },
     {
-      "function": "minecraft:filtered",
+      "type": "minecraft:filtered",
       "item_filter": {
         "items": "minecraft:enchanted_book",
         "predicates": {
@@ -21,7 +21,7 @@
         }
       },
       "on_fail": {
-        "function": "minecraft:discard"
+        "type": "minecraft:discard"
       }
     }
   ],

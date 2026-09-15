@@ -1,0 +1,10 @@
+{
+  "values": [
+    "enchantencore:day_protection",
+    "enchantencore:night_protection",
+    "enchantencore:nether_protection",
+    "enchantencore:end_protection",
+    "enchantencore:thorns_protection",
+    "enchantencore:wither_protection"
+  ]
+}

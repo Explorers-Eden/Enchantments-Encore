@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/well_warded",
+  "display": {
+    "icon": {
+      "id": "minecraft:iron_chestplate"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.growth_spurt.title",
+      "fallback": "Growth Spurt"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.growth_spurt.description",
+      "fallback": "Grow larger by wearing a chestplate enchanted with Growth"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "chest": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:growth"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

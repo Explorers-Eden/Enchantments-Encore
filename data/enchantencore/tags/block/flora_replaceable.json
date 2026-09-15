@@ -1,12 +1,12 @@
 {
   "values": [
     "minecraft:bush",
+    "minecraft:dead_bush",
+    "minecraft:fern",
+    "minecraft:large_fern",
     "minecraft:short_dry_grass",
     "minecraft:short_grass",
     "minecraft:tall_dry_grass",
-    "minecraft:tall_grass",
-    "minecraft:dead_bush",
-    "minecraft:fern",
-    "minecraft:large_fern"
+    "minecraft:tall_grass"
   ]
 }

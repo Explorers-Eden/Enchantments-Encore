@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:mud"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.trail_walker.title",
+      "fallback": "Trail Walker"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.trail_walker.description",
+      "fallback": "Wear boots enchanted with a Walker enchantment"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "feet": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:walker_boots"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

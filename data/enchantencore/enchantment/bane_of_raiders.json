@@ -1,81 +1,80 @@
 {
     "description": {
-    "translate": "enchantment.enchantencore.bane_of_raiders",
-    "fallback": "Bane of Raiders"
-  },
+        "translate": "enchantment.enchantencore.bane_of_raiders",
+        "fallback": "Bane of Raiders"
+    },
     "exclusive_set": "#minecraft:exclusive_set/damage",
     "supported_items": "#enchantencore:weapons",
     "primary_items": "#minecraft:enchantable/melee_weapon",
     "weight": 5,
     "max_level": 5,
     "min_cost": {
-      "base": 5,
-      "per_level_above_first": 8
+        "base": 5,
+        "per_level_above_first": 8
     },
     "max_cost": {
-      "base": 25,
-      "per_level_above_first": 8
+        "base": 25,
+        "per_level_above_first": 8
     },
     "anvil_cost": 2,
     "slots": [
-      "mainhand"
+        "mainhand"
     ],
     "effects": {
-      "minecraft:damage": [
-        {
-          "effect": {
-            "type": "minecraft:add",
-            "value": {
-              "type": "minecraft:linear",
-              "base": 2.5,
-              "per_level_above_first": 2.5
-            }
-          },
-          "requirements": {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "minecraft:entity_type": "#minecraft:raiders"
-            }
-          }
-        }
-      ],
-      "minecraft:post_attack": [
-        {
-          "enchanted": "attacker",
-          "affected": "victim",
-          "effect": {
-            "type": "minecraft:apply_mob_effect",
-            "to_apply": "minecraft:slowness",
-            "min_duration": 1.5,
-            "max_duration": {
-              "type": "minecraft:linear",
-              "base": 1.5,
-              "per_level_above_first": 0.5
-            },
-            "min_amplifier": 3,
-            "max_amplifier": 3
-          },
-          "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:entity_properties",
-                "entity": "this",
-                "predicate": {
-                  "minecraft:entity_type": "#minecraft:raiders"
+        "minecraft:damage": [
+            {
+                "effect": {
+                    "type": "minecraft:add",
+                    "value": {
+                        "type": "minecraft:linear",
+                        "base": 2.5,
+                        "per_level_above_first": 2.5
+                    }
+                },
+                "requirements": {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                        "minecraft:entity_type": "#minecraft:raiders"
+                    }
                 }
-              },
-              {
-                "condition": "minecraft:damage_source_properties",
-                "predicate": {
-                  "is_direct": true
+            }
+        ],
+        "minecraft:post_attack": [
+            {
+                "enchanted": "attacker",
+                "affected": "victim",
+                "effect": {
+                    "type": "minecraft:apply_mob_effect",
+                    "to_apply": "minecraft:slowness",
+                    "min_duration": 1.5,
+                    "max_duration": {
+                        "type": "minecraft:linear",
+                        "base": 1.5,
+                        "per_level_above_first": 0.5
+                    },
+                    "min_amplifier": 3,
+                    "max_amplifier": 3
+                },
+                "requirements": {
+                    "type": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "type": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "minecraft:entity_type": "#minecraft:raiders"
+                            }
+                        },
+                        {
+                            "type": "minecraft:damage_source_properties",
+                            "predicate": {
+                                "is_direct": true
+                            }
+                        }
+                    ]
                 }
-              }
-            ]
-          }
-        }
-      ]
+            }
+        ]
     }
-  }
-  
+}

@@ -31,21 +31,21 @@
           }
         },
         "requirements": {
-          "condition": "minecraft:all_of",
+          "type": "minecraft:all_of",
           "terms": [
             {
-              "condition": "minecraft:damage_source_properties",
+              "type": "minecraft:damage_source_properties",
               "predicate": {
                 "tags": [
                   {
-                    "id": "minecraft:bypasses_invulnerability",
+                    "id": "#minecraft:bypasses_invulnerability",
                     "expected": false
                   }
                 ]
               }
             },
             {
-              "condition": "minecraft:time_check",
+              "type": "minecraft:time_check",
               "clock": "minecraft:overworld",
               "value": {
                 "min": 23001,
@@ -54,7 +54,7 @@
               "period": 24000
             },
             {
-              "condition": "minecraft:location_check",
+              "type": "minecraft:location_check",
               "predicate": {
                 "dimension": "minecraft:overworld"
               }

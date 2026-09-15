@@ -1,0 +1,43 @@
+{
+  "parent": "eden:adventure/night_owl",
+  "display": {
+    "icon": {
+      "id": "minecraft:ender_eye"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.seeing_things.title",
+      "fallback": "Seeing Things"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.seeing_things.description",
+      "fallback": "Get cursed with a vision-altering curse"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "head": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "#eden:vision_curses"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

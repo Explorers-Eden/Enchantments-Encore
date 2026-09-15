@@ -1,0 +1,24 @@
+{
+  "parent": "eden:adventure/root",
+  "display": {
+    "icon": {
+      "id": "minecraft:enchanted_book"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.title",
+      "fallback": "Encore Performance"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.description",
+      "fallback": "Enchant an item and step into Enchantments Encore."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "enchanted": {
+      "trigger": "minecraft:enchanted_item"
+    }
+  }
+}

@@ -23,10 +23,10 @@
     "minecraft:tick": [
       {
         "requirements": {
-          "condition": "minecraft:all_of",
+          "type": "minecraft:all_of",
           "terms": [
             {
-              "condition": "minecraft:entity_properties",
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
                 "periodic_tick": 3
@@ -47,20 +47,20 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:all_of",
+          "type": "minecraft:all_of",
           "terms": [
             {
-              "condition": "minecraft:random_chance",
+              "type": "minecraft:random_chance",
               "chance": 0.2
             },
             {
-              "condition": "minecraft:any_of",
+              "type": "minecraft:any_of",
               "terms": [
                 {
-                  "condition": "minecraft:all_of",
+                  "type": "minecraft:all_of",
                   "terms": [
                     {
-                      "condition": "minecraft:entity_scores",
+                      "type": "minecraft:entity_scores",
                       "entity": "this",
                       "scores": {
                         "enchantencore.idle_time": {
@@ -69,7 +69,7 @@
                       }
                     },
                     {
-                      "condition": "minecraft:entity_properties",
+                      "type": "minecraft:entity_properties",
                       "entity": "this",
                       "predicate": {
                         "movement": {
@@ -81,7 +81,7 @@
                   ]
                 },
                 {
-                  "condition": "minecraft:entity_properties",
+                  "type": "minecraft:entity_properties",
                   "entity": "this",
                   "predicate": {
                     "minecraft:entity_type": "minecraft:armor_stand",
@@ -101,10 +101,10 @@
     "minecraft:location_changed": [
       {
         "requirements": {
-          "condition": "minecraft:any_of",
+          "type": "minecraft:any_of",
           "terms": [
             {
-              "condition": "minecraft:entity_properties",
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
                 "minecraft:type_specific/player": {
@@ -116,7 +116,7 @@
               }
             },
             {
-              "condition": "minecraft:entity_properties",
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
                 "minecraft:type_specific/player": {
@@ -128,7 +128,7 @@
               }
             },
             {
-              "condition": "minecraft:entity_properties",
+              "type": "minecraft:entity_properties",
               "entity": "this",
               "predicate": {
                 "minecraft:type_specific/player": {

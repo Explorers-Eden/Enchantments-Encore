@@ -1,60 +1,18 @@
 {
   "values": [
-    {
-      "id": "minecraft:fire_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:poison_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:wither_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:levitation_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:hunger_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:weakness_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:infested_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:oozing_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:slowness_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:wind_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:weaving_aspect",
-      "required": false
-    },
-    {
-      "id": "enchantencore:pacifier",
-      "required": false
-    },
-    {
-      "id": "enchantencore:guard",
-      "required": false
-    },
-    {
-        "id": "enchantplus:sword/poison_aspect",
-        "required": false
-    }
+    { "id": "enchantencore:guard", "required": false },
+    { "id": "enchantencore:hunger_aspect", "required": false },
+    { "id": "enchantencore:infested_aspect", "required": false },
+    { "id": "enchantencore:levitation_aspect", "required": false },
+    { "id": "enchantencore:oozing_aspect", "required": false },
+    { "id": "enchantencore:pacifier", "required": false },
+    { "id": "enchantencore:poison_aspect", "required": false },
+    { "id": "enchantencore:slowness_aspect", "required": false },
+    { "id": "enchantencore:weakness_aspect", "required": false },
+    { "id": "enchantencore:weaving_aspect", "required": false },
+    { "id": "enchantencore:wind_aspect", "required": false },
+    { "id": "enchantencore:wither_aspect", "required": false },
+    { "id": "enchantplus:sword/poison_aspect", "required": false },
+    { "id": "minecraft:fire_aspect", "required": false }
   ]
 }

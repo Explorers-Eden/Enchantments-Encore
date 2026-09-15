@@ -1,7 +1,7 @@
 {
-    "values": [
-      "minecraft:sweet_berry_bush",
-      "minecraft:cactus",
-      "minecraft:thorns"
-    ]
-  }
+  "values": [
+    "minecraft:cactus",
+    "minecraft:sweet_berry_bush",
+    "minecraft:thorns"
+  ]
+}

@@ -1,9 +1,9 @@
 {
 	"anvil_cost": 4,
-    "description": {
-        "translate": "enchantment.enchantencore.wither_protection",
-        "fallback": "Wither Protection"
-      },
+	"description": {
+		"translate": "enchantment.enchantencore.wither_protection",
+		"fallback": "Wither Protection"
+	},
 	"effects": {
 		"minecraft:damage_protection": [
 			{
@@ -16,16 +16,16 @@
 					}
 				},
 				"requirements": {
-					"condition": "minecraft:damage_source_properties",
+					"type": "minecraft:damage_source_properties",
 					"predicate": {
 						"tags": [
 							{
 								"expected": true,
-								"id": "enchantencore:wither"
+								"id": "#enchantencore:wither"
 							},
 							{
 								"expected": false,
-								"id": "minecraft:bypasses_invulnerability"
+								"id": "#minecraft:bypasses_invulnerability"
 							}
 						]
 					}

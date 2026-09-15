@@ -1,0 +1,50 @@
+{
+  "parent": "eden:adventure/bolt_from_the_blue",
+  "display": {
+    "icon": {
+      "id": "minecraft:netherite_sword"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.boss_slayer.title",
+      "fallback": "Boss Slayer"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.boss_slayer.description",
+      "fallback": "Defeat a boss with a weapon enchanted with Bane of Bosses"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "equipment": {
+              "mainhand": {
+                "predicates": {
+                  "minecraft:enchantments": [
+                    {
+                      "enchantments": "enchantencore:bane_of_bosses"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "#enchantencore:bosses"
+          }
+        }
+      }
+    }
+  }
+}

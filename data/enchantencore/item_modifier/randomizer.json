@@ -1,40 +1,36 @@
-[
+{
+  "type": "minecraft:sequence",
+  "functions": [
     {
-      "function": "minecraft:enchant_randomly",
+      "type": "minecraft:enchant_randomly",
       "options": "#minecraft:non_treasure",
       "only_compatible": true
     },
     {
-      "function": "minecraft:enchant_randomly",
+      "type": "minecraft:enchant_randomly",
       "options": "#minecraft:non_treasure",
       "only_compatible": true,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.5
-        }
-      ]
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.5
+      }
     },
     {
-      "function": "minecraft:enchant_randomly",
+      "type": "minecraft:enchant_randomly",
       "options": "#minecraft:non_treasure",
       "only_compatible": true,
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.4
-        }
-      ]
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.4
+      }
     },
     {
-      "function": "minecraft:enchant_randomly",
+      "type": "minecraft:enchant_randomly",
       "options": "#minecraft:treasure",
-      "conditions": [
-        {
-          "condition": "minecraft:random_chance",
-          "chance": 0.2
-        }
-      ]
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.2
+      }
     }
   ]
-  
+}

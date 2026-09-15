@@ -1,0 +1,76 @@
+{
+  "parent": "eden:adventure/enchantments_encore",
+  "display": {
+    "icon": {
+      "id": "minecraft:wolf_armor"
+    },
+    "title": {
+      "translate": "advancement.eden.adventure.enchantments_encore.spirit_animal.title",
+      "fallback": "Spirit Animal"
+    },
+    "description": {
+      "translate": "advancement.eden.adventure.enchantments_encore.spirit_animal.description",
+      "fallback": "Collect all four Spirit enchantments on wolf armor: Bear, Boar, Ghost, and Scorpion"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:wolf_armor"
+            ],
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:bear_spirit"
+                }
+              ]
+            }
+          },
+          {
+            "items": [
+              "minecraft:wolf_armor"
+            ],
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:boar_spirit"
+                }
+              ]
+            }
+          },
+          {
+            "items": [
+              "minecraft:wolf_armor"
+            ],
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:ghost_spirit"
+                }
+              ]
+            }
+          },
+          {
+            "items": [
+              "minecraft:wolf_armor"
+            ],
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "enchantencore:scorpion_spirit"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  }
+}

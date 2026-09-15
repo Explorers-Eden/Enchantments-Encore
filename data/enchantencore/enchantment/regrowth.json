@@ -8,10 +8,14 @@
     "minecraft:hit_block": [
       {
         "requirements": {
-          "condition": "minecraft:block_state_property",
-          "block": "minecraft:potatoes",
-          "properties": {
-            "age": "7"
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "minecraft:potatoes",
+              "state": {
+                "age": "7"
+              }
+            }
           }
         },
         "effect": {
@@ -21,10 +25,14 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:block_state_property",
-          "block": "minecraft:carrots",
-          "properties": {
-            "age": "7"
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "minecraft:carrots",
+              "state": {
+                "age": "7"
+              }
+            }
           }
         },
         "effect": {
@@ -34,10 +42,14 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:block_state_property",
-          "block": "minecraft:beetroots",
-          "properties": {
-            "age": "3"
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "minecraft:beetroots",
+              "state": {
+                "age": "3"
+              }
+            }
           }
         },
         "effect": {
@@ -47,10 +59,14 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:block_state_property",
-          "block": "minecraft:wheat",
-          "properties": {
-            "age": "7"
+          "type": "minecraft:location_check",
+          "predicate": {
+            "block": {
+              "blocks": "minecraft:wheat",
+              "state": {
+                "age": "7"
+              }
+            }
           }
         },
         "effect": {
@@ -59,41 +75,55 @@
         }
       },
       {
-        "requirements": [
-          {
-            "condition": "minecraft:any_of",
-            "terms": [
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:wheat",
-                "properties": {
-                  "age": "7"
-                }
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:beetroots",
-                "properties": {
-                  "age": "3"
-                }
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:carrots",
-                "properties": {
-                  "age": "7"
-                }
-              },
-              {
-                "condition": "minecraft:block_state_property",
-                "block": "minecraft:potatoes",
-                "properties": {
-                  "age": "7"
+        "requirements": {
+          "type": "minecraft:any_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:wheat",
+                  "state": {
+                    "age": "7"
+                  }
                 }
               }
-            ]
-          }
-        ],
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:beetroots",
+                  "state": {
+                    "age": "3"
+                  }
+                }
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:carrots",
+                  "state": {
+                    "age": "7"
+                  }
+                }
+              }
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "minecraft:potatoes",
+                  "state": {
+                    "age": "7"
+                  }
+                }
+              }
+            }
+          ]
+        },
         "effect": {
           "type": "minecraft:change_item_damage",
           "amount": {

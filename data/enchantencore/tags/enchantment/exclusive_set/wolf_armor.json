@@ -1,13 +1,6 @@
 {
-    "values": [
-      {
-        "id": "enchantencore:scent",
-        "required": false
-      },
-      {
-        "id": "enchantencore:fetch",
-        "required": false
-      }
-    ]
-  }
-  
+  "values": [
+    { "id": "enchantencore:fetch", "required": false },
+    { "id": "enchantencore:scent", "required": false }
+  ]
+}

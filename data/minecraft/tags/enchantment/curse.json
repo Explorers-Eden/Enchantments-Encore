@@ -1,8 +1,5 @@
 {
   "values": [
-    {
-      "id": "#enchantencore:curse",
-      "required": false
-    }
+    { "id": "#enchantencore:curse", "required": false }
   ]
 }

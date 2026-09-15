@@ -1,53 +1,52 @@
 {
     "description": {
-      "translate": "enchantment.enchantencore.replenish",
-      "fallback": "Replenish"
+        "translate": "enchantment.enchantencore.replenish",
+        "fallback": "Replenish"
     },
     "exclusive_set": "#enchantencore:exclusive_set/replenish",
     "supported_items": "#enchantencore:all_bows",
     "weight": 2,
     "max_level": 1,
     "min_cost": {
-      "base": 20,
-      "per_level_above_first": 0
+        "base": 20,
+        "per_level_above_first": 0
     },
     "max_cost": {
-      "base": 50,
-      "per_level_above_first": 0
+        "base": 50,
+        "per_level_above_first": 0
     },
     "anvil_cost": 8,
     "slots": [
-      "mainhand"
+        "mainhand"
     ],
     "effects": {
-      "minecraft:ammo_use": [
-        {
-          "effect": {
-            "type": "minecraft:set",
-            "value": 0
-          },
-          "requirements": {
-            "condition": "minecraft:all_of",
-            "terms": [
-              {
-                "condition": "minecraft:match_tool",
-                "predicate": {
-                  "items": [
-                    "minecraft:arrow",
-                    "minecraft:spectral_arrow",
-                    "minecraft:firework_rocket",
-                    "minecraft:tipped_arrow"
-                  ]
+        "minecraft:ammo_use": [
+            {
+                "effect": {
+                    "type": "minecraft:set",
+                    "value": 0
+                },
+                "requirements": {
+                    "type": "minecraft:all_of",
+                    "terms": [
+                        {
+                            "type": "minecraft:match_tool",
+                            "predicate": {
+                                "items": [
+                                    "minecraft:arrow",
+                                    "minecraft:spectral_arrow",
+                                    "minecraft:firework_rocket",
+                                    "minecraft:tipped_arrow"
+                                ]
+                            }
+                        },
+                        {
+                            "type": "minecraft:random_chance",
+                            "chance": 0.5
+                        }
+                    ]
                 }
-              },
-              {
-                "condition": "minecraft:random_chance",
-                "chance": 0.5
-              }
-            ]
-          }
-        }
-      ]
+            }
+        ]
     }
-  }
-  
+}

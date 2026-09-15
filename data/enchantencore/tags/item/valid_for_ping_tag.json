@@ -1,7 +1,6 @@
 {
-    "values": [
-      "#enchantencore:all_bows",
-      "#enchantencore:weapons"
-    ]
-  }
-  
+  "values": [
+    "#enchantencore:all_bows",
+    "#enchantencore:weapons"
+  ]
+}

@@ -1,8 +1,5 @@
 {
   "values": [
-    {
-      "id": "#enchantencore:treasure",
-      "required": false
-    }
+    { "id": "#enchantencore:treasure", "required": false }
   ]
 }

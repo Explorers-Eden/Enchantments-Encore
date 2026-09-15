@@ -1,16 +1,15 @@
 {
-    "values": [
-      "minecraft:parrot",
-      "minecraft:cat",
-      "minecraft:wolf",
-      "minecraft:horse",
-      "minecraft:donkey",
-      "minecraft:mule",
-      "minecraft:happy_ghast",
-      "minecraft:zombie_horse",
-      "minecraft:camel_husk",
-      "minecraft:nautilus",
-      "minecraft:zombie_nautilus"
-    ]
-  }
-  
+  "values": [
+    "minecraft:camel_husk",
+    "minecraft:cat",
+    "minecraft:donkey",
+    "minecraft:happy_ghast",
+    "minecraft:horse",
+    "minecraft:mule",
+    "minecraft:nautilus",
+    "minecraft:parrot",
+    "minecraft:wolf",
+    "minecraft:zombie_horse",
+    "minecraft:zombie_nautilus"
+  ]
+}

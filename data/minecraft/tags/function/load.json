@@ -1,6 +1,6 @@
 {
-    "values":[
-      "enchantencore:load",
-      "#enchantencore:scheduled_functions"
-    ]
-  }
+  "values": [
+    "#enchantencore:scheduled_functions",
+    "enchantencore:load"
+  ]
+}

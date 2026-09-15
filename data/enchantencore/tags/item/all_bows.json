@@ -1,7 +1,6 @@
 {
-    "values": [
-      "minecraft:crossbow",
-      "minecraft:bow"
-    ]
-  }
-  
+  "values": [
+    "minecraft:bow",
+    "minecraft:crossbow"
+  ]
+}
