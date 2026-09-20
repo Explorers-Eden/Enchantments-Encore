@@ -23,7 +23,7 @@ The datapack usually just needs to be installed. There is nothing else you have 
 But if you are playing on a PaperMC Server (or a PaperMC Fork like Purpur) make sure to set **allow-non-player-entities-on-scoreboards** in your paper config files to **true** in order for everything to work properly.
 
 ## 📝 Translations
-Want to play in your own language? You can help us out by contributing on our **[Crowdin Page](https://crowdin.com/project/explorers-eden)**! Once a translation for a language is finished, it’ll be added to the data pack for you to enjoy.
+Want to play in your own language? You can help us out by contributing on our **[Website]([https://crowdin.com/project/explorers-eden](https://explorerseden.eu/translate/))**!
 
 ## ✍️ Feedback, Questions & Suggestions
 We're here to help! If you happen to have questions, suggestions or just encountered a bug, then feel free to hop on our discord server to ask for help in our **Data Pack Section**. [Click to join the server](https://discord.gg/f2pMggfgVv)
