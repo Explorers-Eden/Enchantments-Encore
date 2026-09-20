@@ -1,7 +1,7 @@
 {
   "description": {
     "translate": "enchantment.enchantencore.spider_vision_curse",
-    "fallback": "Spider of Creeper Vision"
+    "fallback": "Curse of Spider Vision"
   },
   "exclusive_set": "#enchantencore:exclusive_set/vision_based",
   "supported_items": "#minecraft:enchantable/head_armor",

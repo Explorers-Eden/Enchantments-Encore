@@ -1,18 +1,6 @@
 # Minecraft Version(s): 26.3
-## The Wilderness Bound update had lots of small technical changes which added up - so please report any Bugs you catch on our Discord server.
-## We also moved away from crowdin for our translations and now have our own solution. Feel free to contribute: https://explorerseden.eu/translate/
-## Thank you!
-
 ## Changes:
-- Using Crop Dance succesfully now lets it rain the respective Crop (only visual)
-- Night Vision now adds the typical night vision goggles effect instead of using Minecrafts effect
-- Added Curse of Shortsight (Blurs vision when equipped)
-- Added Curse of Color Blindness (Wearer becomes color blind when equipped)
-- Added Curse of Mirror Vision (Wearers vision is mirrored horizontally when equipped)
-- Added Curse of Void Vision (Wearer sees the world with the eyes of the Void when equipped)
-- Added Curse of Spider Vision (Wearer sees the world with the eyes of a Spider when equipped)
-- Added Curse of Creeper Vision (Wearer sees the world with the eyes of a Creeper when equipped)
-- Added Curse of Ender Vision (Wearer sees the world with the eyes of an Enderman when equipped)
-- Added 16 new progression advancements to unlock
 
 ## Fixes:
+- Curse of Spider Vision having the wrong fallback value
+- Post Effects of Night Vision & Vision based Curses not getting removed on Servers
