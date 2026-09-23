@@ -40,6 +40,18 @@
         }
       },
       {
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "periodic_tick": 3
+              }
+            }
+          ]
+        },
         "effect": {
           "type": "minecraft:run_function",
           "function": "enchantencore:aura/echoing/projectile/init"

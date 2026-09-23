@@ -1,6 +1,5 @@
 # Minecraft Version(s): 26.3
 ## Changes:
+- Improvements to Aura Enchantments performance
 
 ## Fixes:
-- Leaf Jumper enchantment draining durability when no leaf block was being placed
-- Leaf Jumper enchantment placing invisible blocks instead of leaf blocks
