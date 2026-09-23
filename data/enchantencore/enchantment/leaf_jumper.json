@@ -23,32 +23,6 @@
     "minecraft:tick": [
       {
         "effect": {
-          "type": "minecraft:change_item_damage",
-          "amount": 1
-        },
-        "requirements": {
-          "type": "minecraft:all_of",
-          "terms": [
-            {
-              "type": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "minecraft:type_specific/player": {
-                  "input": {
-                    "jump": true
-                  }
-                }
-              }
-            },
-            {
-              "type": "minecraft:random_chance",
-              "chance": 0.4
-            }
-          ]
-        }
-      },
-      {
-        "effect": {
           "type": "minecraft:run_function",
           "function": "enchantencore:leaf_jumper/run"
         },

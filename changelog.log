@@ -2,5 +2,5 @@
 ## Changes:
 
 ## Fixes:
-- Curse of Spider Vision having the wrong fallback value
-- Post Effects of Night Vision & Vision based Curses not getting removed on Servers
+- Leaf Jumper enchantment draining durability when no leaf block was being placed
+- Leaf Jumper enchantment placing invisible blocks instead of leaf blocks
