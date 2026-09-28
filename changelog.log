@@ -3,3 +3,4 @@
 - Improvements to Aura Enchantments performance
 
 ## Fixes:
+- Forge Shot causing message spam in log due to missing blockstate

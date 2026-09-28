@@ -27,7 +27,7 @@
           "effects": [
             {
               "type": "minecraft:run_function",
-              "function": "enchantencore:forge_shot"
+              "function": "enchantencore:forge_shot/init"
             }
           ]
         },
@@ -49,7 +49,7 @@
           "effects": [
             {
               "type": "minecraft:run_function",
-              "function": "enchantencore:forge_shot"
+              "function": "enchantencore:forge_shot/init"
             }
           ]
         },

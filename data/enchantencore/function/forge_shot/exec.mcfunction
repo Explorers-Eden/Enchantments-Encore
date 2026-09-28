@@ -1,0 +1,9 @@
+$summon minecraft:falling_block ~01.0 ~5 ~00.0 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~00.7 ~5 ~00.7 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~00.0 ~5 ~01.0 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~-0.7 ~5 ~00.7 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~-1.0 ~5 ~00.0 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~-0.7 ~5 ~-0.7 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~00.0 ~5 ~-1.0 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~00.7 ~5 ~-0.7 {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
+$summon minecraft:falling_block ~ ~5 ~ {BlockState:$(blockstate),Time:1,DropItem:0b,CancelDrop:1b,HurtEntities:1b,FallHurtMax:40,FallDistance:5f,FallHurtAmount:1f}
