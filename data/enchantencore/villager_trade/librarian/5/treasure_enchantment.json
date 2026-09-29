@@ -3,7 +3,7 @@
     "id": "minecraft:book"
   },
   "double_trade_price_enchantments": "#enchantencore:treasure",
-  "given_item_modifiers": [
+  "given_item_modifier": [
     {
       "type": "minecraft:enchant_randomly",
       "include_additional_cost_component": true,
