@@ -2,4 +2,12 @@
 ## Changes:
 
 ## Fixes:
-- Treasure trade for master Villagers having an empty book instead
+- Flaming Aura not being obtainable
+- Curse of Undying not being obtainable and not counting as a curse
+- Ghost Spirit being obtainable from Enchanting Tables, random loot and mob/trade equipment instead of only as a treasure enchantment like the other Wolf spirits
+- Bear Spirit and Boar Spirit being combinable
+- Scorpion Spirit poisoning and withering the Wolf itself instead of its target
+- Ominous Rain only dropping a single projectile instead of 9
+- Implosion being incompatible with Quick Charge but compatible with Bomber and Flare
+- Evokers Wrath being compatible with Bomber and Flare
+- Several wrong infos in the in-game wiki (loot sources, incompatibilities, applicable items and the max level of Rejuvenation)

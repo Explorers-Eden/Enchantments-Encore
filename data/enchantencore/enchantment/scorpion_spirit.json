@@ -49,7 +49,7 @@
         "minecraft:post_attack": [
             {
                 "enchanted": "attacker",
-                "affected": "attacker",
+                "affected": "victim",
                 "effect": {
                     "type": "minecraft:apply_mob_effect",
                     "to_apply": "minecraft:poison",
@@ -65,7 +65,7 @@
             },
             {
                 "enchanted": "attacker",
-                "affected": "attacker",
+                "affected": "victim",
                 "effect": {
                     "type": "minecraft:apply_mob_effect",
                     "to_apply": "minecraft:wither",

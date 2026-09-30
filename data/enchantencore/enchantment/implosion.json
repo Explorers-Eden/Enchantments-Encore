@@ -3,7 +3,7 @@
     "translate": "enchantment.enchantencore.implosion",
     "fallback": "Implosion"
   },
-  "exclusive_set": "#enchantencore:exclusive_set/crossbow",
+  "exclusive_set": "#enchantencore:exclusive_set/shot_arrow",
   "supported_items": "#enchantencore:all_bows",
   "primary_items": "minecraft:bow",
   "weight": 2,

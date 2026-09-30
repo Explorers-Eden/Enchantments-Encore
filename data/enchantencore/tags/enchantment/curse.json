@@ -17,6 +17,7 @@
     { "id": "enchantencore:shortsight_curse", "required": false },
     { "id": "enchantencore:spider_vision_curse", "required": false },
     { "id": "enchantencore:void_vision_curse", "required": false },
-    { "id": "enchantencore:welfare_curse", "required": false }
+    { "id": "enchantencore:welfare_curse", "required": false },
+    { "id": "enchantencore:undying_curse", "required": false }
   ]
 }

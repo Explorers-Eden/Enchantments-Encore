@@ -20,7 +20,6 @@
     { "id": "enchantencore:fetch", "required": false },
     { "id": "enchantencore:forge_shot", "required": false },
     { "id": "enchantencore:gallop", "required": false },
-    { "id": "enchantencore:ghost_spirit", "required": false },
     { "id": "enchantencore:growth", "required": false },
     { "id": "enchantencore:guard", "required": false },
     { "id": "enchantencore:handyman", "required": false },

@@ -2,7 +2,7 @@
   "values": [
     { "id": "enchantencore:angry_aura", "required": false },
     { "id": "enchantencore:aquatic_aura", "required": false },
-    { "id": "enchantencore:demonic_aura", "required": false },
+    { "id": "enchantencore:flaming_aura", "required": false },
     { "id": "enchantencore:echoing_aura", "required": false },
     { "id": "enchantencore:enchanted_aura", "required": false },
     { "id": "enchantencore:ender_aura", "required": false },

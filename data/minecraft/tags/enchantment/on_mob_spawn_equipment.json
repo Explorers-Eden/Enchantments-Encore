@@ -10,7 +10,6 @@
     { "id": "enchantencore:crop_dance", "required": false },
     { "id": "enchantencore:cushion", "required": false },
     { "id": "enchantencore:fetch", "required": false },
-    { "id": "enchantencore:ghost_spirit", "required": false },
     { "id": "enchantencore:guard", "required": false },
     { "id": "enchantencore:handyman", "required": false },
     { "id": "enchantencore:hardened", "required": false },
