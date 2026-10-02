@@ -1,0 +1,37 @@
+{
+    "condition": "minecraft:all_of",
+    "terms": [
+        {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+                "slots": {
+                    "weapon.mainhand": {
+                        "items": "minecraft:shield"
+                    }
+                }
+            }
+        },
+        {
+            "condition": "minecraft:inverted",
+            "term": {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "slots": {
+                        "weapon.mainhand": {
+                            "items": "minecraft:shield",
+                            "predicates": {
+                                "minecraft:enchantments": [
+                                    {
+                                        "enchantments": "enchantencore:cleansing"
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    ]
+}

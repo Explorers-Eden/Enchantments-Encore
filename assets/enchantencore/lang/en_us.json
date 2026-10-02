@@ -173,7 +173,7 @@
     "enchantment_lore.enchantencore:bomber.description": "Compatible with: Corssbows, Bows\n\nArrows explode when an entity was hit",
     "enchantment_lore.enchantencore:bulletproof.description": "Compatible with: Armor\n\n10% chance of protecting the wearer from shulker bullets",
     "enchantment_lore.enchantencore:bunny_hop.description": "Compatible with: Leggings\n\nLet's you jump higher",
-    "enchantment_lore.enchantencore:cleansing.description": "Compatible with: Shields\n\nClears all effects but also drains durability",
+    "enchantment_lore.enchantencore:cleansing.description": "Compatible with: Shields\n\nClears all effects when raised, draining durability only if effects were removed",
     "enchantment_lore.enchantencore:crab_claw.description": "Compatible with: Tools\n\nIncreases block/entity interaction range",
     "enchantment_lore.enchantencore:creeper_alloy.description": "Compatible with: Chestplates\n\nCauses an explosion when you are hit",
     "enchantment_lore.enchantencore:crispbread.description": "Compatible with: Shields\n\nSaturation effect when equipped",
@@ -300,7 +300,7 @@
     "wiki.enchantencore.bulletproof": "10% chance of protecting the wearer from shulker bullets\n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Chestplates\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Creeper Alloy, Fire Alloy, Ice Alloy, Darkness Alloy, Shulker Shell\n\n\u2022 \u00a7lLoot Sources\u00a7r: Treasure",
     "wiki.enchantencore.bunny_hop": "Lets you jump higher\n\n\u2022 \u00a7lMax Level\u00a7r: III\n\n\u2022 \u00a7lApplicable to\u00a7r: Leggings\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Enderscape, Swift Sneak\n\n\u2022 \u00a7lLoot Sources\u00a7r: Enchanting Table, Treasure",
     "wiki.enchantencore.caravan_curse": "Wearer gets slowed down when leashing entities\n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets, Chestplates, Leggings, Boots\n\n\u2022 \u00a7lIncompatibilities\u00a7r: -\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure",
-    "wiki.enchantencore.cleansing": "Clears all effects but also drains durability\n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Shields\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Crispbread, Rejuvenation, Hardened, Ominous Healing\n\n\u2022 \u00a7lLoot Sources\u00a7r: Traded Books, Treasure",
+    "wiki.enchantencore.cleansing": "Clears all effects when raised, draining durability only if effects were removed\n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Shields\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Crispbread, Rejuvenation, Hardened, Ominous Healing\n\n\u2022 \u00a7lLoot Sources\u00a7r: Traded Books, Treasure",
     "wiki.enchantencore.crab_claw": "Increases block/entity interaction range\n\n\u2022 \u00a7lMax Level\u00a7r: III\n\n\u2022 \u00a7lApplicable to\u00a7r: Tools\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Reach, Gluttony\n\n\u2022 \u00a7lLoot Sources\u00a7r: Random Loot, Traded Equipment, Traded Books",
     "wiki.enchantencore.crank_curse": "Hurts the wearer when not moving\n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets, Chestplates, Leggings, Boots\n\n\u2022 \u00a7lIncompatibilities\u00a7r: -\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure",
     "wiki.enchantencore.creeper_alloy": "Causes an explosion when you are hit\n\n\u2022 \u00a7lMax Level\u00a7r: III\n\n\u2022 \u00a7lApplicable to\u00a7r: Chestplates\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Bulletproof, Fire Alloy, Ice Alloy, Darkness Alloy, Shulker Shell\n\n\u2022 \u00a7lLoot Sources\u00a7r: Enchanting Table, Random Loot, Traded Books, Treasure",
@@ -437,5 +437,6 @@
     "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.title": "The Rise and Shine",
     "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.description": "Loot a treasure enchantment from the top of the Rise",
     "advancement.eden.adventure.enchantments_encore.scholarly_treasure.title": "Scholarly Treasure",
-    "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description": "Buy a treasure enchantment from a Master Librarian"
+    "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description": "Buy a treasure enchantment from a Master Librarian",
+    "option.enchantencore.back": "Back"
 }

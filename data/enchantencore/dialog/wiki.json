@@ -20,7 +20,7 @@
   "pause": true,
   "exit_action": {
     "label": {
-      "translate": "gui.back",
+      "translate": "option.enchantencore.back",
       "fallback": "Back"
     },
     "action": {
@@ -489,7 +489,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.cleansing",
-        "fallback": "Clears all effects but also drains durability\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Crispbread, Rejuvenation, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Clears all effects when raised, draining durability only if effects were removed\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Crispbread, Rejuvenation, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",

@@ -2,6 +2,7 @@
   "values": [
     "enchantencore:add_enchantable_component/init",
     "enchantencore:anchor/remove",
+    "enchantencore:cleansing/reset",
     "enchantencore:color_blindness_curse",
     "enchantencore:creeper_vision_curse",
     "enchantencore:crop_dance/reset_sneak_time",

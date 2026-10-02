@@ -17,20 +17,54 @@
   },
   "anvil_cost": 4,
   "slots": [
-    "offhand"
+    "hand"
   ],
   "effects": {
-    "minecraft:location_changed": [
+    "minecraft:tick": [
       {
-        "effect": {
-          "type": "minecraft:run_function",
-          "function": "enchantencore:cleansing"
-        }
-      },
-      {
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_scores",
+              "entity": "this",
+              "scores": {
+                "enchantencore.cleansing": {
+                  "min": 1
+                }
+              }
+            },
+            {
+              "condition": "minecraft:reference",
+              "name": "enchantencore:entity/has_any_effect"
+            },
+            {
+              "condition": "minecraft:inverted",
+              "term": {
+                "condition": "minecraft:reference",
+                "name": "enchantencore:entity/raises_plain_shield"
+              }
+            }
+          ]
+        },
         "effect": {
           "type": "minecraft:change_item_damage",
           "amount": 1.5
+        }
+      },
+      {
+        "requirements": {
+          "condition": "minecraft:entity_scores",
+          "entity": "this",
+          "scores": {
+            "enchantencore.cleansing": {
+              "min": 1
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:cleansing/run"
         }
       }
     ]

@@ -11,9 +11,10 @@ scoreboard objectives add enchantencore.pegasus dummy
 scoreboard objectives add enchantencore.idle_time dummy
 scoreboard objectives add enchantencore.strafe.timer dummy
 scoreboard objectives add enchantencore.pickpocket dummy
+scoreboard objectives add enchantencore.cleansing minecraft.used:minecraft.shield
 
 ##set data pack version
-data modify storage eden:datapack enchantments_encore.version set value "5.4"
+data modify storage eden:datapack enchantments_encore.version set value "5.5"
 
 ##additional cleanup for v4.5
 scoreboard objectives remove enchantencore.dialog_trigger.wiki
