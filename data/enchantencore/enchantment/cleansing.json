@@ -23,10 +23,10 @@
     "minecraft:tick": [
       {
         "requirements": {
-          "condition": "minecraft:all_of",
+          "type": "minecraft:all_of",
           "terms": [
             {
-              "condition": "minecraft:entity_scores",
+              "type": "minecraft:entity_scores",
               "entity": "this",
               "scores": {
                 "enchantencore.cleansing": {
@@ -35,14 +35,408 @@
               }
             },
             {
-              "condition": "minecraft:reference",
-              "name": "enchantencore:entity/has_any_effect"
+              "type": "minecraft:any_of",
+              "terms": [
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:absorption": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:bad_omen": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:blindness": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:breath_of_the_nautilus": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:conduit_power": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:darkness": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:dolphins_grace": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:fire_resistance": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:glowing": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:haste": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:health_boost": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:hero_of_the_village": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:hunger": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:infested": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:instant_damage": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:instant_health": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:invisibility": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:jump_boost": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:levitation": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:luck": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:mining_fatigue": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:nausea": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:night_vision": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:oozing": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:poison": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:raid_omen": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:regeneration": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:resistance": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:saturation": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:slow_falling": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:slowness": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:speed": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:strength": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:trial_omen": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:unluck": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:water_breathing": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:weakness": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:weaving": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:wind_charged": {}
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "effects": {
+                      "minecraft:wither": {}
+                    }
+                  }
+                }
+              ]
             },
             {
-              "condition": "minecraft:inverted",
+              "type": "minecraft:inverted",
               "term": {
-                "condition": "minecraft:reference",
-                "name": "enchantencore:entity/raises_plain_shield"
+                "type": "minecraft:all_of",
+                "terms": [
+                  {
+                    "type": "minecraft:entity_properties",
+                    "entity": "this",
+                    "predicate": {
+                      "slots": {
+                        "weapon.mainhand": {
+                          "items": "minecraft:shield"
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:inverted",
+                    "term": {
+                      "type": "minecraft:entity_properties",
+                      "entity": "this",
+                      "predicate": {
+                        "slots": {
+                          "weapon.mainhand": {
+                            "items": "minecraft:shield",
+                            "predicates": {
+                              "minecraft:enchantments": [
+                                {
+                                  "enchantments": "enchantencore:cleansing"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
               }
             }
           ]
@@ -54,7 +448,7 @@
       },
       {
         "requirements": {
-          "condition": "minecraft:entity_scores",
+          "type": "minecraft:entity_scores",
           "entity": "this",
           "scores": {
             "enchantencore.cleansing": {
