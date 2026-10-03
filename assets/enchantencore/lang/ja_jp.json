@@ -439,5 +439,6 @@
     "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.title": "The Rise and Shine",
     "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.description": "Loot a treasure enchantment from the top of the Rise",
     "advancement.eden.adventure.enchantments_encore.scholarly_treasure.title": "Scholarly Treasure",
-    "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description": "Buy a treasure enchantment from a Master Librarian"
+    "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description": "Buy a treasure enchantment from a Master Librarian",
+    "option.enchantencore.back": "Back"
 }
