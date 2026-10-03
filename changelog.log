@@ -1,7 +1,5 @@
 # Minecraft Version(s): 26.3
 ## Changes:
-- Repeating background tasks now start a few ticks apart after loading instead of all on the same tick, spreading out server load
-- Improved server performance of Heavenly Aura (no longer reads player and pet data every few ticks)
-- Cushion now reduces wall-crash damage by 20/40/60/80% per level (was 30/60/80/80%, so levels III and IV were identical)
+- Crab Claw can no longer be applied to Spears (Spears use their own fixed attack reach, so the extra entity interaction range had no effect on them)
 
 ## Fixes:

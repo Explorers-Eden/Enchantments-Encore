@@ -3,7 +3,7 @@
     "translate": "enchantment.enchantencore.crab_claw",
     "fallback": "Crab Claw"
   },
-    "supported_items": "#enchantencore:all_tools",
+    "supported_items": "#enchantencore:valid_for_crab_claw",
     "exclusive_set": "#enchantencore:exclusive_set/reach",
     "weight": 1,
     "max_level": 3,

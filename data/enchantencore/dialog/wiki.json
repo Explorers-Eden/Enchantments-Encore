@@ -48,7 +48,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.anchor",
-        "fallback": "Anchors the entity in place when not ridden \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Saddles, Harnesses\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+        "fallback": "Anchors the entity in place when not ridden \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Saddles, Harnesses\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -69,7 +69,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.angry_aura",
-        "fallback": "Applies a cosmetic angry aura to the wearer, it's pets and most of the projectiles shot \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic angry aura to the wearer, it's pets and most of the projectiles shot \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -90,7 +90,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.aquatic_aura",
-        "fallback": "Applies a cosmetic aquatic aura to the wearer, it's pets and most of the projectiles shot \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic aquatic aura to the wearer, it's pets and most of the projectiles shot \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -127,7 +127,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bane_of_bosses",
-        "fallback": "Inflicts more damage to boss mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompabilities§r: Bane of Netherborn, Bane of Raiders, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Inflicts more damage to boss mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompatibilities§r: Bane of Netherborn, Bane of Raiders, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -164,7 +164,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bane_of_endborn",
-        "fallback": "Inflicts more damage to End mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompabilities§r: Bane of Bosses, Bane of Raiders, Bane of Netherborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Inflicts more damage to End mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompatibilities§r: Bane of Bosses, Bane of Raiders, Bane of Netherborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -201,7 +201,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bane_of_netherborn",
-        "fallback": "Inflicts more damage to Nether mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompabilities§r: Bane of Bosses, Bane of Raiders, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Inflicts more damage to Nether mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompatibilities§r: Bane of Bosses, Bane of Raiders, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -238,7 +238,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bane_of_raiders",
-        "fallback": "Inflicts more damage to raid mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompabilities§r: Bane of Netherborn, Bane of Bosses, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Inflicts more damage to raid mobs \n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Axes, Swords, Spears, Maces, Tridents\n\n• §lIncompatibilities§r: Bane of Netherborn, Bane of Bosses, Bane of Endborn, Swift Slash, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -259,7 +259,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bear_spirit",
-        "fallback": "Infuses a Wolf with the powers of a Bear \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompabilities§r: Boar Spirit, Scorpion Spirit, Ghost Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
+        "fallback": "Infuses a Wolf with the powers of a Bear \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompatibilities§r: Boar Spirit, Scorpion Spirit, Ghost Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -280,7 +280,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.blindness_curse",
-        "fallback": "Applies Blindness to the wearer \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Applies Blindness to the wearer \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -301,7 +301,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.boar_spirit",
-        "fallback": "Infuses a Wolf with the powers of a Boar \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompabilities§r: Bear Spirit, Scorpion Spirit, Ghost Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
+        "fallback": "Infuses a Wolf with the powers of a Boar \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompatibilities§r: Bear Spirit, Scorpion Spirit, Ghost Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -322,7 +322,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.boltbringer",
-        "fallback": "Summons lightning when entity was hit by a player which at least fell 8 blocks \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Maces\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Summons lightning when entity was hit by a player which at least fell 8 blocks \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Maces\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -347,7 +347,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bomber",
-        "fallback": "Arrows explode when an entity was hit \n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Forge Shot, Ender Shot, Evokers Wrath, Lightning Bolt, Implosion, Flare\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Arrows explode when an entity was hit \n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Infinity, Forge Shot, Ender Shot, Evokers Wrath, Lightning Bolt, Implosion, Flare\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -368,7 +368,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bounce",
-        "fallback": "Lets the wearer bounce all over the place \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Invisibility Cloak, Sonic, Soul Speed, End Speed, Path Speed, Sand Speed, Leaf Jumper, Strafe\n\n• §lLoot Sources§r: Enchanting Table, Random Loot"
+        "fallback": "Lets the wearer bounce all over the place \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Invisibility Cloak, Sonic, Soul Speed, End Speed, Path Speed, Sand Speed, Leaf Jumper, Strafe\n\n• §lLoot Sources§r: Enchanting Table, Random Loot"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -393,7 +393,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.breeze_curse",
-        "fallback": "Wind charges entity on attack \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wind charges entity on attack \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -414,7 +414,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bulletproof",
-        "fallback": "10% chance of protecting the wearer from shulker bullets\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Creeper Alloy, Fire Alloy, Ice Alloy, Darkness Alloy\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "10% chance of protecting the wearer from shulker bullets\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: Creeper Alloy, Fire Alloy, Ice Alloy, Darkness Alloy\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -435,7 +435,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.bunny_hop",
-        "fallback": "Let's you jump higher\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Leggings\n\n• §lIncompabilities§r: Enderscape, Swift Sneak\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
+        "fallback": "Let's you jump higher\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Leggings\n\n• §lIncompatibilities§r: Enderscape, Swift Sneak\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -468,7 +468,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.caravan_curse",
-        "fallback": "Wearer gets slowed down when leashing entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer gets slowed down when leashing entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -489,7 +489,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.cleansing",
-        "fallback": "Clears all effects when raised, draining durability only if effects were removed\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Crispbread, Rejuvenation, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Clears all effects when raised, draining durability only if effects were removed\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Shields\n\n• §lIncompatibilities§r: Crispbread, Rejuvenation, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -510,7 +510,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.color_blindness_curse",
-        "fallback": "Wearer becomes color blind when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer becomes color blind when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -545,10 +545,6 @@
           "atlas": "minecraft:items"
         },
         {
-          "sprite": "minecraft:item/iron_spear",
-          "atlas": "minecraft:items"
-        },
-        {
           "sprite": "minecraft:item/flint_and_steel",
           "atlas": "minecraft:items"
         },
@@ -559,11 +555,19 @@
         {
           "sprite": "minecraft:item/brush",
           "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/mace",
+          "atlas": "minecraft:items"
+        },
+        {
+          "sprite": "minecraft:item/trident",
+          "atlas": "minecraft:items"
         }
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.crab_claw",
-        "fallback": "Increases block/entity interaction range\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: Curse of Reach, Gluttony\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Increases block/entity interaction range\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tools & Swords\n\n• §lIncompatibilities§r: Curse of Reach, Gluttony\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -596,7 +600,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.crank_curse",
-        "fallback": "Hurts the wearer when not moving\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Hurts the wearer when not moving\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -617,7 +621,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.creeper_alloy",
-        "fallback": "Causes an explosion when you are hit\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Bulletproof, Fire Alloy, Ice Alloy, Darkness Alloy, Shulker Shell\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
+        "fallback": "Causes an explosion when you are hit\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: Bulletproof, Fire Alloy, Ice Alloy, Darkness Alloy, Shulker Shell\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -638,7 +642,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.creeper_vision_curse",
-        "fallback": "Wearer sees the world with the eyes of a Creeper \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer sees the world with the eyes of a Creeper \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -659,7 +663,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.crispbread",
-        "fallback": "Saturation effect when equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Cleansing, Rejuvenation, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Saturation effect when equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Shields\n\n• §lIncompatibilities§r: Cleansing, Rejuvenation, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -680,7 +684,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.crop_dance",
-        "fallback": "Sneak-Dance to let crops around you grow\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Magma Walker, Summer Walker, Grass Walker, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Sneak-Dance to let crops around you grow\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Magma Walker, Summer Walker, Grass Walker, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -701,7 +705,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.cushion",
-        "fallback": "Protection against damage when flying into walls\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Elytras\n\n• §lIncompabilities§r: Safe Landing\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Protection against damage when flying into walls\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Elytras\n\n• §lIncompatibilities§r: Safe Landing\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -722,7 +726,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.darkness_alloy",
-        "fallback": "Gives attacking entities darkness effect\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Bulletproof, Fire Alloy, Ice Alloy, Creeper Alloy, Shulker Shell\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
+        "fallback": "Gives attacking entities darkness effect\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: Bulletproof, Fire Alloy, Ice Alloy, Creeper Alloy, Shulker Shell\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -755,7 +759,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.day_protection",
-        "fallback": "Twice the damage protection than the vanilla enchant but works only at day time (overworld)\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: Thorns Protection, Night Protection, Nether Protection, End Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
+        "fallback": "Twice the damage protection than the vanilla enchant but works only at day time (overworld)\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: Thorns Protection, Night Protection, Nether Protection, End Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -780,7 +784,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.death_curse",
-        "fallback": "Small chance of dying when attacking\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Small chance of dying when attacking\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -801,7 +805,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.echoing_aura",
-        "fallback": "Applies a cosmetic echoing aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic echoing aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -822,7 +826,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.electric_walker",
-        "fallback": "Powers Redstone for a brief moment when walking over it\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Magma Walker, Summer Walker, Grass Walker, Crop Dance, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Powers Redstone for a brief moment when walking over it\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Magma Walker, Summer Walker, Grass Walker, Crop Dance, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -843,7 +847,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.enchanted_aura",
-        "fallback": "Applies a cosmetic enchanted aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic enchanted aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -876,7 +880,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.end_protection",
-        "fallback": "Twice the damage protection than the vanilla enchant but works only the end\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: Thorns Protection, Night Protection, Nether Protection, Day Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
+        "fallback": "Twice the damage protection than the vanilla enchant but works only the end\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: Thorns Protection, Night Protection, Nether Protection, Day Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -897,7 +901,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.end_speed",
-        "fallback": "Increases movement speed when in the end\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Invisibility Cloak, Soul Speed, Path Speed, Sonic, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Increases movement speed when in the end\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Invisibility Cloak, Soul Speed, Path Speed, Sonic, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -918,7 +922,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ender_aura",
-        "fallback": "Applies a cosmetic ender aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic ender aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -943,7 +947,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ender_shot",
-        "fallback": "Teleports hit entities on the surface randomly\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Bomber, Forge Shot, Evokers Wrath, Lightning Bolt, Implosion, Flare\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Teleports hit entities on the surface randomly\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Infinity, Bomber, Forge Shot, Evokers Wrath, Lightning Bolt, Implosion, Flare\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -964,7 +968,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ender_vision_curse",
-        "fallback": "Wearer sees the world with the eyes of an Enderman \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer sees the world with the eyes of an Enderman \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -985,7 +989,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.enderscape",
-        "fallback": "You teleport randomly in a 5 block radius when hit on the surface\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Leggings\n\n• §lIncompabilities§r: Swift Sneak, Bunny Hop\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "You teleport randomly in a 5 block radius when hit on the surface\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Leggings\n\n• §lIncompatibilities§r: Swift Sneak, Bunny Hop\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1006,7 +1010,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.evokers_wrath",
-        "fallback": "Arrows spawn Evoker Fangs when they land\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows\n\n• §lIncompabilities§r: Quick Charge, Infinity, Lightning Bolt, Forge Shot, Ender Shot, Implosion, Flare\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Arrows spawn Evoker Fangs when they land\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows\n\n• §lIncompatibilities§r: Quick Charge, Infinity, Lightning Bolt, Forge Shot, Ender Shot, Implosion, Flare\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1027,7 +1031,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.fetch",
-        "fallback": "Small chance for a Wolf to fetch loot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompabilities§r: Scent\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Small chance for a Wolf to fetch loot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompatibilities§r: Scent\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1048,7 +1052,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.fire_alloy",
-        "fallback": "Ignites attacking entities\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Bulletproof, Creeper Alloy, Ice Alloy, Darkness Alloy, Shulker Shell\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
+        "fallback": "Ignites attacking entities\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: Bulletproof, Creeper Alloy, Ice Alloy, Darkness Alloy, Shulker Shell\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1069,7 +1073,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.flaming_aura",
-        "fallback": "Applies a cosmetic flaming aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic flaming aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1094,7 +1098,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.flare",
-        "fallback": "Arrows explode like fireworks when they land or hit an entity\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Bomber, Forge Shot, Ender Shot, Evokers Wrath, Lightning Bolt\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
+        "fallback": "Arrows explode like fireworks when they land or hit an entity\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Infinity, Bomber, Forge Shot, Ender Shot, Evokers Wrath, Lightning Bolt\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1119,7 +1123,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.forge_shot",
-        "fallback": "Arrows spawn falling Anvils when they land\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Quick Charge, Infinity, Lightning Bolt, Evokers Wrath, Ender Shot, Implosion, Flare\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Arrows spawn falling Anvils when they land\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Quick Charge, Infinity, Lightning Bolt, Evokers Wrath, Ender Shot, Implosion, Flare\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1156,7 +1160,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.fragility_curse",
-        "fallback": "Drains more durability points\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Melee Weapons\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Drains more durability points\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Melee Weapons\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1177,7 +1181,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.gallop",
-        "fallback": "The equipped mob gets a speed boost when ridden\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Saddles\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "The equipped mob gets a speed boost when ridden\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Saddles\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1198,7 +1202,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ghost_spirit",
-        "fallback": "Makes your Wolf almost invincible but it also has 0 attack damage\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompabilities§r: Boar Spirit, Bear Spirit, Scorpion Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
+        "fallback": "Makes your Wolf almost invincible but it also has 0 attack damage\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompatibilities§r: Boar Spirit, Bear Spirit, Scorpion Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1251,7 +1255,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.gluttony",
-        "fallback": "Sucks up items in a 2-10 block radius depending on the level\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: Crab Claw, Curse of Welfare\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
+        "fallback": "Sucks up items in a 2-10 block radius depending on the level\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: Crab Claw, Curse of Welfare\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1272,7 +1276,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.grass_walker",
-        "fallback": "Turns dirt into grass blocks when walking over it\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Magma Walker, Summer Walker, Crop Dance, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Turns dirt into grass blocks when walking over it\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Magma Walker, Summer Walker, Crop Dance, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1309,7 +1313,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.growth",
-        "fallback": "Increases wearers scale and step height\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Chestplates, Elytras, Horse Armor, Wolf Armor\n\n• §lIncompabilities§r: Shrinkage\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Increases wearers scale and step height\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Chestplates, Elytras, Horse Armor, Wolf Armor\n\n• §lIncompatibilities§r: Shrinkage\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1342,7 +1346,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.guard",
-        "fallback": "Allows for blocking melee attacks with the enchanted item\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Sword, Axes, Maces\n\n• §lIncompabilities§r: Sharpness, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Allows for blocking melee attacks with the enchanted item\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Sword, Axes, Maces\n\n• §lIncompatibilities§r: Sharpness, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1356,7 +1360,7 @@
       },
       "tooltip": {
         "translate": "wiki.enchantencore.handyman",
-        "fallback": "Keeps repair cost low\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Any\n\n• §lIncompabilities§r: Mending, Sacrifice\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+        "fallback": "Keeps repair cost low\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Any\n\n• §lIncompatibilities§r: Mending, Sacrifice\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1377,7 +1381,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.hardened",
-        "fallback": "Extra armor when equipped\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Crispbread, Rejuvenation, Cleansing, Ominous Healing\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Extra armor when equipped\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Shields\n\n• §lIncompatibilities§r: Crispbread, Rejuvenation, Cleansing, Ominous Healing\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1410,7 +1414,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.haste",
-        "fallback": "Applies Haste effect when in mainhand equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: Fortune\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies Haste effect when in mainhand equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: Fortune\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1431,7 +1435,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.heavenly_aura",
-        "fallback": "Applies a cosmetic heavenly aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic heavenly aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1452,7 +1456,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.heroes_crown",
-        "fallback": "Gives the wearer the Hero of the Village effect but drains durability\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Night Vision\n\n• §lLoot Sources§r: Random Loot, Treasure"
+        "fallback": "Gives the wearer the Hero of the Village effect but drains durability\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Night Vision\n\n• §lLoot Sources§r: Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1477,7 +1481,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.hiding_curse",
-        "fallback": "Hit entities turn invisible\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Hit entities turn invisible\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1506,7 +1510,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.hunger_aspect",
-        "fallback": "Applies hunger effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies hunger effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1527,7 +1531,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ice_alloy",
-        "fallback": "Freezes attacking entities\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Bulletproof, Fire Alloy, Creeper Alloy, Darkness Alloy, Shulker Shell, Ocean Heart\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
+        "fallback": "Freezes attacking entities\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: Bulletproof, Fire Alloy, Creeper Alloy, Darkness Alloy, Shulker Shell, Ocean Heart\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1548,7 +1552,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.illumination",
-        "fallback": "Lightens up the area around you when headblock is not obstructed\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Night Vision\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Lightens up the area around you when headblock is not obstructed\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Night Vision\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1573,7 +1577,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.implosion",
-        "fallback": "Pulls in hostile entities within a 5 block radius\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Bomber, Ender Shot, Forge Shot, Evokers Wrath, Lightning Bolt, Flare\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Pulls in hostile entities within a 5 block radius\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Infinity, Bomber, Ender Shot, Forge Shot, Evokers Wrath, Lightning Bolt, Flare\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1594,7 +1598,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.incognito",
-        "fallback": "Hides the wearers name tag \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Traded Books, Random Loot"
+        "fallback": "Hides the wearers name tag \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Traded Books, Random Loot"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1623,7 +1627,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.infested_aspect",
-        "fallback": "Applies infested effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies infested effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1644,7 +1648,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.invisibility_cloak",
-        "fallback": "Crouching turns you invisible\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Sonic, Soul Speed, End Speed, Path Speed, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Crouching turns you invisible\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Sonic, Soul Speed, End Speed, Path Speed, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1665,7 +1669,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.leaf_jumper",
-        "fallback": "Spawns Leaf Blocks when jumping in the air whenever there is enough room below\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Path Speed, Strafe\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
+        "fallback": "Spawns Leaf Blocks when jumping in the air whenever there is enough room below\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Path Speed, Strafe\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1690,7 +1694,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.leech",
-        "fallback": "Regenerate health when hitting entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears, Axes, Tridents, Maces\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
+        "fallback": "Regenerate health when hitting entities\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Swords, Spears, Axes, Tridents, Maces\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1719,7 +1723,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.levitation_aspect",
-        "fallback": "Applies levitation effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier, Heavy\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies levitation effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier, Heavy\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1744,7 +1748,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.lightning_bolt",
-        "fallback": "Has a chance to summon lightning upon hit entities when they can see the sky\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity, Bomber, Ender Shot, Forge Shot, Evokers Wrath, Implosion, Flare\n\n• §lLoot Sources§r: Traded Equipment, Traded Books"
+        "fallback": "Has a chance to summon lightning upon hit entities when they can see the sky\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Infinity, Bomber, Ender Shot, Forge Shot, Evokers Wrath, Implosion, Flare\n\n• §lLoot Sources§r: Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1769,7 +1773,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.lingering",
-        "fallback": "Leaves behind a lingering cloud with the effect of the shot tipped arrow when hitting a block\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Leaves behind a lingering cloud with the effect of the shot tipped arrow when hitting a block\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1790,7 +1794,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.lovely_aura",
-        "fallback": "Applies a cosmetic lovely aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic lovely aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1811,7 +1815,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.lush_aura",
-        "fallback": "Applies a cosmetic lush aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic lush aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1832,7 +1836,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.magma_walker",
-        "fallback": "Turns Lava into magma blocks when walking over it\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Crop Dance, Summer Walker, Grass Walker, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Turns Lava into magma blocks when walking over it\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Crop Dance, Summer Walker, Grass Walker, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1853,7 +1857,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.mirror_vision_curse",
-        "fallback": "Wearers vision is mirrored when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearers vision is mirrored when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1878,7 +1882,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.moonwalk",
-        "fallback": "Reduces gravity when equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Elytras, Horse Armor\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Reduces gravity when equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Elytras, Horse Armor\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1899,7 +1903,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.muddy_aura",
-        "fallback": "Applies a cosmetic muddy aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic muddy aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1932,7 +1936,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.nether_protection",
-        "fallback": "Twice the damage protection than the vanilla enchant but works only at night time (overworld)\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplate, Leggings, Boots\n\n• §lIncompabilities§r: Thorns Protection, Day Protection, Nether Protection, End Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
+        "fallback": "Twice the damage protection than the vanilla enchant but works only at night time (overworld)\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplate, Leggings, Boots\n\n• §lIncompatibilities§r: Thorns Protection, Day Protection, Nether Protection, End Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1965,7 +1969,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.night_protection",
-        "fallback": "Twice the damage protection than the vanilla enchant but works only at night time (overworld)\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplate, Leggings, Boots\n\n• §lIncompabilities§r: Thorns Protection, Day Protection, Nether Protection, End Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
+        "fallback": "Twice the damage protection than the vanilla enchant but works only at night time (overworld)\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplate, Leggings, Boots\n\n• §lIncompatibilities§r: Thorns Protection, Day Protection, Nether Protection, End Protection, Protection, Fire Protection, Blast Protection, Projectile Protection, Wither Protection\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1986,7 +1990,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.night_vision",
-        "fallback": "Gives the wearer night vision effect when it's nighttime\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Heroes Crown\n\n• §lLoot Sources§r: Enchanting Table, Traded Equipment"
+        "fallback": "Gives the wearer night vision effect when it's nighttime\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Heroes Crown\n\n• §lLoot Sources§r: Enchanting Table, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2007,7 +2011,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ominous_aura",
-        "fallback": "Applies a cosmetic ominous aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic ominous aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2028,7 +2032,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ominous_healing",
-        "fallback": "Has a 60% chance to spawn a healing lingering potion when hit while having 3.5 hearts or less\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Crispbread, Rejuvenation, Hardened, Cleansing\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Has a 60% chance to spawn a healing lingering potion when hit while having 3.5 hearts or less\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Shields\n\n• §lIncompatibilities§r: Crispbread, Rejuvenation, Hardened, Cleansing\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2049,7 +2053,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ominous_rain",
-        "fallback": "Summons ominous projectiles when projectile lands\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tridents\n\n• §lIncompabilities§r: Riptide, Channeling, Switch, Pufferfish, Sea Breeze\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Summons ominous projectiles when projectile lands\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tridents\n\n• §lIncompatibilities§r: Riptide, Channeling, Switch, Pufferfish, Sea Breeze\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2078,7 +2082,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.oozing_aspect",
-        "fallback": "Applies oozing effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies oozing effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2111,7 +2115,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ownership_curse",
-        "fallback": "Wearer takes damage when their pets do\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer takes damage when their pets do\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2140,7 +2144,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.pacifier",
-        "fallback": "Has a chance to make hit entities harmless for a short period\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment\n\n• §lLoot Sources§r: Enchanting Table, Treasure, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Has a chance to make hit entities harmless for a short period\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment\n\n• §lLoot Sources§r: Enchanting Table, Treasure, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2161,7 +2165,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.pale_aura",
-        "fallback": "Applies a cosmetic pale aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic pale aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2182,7 +2186,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.path_speed",
-        "fallback": "Increases movement speed when on dirth path blocks\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Strafe, Leaf Jumper, Web Walker\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Increases movement speed when on dirth path blocks\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Strafe, Leaf Jumper, Web Walker\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2203,7 +2207,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.pegasus",
-        "fallback": "Entities start flying up to 30 blocks above the Y-level they were mounted. Dismounting gives slow falling to land safely\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Horse Armor\n\n• §lIncompabilities§r: Moonwalk\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Entities start flying up to 30 blocks above the Y-level they were mounted. Dismounting gives slow falling to land safely\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Horse Armor\n\n• §lIncompatibilities§r: Moonwalk\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2228,7 +2232,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.phantom_menace",
-        "fallback": "Increases Damage against Phantoms\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Increases Damage against Phantoms\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2249,7 +2253,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.pickpocket",
-        "fallback": "Right Click to steal items from villager inventories (Inventory Items are things they pick up not what they trade!)\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Right Click to steal items from villager inventories (Inventory Items are things they pick up not what they trade!)\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2294,7 +2298,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.ping_tag",
-        "fallback": "Indicates that an entity has been hit by playing a ping sound \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Crossbows, Bows, Axes, Swords, Spears, Tridents, Maces\n\n\u2022 \u00a7lIncompabilities\u00a7r: -\n\n\u2022 \u00a7lLoot Sources\u00a7r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+        "fallback": "Indicates that an entity has been hit by playing a ping sound \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Crossbows, Bows, Axes, Swords, Spears, Tridents, Maces\n\n\u2022 \u00a7lIncompatibilities\u00a7r: -\n\n\u2022 \u00a7lLoot Sources\u00a7r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2315,7 +2319,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.plow",
-        "fallback": "Tills a larger area with left-click \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Hoes\n\n• §lIncompabilities§r: Silk Touch, Efficiency, Regrowth\n\n• §lLoot Sources§r: Enchanting Table, Traded Books"
+        "fallback": "Tills a larger area with left-click \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Hoes\n\n• §lIncompatibilities§r: Silk Touch, Efficiency, Regrowth\n\n• §lLoot Sources§r: Enchanting Table, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2344,7 +2348,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.poison_aspect",
-        "fallback": "Applies poison effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies poison effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2365,7 +2369,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.propeller",
-        "fallback": "Increases flying speed of Happy Ghasts\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Harnesses\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+        "fallback": "Increases flying speed of Happy Ghasts\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Harnesses\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2386,7 +2390,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.pufferfish",
-        "fallback": "Has a chance to spawn a pufferfish when the hit entity is in water\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tridents\n\n• §lIncompabilities§r: Riptide, Channeling, Switch, Ominous Rain, Sea Breeze\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Has a chance to spawn a pufferfish when the hit entity is in water\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tridents\n\n• §lIncompatibilities§r: Riptide, Channeling, Switch, Ominous Rain, Sea Breeze\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2407,7 +2411,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.rabbit_foot",
-        "fallback": "Increases luck attribute\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Increases luck attribute\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2468,7 +2472,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.randomness_curse",
-        "fallback": "Rerolls weapon enchantments on each hit\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Rerolls weapon enchantments on each hit\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2521,7 +2525,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.reach_curse",
-        "fallback": "Reduces block/entity interaction range\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: Crab Claw\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Reduces block/entity interaction range\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: Crab Claw\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2542,7 +2546,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.regrowth",
-        "fallback": "Replants fully grown Crops when harvested \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Hoes\n\n• §lIncompabilities§r: Silk Touch, Efficiency, Plow\n\n• §lLoot Sources§r: Enchanting Table, Traded Books"
+        "fallback": "Replants fully grown Crops when harvested \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Hoes\n\n• §lIncompatibilities§r: Silk Touch, Efficiency, Plow\n\n• §lLoot Sources§r: Enchanting Table, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2563,7 +2567,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.rejuvenation",
-        "fallback": "Increases max health\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Shields\n\n• §lIncompabilities§r: Crispbread, Cleansing, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Increases max health\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Shields\n\n• §lIncompatibilities§r: Crispbread, Cleansing, Hardened, Ominous Healing\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2588,7 +2592,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.replenish",
-        "fallback": "50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompabilities§r: Infinity\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "50% Chance to not consume an arrow, tipped arrow, spectral arrow or firework when shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Crossbows, Bows\n\n• §lIncompatibilities§r: Infinity\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2604,7 +2608,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sacrifice",
-        "fallback": "Repairs Tools/Armor when wearer gets hit by entities\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Any\n\n• §lIncompabilities§r: Mending, Handyman\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Repairs Tools/Armor when wearer gets hit by entities\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Any\n\n• §lIncompatibilities§r: Mending, Handyman\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2625,7 +2629,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.safe_landing",
-        "fallback": "Increases safe landing height\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Elytras\n\n• §lIncompabilities§r: Cushion\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Increases safe landing height\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Elytras\n\n• §lIncompatibilities§r: Cushion\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2646,7 +2650,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sand_speed",
-        "fallback": "Increases movement speed when on sand\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Invisibility Cloak, Soul Speed, End Speed, Path Speed, Sonic, Strafe, Leaf Jumper, Web Walker\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Increases movement speed when on sand\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Invisibility Cloak, Soul Speed, End Speed, Path Speed, Sonic, Strafe, Leaf Jumper, Web Walker\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2667,7 +2671,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.scent",
-        "fallback": "Wolves make nearby entities glow when they move\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompabilities§r: Fetch\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Wolves make nearby entities glow when they move\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompatibilities§r: Fetch\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2712,7 +2716,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.scholar_of_blocks",
-        "fallback": "More experience from mining blocks\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: Scholar of Mobs\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "More experience from mining blocks\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: Scholar of Mobs\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2749,7 +2753,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.scholar_of_mobs",
-        "fallback": "More experience from killing entities\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Melee Weapons\n\n• §lIncompabilities§r: Scholar of Blocks\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "More experience from killing entities\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Melee Weapons\n\n• §lIncompatibilities§r: Scholar of Blocks\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2770,7 +2774,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.scorpion_spirit",
-        "fallback": "Infuses a Wolf with the powers of a Scorpion\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompabilities§r: Bear Spirit, Boar Spirit, Ghost Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
+        "fallback": "Infuses a Wolf with the powers of a Scorpion\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Wolf Armor\n\n• §lIncompatibilities§r: Bear Spirit, Boar Spirit, Ghost Spirit\n\n• §lLoot Sources§r: Treasure, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2791,7 +2795,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sea_breeze",
-        "fallback": "Wind Charges hit entities away when hit by thrown trident\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tridents\n\n• §lIncompabilities§r: Riptide, Channeling, Switch, Ominous Rain, Pufferfish\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Wind Charges hit entities away when hit by thrown trident\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Tridents\n\n• §lIncompatibilities§r: Riptide, Channeling, Switch, Ominous Rain, Pufferfish\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2812,7 +2816,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.seeker",
-        "fallback": "Highlights Items in a 4-12 block radius depending on the level\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Highlights Items in a 4-12 block radius depending on the level\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2833,7 +2837,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.shortsight_curse",
-        "fallback": "Blurs the wearers vision when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Blurs the wearers vision when equipped \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2870,7 +2874,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.shrinkage",
-        "fallback": "Decreases player scale and step height\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Chestplates, Elytras, Horse Armor, Harnesses\n\n• §lIncompabilities§r: Growth\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Decreases player scale and step height\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Chestplates, Elytras, Horse Armor, Harnesses\n\n• §lIncompatibilities§r: Growth\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2891,7 +2895,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.shulker_shell",
-        "fallback": "Firework, Tridents, (Spectral) Arrows shot at the wearer fall to the ground when wearer stands still\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompabilities§r: Bulletproof, Fire Alloy, Ice Alloy, Darkness Alloy, Creeper Alloy\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Firework, Tridents, (Spectral) Arrows shot at the wearer fall to the ground when wearer stands still\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Chestplates\n\n• §lIncompatibilities§r: Bulletproof, Fire Alloy, Ice Alloy, Darkness Alloy, Creeper Alloy\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2920,7 +2924,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.slowness_aspect",
-        "fallback": "Applies slowness effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies slowness effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2941,7 +2945,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sonic",
-        "fallback": "Boosts walking speed\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Invisibility Cloak, Soul Speed, End Speed, Path Speed, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
+        "fallback": "Boosts walking speed\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Invisibility Cloak, Soul Speed, End Speed, Path Speed, Sand Speed, Strafe, Leaf Jumper\n\n• §lLoot Sources§r: Enchanting Table, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2962,7 +2966,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sparking_aura",
-        "fallback": "Applies a cosmetic sparking aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic sparking aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2983,7 +2987,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.spider_vision_curse",
-        "fallback": "Wearer sees the world with the eyes of a Spider \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer sees the world with the eyes of a Spider \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Creeper Vision, Curse of Void Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3004,7 +3008,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sticky_aura",
-        "fallback": "Applies a cosmetic sticky aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic sticky aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3025,7 +3029,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.strafe",
-        "fallback": "Sprint + Left/Right lets you strafe fast in that direction\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Bounce, Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Path Speed, Leaf Jumper\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Sprint + Left/Right lets you strafe fast in that direction\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Bounce, Invisibility Cloak, Soul Speed, Sonic, Sand Speed, End Speed, Path Speed, Leaf Jumper\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3046,7 +3050,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.summer_walker",
-        "fallback": "Melts snow when walking over it\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: Magma Walker, Crop Dance, Grass Walker, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Melts snow when walking over it\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: Magma Walker, Crop Dance, Grass Walker, Electric Walker, Frost Walker, Depth Strider\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3067,7 +3071,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.surfer",
-        "fallback": "Increases swimming speed of entities \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Saddles\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+        "fallback": "Increases swimming speed of entities \n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Saddles\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3104,7 +3108,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.swift_slash",
-        "fallback": "Increases attack speed\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Melee Weapons\n\n• §lIncompabilities§r: Bane of Netherborn, Bane of Raiders, Bane of Bosses, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach, Heavy\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Increases attack speed\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Melee Weapons\n\n• §lIncompatibilities§r: Bane of Netherborn, Bane of Raiders, Bane of Bosses, Sharpness, Smite, Bane of Arthropods, Impaling, Density, Breach, Heavy\n\n• §lLoot Sources§r: Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3125,7 +3129,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.switch",
-        "fallback": "Swaps places with hit entity\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tridents\n\n• §lIncompabilities§r: Riptide, Channeling, Ominous Rain, Pufferfish, Sea Breeze\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Swaps places with hit entity\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tridents\n\n• §lIncompatibilities§r: Riptide, Channeling, Ominous Rain, Pufferfish, Sea Breeze\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3158,7 +3162,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.thorns_protection",
-        "fallback": "Protection against Thorns including Sweet Berry Bushes and Cactus\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: Wither Protection, Night Protection, Nether Protection, End Protection, Day Protection, Protection, Fire Protection, Blast Protection, Projectile Protection\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Protection against Thorns including Sweet Berry Bushes and Cactus\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: Wither Protection, Night Protection, Nether Protection, End Protection, Day Protection, Protection, Fire Protection, Blast Protection, Projectile Protection\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3179,7 +3183,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.trial_aura",
-        "fallback": "Applies a cosmetic trial aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompabilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
+        "fallback": "Applies a cosmetic trial aura to the wearer, it's pets and most of the projectiles shot\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Helmets\n\n• §lIncompatibilities§r: Any Aura Enchantment\n\n• §lLoot Sources§r: Random Loot, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3200,7 +3204,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.trial_runner",
-        "fallback": "Gives the wearer the Trial Omen effect but drains durability\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Random Loot, Treasure"
+        "fallback": "Gives the wearer the Trial Omen effect but drains durability\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Boots\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3253,7 +3257,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.undying_curse",
-        "fallback": "Turns the tool into a Totem of Undying\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Turns the tool into a Totem of Undying\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3282,7 +3286,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.velocity",
-        "fallback": "Doubles the speed of shot projectiles \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Bows, Crossbows, Tridents\n\n• §lIncompabilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Random Loot"
+        "fallback": "Doubles the speed of shot projectiles \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Bows, Crossbows, Tridents\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Random Loot"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3303,7 +3307,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.void_vision_curse",
-        "fallback": "Wearer sees the world with the eyes of the Void \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompabilities\u00a7r: Curse of Creeper Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Wearer sees the world with the eyes of the Void \n\n\u2022 \u00a7lMax Level\u00a7r: I\n\n\u2022 \u00a7lApplicable to\u00a7r: Helmets\n\n\u2022 \u00a7lIncompatibilities\u00a7r: Curse of Creeper Vision, Curse of Spider Vision, Curse of Ender Vision, Curse of Mirror Vision, Curse of Shortsight, Curse of Color Blindness, Night Vision\n\n\u2022 \u00a7lLoot Sources\u00a7r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3332,7 +3336,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.weakness_aspect",
-        "fallback": "Applies weakness effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies weakness effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3361,7 +3365,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.weaving_aspect",
-        "fallback": "Applies weaving effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies weaving effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3414,7 +3418,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.welfare_curse",
-        "fallback": "Destroys items in a 3 block radius\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompabilities§r: Gluttony\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+        "fallback": "Destroys items in a 3 block radius\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Tools\n\n• §lIncompatibilities§r: Gluttony\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3443,7 +3447,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.wind_aspect",
-        "fallback": "Applies wind charged effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies wind charged effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3472,7 +3476,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.wither_aspect",
-        "fallback": "Applies wither effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompabilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Applies wither effect to hit entities\n\n• §lMax Level§r: II\n\n• §lApplicable to§r: Swords, Spears, Maces\n\n• §lIncompatibilities§r: Guard, Any Aspect Enchantment, Pacifier\n\n• §lLoot Sources§r: Enchanting Table, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -3505,7 +3509,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.wither_protection",
-        "fallback": "Protection against Wither Effect and Wither Skulls\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompabilities§r: Thorns Protection, Night Protection, Nether Protection, End Protection, Day Protection, Protection, Fire Protection, Blast Protection, Projectile Protection\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Protection against Wither Effect and Wither Skulls\n\n• §lMax Level§r: IV\n\n• §lApplicable to§r: Helmets, Chestplates, Leggings, Boots\n\n• §lIncompatibilities§r: Thorns Protection, Night Protection, Nether Protection, End Protection, Day Protection, Protection, Fire Protection, Blast Protection, Projectile Protection\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",

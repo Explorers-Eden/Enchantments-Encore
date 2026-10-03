@@ -17,7 +17,7 @@ scoreboard objectives add enchantencore.cleansing minecraft.used:minecraft.shiel
 function enchantencore:start
 
 ##set data pack version
-data modify storage eden:datapack enchantments_encore.version set value "5.6"
+data modify storage eden:datapack enchantments_encore.version set value "5.7"
 
 ##additional cleanup for v4.5
 scoreboard objectives remove enchantencore.dialog_trigger.wiki
