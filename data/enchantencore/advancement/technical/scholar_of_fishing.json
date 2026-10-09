@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "rod": {
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:scholar_of_fishing"
+              }
+            ]
+          }
+        },
+        "entity": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "minecraft:entity_type": "minecraft:fishing_bobber"
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "enchantencore:scholar_of_fishing/run"
+  }
+}

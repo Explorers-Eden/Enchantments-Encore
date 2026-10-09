@@ -1,0 +1,23 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.harpoon",
+    "fallback": "Harpoon"
+  },
+  "supported_items": "#minecraft:enchantable/fishing",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 10,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 40,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand",
+    "offhand"
+  ],
+  "effects": {}
+}

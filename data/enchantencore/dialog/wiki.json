@@ -322,7 +322,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.boltbringer",
-        "fallback": "Summons lightning when entity was hit by a player which at least fell 8 blocks \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Maces\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Treasure"
+        "fallback": "Summons lightning when entity was hit by a player which at least fell 8 blocks \n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Maces\n\n• §lIncompatibilities§r: Meteor\n\n• §lLoot Sources§r: Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -515,6 +515,20 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/color_blindness_curse"
+      }
+    },
+    {
+      "label": {
+        "translate": "enchantment.enchantencore.corrosion_curse",
+        "fallback": "Curse of Corrosion"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.corrosion_curse",
+        "fallback": "Slowly drains durability in rain or underwater\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Sunweave, Moonweave, Rainweave, Emberweave, Voidweave, Tideweave\n\n• §lLoot Sources§r: Mob Equipment, Random Loot, Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/corrosion_curse"
       }
     },
     {
@@ -794,6 +808,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.dismount",
+          "fallback": "Dismount"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_spear",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.dismount",
+        "fallback": "Charged spear hits knock riders off their mounts\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Spears\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/dismount"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.echoing_aura",
           "fallback": "Echoing Aura"
         },
@@ -831,6 +866,20 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/electric_walker"
+      }
+    },
+    {
+      "label": {
+        "translate": "enchantment.enchantencore.emberweave",
+        "fallback": "Emberweave"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.emberweave",
+        "fallback": "Slowly repairs the item while in the Nether\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Sunweave, Moonweave, Rainweave, Voidweave, Tideweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/emberweave"
       }
     },
     {
@@ -1360,7 +1409,7 @@
       },
       "tooltip": {
         "translate": "wiki.enchantencore.handyman",
-        "fallback": "Keeps repair cost low\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Any\n\n• §lIncompatibilities§r: Mending, Sacrifice\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+        "fallback": "Keeps repair cost low\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Any\n\n• §lIncompatibilities§r: Sacrifice, Sunweave, Moonweave, Rainweave, Emberweave, Voidweave, Tideweave, Curse of Corrosion, Mending\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -1386,6 +1435,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/hardened"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.harpoon",
+          "fallback": "Harpoon"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/fishing_rod",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.harpoon",
+        "fallback": "Reeled-in mobs get yanked towards you\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Fishing Rods\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/harpoon"
       }
     },
     {
@@ -1562,6 +1632,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.impale_rush",
+          "fallback": "Impale Rush"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_spear",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.impale_rush",
+        "fallback": "Charged spear hits pin the target in place\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Spears\n\n• §lIncompatibilities§r: Lunge\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/impale_rush"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.implosion",
           "fallback": "Implosion"
         },
@@ -1653,6 +1744,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/invisibility_cloak"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.jousting",
+          "fallback": "Jousting"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/iron_spear",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.jousting",
+        "fallback": "Deals extra damage while riding a mount\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Spears\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/jousting"
       }
     },
     {
@@ -1846,6 +1958,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.meteor",
+          "fallback": "Meteor"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/mace",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.meteor",
+        "fallback": "Smash attacks after falling 8 blocks set the area on fire\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Maces\n\n• §lIncompatibilities§r: Boltbringer\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/meteor"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.mirror_vision_curse",
           "fallback": "Curse of Mirror Vision"
         },
@@ -1887,6 +2020,20 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/moonwalk"
+      }
+    },
+    {
+      "label": {
+        "translate": "enchantment.enchantencore.moonweave",
+        "fallback": "Moonweave"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.moonweave",
+        "fallback": "Slowly repairs the item while under the open night sky\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Sunweave, Rainweave, Emberweave, Voidweave, Tideweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/moonweave"
       }
     },
     {
@@ -2419,6 +2566,20 @@
       }
     },
     {
+      "label": {
+        "translate": "enchantment.enchantencore.rainweave",
+        "fallback": "Rainweave"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.rainweave",
+        "fallback": "Slowly repairs the item while rain falls on you\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Sunweave, Moonweave, Emberweave, Voidweave, Tideweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/rainweave"
+      }
+    },
+    {
       "label": [
         {
           "translate": "enchantment.enchantencore.randomness_curse",
@@ -2608,7 +2769,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.sacrifice",
-        "fallback": "Repairs Tools/Armor when wearer gets hit by entities\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Any\n\n• §lIncompatibilities§r: Mending, Handyman\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
+        "fallback": "Repairs Tools/Armor when wearer gets hit by entities\n\n• §lMax Level§r: V\n\n• §lApplicable to§r: Any\n\n• §lIncompatibilities§r: Mending, Handyman, Sunweave, Moonweave, Rainweave, Emberweave, Voidweave, Tideweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Enchanting Table, Mob Equipment, Random Loot, Traded Equipment, Traded Books"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2721,6 +2882,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/scholar_of_blocks"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.scholar_of_fishing",
+          "fallback": "Scholar of Fishing"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/fishing_rod",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.scholar_of_fishing",
+        "fallback": "Increases the experience you get from fishing\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Fishing Rods\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/scholar_of_fishing"
       }
     },
     {
@@ -3058,6 +3240,20 @@
       }
     },
     {
+      "label": {
+        "translate": "enchantment.enchantencore.sunweave",
+        "fallback": "Sunweave"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.sunweave",
+        "fallback": "Slowly repairs the item while under the open daytime sky\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Moonweave, Rainweave, Emberweave, Voidweave, Tideweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/sunweave"
+      }
+    },
+    {
       "label": [
         {
           "translate": "enchantment.enchantencore.surfer",
@@ -3170,6 +3366,20 @@
       }
     },
     {
+      "label": {
+        "translate": "enchantment.enchantencore.tideweave",
+        "fallback": "Tideweave"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.tideweave",
+        "fallback": "Slowly repairs the item while underwater\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Sunweave, Moonweave, Rainweave, Emberweave, Voidweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/tideweave"
+      }
+    },
+    {
       "label": [
         {
           "translate": "enchantment.enchantencore.trial_aura",
@@ -3267,6 +3477,27 @@
     {
       "label": [
         {
+          "translate": "enchantment.enchantencore.updraft",
+          "fallback": "Updraft"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/elytra",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.updraft",
+        "fallback": "Gliding over lava, magma or fire lifts you up\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Elytras\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/updraft"
+      }
+    },
+    {
+      "label": [
+        {
           "translate": "enchantment.enchantencore.velocity",
           "fallback": "Velocity"
         },
@@ -3312,6 +3543,20 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/void_vision_curse"
+      }
+    },
+    {
+      "label": {
+        "translate": "enchantment.enchantencore.voidweave",
+        "fallback": "Voidweave"
+      },
+      "tooltip": {
+        "translate": "wiki.enchantencore.voidweave",
+        "fallback": "Slowly repairs the item while in the End\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Any Damageable\n\n• §lIncompatibilities§r: Mending, Handyman, Sacrifice, Sunweave, Moonweave, Rainweave, Emberweave, Tideweave, Curse of Corrosion\n\n• §lLoot Sources§r: Treasure, Random Loot, Traded Books"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/voidweave"
       }
     },
     {
@@ -3514,6 +3759,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/wither_protection"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.yoink",
+          "fallback": "Yoink"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/fishing_rod",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.yoink",
+        "fallback": "Reeling in a hooked mob steals its held item\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Fishing Rods\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Enchanting Table, Mob Equipment, Random Loot, Traded Books, Traded Equipment"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/yoink"
       }
     }
   ]

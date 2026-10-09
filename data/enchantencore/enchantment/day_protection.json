@@ -45,13 +45,27 @@
               }
             },
             {
-              "type": "minecraft:time_check",
-              "clock": "minecraft:overworld",
-              "value": {
-                "min": 23001,
-                "max": 12999
-              },
-              "period": 24000
+              "type": "minecraft:any_of",
+              "terms": [
+                {
+                  "type": "minecraft:time_check",
+                  "clock": "minecraft:overworld",
+                  "value": {
+                    "min": 0,
+                    "max": 12999
+                  },
+                  "period": 24000
+                },
+                {
+                  "type": "minecraft:time_check",
+                  "clock": "minecraft:overworld",
+                  "value": {
+                    "min": 23001,
+                    "max": 23999
+                  },
+                  "period": 24000
+                }
+              ]
             },
             {
               "type": "minecraft:location_check",

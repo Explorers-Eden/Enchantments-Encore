@@ -3,6 +3,7 @@
     { "id": "#enchantencore:alloy", "required": false },
     { "id": "#enchantencore:curse", "required": false },
     { "id": "enchantencore:bear_spirit", "required": false },
+    { "id": "enchantencore:emberweave", "required": false },
     { "id": "enchantencore:ghost_spirit", "required": false },
     { "id": "enchantencore:boar_spirit", "required": false },
     { "id": "enchantencore:boltbringer", "required": false },
@@ -23,11 +24,14 @@
     { "id": "enchantencore:leaf_jumper", "required": false },
     { "id": "enchantencore:leech", "required": false },
     { "id": "enchantencore:magma_walker", "required": false },
+    { "id": "enchantencore:meteor", "required": false },
     { "id": "enchantencore:moonwalk", "required": false },
+    { "id": "enchantencore:moonweave", "required": false },
     { "id": "enchantencore:ominous_healing", "required": false },
     { "id": "enchantencore:ominous_rain", "required": false },
     { "id": "enchantencore:pacifier", "required": false },
     { "id": "enchantencore:path_speed", "required": false },
+    { "id": "enchantencore:rainweave", "required": false },
     { "id": "enchantencore:rejuvenation", "required": false },
     { "id": "enchantencore:sacrifice", "required": false },
     { "id": "enchantencore:sand_speed", "required": false },
@@ -35,7 +39,11 @@
     { "id": "enchantencore:shulker_shell", "required": false },
     { "id": "enchantencore:sonic", "required": false },
     { "id": "enchantencore:summer_walker", "required": false },
+    { "id": "enchantencore:sunweave", "required": false },
     { "id": "enchantencore:switch", "required": false },
-    { "id": "enchantencore:trial_runner", "required": false }
+    { "id": "enchantencore:tideweave", "required": false },
+    { "id": "enchantencore:trial_runner", "required": false },
+    { "id": "enchantencore:updraft", "required": false },
+    { "id": "enchantencore:voidweave", "required": false }
   ]
 }

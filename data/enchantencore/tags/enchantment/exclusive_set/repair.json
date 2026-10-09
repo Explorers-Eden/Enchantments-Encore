@@ -1,7 +1,14 @@
 {
   "values": [
+    { "id": "enchantencore:corrosion_curse", "required": false },
+    { "id": "enchantencore:emberweave", "required": false },
     { "id": "enchantencore:handyman", "required": false },
+    { "id": "enchantencore:moonweave", "required": false },
+    { "id": "enchantencore:rainweave", "required": false },
     { "id": "enchantencore:sacrifice", "required": false },
+    { "id": "enchantencore:sunweave", "required": false },
+    { "id": "enchantencore:tideweave", "required": false },
+    { "id": "enchantencore:voidweave", "required": false },
     { "id": "minecraft:mending", "required": false }
   ]
 }

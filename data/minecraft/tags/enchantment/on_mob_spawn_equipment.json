@@ -9,13 +9,17 @@
     { "id": "enchantencore:bane_of_raiders", "required": false },
     { "id": "enchantencore:crop_dance", "required": false },
     { "id": "enchantencore:cushion", "required": false },
+    { "id": "enchantencore:dismount", "required": false },
     { "id": "enchantencore:fetch", "required": false },
     { "id": "enchantencore:guard", "required": false },
     { "id": "enchantencore:handyman", "required": false },
     { "id": "enchantencore:hardened", "required": false },
+    { "id": "enchantencore:harpoon", "required": false },
     { "id": "enchantencore:haste", "required": false },
     { "id": "enchantencore:illumination", "required": false },
+    { "id": "enchantencore:impale_rush", "required": false },
     { "id": "enchantencore:implosion", "required": false },
+    { "id": "enchantencore:jousting", "required": false },
     { "id": "enchantencore:lingering", "required": false },
     { "id": "enchantencore:pegasus", "required": false },
     { "id": "enchantencore:phantom_menace", "required": false },
@@ -29,12 +33,14 @@
     { "id": "enchantencore:safe_landing", "required": false },
     { "id": "enchantencore:scent", "required": false },
     { "id": "enchantencore:scholar_of_blocks", "required": false },
+    { "id": "enchantencore:scholar_of_fishing", "required": false },
     { "id": "enchantencore:scholar_of_mobs", "required": false },
     { "id": "enchantencore:sea_breeze", "required": false },
     { "id": "enchantencore:seeker", "required": false },
     { "id": "enchantencore:strafe", "required": false },
     { "id": "enchantencore:surfer", "required": false },
     { "id": "enchantencore:thorns_protection", "required": false },
-    { "id": "enchantencore:wither_protection", "required": false }
+    { "id": "enchantencore:wither_protection", "required": false },
+    { "id": "enchantencore:yoink", "required": false }
   ]
 }

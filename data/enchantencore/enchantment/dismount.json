@@ -1,0 +1,44 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.dismount",
+    "fallback": "Dismount"
+  },
+  "supported_items": "#minecraft:enchantable/lunge",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 50,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "requirements": {
+          "type": "minecraft:damage_source_properties",
+          "predicate": {
+            "tags": [
+              {
+                "id": "#enchantencore:spear_charge",
+                "expected": true
+              }
+            ]
+          }
+        },
+        "effect": {
+          "type": "minecraft:run_function",
+          "function": "enchantencore:dismount"
+        }
+      }
+    ]
+  }
+}

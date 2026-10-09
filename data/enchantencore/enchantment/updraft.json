@@ -1,0 +1,404 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.updraft",
+    "fallback": "Updraft"
+  },
+  "supported_items": "minecraft:elytra",
+  "weight": 2,
+  "max_level": 3,
+  "min_cost": {
+    "base": 15,
+    "per_level_above_first": 10
+  },
+  "max_cost": {
+    "base": 45,
+    "per_level_above_first": 10
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "chest"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0,
+                1,
+                0
+              ],
+              "coordinate_scale": [
+                0,
+                1,
+                0
+              ],
+              "magnitude": {
+                "type": "minecraft:linear",
+                "base": 0.045,
+                "per_level_above_first": 0.015
+              }
+            },
+            {
+              "type": "minecraft:apply_impulse",
+              "direction": [
+                0,
+                0,
+                1
+              ],
+              "coordinate_scale": [
+                1,
+                0,
+                1
+              ],
+              "magnitude": {
+                "type": "minecraft:linear",
+                "base": 0.015,
+                "per_level_above_first": 0.0075
+              }
+            }
+          ]
+        },
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "minecraft:flags": {
+                  "is_fall_flying": true
+                },
+                "minecraft:movement": {
+                  "y": {
+                    "max": 0.5
+                  }
+                }
+              }
+            },
+            {
+              "type": "minecraft:any_of",
+              "terms": [
+                {
+                  "type": "minecraft:any_of",
+                  "terms": [
+                    {
+                      "type": "minecraft:location_check",
+                      "offsetY": -1,
+                      "predicate": {
+                        "fluid": {
+                          "fluids": "#minecraft:lava"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:location_check",
+                      "offsetY": -1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#enchantencore:updraft_heat"
+                        }
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "type": "minecraft:location_check",
+                      "offsetY": -1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#minecraft:air"
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:any_of",
+                      "terms": [
+                        {
+                          "type": "minecraft:any_of",
+                          "terms": [
+                            {
+                              "type": "minecraft:location_check",
+                              "offsetY": -2,
+                              "predicate": {
+                                "fluid": {
+                                  "fluids": "#minecraft:lava"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:location_check",
+                              "offsetY": -2,
+                              "predicate": {
+                                "block": {
+                                  "blocks": "#enchantencore:updraft_heat"
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "type": "minecraft:all_of",
+                          "terms": [
+                            {
+                              "type": "minecraft:location_check",
+                              "offsetY": -2,
+                              "predicate": {
+                                "block": {
+                                  "blocks": "#minecraft:air"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:any_of",
+                              "terms": [
+                                {
+                                  "type": "minecraft:any_of",
+                                  "terms": [
+                                    {
+                                      "type": "minecraft:location_check",
+                                      "offsetY": -3,
+                                      "predicate": {
+                                        "fluid": {
+                                          "fluids": "#minecraft:lava"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "minecraft:location_check",
+                                      "offsetY": -3,
+                                      "predicate": {
+                                        "block": {
+                                          "blocks": "#enchantencore:updraft_heat"
+                                        }
+                                      }
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "minecraft:all_of",
+                                  "terms": [
+                                    {
+                                      "type": "minecraft:location_check",
+                                      "offsetY": -3,
+                                      "predicate": {
+                                        "block": {
+                                          "blocks": "#minecraft:air"
+                                        }
+                                      }
+                                    },
+                                    {
+                                      "type": "minecraft:any_of",
+                                      "terms": [
+                                        {
+                                          "type": "minecraft:any_of",
+                                          "terms": [
+                                            {
+                                              "type": "minecraft:location_check",
+                                              "offsetY": -4,
+                                              "predicate": {
+                                                "fluid": {
+                                                  "fluids": "#minecraft:lava"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "type": "minecraft:location_check",
+                                              "offsetY": -4,
+                                              "predicate": {
+                                                "block": {
+                                                  "blocks": "#enchantencore:updraft_heat"
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "type": "minecraft:all_of",
+                                          "terms": [
+                                            {
+                                              "type": "minecraft:location_check",
+                                              "offsetY": -4,
+                                              "predicate": {
+                                                "block": {
+                                                  "blocks": "#minecraft:air"
+                                                }
+                                              }
+                                            },
+                                            {
+                                              "type": "minecraft:any_of",
+                                              "terms": [
+                                                {
+                                                  "type": "minecraft:any_of",
+                                                  "terms": [
+                                                    {
+                                                      "type": "minecraft:location_check",
+                                                      "offsetY": -5,
+                                                      "predicate": {
+                                                        "fluid": {
+                                                          "fluids": "#minecraft:lava"
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "type": "minecraft:location_check",
+                                                      "offsetY": -5,
+                                                      "predicate": {
+                                                        "block": {
+                                                          "blocks": "#enchantencore:updraft_heat"
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "minecraft:all_of",
+                                                  "terms": [
+                                                    {
+                                                      "type": "minecraft:location_check",
+                                                      "offsetY": -5,
+                                                      "predicate": {
+                                                        "block": {
+                                                          "blocks": "#minecraft:air"
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "type": "minecraft:any_of",
+                                                      "terms": [
+                                                        {
+                                                          "type": "minecraft:any_of",
+                                                          "terms": [
+                                                            {
+                                                              "type": "minecraft:location_check",
+                                                              "offsetY": -6,
+                                                              "predicate": {
+                                                                "fluid": {
+                                                                  "fluids": "#minecraft:lava"
+                                                                }
+                                                              }
+                                                            },
+                                                            {
+                                                              "type": "minecraft:location_check",
+                                                              "offsetY": -6,
+                                                              "predicate": {
+                                                                "block": {
+                                                                  "blocks": "#enchantencore:updraft_heat"
+                                                                }
+                                                              }
+                                                            }
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "minecraft:all_of",
+                                                          "terms": [
+                                                            {
+                                                              "type": "minecraft:location_check",
+                                                              "offsetY": -6,
+                                                              "predicate": {
+                                                                "block": {
+                                                                  "blocks": "#minecraft:air"
+                                                                }
+                                                              }
+                                                            },
+                                                            {
+                                                              "type": "minecraft:any_of",
+                                                              "terms": [
+                                                                {
+                                                                  "type": "minecraft:any_of",
+                                                                  "terms": [
+                                                                    {
+                                                                      "type": "minecraft:location_check",
+                                                                      "offsetY": -7,
+                                                                      "predicate": {
+                                                                        "fluid": {
+                                                                          "fluids": "#minecraft:lava"
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    {
+                                                                      "type": "minecraft:location_check",
+                                                                      "offsetY": -7,
+                                                                      "predicate": {
+                                                                        "block": {
+                                                                          "blocks": "#enchantencore:updraft_heat"
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                },
+                                                                {
+                                                                  "type": "minecraft:all_of",
+                                                                  "terms": [
+                                                                    {
+                                                                      "type": "minecraft:location_check",
+                                                                      "offsetY": -7,
+                                                                      "predicate": {
+                                                                        "block": {
+                                                                          "blocks": "#minecraft:air"
+                                                                        }
+                                                                      }
+                                                                    },
+                                                                    {
+                                                                      "type": "minecraft:any_of",
+                                                                      "terms": [
+                                                                        {
+                                                                          "type": "minecraft:location_check",
+                                                                          "offsetY": -8,
+                                                                          "predicate": {
+                                                                            "fluid": {
+                                                                              "fluids": "#minecraft:lava"
+                                                                            }
+                                                                          }
+                                                                        },
+                                                                        {
+                                                                          "type": "minecraft:location_check",
+                                                                          "offsetY": -8,
+                                                                          "predicate": {
+                                                                            "block": {
+                                                                              "blocks": "#enchantencore:updraft_heat"
+                                                                            }
+                                                                          }
+                                                                        }
+                                                                      ]
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              ]
+                                                            }
+                                                          ]
+                                                        }
+                                                      ]
+                                                    }
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

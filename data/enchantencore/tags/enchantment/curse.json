@@ -4,6 +4,7 @@
     { "id": "enchantencore:breeze_curse", "required": false },
     { "id": "enchantencore:caravan_curse", "required": false },
     { "id": "enchantencore:color_blindness_curse", "required": false },
+    { "id": "enchantencore:corrosion_curse", "required": false },
     { "id": "enchantencore:crank_curse", "required": false },
     { "id": "enchantencore:creeper_vision_curse", "required": false },
     { "id": "enchantencore:death_curse", "required": false },

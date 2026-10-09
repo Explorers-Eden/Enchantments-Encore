@@ -1,0 +1,75 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.tideweave",
+    "fallback": "Tideweave"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/repair",
+  "supported_items": "#minecraft:enchantable/durability",
+  "weight": 2,
+  "max_level": 3,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 25
+  },
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 25
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:random_chance",
+              "chance": {
+                "type": "minecraft:enchantment_level",
+                "amount": {
+                  "type": "minecraft:lookup",
+                  "values": [
+                    0.00833,
+                    0.0125,
+                    0.01667
+                  ],
+                  "fallback": 0.01667
+                }
+              }
+            },
+            {
+              "type": "minecraft:all_of",
+              "terms": [
+                {
+                  "type": "minecraft:entity_properties",
+                  "entity": "this",
+                  "predicate": {
+                    "minecraft:flags": {
+                      "is_in_water": true
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:location_check",
+                  "offsetY": 1,
+                  "predicate": {
+                    "block": {
+                      "blocks": "#enchantencore:underwater"
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:change_item_damage",
+          "amount": -1
+        }
+      }
+    ]
+  }
+}

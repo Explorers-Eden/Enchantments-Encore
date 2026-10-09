@@ -1,5 +1,21 @@
 # Minecraft Version(s): 26.3
 ## Changes:
-- Crab Claw can no longer be applied to Spears (Spears use their own fixed attack reach, so the extra entity interaction range had no effect on them)
+- Added Moonweave (Treasure, I-III): slowly repairs the enchanted item while under the open night sky in the Overworld
+- Added Sunweave (Treasure, I-III): slowly repairs the enchanted item while under the open daytime sky in the Overworld
+- Added Rainweave (Treasure, I-III): slowly repairs the enchanted item while rain falls on you
+- Added Emberweave (Treasure, I-III): slowly repairs the enchanted item while in the Nether
+- Added Voidweave (Treasure, I-III): slowly repairs the enchanted item while in the End
+- Added Tideweave (Treasure, I-III): slowly repairs the enchanted item while your head is underwater
+- All weaves are incompatible with each other, Mending, Handyman and Sacrifice
+- Added Harpoon (Fishing Rods, I-III): reeled-in mobs get yanked towards you
+- Added Impale Rush (Spears, I-III): charged spear hits pin the target in place (incompatible with Lunge)
+- Added Updraft (Elytras, Treasure, I-III): gliding over lava, magma or fire lifts you up
+- Added Curse of Corrosion (Any Damageable): slowly drains durability in rain or underwater (incompatible with all repair enchantments)
+- Added Meteor (Maces, Treasure): smash attacks after falling 8 blocks set the area on fire (incompatible with Boltbringer)
+- Added Jousting (Spears, I-III): deals extra damage while riding a mount
+- Added Dismount (Spears): charged spear hits knock riders off their mounts
+- Added Yoink (Fishing Rods, I-III): reeling in a hooked mob steals its held item
+- Added Scholar of Fishing (Fishing Rods, I-III): increases the experience you get from fishing
 
 ## Fixes:
+- Daytime detection predicate for Day Protection

@@ -1,0 +1,42 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.jousting",
+    "fallback": "Jousting"
+  },
+  "supported_items": "#minecraft:enchantable/lunge",
+  "weight": 3,
+  "max_level": 3,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 9
+  },
+  "max_cost": {
+    "base": 35,
+    "per_level_above_first": 9
+  },
+  "anvil_cost": 2,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:damage": [
+      {
+        "effect": {
+          "type": "minecraft:add",
+          "value": {
+            "type": "minecraft:linear",
+            "base": 2,
+            "per_level_above_first": 1.5
+          }
+        },
+        "requirements": {
+          "type": "minecraft:entity_properties",
+          "entity": "attacker",
+          "predicate": {
+            "minecraft:vehicle": {}
+          }
+        }
+      }
+    ]
+  }
+}

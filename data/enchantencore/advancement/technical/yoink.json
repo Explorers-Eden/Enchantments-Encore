@@ -1,0 +1,43 @@
+{
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:fishing_rod_hooked",
+      "conditions": {
+        "rod": {
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "enchantencore:yoink"
+              }
+            ]
+          }
+        },
+        "entity": {
+          "type": "minecraft:inverted",
+          "term": {
+            "type": "minecraft:any_of",
+            "terms": [
+              {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:entity_type": "#enchantencore:non_living"
+                }
+              },
+              {
+                "type": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                  "minecraft:entity_type": "minecraft:player"
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "enchantencore:yoink/run"
+  }
+}

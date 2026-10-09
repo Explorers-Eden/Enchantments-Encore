@@ -1,0 +1,69 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.meteor",
+    "fallback": "Meteor"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/mace_strike",
+  "supported_items": "minecraft:mace",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 0
+  },
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 0
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "mainhand"
+  ],
+  "effects": {
+    "minecraft:post_attack": [
+      {
+        "enchanted": "attacker",
+        "affected": "victim",
+        "requirements": {
+          "type": "minecraft:entity_properties",
+          "entity": "direct_attacker",
+          "predicate": {
+            "minecraft:flags": {
+              "is_flying": false
+            },
+            "minecraft:movement": {
+              "fall_distance": {
+                "min": 8
+              }
+            }
+          }
+        },
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:explode",
+              "damage_type": "minecraft:in_fire",
+              "attribute_to_user": true,
+              "block_interaction": "none",
+              "create_fire": true,
+              "radius": 2.5,
+              "knockback_multiplier": 0.6,
+              "small_particle": {
+                "type": "minecraft:flame"
+              },
+              "large_particle": {
+                "type": "minecraft:lava"
+              },
+              "sound": "minecraft:entity.blaze.shoot"
+            },
+            {
+              "type": "minecraft:ignite",
+              "duration": 4
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

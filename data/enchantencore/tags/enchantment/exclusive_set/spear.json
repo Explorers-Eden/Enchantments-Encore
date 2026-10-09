@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "enchantencore:impale_rush",
+      "required": false
+    },
+    {
+      "id": "minecraft:lunge",
+      "required": false
+    }
+  ]
+}

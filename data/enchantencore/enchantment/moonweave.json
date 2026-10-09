@@ -1,0 +1,72 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.moonweave",
+    "fallback": "Moonweave"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/repair",
+  "supported_items": "#minecraft:enchantable/durability",
+  "weight": 2,
+  "max_level": 3,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 25
+  },
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 25
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:random_chance",
+              "chance": {
+                "type": "minecraft:enchantment_level",
+                "amount": {
+                  "type": "minecraft:lookup",
+                  "values": [
+                    0.00833,
+                    0.0125,
+                    0.01667
+                  ],
+                  "fallback": 0.01667
+                }
+              }
+            },
+            {
+              "type": "minecraft:time_check",
+              "clock": "minecraft:overworld",
+              "value": {
+                "min": 13000,
+                "max": 23000
+              },
+              "period": 24000
+            },
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "dimension": "minecraft:overworld",
+                "can_see_sky": true
+              }
+            },
+            {
+              "type": "minecraft:weather_check",
+              "raining": false
+            }
+          ]
+        },
+        "effect": {
+          "type": "minecraft:change_item_damage",
+          "amount": -1
+        }
+      }
+    ]
+  }
+}

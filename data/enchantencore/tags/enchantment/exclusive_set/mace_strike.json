@@ -1,0 +1,12 @@
+{
+  "values": [
+    {
+      "id": "enchantencore:boltbringer",
+      "required": false
+    },
+    {
+      "id": "enchantencore:meteor",
+      "required": false
+    }
+  ]
+}

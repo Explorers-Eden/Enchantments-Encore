@@ -1,0 +1,85 @@
+{
+  "description": {
+    "translate": "enchantment.enchantencore.corrosion_curse",
+    "fallback": "Curse of Corrosion"
+  },
+  "exclusive_set": "#enchantencore:exclusive_set/repair",
+  "supported_items": "#minecraft:enchantable/durability",
+  "weight": 2,
+  "max_level": 1,
+  "min_cost": {
+    "base": 1,
+    "per_level_above_first": 5
+  },
+  "max_cost": {
+    "base": 51,
+    "per_level_above_first": 50
+  },
+  "anvil_cost": 4,
+  "slots": [
+    "any"
+  ],
+  "effects": {
+    "minecraft:tick": [
+      {
+        "effect": {
+          "type": "minecraft:change_item_damage",
+          "amount": 1
+        },
+        "requirements": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:random_chance",
+              "chance": 0.005
+            },
+            {
+              "type": "minecraft:any_of",
+              "terms": [
+                {
+                  "type": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "type": "minecraft:weather_check",
+                      "raining": true
+                    },
+                    {
+                      "type": "minecraft:location_check",
+                      "predicate": {
+                        "dimension": "minecraft:overworld",
+                        "can_see_sky": true
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "minecraft:all_of",
+                  "terms": [
+                    {
+                      "type": "minecraft:entity_properties",
+                      "entity": "this",
+                      "predicate": {
+                        "minecraft:flags": {
+                          "is_in_water": true
+                        }
+                      }
+                    },
+                    {
+                      "type": "minecraft:location_check",
+                      "offsetY": 1,
+                      "predicate": {
+                        "block": {
+                          "blocks": "#enchantencore:underwater"
+                        }
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
