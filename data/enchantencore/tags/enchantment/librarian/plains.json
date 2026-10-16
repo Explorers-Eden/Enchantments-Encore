@@ -1,0 +1,19 @@
+{
+  "values": [
+    { "id": "enchantencore:bane_of_raiders", "required": false },
+    { "id": "enchantencore:cleansing", "required": false },
+    { "id": "enchantencore:crop_dance", "required": false },
+    { "id": "enchantencore:evokers_wrath", "required": false },
+    { "id": "enchantencore:gallop", "required": false },
+    { "id": "enchantencore:grass_walker", "required": false },
+    { "id": "enchantencore:guard", "required": false },
+    { "id": "enchantencore:hardened", "required": false },
+    { "id": "enchantencore:haste", "required": false },
+    { "id": "enchantencore:heavenly_aura", "required": false },
+    { "id": "enchantencore:lovely_aura", "required": false },
+    { "id": "enchantencore:pegasus", "required": false },
+    { "id": "enchantencore:plow", "required": false },
+    { "id": "enchantencore:scholar_of_blocks", "required": false },
+    { "id": "enchantencore:scholar_of_mobs", "required": false }
+  ]
+}

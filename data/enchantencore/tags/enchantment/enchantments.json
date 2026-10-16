@@ -103,6 +103,7 @@
     { "id": "enchantencore:seeker", "required": false },
     { "id": "enchantencore:shrinkage", "required": false },
     { "id": "enchantencore:shulker_shell", "required": false },
+    { "id": "enchantencore:refuel", "required": false },
     { "id": "enchantencore:slowness_aspect", "required": false },
     { "id": "enchantencore:sonic", "required": false },
     { "id": "enchantencore:sparking_aura", "required": false },

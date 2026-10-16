@@ -2015,7 +2015,7 @@
       ],
       "tooltip": {
         "translate": "wiki.enchantencore.moonwalk",
-        "fallback": "Reduces gravity when equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Elytras, Horse Armor\n\n• §lIncompatibilities§r: -\n\n• §lLoot Sources§r: Traded Books, Treasure"
+        "fallback": "Reduces gravity when equipped\n\n• §lMax Level§r: III\n\n• §lApplicable to§r: Elytras, Horse Armor\n\n• §lIncompatibilities§r: Pegasus, Refuel\n\n• §lLoot Sources§r: Traded Books, Treasure"
       },
       "action": {
         "type": "minecraft:open_url",
@@ -2691,6 +2691,27 @@
       "action": {
         "type": "minecraft:open_url",
         "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/reach_curse"
+      }
+    },
+    {
+      "label": [
+        {
+          "translate": "enchantment.enchantencore.refuel",
+          "fallback": "Refuel"
+        },
+        " ",
+        {
+          "sprite": "minecraft:item/elytra",
+          "atlas": "minecraft:items"
+        }
+      ],
+      "tooltip": {
+        "translate": "wiki.enchantencore.refuel",
+        "fallback": "Takes an identical firework rocket from the inventory and adds it to the held stack each time one is used while gliding\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Elytras\n\n• §lIncompatibilities§r: Moonwalk\n\n• §lLoot Sources§r: Treasure"
+      },
+      "action": {
+        "type": "minecraft:open_url",
+        "url": "https://wiki.explorerseden.eu/enchantments_encore/enchantments/refuel"
       }
     },
     {

@@ -1,0 +1,19 @@
+{
+  "values": [
+    { "id": "enchantencore:bane_of_netherborn", "required": false },
+    { "id": "enchantencore:creeper_alloy", "required": false },
+    { "id": "enchantencore:emberweave", "required": false },
+    { "id": "enchantencore:fire_alloy", "required": false },
+    { "id": "enchantencore:flaming_aura", "required": false },
+    { "id": "enchantencore:forge_shot", "required": false },
+    { "id": "enchantencore:hunger_aspect", "required": false },
+    { "id": "enchantencore:magma_walker", "required": false },
+    { "id": "enchantencore:meteor", "required": false },
+    { "id": "enchantencore:scorpion_spirit", "required": false },
+    { "id": "enchantencore:summer_walker", "required": false },
+    { "id": "enchantencore:sunweave", "required": false },
+    { "id": "enchantencore:updraft", "required": false },
+    { "id": "enchantencore:wither_aspect", "required": false },
+    { "id": "enchantencore:wither_protection", "required": false }
+  ]
+}

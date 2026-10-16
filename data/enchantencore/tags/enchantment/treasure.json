@@ -37,6 +37,7 @@
     { "id": "enchantencore:sand_speed", "required": false },
     { "id": "enchantencore:scorpion_spirit", "required": false },
     { "id": "enchantencore:shulker_shell", "required": false },
+    { "id": "enchantencore:refuel", "required": false },
     { "id": "enchantencore:sonic", "required": false },
     { "id": "enchantencore:summer_walker", "required": false },
     { "id": "enchantencore:sunweave", "required": false },

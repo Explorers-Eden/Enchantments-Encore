@@ -1,0 +1,18 @@
+{
+  "values": [
+    { "id": "enchantencore:angry_aura", "required": false },
+    { "id": "enchantencore:boar_spirit", "required": false },
+    { "id": "enchantencore:cushion", "required": false },
+    { "id": "enchantencore:dismount", "required": false },
+    { "id": "enchantencore:electric_walker", "required": false },
+    { "id": "enchantencore:fetch", "required": false },
+    { "id": "enchantencore:impale_rush", "required": false },
+    { "id": "enchantencore:jousting", "required": false },
+    { "id": "enchantencore:lightning_bolt", "required": false },
+    { "id": "enchantencore:moonwalk", "required": false },
+    { "id": "enchantencore:propeller", "required": false },
+    { "id": "enchantencore:scent", "required": false },
+    { "id": "enchantencore:sparking_aura", "required": false },
+    { "id": "enchantencore:wind_aspect", "required": false }
+  ]
+}

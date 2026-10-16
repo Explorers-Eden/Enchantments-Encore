@@ -1,0 +1,18 @@
+{
+  "values": [
+    { "id": "enchantencore:growth", "required": false },
+    { "id": "enchantencore:incognito", "required": false },
+    { "id": "enchantencore:invisibility_cloak", "required": false },
+    { "id": "enchantencore:lush_aura", "required": false },
+    { "id": "enchantencore:pickpocket", "required": false },
+    { "id": "enchantencore:poison_aspect", "required": false },
+    { "id": "enchantencore:rabbit_foot", "required": false },
+    { "id": "enchantencore:regrowth", "required": false },
+    { "id": "enchantencore:replenish", "required": false },
+    { "id": "enchantencore:safe_landing", "required": false },
+    { "id": "enchantencore:seeker", "required": false },
+    { "id": "enchantencore:strafe", "required": false },
+    { "id": "enchantencore:swift_slash", "required": false },
+    { "id": "enchantencore:weaving_aspect", "required": false }
+  ]
+}

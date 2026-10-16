@@ -1,0 +1,18 @@
+{
+  "values": [
+    { "id": "enchantencore:bane_of_endborn", "required": false },
+    { "id": "enchantencore:bear_spirit", "required": false },
+    { "id": "enchantencore:enchanted_aura", "required": false },
+    { "id": "enchantencore:ender_aura", "required": false },
+    { "id": "enchantencore:ender_shot", "required": false },
+    { "id": "enchantencore:enderscape", "required": false },
+    { "id": "enchantencore:ice_alloy", "required": false },
+    { "id": "enchantencore:illumination", "required": false },
+    { "id": "enchantencore:implosion", "required": false },
+    { "id": "enchantencore:levitation_aspect", "required": false },
+    { "id": "enchantencore:moonweave", "required": false },
+    { "id": "enchantencore:phantom_menace", "required": false },
+    { "id": "enchantencore:slowness_aspect", "required": false },
+    { "id": "enchantencore:voidweave", "required": false }
+  ]
+}
