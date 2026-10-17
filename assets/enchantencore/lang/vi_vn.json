@@ -485,5 +485,8 @@
     "advancement.eden.adventure.enchantments_encore.the_rise_and_shine.description": "Loot a treasure enchantment from the top of the Rise",
     "advancement.eden.adventure.enchantments_encore.scholarly_treasure.title": "Scholarly Treasure",
     "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description": "Buy a treasure enchantment from a Master Librarian",
-    "option.enchantencore.back": "Back"
+    "option.enchantencore.back": "Back",
+    "enchantment.enchantencore.refuel": "Refuel",
+    "enchantment_lore.enchantencore:refuel.description": "Compatible with: Elytra\n\nTakes an identical firework rocket from the inventory and adds it to the held stack each time one is used while gliding",
+    "wiki.enchantencore.refuel": "Takes an identical firework rocket from the inventory and adds it to the held stack each time one is used while gliding\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Elytras\n\n• §lIncompatibilities§r: Moonwalk\n\n• §lLoot Sources§r: Treasure"
 }
