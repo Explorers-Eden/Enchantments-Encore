@@ -15,12 +15,13 @@ scoreboard objectives add enchantencore.strafe.timer dummy
 scoreboard objectives add enchantencore.pickpocket dummy
 scoreboard objectives add enchantencore.cleansing minecraft.used:minecraft.shield
 scoreboard objectives add enchantencore.refuel minecraft.used:minecraft.firework_rocket
+scoreboard objectives add enchantencore.ownership dummy
 
 ##start repeating loops
 function enchantencore:start
 
 ##set data pack version
-data modify storage eden:datapack enchantments_encore.version set value "5.9"
+data modify storage eden:datapack enchantments_encore.version set value "6.0"
 
 ##additional cleanup for v4.5
 scoreboard objectives remove enchantencore.dialog_trigger.wiki

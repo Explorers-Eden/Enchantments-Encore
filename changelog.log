@@ -1,7 +1,7 @@
 # Minecraft Version(s): 26.3
 ## Changes:
-- Added the Refuel enchantment for Elytras: each time a firework rocket is used while gliding, an identical rocket is taken from the inventory and added to the held stack; incompatible with Moonwalk
-- The vanilla enchanted book trade of Novice Librarians now offers a vanilla enchantment 2 in 3 times and an Enchantments Encore enchantment 1 in 3 times
-- Novice Librarians can now offer an extra enchanted book trade with an Enchantments Encore enchantment; which enchantments are available depends on the Librarian's villager type (Desert, Jungle, Plains, Savanna, Snowy, Swamp or Taiga)
+- Curse of Ownership now costs a lot less performance
 
 ## Fixes:
+- Curse of Ownership damaging the owners of every hurt pet instead of only the player wearing the cursed armor
+- Curse of Ownership dealing damage once per cursed armor piece instead of once
