@@ -49,3 +49,8 @@ jobs:
           JAR_NAME: ${{ steps.meta.outputs.jar_name }}
           IS_PRERELEASE: ${{ steps.meta.outputs.is_prerelease }}
         run: bash tools/scripts/create-or-update-github-release.sh
+
+  publish-modrinth:
+    needs: build-and-release
+    uses: ./.github/workflows/publish-modrinth-release.yml
+    secrets: inherit

@@ -1,7 +1,5 @@
 # Minecraft Version(s): 26.3
 ## Changes:
-- Curse of Ownership now costs a lot less performance
 
 ## Fixes:
-- Curse of Ownership damaging the owners of every hurt pet instead of only the player wearing the cursed armor
-- Curse of Ownership dealing damage once per cursed armor piece instead of once
+- Seeker turning off the glow of every dropped item nearby, also items glowing for other reasons (now it only turns off the glow it gave)

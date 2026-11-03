@@ -21,7 +21,7 @@ scoreboard objectives add enchantencore.ownership dummy
 function enchantencore:start
 
 ##set data pack version
-data modify storage eden:datapack enchantments_encore.version set value "6.0"
+data modify storage eden:datapack enchantments_encore.version set value "6.1"
 
 ##additional cleanup for v4.5
 scoreboard objectives remove enchantencore.dialog_trigger.wiki
