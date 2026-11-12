@@ -23,8 +23,8 @@
           "id": "enchantencore:surfer.water_mov",
           "amount": {
             "type": "minecraft:linear",
-            "base": 1.5,
-            "per_level_above_first": 1.75
+            "base": 0.2,
+            "per_level_above_first": 0.4
           },
           "operation": "add_value"
         }
