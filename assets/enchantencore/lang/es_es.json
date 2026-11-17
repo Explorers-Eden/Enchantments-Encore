@@ -486,7 +486,7 @@
     "advancement.eden.adventure.enchantments_encore.scholarly_treasure.title": "Tesoro Erudito",
     "advancement.eden.adventure.enchantments_encore.scholarly_treasure.description": "Comprar un encantamiento de tesoro de un Librero Maestro",
     "option.enchantencore.back": "Atrás",
-    "enchantment.enchantencore.refuel": "Refuel",
-    "enchantment_lore.enchantencore:refuel.description": "Compatible with: Elytra\n\nTakes an identical firework rocket from the inventory and adds it to the held stack each time one is used while gliding",
-    "wiki.enchantencore.refuel": "Takes an identical firework rocket from the inventory and adds it to the held stack each time one is used while gliding\n\n• §lMax Level§r: I\n\n• §lApplicable to§r: Elytras\n\n• §lIncompatibilities§r: Moonwalk\n\n• §lLoot Sources§r: Treasure"
+    "enchantment.enchantencore.refuel": "Reabastecer",
+    "enchantment_lore.enchantencore:refuel.description": "Compatible con: Elytra\\n\\nToma un fuego artificial idéntico del inventario y lo añade al stack de la mano cada vez que se use uno al planear",
+    "wiki.enchantencore.refuel": "Takes an identical firework rocket from the inventory and adds it to the held stack each time one is used while gliding\\n\\n• §lMax Level§r: I\\n\\n• §lApplicable to§r: Elytras\\n\\n• §lIncompatibilities§r: Moonwalk\\n\\n• §lLoot Sources§r: Treasure\nToma un fuego artificial idéntico del inventario y lo añade al stack de la mano cada vez que se use uno al planear\\n\\n• §lNivel Máximo§r: I\\n\\n• §lAplicable a§r: Elytras\\n\\n• §lIncompatibilidades§r: Caminata Lunar\\n\\n• §lFuentes§r: Tesoro"
 }
